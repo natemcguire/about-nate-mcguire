@@ -152,178 +152,287 @@
             box-shadow: 4px 4px 0px #000000;
             object-fit: cover;
         }
+
+        #boot-sequence {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: #fff5e6;
+            color: #000000;
+            font-family: 'VT323', monospace;
+            font-size: 20px;
+            padding: 20px;
+            box-sizing: border-box;
+            z-index: 1000;
+            white-space: pre-line;
+            overflow: hidden;
+        }
+
+        #boot-sequence.hidden {
+            animation: dissolveOut 1s forwards;
+        }
+
+        #main-content {
+            display: none;
+            opacity: 0;
+        }
+
+        #main-content.visible {
+            display: block;
+            animation: fadeIn 1s forwards;
+        }
+
+        .blink {
+            animation: blink 1s step-end infinite;
+        }
+
+        @keyframes blink {
+            50% { opacity: 0; }
+        }
+
+        .cursor {
+            display: inline-block;
+            width: 10px;
+            height: 20px;
+            background: #33ff33;
+            margin-left: 5px;
+            animation: blink 1s step-end infinite;
+        }
+
+        @keyframes dissolveOut {
+            0% {
+                clip-path: inset(0% 0% 0% 0%);
+                opacity: 1;
+            }
+            100% {
+                clip-path: inset(50% 50% 50% 50%);
+                opacity: 0;
+            }
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
     </style>
 </head>
 <body>
-    <div class="window">
-        <div class="window-header">NATE_MCGUIRE.EXE</div>
-         <div style="text-align: center; margin: 20px 0;">
-            <img src="nate-mcguire-headshot.jpg" alt="Nate McGuire" style="width: 150px; height: 150px; border-radius: 50%; border: 3px solid #000000; object-fit: cover; display: inline-block;" />
-        </div>
-        <h1>Nate McGuire</h1>
-        <div class="decoration">═══════ * ═══════</div>
-
+    <div id="boot-sequence"></div>
+    <div id="main-content">
         <div class="window">
-            <div class="window-header">PERSONAL_OVERVIEW.TXT</div>
-            <p>Nate McGuire is a <span class="keyword">technology executive</span>, <span class="keyword">CTO</span>, and <span class="keyword">entrepreneur</span> with a track record of building and scaling high-performance engineering teams. With <span class="keyword">15+ years</span> in <span class="keyword">San Francisco</span>, he has worked with <span class="keyword">VC-backed companies</span>, <span class="keyword">Fortune 500s</span>, and high-growth startups, specializing in engineering leadership, demand-gen-driven technology teams, and remote work culture.</p>
-            
-            <p>As the founder of <span class="keyword">Mayven Studios</span>, Nate built one of the Bay Area's premier engineering agencies, generating <span class="keyword">$25M+</span> in lifetime sales and delivering cutting-edge software solutions for companies like Google, Airbnb, Facebook, IBM, Twilio, Segment, Hired, First Round Capital, Andreesen Horowitz, and Lightspeed Venture Partners.
-            
-            <p>In addition to leading Mayven, Nate is the founder of <span class="keyword">Recipeas</span>, an iOS recipe generator that helps users decide what to cook based on available ingredients. He also owns <span class="keyword">PureCalculators.com</span>, a technical content platform acquired from a Finnish entrepreneur. He buys small internet businesses and scales them, as well as invests in startups poised for scale. The startups and founders he advises generally come for technical hiring and scaling marketing operations advice.</p>
-            
-            <p>Beyond business, Nate has traveled to over <span class="keyword">50 countries</span>, working with global teams and conducting business across multiple international markets. His expertise lies in scaling engineering teams, optimizing software architecture, and aligning technology with business growth.</p>
-        </div>
+            <div class="window-header">NATE_MCGUIRE.EXE</div>
+             <div style="text-align: center; margin: 20px 0;">
+                <img src="nate-mcguire-headshot.jpg" alt="Nate McGuire" style="width: 150px; height: 150px; border-radius: 50%; border: 3px solid #000000; object-fit: cover; display: inline-block;" />
+            </div>
+            <h1>Nate McGuire</h1>
+            <div class="decoration">═══════ * ═══════</div>
 
-        <div class="window">
-            <div class="window-header">COMPANIES.DAT</div>
-            <h2>Founder & Leadership</h2>
-            <ul>
-                <li><span class="keyword">Mayven Studios</span> – Engineering & design agency serving top Silicon Valley brands (<span class="keyword">$25M+</span> lifetime revenue).</li>
-                <li><span class="keyword">Recipeas</span> – iOS recipe app that tells users what to cook based on available ingredients. <span class="keyword">#2</span> free food and drink app.</li>
-                <li><span class="keyword">PureCalculators.com</span> – Acquired from Finnish founder; a content-driven platform focused on technical and niche calculators.</li>
-                <li><span class="keyword">Spokefly</span> – Early bike rental marketplace, similar to <span class="keyword">CitiBike</span>, <span class="keyword">Lime</span>, and <span class="keyword">Bird</span> (RIP shut down, but provided key startup lessons).</li>
-            </ul>
-        </div>
+            <div class="window">
+                <div class="window-header">PERSONAL_OVERVIEW.TXT</div>
+                <p>Nate McGuire is a <span class="keyword">technology executive</span>, <span class="keyword">CTO</span>, and <span class="keyword">entrepreneur</span> with a track record of building and scaling high-performance engineering teams. With <span class="keyword">15+ years</span> in <span class="keyword">San Francisco</span>, he has worked with <span class="keyword">VC-backed companies</span>, <span class="keyword">Fortune 500s</span>, and high-growth startups, specializing in engineering leadership, demand-gen-driven technology teams, and remote work culture.</p>
+                
+                <p>As the founder of <span class="keyword">Mayven Studios</span>, Nate built one of the Bay Area's premier engineering agencies, generating <span class="keyword">$25M+</span> in lifetime sales and delivering cutting-edge software solutions for companies like Google, Airbnb, Facebook, IBM, Twilio, Segment, Hired, First Round Capital, Andreesen Horowitz, and Lightspeed Venture Partners.
+                
+                <p>In addition to leading Mayven, Nate is the founder of <span class="keyword">Recipeas</span>, an iOS recipe generator that helps users decide what to cook based on available ingredients. He also owns <span class="keyword">PureCalculators.com</span>, a technical content platform acquired from a Finnish entrepreneur. He buys small internet businesses and scales them, as well as invests in startups poised for scale. The startups and founders he advises generally come for technical hiring and scaling marketing operations advice.</p>
+                
+                <p>Beyond business, Nate has traveled to over <span class="keyword">50 countries</span>, working with global teams and conducting business across multiple international markets. His expertise lies in scaling engineering teams, optimizing software architecture, and aligning technology with business growth.</p>
+            </div>
 
-        <div class="window">
-            <div class="window-header">ACHIEVEMENTS.DAT</div>
-            <h2>Notable Achievements</h2>
-            <ul>
-                <li>Built Mayven Studios into a <span class="keyword">$25M+</span> revenue company, serving Fortune 500s, startups, and VCs. Sold to <span class="keyword">Saltwater</span>.</li>
-                <li>Launched <span class="keyword">Recipeas</span>, an iOS recipe generator that helps people cook with what they have.</li>
-                <li>Acquired and scaled <span class="keyword">PureCalculators.com</span>, turning it into a global traffic generator.</li>
-                <li>Built scalable solutions for <span class="keyword">millions</span> of concurrent visitors and highly regulated telehealth environments.</li>
-                <li>Had work featured in <span class="keyword">Times Square</span> on the <span class="keyword">NASDAQ</span> billboard (Hi mom!).</li>
-                <li>Conducted business in multiple international markets across <span class="keyword">63 countries</span>.</li>
-            </ul>
-        </div>
-
-        <div class="window">
-            <div class="window-header">EXPERTISE.DAT</div>
-            <h2>Thought Leadership</h2>
-            <div class="expertise-content">
+            <div class="window">
+                <div class="window-header">COMPANIES.DAT</div>
+                <h2>Founder & Leadership</h2>
                 <ul>
-                    <li><span class="keyword">Scaling Engineering Teams for Marketing-Led Organizations</span>
-                        <ul>
-                            <li>How to align engineering with <span class="keyword">demand-gen</span>, <span class="keyword">performance marketing</span>, and <span class="keyword">revenue growth</span>.</li>
-                            <li>Why most traditional product-led engineering approaches fail in marketing-driven companies.</li>
-                        </ul>
-                    </li>
-                    <li><span class="keyword">We're Not Family</span> – Building a Culture of Accountability
-                        <ul>
-                            <li>"A leadership philosophy that contrasts high-accountability, results-driven management with overprotective, overly hands-on leadership styles."</li>
-                            <li>How to create <span class="keyword">autonomy</span>, <span class="keyword">discipline</span>, and <span class="keyword">high performance</span> without coddling teams.</li>
-                        </ul>
-                    </li>
-                    <li><span class="keyword">Remote Work & Global Teams</span>
-                        <ul>
-                            <li>Lessons from managing distributed engineering teams across multiple countries.</li>
-                            <li>The realities of remote work, scaling teams, and maintaining efficiency & culture.</li>
-                            <li>Location agnostic hiring — It's not cheaper, it's better</li>
-                        </ul>
-                    </li>
+                    <li><span class="keyword">Mayven Studios</span> – Engineering & design agency serving top Silicon Valley brands (<span class="keyword">$25M+</span> lifetime revenue).</li>
+                    <li><span class="keyword">Recipeas</span> – iOS recipe app that tells users what to cook based on available ingredients. <span class="keyword">#2</span> free food and drink app.</li>
+                    <li><span class="keyword">PureCalculators.com</span> – Acquired from Finnish founder; a content-driven platform focused on technical and niche calculators.</li>
+                    <li><span class="keyword">Spokefly</span> – Early bike rental marketplace, similar to <span class="keyword">CitiBike</span>, <span class="keyword">Lime</span>, and <span class="keyword">Bird</span> (RIP shut down, but provided key startup lessons).</li>
                 </ul>
             </div>
-        </div>
 
-        <div class="window">
-            <div class="window-header">PRESS_AND_WRITING.DAT</div>
-            <h2>Press & Writing</h2>
-            <h3>Featured In:</h3>
-            <ul>
-                <li><a href="https://www.youtube.com/watch?v=aqCFTpvE4Q0&t=153s">SXSW Panel: Modern Work: Finding structure in an officeless world</a></li>
-                <li><a href="https://medium.com/@natemcguire/remote-work-is-here-to-stay-so-now-what-1680e8a4398">Remote Work Is Here to Stay — So, Now What?</a></li>
-                <li><a href="https://medium.com/@natemcguire/if-software-is-eating-the-world-your-office-is-also-on-the-menu-56122126f3df">If 'Software is Eating the World', your office is also on the menu</a></li>
-                <li><a href="https://medium.com/@natemcguire/time-is-money-and-money-is-time-how-do-you-manage-both-505bff438ebe">Time is Money and Money is Time. How Do You Manage Both?</a></li>
-                <li><a href="https://medium.com/@natemcguire/growing-remote-4f774df06fed">Growing Remote</a></li>
-            </ul>
+            <div class="window">
+                <div class="window-header">ACHIEVEMENTS.DAT</div>
+                <h2>Notable Achievements</h2>
+                <ul>
+                    <li>Built Mayven Studios into a <span class="keyword">$25M+</span> revenue company, serving Fortune 500s, startups, and VCs. Sold to <span class="keyword">Saltwater</span>.</li>
+                    <li>Launched <span class="keyword">Recipeas</span>, an iOS recipe generator that helps people cook with what they have.</li>
+                    <li>Acquired and scaled <span class="keyword">PureCalculators.com</span>, turning it into a global traffic generator.</li>
+                    <li>Built scalable solutions for <span class="keyword">millions</span> of concurrent visitors and highly regulated telehealth environments.</li>
+                    <li>Had work featured in <span class="keyword">Times Square</span> on the <span class="keyword">NASDAQ</span> billboard (Hi mom!).</li>
+                    <li>Conducted business in multiple international markets across <span class="keyword">63 countries</span>.</li>
+                </ul>
+            </div>
 
-            <h3>Writings:</h3>
-            <ul>
-                <li><a href="https://mayvenstudios.com/blog/will-chatgpt-snake-eats-tail-analysis-ai-generated-content-impact-future-training-data">Will ChatGPT be the Snake That Eats Its Own Tail?</a></li>
-                <li><a href="https://mayvenstudios.com/blog/re-launching-mixpanel-again">Re-launching Mixpanel (Again)</a></li>
-                <li><a href="https://mayvenstudios.com/blog/tdd-todays-engineering-teams-test-driven-development">TDD for Today's Engineering Teams: Test-Driven Development</a></li>
-                <li><a href="https://mayvenstudios.com/blog/embracing-microservices-architecture-large-enterprises-key-insights-benefits">Embracing Microservices Architecture for Large Enterprises: Key Insights and Benefits</a></li>
-                <li><a href="https://mayvenstudios.com/blog/designing-effective-rest-apis-guide-software-developers">Designing Effective REST APIs: A Guide for Software Developers</a></li>
-                <li><a href="https://mayvenstudios.com/blog/unlocking-business-value-apis-business-analysts-perspective">Unlocking Business Value Through APIs: A Business Analyst's Perspective</a></li>
-                <li><a href="https://mayvenstudios.com/blog/state-api-design-2023">The State of API Design in 2023</a></li>
-                <li><a href="https://mayvenstudios.com/blog/how-build-ecommerce-mvp">How to Build an eCommerce MVP</a></li>
-                <li><a href="https://mayvenstudios.com/blog/what-is-mvp">What is an MVP?</a></li>
-                <li><a href="https://mayvenstudios.com/blog/review-lean-startup-book">Review: The Lean Startup Book</a></li>
-                <li><a href="https://mayvenstudios.com/blog/planning-build-mvp-what-do-you-need">Planning to Build an MVP: What Do You Need?</a></li>
-                <li><a href="https://mayvenstudios.com/blog/how-build-mvp-step-step-guide">How to Build an MVP: A Step-by-Step Guide</a></li>
-                <li><a href="https://mayvenstudios.com/blog/review-best-web-application-development-frameworks-build-mvp">A Review of the Best Web Application Development Frameworks to Build an MVP</a></li>
-                <li><a href="https://mayvenstudios.com/blog/benefits-migrating-drupal-wordpress">The Benefits of Migrating From Drupal to WordPress</a></li>
-                <li><a href="https://mayvenstudios.com/blog/how-build-digital-products-remote-team">How to Build Digital Products With a Remote Team</a></li>
-                <li><a href="https://mayvenstudios.com/blog/how-does-googles-core-web-vitals-work">How Does Google's Core Web Vitals Work?</a></li>
-                <li><a href="https://mayvenstudios.com/blog/best-ab-testing-tools-your-marketing-site">Best A/B Testing Tools for Your Marketing Site</a></li>
-                <li><a href="https://mayvenstudios.com/blog/benefits-using-low-code-platform-rapid-prototyping">The Benefits of Using a Low-Code Platform for Rapid Prototyping</a></li>
-                <li><a href="https://mayvenstudios.com/blog/benefits-continuous-integration-delivery-software-development">The Benefits of Continuous Integration and Delivery in Software</a></li>
-                <li><a href="https://mayvenstudios.com/blog/best-practices-testing-debugging-software">Best Practices for Testing and Debugging Software</a></li>
-                <li><a href="https://mayvenstudios.com/blog/recruiting-tips-building-strong-software-development-team">Recruiting: Tips for Building a Strong Software Development Team</a></li>
-                <li><a href="https://mayvenstudios.com/blog/how-implement-successful-digital-transformation-strategy">How to Implement a Successful Digital Transformation Strategy</a></li>
-                <li><a href="https://mayvenstudios.com/blog/should-you-try-influencer-marketing-your-business">Should You Try Influencer Marketing for Your Business?</a></li>
-                <li><a href="https://mayvenstudios.com/blog/maximizing-roi-best-practices-measuring-optimizing-marketing-campaigns">Maximizing ROI: Best Practices for Measuring and Optimizing Marketing Campaigns</a></li>
-                <li><a href="https://mayvenstudios.com/blog/how-clear-wpengine-cache">How to Clear Your WPEngine Cache</a></li>
-                <li><a href="https://mayvenstudios.com/blog/how-effectively-communicate-your-remote-software-development-team">How to Effectively Communicate With Your Remote Software Development Team</a></li>
-                <li><a href="https://mayvenstudios.com/blog/benefits-using-agile-methodologies-software-development">The Benefits of Using Agile Methodologies in Software Development</a></li>
-                <li><a href="https://mayvenstudios.com/blog/gift-guide-software-developers">Gift Guide for Software Developers</a></li>
-                <li><a href="https://mayvenstudios.com/blog/basics-content-marketing-startups-tech-companies">Basics of Content Marketing for Startups and Tech Companies</a></li>
-                <li><a href="https://mayvenstudios.com/blog/how-tell-compelling-brand-story">How to Tell a Compelling Brand Story</a></li>
-                <li><a href="https://mayvenstudios.com/blog/power-personalization-how-use-data-ai-deliver-targeted-marketing-messages">The Power of Personalization: How to Use Data and AI to Deliver Targeted Marketing Messages</a></li>
-                <li><a href="https://mayvenstudios.com/blog/how-much-does-it-cost-hire-team-developers">How Much Does It Cost to Hire a Team of Developers?</a></li>
-                <li><a href="https://mayvenstudios.com/blog/architecture-planning-telehealth-video-conferencing-app">Architecture and Planning for a Telehealth Video Conferencing App</a></li>
-            </ul>
-        </div>
+            <div class="window">
+                <div class="window-header">EXPERTISE.DAT</div>
+                <h2>Thought Leadership</h2>
+                <div class="expertise-content">
+                    <ul>
+                        <li><span class="keyword">Scaling Engineering Teams for Marketing-Led Organizations</span>
+                            <ul>
+                                <li>How to align engineering with <span class="keyword">demand-gen</span>, <span class="keyword">performance marketing</span>, and <span class="keyword">revenue growth</span>.</li>
+                                <li>Why most traditional product-led engineering approaches fail in marketing-driven companies.</li>
+                            </ul>
+                        </li>
+                        <li><span class="keyword">We're Not Family</span> – Building a Culture of Accountability
+                            <ul>
+                                <li>"A leadership philosophy that contrasts high-accountability, results-driven management with overprotective, overly hands-on leadership styles."</li>
+                                <li>How to create <span class="keyword">autonomy</span>, <span class="keyword">discipline</span>, and <span class="keyword">high performance</span> without coddling teams.</li>
+                            </ul>
+                        </li>
+                        <li><span class="keyword">Remote Work & Global Teams</span>
+                            <ul>
+                                <li>Lessons from managing distributed engineering teams across multiple countries.</li>
+                                <li>The realities of remote work, scaling teams, and maintaining efficiency & culture.</li>
+                                <li>Location agnostic hiring — It's not cheaper, it's better</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
 
-        <div class="window">
-            <div class="window-header">SOCIALS.DAT</div>
-            <h2>Connect With Nate McGuire</h2>
-            <ul>
-                <li>X: <a href="https://twitter.com/natemcguire">@natemcguire</a></li>
-                <li>GitHub: <a href="https://github.com/natemcguire">github.com/natemcguire</a></li>
-                <li>LinkedIn: <a href="https://linkedin.com/in/natemcguire">linkedin.com/in/natemcguire</a></li>
-            </ul>
-        </div>
+            <div class="window">
+                <div class="window-header">PRESS_AND_WRITING.DAT</div>
+                <h2>Press & Writing</h2>
+                <h3>Featured In:</h3>
+                <ul>
+                    <li><a href="https://www.youtube.com/watch?v=aqCFTpvE4Q0&t=153s">SXSW Panel: Modern Work: Finding structure in an officeless world</a></li>
+                    <li><a href="https://medium.com/@natemcguire/remote-work-is-here-to-stay-so-now-what-1680e8a4398">Remote Work Is Here to Stay — So, Now What?</a></li>
+                    <li><a href="https://medium.com/@natemcguire/if-software-is-eating-the-world-your-office-is-also-on-the-menu-56122126f3df">If 'Software is Eating the World', your office is also on the menu</a></li>
+                    <li><a href="https://medium.com/@natemcguire/time-is-money-and-money-is-time-how-do-you-manage-both-505bff438ebe">Time is Money and Money is Time. How Do You Manage Both?</a></li>
+                    <li><a href="https://medium.com/@natemcguire/growing-remote-4f774df06fed">Growing Remote</a></li>
+                </ul>
 
-        <div class="window">
-            <div class="window-header">INDUSTRY_CONTRIBUTIONS.DAT</div>
-            <h2>Startup Investments & Mentorship</h2>
-            <ul>
-                <li>Investing in startups across <span class="keyword">e-commerce</span>, <span class="keyword">AI</span>, <span class="keyword">telehealth</span>.</li>
-                <li>Advisor to early-stage companies on <span class="keyword">engineering hiring</span>, <span class="keyword">technical strategy</span>, and <span class="keyword">product development</span> work.</li>
-                <li>Worked with top VC firms like <span class="keyword">A16z</span> & <span class="keyword">Lightspeed</span> on engineering & product initiatives.</li>
-            </ul>
-        </div>
+                <h3>Writings:</h3>
+                <ul>
+                    <li><a href="https://mayvenstudios.com/blog/will-chatgpt-snake-eats-tail-analysis-ai-generated-content-impact-future-training-data">Will ChatGPT be the Snake That Eats Its Own Tail?</a></li>
+                    <li><a href="https://mayvenstudios.com/blog/re-launching-mixpanel-again">Re-launching Mixpanel (Again)</a></li>
+                    <li><a href="https://mayvenstudios.com/blog/tdd-todays-engineering-teams-test-driven-development">TDD for Today's Engineering Teams: Test-Driven Development</a></li>
+                    <li><a href="https://mayvenstudios.com/blog/embracing-microservices-architecture-large-enterprises-key-insights-benefits">Embracing Microservices Architecture for Large Enterprises: Key Insights and Benefits</a></li>
+                    <li><a href="https://mayvenstudios.com/blog/designing-effective-rest-apis-guide-software-developers">Designing Effective REST APIs: A Guide for Software Developers</a></li>
+                    <li><a href="https://mayvenstudios.com/blog/unlocking-business-value-apis-business-analysts-perspective">Unlocking Business Value Through APIs: A Business Analyst's Perspective</a></li>
+                    <li><a href="https://mayvenstudios.com/blog/state-api-design-2023">The State of API Design in 2023</a></li>
+                    <li><a href="https://mayvenstudios.com/blog/how-build-ecommerce-mvp">How to Build an eCommerce MVP</a></li>
+                    <li><a href="https://mayvenstudios.com/blog/what-is-mvp">What is an MVP?</a></li>
+                    <li><a href="https://mayvenstudios.com/blog/review-lean-startup-book">Review: The Lean Startup Book</a></li>
+                    <li><a href="https://mayvenstudios.com/blog/planning-build-mvp-what-do-you-need">Planning to Build an MVP: What Do You Need?</a></li>
+                    <li><a href="https://mayvenstudios.com/blog/how-build-mvp-step-step-guide">How to Build an MVP: A Step-by-Step Guide</a></li>
+                    <li><a href="https://mayvenstudios.com/blog/review-best-web-application-development-frameworks-build-mvp">A Review of the Best Web Application Development Frameworks to Build an MVP</a></li>
+                    <li><a href="https://mayvenstudios.com/blog/benefits-migrating-drupal-wordpress">The Benefits of Migrating From Drupal to WordPress</a></li>
+                    <li><a href="https://mayvenstudios.com/blog/how-build-digital-products-remote-team">How to Build Digital Products With a Remote Team</a></li>
+                    <li><a href="https://mayvenstudios.com/blog/how-does-googles-core-web-vitals-work">How Does Google's Core Web Vitals Work?</a></li>
+                    <li><a href="https://mayvenstudios.com/blog/best-ab-testing-tools-your-marketing-site">Best A/B Testing Tools for Your Marketing Site</a></li>
+                    <li><a href="https://mayvenstudios.com/blog/benefits-using-low-code-platform-rapid-prototyping">The Benefits of Using a Low-Code Platform for Rapid Prototyping</a></li>
+                    <li><a href="https://mayvenstudios.com/blog/benefits-continuous-integration-delivery-software-development">The Benefits of Continuous Integration and Delivery in Software</a></li>
+                    <li><a href="https://mayvenstudios.com/blog/best-practices-testing-debugging-software">Best Practices for Testing and Debugging Software</a></li>
+                    <li><a href="https://mayvenstudios.com/blog/recruiting-tips-building-strong-software-development-team">Recruiting: Tips for Building a Strong Software Development Team</a></li>
+                    <li><a href="https://mayvenstudios.com/blog/how-implement-successful-digital-transformation-strategy">How to Implement a Successful Digital Transformation Strategy</a></li>
+                    <li><a href="https://mayvenstudios.com/blog/should-you-try-influencer-marketing-your-business">Should You Try Influencer Marketing for Your Business?</a></li>
+                    <li><a href="https://mayvenstudios.com/blog/maximizing-roi-best-practices-measuring-optimizing-marketing-campaigns">Maximizing ROI: Best Practices for Measuring and Optimizing Marketing Campaigns</a></li>
+                    <li><a href="https://mayvenstudios.com/blog/how-clear-wpengine-cache">How to Clear Your WPEngine Cache</a></li>
+                    <li><a href="https://mayvenstudios.com/blog/how-effectively-communicate-your-remote-software-development-team">How to Effectively Communicate With Your Remote Software Development Team</a></li>
+                    <li><a href="https://mayvenstudios.com/blog/benefits-using-agile-methodologies-software-development">The Benefits of Using Agile Methodologies in Software Development</a></li>
+                    <li><a href="https://mayvenstudios.com/blog/gift-guide-software-developers">Gift Guide for Software Developers</a></li>
+                    <li><a href="https://mayvenstudios.com/blog/basics-content-marketing-startups-tech-companies">Basics of Content Marketing for Startups and Tech Companies</a></li>
+                    <li><a href="https://mayvenstudios.com/blog/how-tell-compelling-brand-story">How to Tell a Compelling Brand Story</a></li>
+                    <li><a href="https://mayvenstudios.com/blog/power-personalization-how-use-data-ai-deliver-targeted-marketing-messages">The Power of Personalization: How to Use Data and AI to Deliver Targeted Marketing Messages</a></li>
+                    <li><a href="https://mayvenstudios.com/blog/how-much-does-it-cost-hire-team-developers">How Much Does It Cost to Hire a Team of Developers?</a></li>
+                    <li><a href="https://mayvenstudios.com/blog/architecture-planning-telehealth-video-conferencing-app">Architecture and Planning for a Telehealth Video Conferencing App</a></li>
+                </ul>
+            </div>
 
-        <div class="window">
-            <div class="window-header">BACKGROUND.DAT</div>
-            <h2>Professional Background</h2>
-            <ul>
-                <li><span class="keyword">15+ years</span> leading engineering teams building for <span class="keyword">SaaS</span>, <span class="keyword">marketplaces</span>, <span class="keyword">telehealth</span>.</li>
-                <li>Scaled & led global teams, working with <span class="keyword">remote-first</span> and <span class="keyword">hybrid</span> models.</li>
-                <li>Built & managed cross-functional engineering teams across <span class="keyword">marketing-led</span> and <span class="keyword">product-led</span> organizations.</li>
-                <li>Tech stack expertise: Built across a variety of platforms and languages, primarily for <span class="keyword">web</span> and <span class="keyword">mobile</span>, with some hardware here and there.</li>
-            </ul>
-        </div>
+            <div class="window">
+                <div class="window-header">SOCIALS.DAT</div>
+                <h2>Connect With Nate McGuire</h2>
+                <ul>
+                    <li>X: <a href="https://twitter.com/natemcguire">@natemcguire</a></li>
+                    <li>GitHub: <a href="https://github.com/natemcguire">github.com/natemcguire</a></li>
+                    <li>LinkedIn: <a href="https://linkedin.com/in/natemcguire">linkedin.com/in/natemcguire</a></li>
+                </ul>
+            </div>
 
-        <div class="window">
-            <div class="window-header">PRESS_BIO.DAT</div>
-            <h2>About Nate - For Press</h2>
+            <div class="window">
+                <div class="window-header">INDUSTRY_CONTRIBUTIONS.DAT</div>
+                <h2>Startup Investments & Mentorship</h2>
+                <ul>
+                    <li>Investing in startups across <span class="keyword">e-commerce</span>, <span class="keyword">AI</span>, <span class="keyword">telehealth</span>.</li>
+                    <li>Advisor to early-stage companies on <span class="keyword">engineering hiring</span>, <span class="keyword">technical strategy</span>, and <span class="keyword">product development</span> work.</li>
+                    <li>Worked with top VC firms like <span class="keyword">A16z</span> & <span class="keyword">Lightspeed</span> on engineering & product initiatives.</li>
+                </ul>
+            </div>
 
-            <h3>80 Characters</h3>
-            <p>Nate McGuire is a <span class="keyword">serial entrepreneur</span> and <span class="keyword">technology leader</span> based in San Francisco.</p>
+            <div class="window">
+                <div class="window-header">BACKGROUND.DAT</div>
+                <h2>Professional Background</h2>
+                <ul>
+                    <li><span class="keyword">15+ years</span> leading engineering teams building for <span class="keyword">SaaS</span>, <span class="keyword">marketplaces</span>, <span class="keyword">telehealth</span>.</li>
+                    <li>Scaled & led global teams, working with <span class="keyword">remote-first</span> and <span class="keyword">hybrid</span> models.</li>
+                    <li>Built & managed cross-functional engineering teams across <span class="keyword">marketing-led</span> and <span class="keyword">product-led</span> organizations.</li>
+                    <li>Tech stack expertise: Built across a variety of platforms and languages, primarily for <span class="keyword">web</span> and <span class="keyword">mobile</span>, with some hardware here and there.</li>
+                </ul>
+            </div>
 
-            <h3>300 Characters</h3>
-            <p>Nate McGuire is a <span class="keyword">serial entrepreneur</span> and <span class="keyword">CTO</span> who has built and scaled high-performance engineering teams. As founder of <span class="keyword">Mayven Studios</span>, he led <span class="keyword">$25M+</span> in lifetime sales, working with <span class="keyword">Google</span>, <span class="keyword">Airbnb</span>, <span class="keyword">IBM</span>, and <span class="keyword">A16z</span>-backed startups. He now focuses on engineering leadership, demand-gen tech, and AI-driven products.</p>
+            <div class="window">
+                <div class="window-header">PRESS_BIO.DAT</div>
+                <h2>About Nate - For Press</h2>
 
-            <h3>Longer Bio</h3>
-            <p>Nate McGuire has spent over a decade leading <span class="keyword">software engineering</span>, <span class="keyword">e-commerce</span>, and <span class="keyword">telehealth</span> initiatives. He built <span class="keyword">Mayven Studios</span> into a top-tier engineering agency, delivering scalable software solutions for Fortune 500s and VC-backed startups.</p>
-            
-            <p>Beyond Mayven, Nate founded <span class="keyword">Recipeas</span>, an AI-powered recipe app, and acquired <span class="keyword">PureCalculators.com</span>, a technical content platform. His expertise in engineering leadership, scaling remote teams, and aligning technology with business growth makes him a sought-after advisor and speaker.</p>
-            
-            <p>Having worked with global teams across <span class="keyword">63 countries</span>, Nate has deep experience in distributed engineering, cross-border business, and remote team management. He has spoken at <span class="keyword">SXSW</span> and other industry events on scaling technical teams, remote work culture, and leadership strategies.</p>
+                <h3>80 Characters</h3>
+                <p>Nate McGuire is a <span class="keyword">serial entrepreneur</span> and <span class="keyword">technology leader</span> based in San Francisco.</p>
+
+                <h3>300 Characters</h3>
+                <p>Nate McGuire is a <span class="keyword">serial entrepreneur</span> and <span class="keyword">CTO</span> who has built and scaled high-performance engineering teams. As founder of <span class="keyword">Mayven Studios</span>, he led <span class="keyword">$25M+</span> in lifetime sales, working with <span class="keyword">Google</span>, <span class="keyword">Airbnb</span>, <span class="keyword">IBM</span>, and <span class="keyword">A16z</span>-backed startups. He now focuses on engineering leadership, demand-gen tech, and AI-driven products.</p>
+
+                <h3>Longer Bio</h3>
+                <p>Nate McGuire has spent over a decade leading <span class="keyword">software engineering</span>, <span class="keyword">e-commerce</span>, and <span class="keyword">telehealth</span> initiatives. He built <span class="keyword">Mayven Studios</span> into a top-tier engineering agency, delivering scalable software solutions for Fortune 500s and VC-backed startups.</p>
+                
+                <p>Beyond Mayven, Nate founded <span class="keyword">Recipeas</span>, an AI-powered recipe app, and acquired <span class="keyword">PureCalculators.com</span>, a technical content platform. His expertise in engineering leadership, scaling remote teams, and aligning technology with business growth makes him a sought-after advisor and speaker.</p>
+                
+                <p>Having worked with global teams across <span class="keyword">63 countries</span>, Nate has deep experience in distributed engineering, cross-border business, and remote team management. He has spoken at <span class="keyword">SXSW</span> and other industry events on scaling technical teams, remote work culture, and leadership strategies.</p>
+            </div>
         </div>
     </div>
+
+    <script>
+        const bootSequence = [
+            { text: "ACME BIOS v1.21 (C) 1987 American Made, Inc.\n", delay: 500 },
+            { text: "640K Base Memory, 3072K Extended Memory\n", delay: 300 },
+            { text: "\n\nInitializing...\n", delay: 800 },
+            { text: "Starting N_DOS...\n", delay: 400 },
+            { text: "Loading NATE_MCGUIRE.exe...\n", delay: 800 }
+        ];
+
+        const bootScreen = document.getElementById('boot-sequence');
+        const mainContent = document.getElementById('main-content');
+        let currentText = '';
+
+        async function typeWriter(text, delay) {
+            for (let i = 0; i < text.length; i++) {
+                currentText += text[i];
+                bootScreen.textContent = currentText;
+                await new Promise(resolve => setTimeout(resolve, 20));
+            }
+            await new Promise(resolve => setTimeout(resolve, delay));
+        }
+
+        async function runBootSequence() {
+            for (const sequence of bootSequence) {
+                await typeWriter(sequence.text, sequence.delay);
+            }
+            await new Promise(resolve => setTimeout(resolve, 800));
+            
+            bootScreen.classList.add('hidden');
+            setTimeout(() => {
+                mainContent.classList.add('visible');
+            }, 500);
+        }
+
+        // Start the boot sequence when the page loads
+        window.addEventListener('load', runBootSequence);
+    </script>
 </body>
 </html>
