@@ -168,6 +168,7 @@
             z-index: 1000;
             white-space: pre-line;
             overflow: hidden;
+            cursor: pointer;
         }
 
         #boot-sequence.hidden {
@@ -220,11 +221,53 @@
                 opacity: 1;
             }
         }
+
+        .top-nav {
+            display: flex;
+            justify-content: flex-end;
+            margin-bottom: 20px;
+        }
+
+        .vehicle-link {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 16px;
+            color: #000000;
+            text-decoration: none;
+            border-bottom: none;
+        }
+
+        .vehicle-link:hover {
+            color: #0033CC;
+            background-color: transparent;
+        }
+
+        .vehicle-link:after {
+            content: "→";
+            font-size: 20px;
+        }
+
+        .skip-hint {
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 14px;
+            color: #666;
+            animation: blink 1s step-end infinite;
+        }
     </style>
 </head>
 <body>
-    <div id="boot-sequence"></div>
+    <div id="boot-sequence">
+        <div class="skip-hint">Press SPACE or Click/Tap to Skip</div>
+    </div>
     <div id="main-content">
+        <div class="top-nav">
+            <a href="land-rover-defender-110-TDi-200-1993.html" class="vehicle-link">Nate's Land Rover Defender</a>
+        </div>
+        
         <div class="window">
             <div class="window-header">NATE_MCGUIRE.EXE</div>
              <div style="text-align: center; margin: 20px 0;">
@@ -409,27 +452,61 @@
         const bootScreen = document.getElementById('boot-sequence');
         const mainContent = document.getElementById('main-content');
         let currentText = '';
+        let isAnimating = true;
+        let fastForward = false;
+
+        function skipAnimation() {
+            if (!isAnimating || fastForward) return;
+            fastForward = true;
+            
+            // Immediately complete the boot sequence text
+            const fullText = bootSequence.map(seq => seq.text).join('');
+            bootScreen.textContent = fullText;
+            
+            // Wait a brief moment before hiding
+            setTimeout(() => {
+                bootScreen.classList.add('hidden');
+                setTimeout(() => {
+                    mainContent.classList.add('visible');
+                    bootScreen.style.display = 'none';
+                }, 500);
+            }, 300);
+        }
 
         async function typeWriter(text, delay) {
+            if (!isAnimating) return;
             for (let i = 0; i < text.length; i++) {
+                if (fastForward) return;
                 currentText += text[i];
                 bootScreen.textContent = currentText;
                 await new Promise(resolve => setTimeout(resolve, 20));
             }
-            await new Promise(resolve => setTimeout(resolve, delay));
+            if (!fastForward) {
+                await new Promise(resolve => setTimeout(resolve, delay));
+            }
         }
 
         async function runBootSequence() {
             for (const sequence of bootSequence) {
+                if (fastForward) break;
                 await typeWriter(sequence.text, sequence.delay);
             }
-            await new Promise(resolve => setTimeout(resolve, 800));
-            
-            bootScreen.classList.add('hidden');
-            setTimeout(() => {
-                mainContent.classList.add('visible');
-            }, 500);
+            if (!fastForward) {
+                await new Promise(resolve => setTimeout(resolve, 800));
+            }
+            skipAnimation();
         }
+
+        // Event listeners for skipping
+        document.addEventListener('keydown', (e) => {
+            if (e.code === 'Space') {
+                e.preventDefault();
+                skipAnimation();
+            }
+        });
+
+        bootScreen.addEventListener('click', skipAnimation);
+        bootScreen.addEventListener('touchend', skipAnimation);
 
         // Start the boot sequence when the page loads
         window.addEventListener('load', runBootSequence);
