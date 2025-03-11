@@ -2,14 +2,24 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
         <loc>https://natemcguire.com/</loc>
-        <lastmod>2024-03-19</lastmod>
+        <lastmod>2024-03-17</lastmod>
         <changefreq>monthly</changefreq>
         <priority>1.0</priority>
     </url>
     <url>
         <loc>https://natemcguire.com/land-rover-defender-110-TDi-200-1993.html</loc>
-        <lastmod>2024-03-19</lastmod>
+        <lastmod>2024-03-17</lastmod>
         <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://natemcguire.com/retro-profile.html</loc>
+        <lastmod>2024-03-17</lastmod>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://natemcguire.com/cycle-ios-8-swift-and-the-apple-watch-cycling-tracker.html</loc>
+        <lastmod>2024-03-17</lastmod>
         <priority>0.8</priority>
     </url>
 </urlset> 
