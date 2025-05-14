@@ -147,12 +147,28 @@
     <div class="image-container">
         <img src="land-rover.png" alt="Land Rover illustration" class="framed-image">
         <canvas id="canvas"></canvas>
+        <div class="text-overlay">
+            <div class="buttons">
+                <h2 style="font-family: Arial, sans-serif; margin-bottom: 20px; text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);">Nice. You've got taste.</h2>
+                <form id="commentForm" class="comment-form">
+                    <textarea 
+                        name="entry.525132392" 
+                        placeholder="Send me a message!"
+                        required
+                    ></textarea>
+                    <button type="submit">Send</button>
+                </form>
+                <div class="success-message">Thanks!</div>
+                <a href="land-rover-details.html" style="margin-top: 20px; text-decoration: none; color: white; font-family: Arial, sans-serif; text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);">Learn about the Land Rover</a>
+            </div>
+        </div>
     </div>
 
     <script>
         // Ensure jQuery is loaded before running our code
         function initializeApp() {
             if (typeof jQuery === 'undefined') {
+                // If jQuery isn't loaded yet, try again in 100ms
                 setTimeout(initializeApp, 100);
                 return;
             }
@@ -160,25 +176,24 @@
             $(function() {
                 var canvas = $('#canvas')[0];
                 var container = $('.image-container');
+                var rect = container[0].getBoundingClientRect();
+                canvas.width = rect.width;
+                canvas.height = rect.height;
+                var ctx = canvas.getContext('2d');
                 
-                // Function to handle resize and setup
-                function handleResize() {
-                    var rect = container[0].getBoundingClientRect();
+                // resize
+                $(window).on('resize', function() {
+                    rect = container[0].getBoundingClientRect();
                     canvas.width = rect.width;
                     canvas.height = rect.height;
-                    if (ctx) {
-                        ctx.fillStyle = 'rgba(0, 0, 0, 0)';
-                        ctx.fillRect(0, 0, canvas.width, canvas.height);
-                    }
-                }
+                    ctx.fillStyle = 'rgba(0, 0, 0, 0)';
+                    ctx.fillRect(0, 0, canvas.width, canvas.height);
+                });
 
-                // Initialize canvas
-                var ctx = canvas.getContext('2d');
-                handleResize();
-
-                // Resize handler
-                $(window).on('resize orientationchange', handleResize);
-
+                // init
+                ctx.fillStyle = 'rgba(0, 0, 0, 0)';
+                ctx.fillRect(0, 0, canvas.width, canvas.height);
+                
                 // objects
                 var listFire = [];
                 var listFirework = [];
