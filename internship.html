@@ -3,119 +3,336 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>UT Internship Application</title>
+  <title>M LLC Internship Application</title>
   <style>
     body {
-      font-family: Arial, sans-serif;
-      margin: 2rem auto;
-      max-width: 700px;
-      padding: 1rem;
-      background: #f9f9f9;
+      font-family: 'Inter', -apple-system, sans-serif;
+      margin: 0;
+      padding: 2rem;
+      background: #000000;
+      color: #ffffff;
+      line-height: 1.6;
     }
-    h1, p {
+
+    .container {
+      max-width: 700px;
+      margin: 0 auto;
+      background: #111111;
+      padding: 2.5rem;
+      border-radius: 20px;
+      box-shadow: 0 4px 24px rgba(255, 255, 255, 0.05);
+    }
+
+    h1 {
+      font-size: 2.5rem;
+      margin-bottom: 0.5rem;
+      color: #ffffff;
       text-align: center;
     }
+
+    p {
+      text-align: center;
+      color: #888;
+      margin-bottom: 2rem;
+    }
+
+    p a {
+      color: #ffffff;
+      text-decoration: none;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+      transition: all 0.2s;
+    }
+
+    p a:hover {
+      border-color: #ffffff;
+    }
+
     label {
       display: block;
-      margin-top: 1rem;
-      font-weight: bold;
+      margin-top: 1.5rem;
+      font-weight: 500;
+      color: #ffffff;
+      font-size: 0.9rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
     }
+
     input, select, textarea {
       width: 100%;
-      padding: 0.5rem;
+      padding: 0.75rem;
       margin-top: 0.5rem;
-      border: 1px solid #ccc;
-      border-radius: 4px;
+      background: #222222;
+      border: 1px solid #333333;
+      border-radius: 8px;
+      font-size: 1rem;
+      color: #ffffff;
+      transition: all 0.2s;
     }
-    .rating-group, .skills-group {
+
+    input:focus, select:focus, textarea:focus {
+      outline: none;
+      border-color: #ffffff;
+      box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.1);
+    }
+
+    input::placeholder, textarea::placeholder {
+      color: #666666;
+    }
+
+    .skills-group {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1rem;
+      margin-top: 0.5rem;
+    }
+
+    .rating-group {
       display: flex;
-      justify-content: space-between;
+      gap: 0.5rem;
       margin-top: 0.5rem;
     }
-    .rating-group label, .skills-group label {
+
+    .rating-group label {
+      flex: 1;
+      text-align: center;
+      padding: 0.5rem;
+      border: 1px solid #333333;
+      border-radius: 8px;
+      cursor: pointer;
       font-weight: normal;
+      text-transform: none;
+      letter-spacing: normal;
+      margin-top: 0;
+      transition: all 0.2s;
     }
+
+    .rating-group input[type="radio"] {
+      display: none;
+    }
+
+    .rating-group input[type="radio"]:checked + label {
+      background: #ffffff;
+      color: #000000;
+      border-color: #ffffff;
+    }
+
+    .rating-group label:hover {
+      background: rgba(255, 255, 255, 0.1);
+    }
+
     button {
+      display: block;
+      width: 100%;
       margin-top: 2rem;
       padding: 1rem;
-      background-color: #333;
-      color: white;
+      background-color: #ffffff;
+      color: #000000;
       border: none;
-      border-radius: 4px;
+      border-radius: 8px;
+      font-size: 1rem;
+      font-weight: 600;
       cursor: pointer;
+      transition: all 0.2s;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
     }
+
     button:hover {
-      background-color: #555;
+      background-color: #f0f0f0;
+      transform: translateY(-1px);
+    }
+
+    .helper-text {
+      font-size: 0.8rem;
+      color: #666666;
+      margin-top: 0.25rem;
+      font-style: italic;
+    }
+
+    select {
+      appearance: none;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-position: right 0.7rem center;
+      background-size: 1em;
+      padding-right: 2.5rem;
+    }
+
+    @media (max-width: 768px) {
+      body {
+        padding: 1rem;
+      }
+      
+      .container {
+        padding: 1.5rem;
+      }
+
+      .skills-group {
+        grid-template-columns: 1fr;
+      }
+
+      h1 {
+        font-size: 2rem;
+      }
     }
   </style>
 </head>
 <body>
-  <h1>UT Internship</h1>
-  <p>Thanks for your interest. Learn more at <a href="https://natemcguire.com">natemcguire.com</a>.</p>
+  <div class="container">
+    <h1>Recruitment Form</h1>
+    <p>Thanks for your interest. Learn more at <a href="https://natemcguire.com">natemcguire.com</a>.</p>
 
-  <form name="submit-to-google-sheet">
-    <label for="name">Full Name</label>
-    <input type="text" name="name" required />
+    <button 
+        type="button" 
+        id="testMode" 
+        style="background: #666; margin-bottom: 2rem; width: auto; padding: 0.5rem 1rem; font-size: 0.9rem;"
+    >
+        Fill Test Data
+    </button>
 
-    <label for="email">Email Address</label>
-    <input type="email" name="email" required />
+    <form name="submit-to-google-sheet">
+      <label for="name">Full Name</label>
+      <input type="text" name="name" required />
 
-    <label for="phone">Phone Number</label>
-    <input type="tel" name="phone" />
+      <label for="email">Email Address</label>
+      <input type="email" name="email" required />
 
-    <label for="degree">What is your degree focus?</label>
-    <input type="text" name="degree" />
+      <label for="phone">Phone Number</label>
+      <input type="tel" name="phone" />
 
-    <label for="gradYear">What is your graduation year?</label>
-    <input type="text" name="gradYear" />
+      <label for="degree">What is your degree focus?</label>
+      <input type="text" name="degree" />
 
-    <label for="availability">How much time per week would you be available to work from May to September 2025?</label>
-    <input type="text" name="availability" />
+      <label for="gradYear">What is your graduation year?</label>
+      <input type="text" name="gradYear" />
 
-    <label>Rate your proficiency in the following skills:</label>
-    <div class="skills-group">
-      <label>Communication: <input type="text" name="communication" placeholder="Beginner / Intermediate / Advanced"></label>
-      <label>Finance: <input type="text" name="finance" placeholder="Beginner / Intermediate / Advanced"></label>
-      <label>Technical: <input type="text" name="technical" placeholder="Beginner / Intermediate / Advanced"></label>
-      <label>Marketing: <input type="text" name="marketing" placeholder="Beginner / Intermediate / Advanced"></label>
-    </div>
+      <label for="availability">How much time per week would you be available to work from May to September 2025?</label>
+      <input type="text" name="availability" />
 
-    <label for="resume">Upload your resume (link)</label>
-    <input type="url" name="resume" />
+      <label>Rate your proficiency in the following skills (1-5):</label>
+      <div class="helper-text">1 = Beginner, 5 = Expert</div>
+      
+      <div class="skills-group">
+        <div>
+          <label for="communication">Communication</label>
+          <select name="communication" required>
+            <option value="">Select...</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+          </select>
+        </div>
+        
+        <div>
+          <label for="finance">Finance</label>
+          <select name="finance" required>
+            <option value="">Select...</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+          </select>
+        </div>
+        
+        <div>
+          <label for="technical">Technical</label>
+          <select name="technical" required>
+            <option value="">Select...</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+          </select>
+        </div>
+        
+        <div>
+          <label for="marketing">Marketing</label>
+          <select name="marketing" required>
+            <option value="">Select...</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+          </select>
+        </div>
+      </div>
 
-    <label for="linkedin">LinkedIn URL</label>
-    <input type="url" name="linkedin" />
+      <label for="linkedin">LinkedIn URL</label>
+      <input type="url" name="linkedin" required pattern="https?:\/\/(www\.)?linkedin\.com\/.*" />
+      <div class="helper-text">Please enter a valid LinkedIn URL (e.g., https://linkedin.com/in/yourprofile)</div>
 
-    <label for="video">Video URL (YouTube/Vimeo)</label>
-    <input type="url" name="video" />
+      <label for="video">Video URL (YouTube/Vimeo)</label>
+      <input type="url" name="video" />
 
-    <label for="comments">Any other thoughts or comments?</label>
-    <textarea name="comments"></textarea>
+      <label for="comments">What are your general career goals? Start a company? Get a corpoate job? Something else? No wrong answers</label>
+      <textarea name="comments" rows="4"></textarea>
 
-    <label>How would you rate your interest in this internship?</label>
-    <div class="rating-group">
-      <label><input type="radio" name="interest" value="1" /> 1</label>
-      <label><input type="radio" name="interest" value="2" /> 2</label>
-      <label><input type="radio" name="interest" value="3" /> 3</label>
-      <label><input type="radio" name="interest" value="4" /> 4</label>
-      <label><input type="radio" name="interest" value="5" /> 5</label>
-    </div>
+      <label>How would you rate your interest in this internship?</label>
+      <div class="rating-group">
+        <input type="radio" name="interest" value="1" id="interest1" required />
+        <label for="interest1">1</label>
+        <input type="radio" name="interest" value="2" id="interest2" />
+        <label for="interest2">2</label>
+        <input type="radio" name="interest" value="3" id="interest3" />
+        <label for="interest3">3</label>
+        <input type="radio" name="interest" value="4" id="interest4" />
+        <label for="interest4">4</label>
+        <input type="radio" name="interest" value="5" id="interest5" />
+        <label for="interest5">5</label>
+      </div>
 
-    <label for="duration">Duration of internship required (in hours)?</label>
-    <input type="number" name="duration" />
-
-    <button type="submit">Submit Application</button>
-  </form>
+      <button type="submit">Submit Application</button>
+    </form>
+  </div>
 
   <script>
-    const scriptURL = 'https://script.google.com/macros/s/YOUR_SCRIPT_ID/exec';
+    const scriptURL = 'https://script.google.com/macros/s/AKfycby7Qt087Ls5YRMe3Xzv4DqKsU_lzK2gvA_TpjPFlSGLIO8_17FmdzQ7AoN_p628d16hRQ/exec';
     const form = document.forms['submit-to-google-sheet'];
 
+    document.getElementById('testMode').addEventListener('click', () => {
+        form.name.value = 'Test User';
+        form.email.value = 'test@utexas.edu';
+        form.phone.value = '512-555-0123';
+        form.degree.value = 'Business Administration';
+        form.gradYear.value = '2025';
+        form.availability.value = '20 hours per week';
+        form.linkedin.value = 'https://linkedin.com/in/test-profile';
+        form.video.value = 'https://youtube.com/watch?v=test';
+        form.comments.value = 'This is a test submission.';
+
+        form.communication.value = '4';
+        form.finance.value = '3';
+        form.technical.value = '4';
+        form.marketing.value = '3';
+
+        const interestRadio = form.querySelector('input[name="interest"][value="4"]');
+        if (interestRadio) interestRadio.checked = true;
+    });
+
     form.addEventListener('submit', e => {
-      e.preventDefault();
-      fetch(scriptURL, { method: 'POST', body: new FormData(form) })
-        .then(response => alert('Success! Your application has been submitted.'))
-        .catch(error => alert('Error! Please try again later.'));
+        e.preventDefault();
+        fetch(scriptURL, { 
+            method: 'POST', 
+            body: new FormData(form),
+            mode: 'no-cors'
+        })
+        .then(response => {
+            if (response.type === 'opaque') {
+                form.reset();
+                alert('Success! Your application has been submitted.');
+            } else {
+                throw new Error('Network response was not ok');
+            }
+        })
+        .catch(error => {
+            console.error('Error!', error);
+            alert('Error! Please try again later.');
+        });
     });
   </script>
 </body>
