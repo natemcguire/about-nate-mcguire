@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Voice Check-In</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: sans-serif;
+      background-color: #000;
+      color: white;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      padding: 1rem;
+    }
+
+    #wave {
+      display: flex;
+      gap: 5px;
+      margin: 20px 0;
+      height: 40px;
+      align-items: flex-end;
+    }
+
+    .bar {
+      width: 6px;
+      height: 20px;
+      background: white;
+      animation: wave 1.2s infinite ease-in-out;
+    }
+
+    .bar:nth-child(2) { animation-delay: -1.1s; }
+    .bar:nth-child(3) { animation-delay: -1.0s; }
+    .bar:nth-child(4) { animation-delay: -0.9s; }
+    .bar:nth-child(5) { animation-delay: -0.8s; }
+
+    @keyframes wave {
+      0%, 100% {
+        height: 20px;
+      }
+      50% {
+        height: 40px;
+      }
+    }
+
+    .question {
+      font-size: 1.25rem;
+      text-align: center;
+      margin: 10px 0;
+    }
+
+    .button-group {
+      margin-top: 20px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      justify-content: center;
+    }
+
+    button {
+      background-color: #111;
+      color: white;
+      border: 1px solid white;
+      padding: 10px 20px;
+      font-size: 1rem;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: white;
+      color: black;
+    }
+  </style>
+</head>
+<body>
+  <div id="wave">
+    <div class="bar"></div>
+    <div class="bar"></div>
+    <div class="bar"></div>
+    <div class="bar"></div>
+    <div class="bar"></div>
+  </div>
+
+  <div id="content"></div>
+
+  <script>
+    const questions = [
+      "Everything you tell us is transmitted securely and encrypted. We are your cone of silence.",
+      "The deal we make is you share and we give you valuable insights.",
+      "That commitment is minimum 30 days.",
+      "Are you in or out?",
+      "IF you're in, do you want push notifications, an email, or a phone call?",
+      "IF you miss two days, you forfeit your membership and we kick you out.",
+      "Yes or No?",
+      "Ok, tell me what's on your mind - no more than 15 seconds.",
+      "Did you sleep good or no?",
+      "Are you fat? Or skinny fat?",
+      "How's your mood?",
+      "How's your life?",
+      "Money isn't everything - how is the family?",
+      "When did you talk to your mom last?"
+    ];
+
+    const contentDiv = document.getElementById("content");
+    let index = 0;
+
+    function showNext() {
+      if (index < questions.length) {
+        contentDiv.innerHTML = `<div class="question">${questions[index]}</div>`;
+        index++;
+      } else {
+        contentDiv.innerHTML = `<div class="question">Done for now.</div>`;
+      }
+    }
+
+    showNext();
+    document.body.addEventListener("click", showNext);
+  </script>
+</body>
+</html>
