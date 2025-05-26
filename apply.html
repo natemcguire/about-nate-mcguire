@@ -318,25 +318,29 @@
     const scriptURL = 'https://script.google.com/macros/s/AKfycby7Qt087Ls5YRMe3Xzv4DqKsU_lzK2gvA_TpjPFlSGLIO8_17FmdzQ7AoN_p628d16hRQ/exec';
     const form = document.forms['submit-to-google-sheet'];
 
-    document.getElementById('testMode').addEventListener('click', () => {
-        form.name.value = 'Test User';
-        form.email.value = 'test@utexas.edu';
-        form.phone.value = '512-555-0123';
-        form.degree.value = 'Business Administration';
-        form.gradYear.value = '2025';
-        form.availability.value = '20 hours per week';
-        form.linkedin.value = 'https://linkedin.com/in/test-profile';
-        form.video.value = 'https://youtube.com/watch?v=test';
-        form.comments.value = 'This is a test submission.';
+    // Test mode functionality - only add if button exists
+    const testButton = document.getElementById('testMode');
+    if (testButton) {
+        testButton.addEventListener('click', () => {
+            form.name.value = 'Test User';
+            form.email.value = 'test@utexas.edu';
+            form.phone.value = '512-555-0123';
+            form.degree.value = 'Business Administration';
+            form.gradYear.value = '2025';
+            form.availability.value = '20 hours per week';
+            form.linkedin.value = 'https://linkedin.com/in/test-profile';
+            form.video.value = 'https://youtube.com/watch?v=test';
+            form.comments.value = 'This is a test submission.';
 
-        form.communication.value = '4';
-        form.finance.value = '3';
-        form.technical.value = '4';
-        form.marketing.value = '3';
+            form.communication.value = '4';
+            form.finance.value = '3';
+            form.technical.value = '4';
+            form.marketing.value = '3';
 
-        const interestRadio = form.querySelector('input[name="interest"][value="4"]');
-        if (interestRadio) interestRadio.checked = true;
-    });
+            const interestRadio = form.querySelector('input[name="interest"][value="4"]');
+            if (interestRadio) interestRadio.checked = true;
+        });
+    }
 
     form.addEventListener('submit', e => {
         e.preventDefault();
