@@ -142,6 +142,28 @@
       transform: translateY(-1px);
     }
 
+    button:disabled {
+      background-color: #666666;
+      color: #ffffff;
+      cursor: not-allowed;
+      transform: none;
+    }
+
+    .loading {
+      display: inline-block;
+      width: 20px;
+      height: 20px;
+      border: 3px solid #ffffff;
+      border-radius: 50%;
+      border-top-color: transparent;
+      animation: spin 1s ease-in-out infinite;
+      margin-right: 10px;
+    }
+
+    @keyframes spin {
+      to { transform: rotate(360deg); }
+    }
+
     .helper-text {
       font-size: 0.8rem;
       color: #666666;
@@ -318,22 +340,32 @@
 
     form.addEventListener('submit', e => {
         e.preventDefault();
+        
+        const submitButton = form.querySelector('button[type="submit"]');
+        const originalText = submitButton.innerHTML;
+        
+        // Show loading state
+        submitButton.disabled = true;
+        submitButton.innerHTML = '<span class="loading"></span>Submitting...';
+        
         fetch(scriptURL, { 
             method: 'POST', 
             body: new FormData(form),
             mode: 'no-cors'
         })
         .then(response => {
-            if (response.type === 'opaque') {
-                form.reset();
-                alert('Success! Your application has been submitted.');
-            } else {
-                throw new Error('Network response was not ok');
-            }
+            // With no-cors, we can't read the response, so assume success
+            form.reset();
+            alert('Success! Your application has been submitted.');
         })
         .catch(error => {
             console.error('Error!', error);
-            alert('Error! Please try again later.');
+            alert('Error! Please check your internet connection and try again.');
+        })
+        .finally(() => {
+            // Reset button state
+            submitButton.disabled = false;
+            submitButton.innerHTML = originalText;
         });
     });
   </script>
