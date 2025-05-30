@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Miami YPO Connect App - Connections</title>
+  <link rel="stylesheet" href="ypo-styles.css">
+</head>
+<body>
+  <header>
+    <div class="container">
+      <a href="/" class="logo">Miami YPO Connect App</a>
+      <p class="tagline">Connecting Miami's Young Leaders</p>
+    </div>
+  </header>
+
+  <nav>
+    <div class="container">
+      <ul class="nav-list">
+        <li><a href="directory.html">Browse Profiles</a></li>
+        <li><a href="connections.html" class="active">My Connections</a></li>
+        <li><a href="messages.html">Messages</a></li>
+        <li><a href="profile.html">My Profile</a></li>
+        <li><a href="login.html">Logout</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <main class="container">
+    <section class="connections-section">
+      <h1>My Connections</h1>
+
+      <section class="sent-requests">
+        <h2>Sent Requests</h2>
+        <div class="requests-list">
+          <article class="profile-card">
+            <div class="profile-header">
+              <img src="profile.jpg" alt="John Smith" class="profile-image">
+              <div class="profile-intro">
+                <h3>John Smith</h3>
+                <p>Founder @ EdTech Startup</p>
+                <span class="status-badge pending">Pending Response</span>
+                <time>Sent 2 days ago</time>
+              </div>
+            </div>
+            <div class="request-actions">
+              <button type="button" class="button secondary">Cancel Request</button>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="received-requests">
+        <h2>Received Requests</h2>
+        <div class="requests-list">
+          <article class="profile-card">
+            <div class="profile-header">
+              <img src="profile.jpg" alt="Rachel Kim" class="profile-image">
+              <div class="profile-intro">
+                <h3>Rachel Kim</h3>
+                <p>Data Scientist @ AI Startup</p>
+                <p class="request-message">"Your work in machine learning looks fascinating! Would love to connect and share ideas."</p>
+              </div>
+            </div>
+            <div class="request-actions">
+              <button type="button" class="network-button">Accept</button>
+              <button type="button" class="button secondary">Decline</button>
+              <a href="#" class="linkedin-link">View LinkedIn Profile</a>
+            </div>
+          </article>
+        </div>
+      </section>
+    </section>
+  </main>
+</body>
+</html> 
