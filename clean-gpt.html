@@ -3,13 +3,13 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Chat → Docs: Cleaner (Rich Input)</title>
+  <title>Chat → Google Docs Cleaner</title>
   <style>
     :root { --bg:#0b0c0f; --muted:#a0a6b0; --ink:#e8eaf0; --accent:#7aa2ff; --card:#151820; --border:#2a2f3a; }
     html,body{height:100%}
     body{margin:0;background:var(--bg);color:var(--ink);font:14px/1.5 system-ui,-apple-system,Segoe UI,Roboto,Inter,Arial,sans-serif}
     header{padding:16px 20px;border-bottom:1px solid var(--border);background:#0d1017;display:flex;gap:14px;align-items:center;flex-wrap:wrap}
-    header h1{font-size:16px;margin:0;letter-spacing:.2px}
+    header h1{font-size:16px;margin:0}
     header .hint{color:var(--muted);font-size:12px}
     .wrap{display:grid;grid-template-columns:1fr 1fr;gap:16px;padding:16px}
     @media (max-width:950px){.wrap{grid-template-columns:1fr}}
@@ -20,27 +20,27 @@
     button,.secondary{appearance:none;border:1px solid var(--border);background:#1a1f2b;color:var(--ink);padding:8px 12px;border-radius:10px;cursor:pointer;font-weight:600;font-size:13px}
     button:hover{background:#212637}
     .primary{background:var(--accent);border-color:#5b88ff;color:#0b0c0f}
-    .primary:hover{filter:brightness(1.1)}
+    .primary:hover{filter:brightness(1.08)}
     .tag{padding:3px 8px;border-radius:999px;border:1px solid var(--border);color:var(--muted);font-size:12px}
 
     /* Editors */
     .in,.out{overflow:auto;background:#0f121a;width:100%;flex:1 1 auto;min-height:300px;padding:12px 14px;border:0;outline:none;scrollbar-width:thin}
-    .in{font:13px/1.5 -apple-system, system-ui, Segoe UI, Roboto, Inter, Arial, sans-serif}
+    .in{font:14px/1.5 -apple-system, system-ui, Segoe UI, Roboto, Inter, Arial, sans-serif}
     .in:empty:before{content:attr(data-placeholder);color:#7d8291}
     .out{font:13px/1.5 ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,"Liberation Mono","Courier New",monospace}
     .out[contenteditable="true"]{caret-color:transparent}
 
-    /* Output content basics */
-    .out h1,.out h2,.out h3,.out h4,.out h5,.out h6{margin:1rem 0 .6rem;line-height:1.25}
+    /* Output content basics (already tight) */
+    .out h1,.out h2,.out h3,.out h4,.out h5,.out h6{margin:.8rem 0 .5rem;line-height:1.25}
     .out h1{font-size:1.6rem}.out h2{font-size:1.4rem}.out h3{font-size:1.2rem}
-    .out p{margin:.4rem 0} /* slightly tighter by default */
-    .out ul,.out ol{margin:.4rem 0 .4rem 1.3rem}
-    .out li{margin:.15rem 0}
+    .out p{margin:.35rem 0}
+    .out ul,.out ol{margin:.25rem 0 .25rem 1.3rem}
+    .out li{margin:.1rem 0}
     .out code{background:#1c2230;padding:2px 5px;border-radius:6px;font-size:.92em}
     .out pre{background:#0e1421;padding:12px;border-radius:10px;overflow:auto}
     .out pre code{background:transparent;padding:0}
     .out a{color:#9dc0ff;text-decoration:underline}
-    .out blockquote{margin:.4rem 0;padding:.4rem .8rem;border-left:3px solid #38508a;color:#c9d1e1;background:#0c1220;border-radius:8px}
+    .out blockquote{margin:.35rem 0;padding:.35rem .7rem;border-left:3px solid #38508a;color:#c9d1e1;background:#0c1220;border-radius:8px}
     .note{color:var(--muted);font-size:12px;margin-left:auto}
   </style>
 </head>
@@ -48,30 +48,27 @@
   <header>
     <h1>Chat → Google Docs Cleaner</h1>
     <span class="tag">Paste → Clean → Copy</span>
-    <div class="hint">Tip: ⌘/Ctrl+Enter cleans. “Copy formatted” puts HTML on your clipboard for rich paste into Docs.</div>
+    <div class="hint">Tip: ⌘/Ctrl+Enter cleans. “Copy formatted” pastes nicely into Google Docs.</div>
   </header>
 
   <div class="wrap">
     <section class="panel" aria-label="Input">
-      <header><h2>Input (rich text supported — paste from ChatGPT)</h2></header>
+      <header><h2>Input (rich text — paste from ChatGPT)</h2></header>
       <div id="input" class="in" contenteditable="true" role="textbox" aria-label="Input editor" spellcheck="true" data-placeholder="Paste rich text (or plain) here…"></div>
       <div class="toolbar">
         <button class="primary" id="cleanBtn">Clean ⇧⏎</button>
-        <button id="clearBtn" title="Clear input">Clear</button>
+        <button id="resetBtn">Reset</button>
         <span class="note">Keeps bullets/lists, headings, bold/italic.</span>
       </div>
     </section>
 
     <section class="panel" aria-label="Output">
-      <header><h2>Output (formatted, ready for Google Docs)</h2></header>
+      <header><h2>Output (tightened & ready for Google Docs)</h2></header>
       <div id="output" class="out" contenteditable="true" spellcheck="false"></div>
       <div class="toolbar">
         <button id="copyHtmlBtn" class="primary" title="Copy formatted (HTML) to clipboard">Copy formatted</button>
         <button id="copyTxtBtn" title="Copy plain text">Copy plain</button>
         <button id="selectAllBtn" class="secondary" title="Select all output for manual copy">Select all</button>
-        <label class="secondary" style="display:inline-flex;align-items:center;gap:8px;cursor:pointer;">
-          <input type="checkbox" id="tight" style="accent-color:#7aa2ff" checked> Tighten spacing for Docs
-        </label>
         <span class="note">You can also click in the output and press ⌘/Ctrl+C.</span>
       </div>
     </section>
@@ -82,59 +79,117 @@
     const input = $('#input');
     const out = $('#output');
 
-    function isProbablyHTML(s){ return /<\s*\w+[^>]*>/i.test(s) || /&\w+;/.test(s); }
-    function escapeHtml(s){ return s.replaceAll('&','&amp;').replaceAll('<','&lt;').replaceAll('>','&gt;'); }
-    function collapseBlankLines(t){ return t.replace(/\n{3,}/g,'\n\n'); }
+    // --- Helpers ---
+    const isProbablyHTML = s => /<\s*\w+[^>]*>/i.test(s) || /&\w+;/.test(s);
+    const escapeHtml = s => s.replaceAll('&','&amp;').replaceAll('<','&lt;').replaceAll('>','&gt;');
+    const collapseBlankLines = t => t.replace(/\n{3,}/g,'\n\n');
 
+    // Clean incoming HTML (keeps basic tags, strips junk)
     function cleanHTML(raw){
-      raw = raw.replace(/\u00A0/g,' ').replace(/(<br\s*\/?\s*>\s*){3,}/gi,'<br><br>');
+      raw = raw.replace(/\u00A0/g,' '); // nbsp → space
+      raw = raw.replace(/(<br\s*\/?\s*>\s*){3,}/gi,'<br><br>');
+
       const doc = new DOMParser().parseFromString(raw,'text/html');
       const allowed = new Set(['h1','h2','h3','h4','h5','h6','p','strong','em','b','i','u','s','a','ul','ol','li','blockquote','code','pre','br','hr']);
       doc.querySelectorAll('script,style').forEach(n=>n.remove());
+
       const walker = doc.createTreeWalker(doc.body, NodeFilter.SHOW_ELEMENT | NodeFilter.SHOW_TEXT, null);
       const nodes = []; while (walker.nextNode()) nodes.push(walker.currentNode);
+
       for (const node of nodes){
         if (node.nodeType !== 1) continue;
         const tag = node.tagName.toLowerCase();
+
+        // Normalize tags
         if (tag==='b'){ const e=doc.createElement('strong'); e.innerHTML=node.innerHTML; node.replaceWith(e); continue; }
         if (tag==='i'){ const e=doc.createElement('em'); e.innerHTML=node.innerHTML; node.replaceWith(e); continue; }
         if (tag==='div'){ const p=doc.createElement('p'); p.innerHTML=node.innerHTML; node.replaceWith(p); continue; }
         if (tag==='span'){ node.replaceWith(...node.childNodes); continue; }
+
+        // Unwrap unknown elements
         if (!allowed.has(tag)){ node.replaceWith(...node.childNodes); continue; }
+
+        // Strip attributes (except valid <a href>)
         for (const attr of [...node.attributes]){
-          if (tag==='a' && attr.name==='href') { try{ new URL(attr.value); }catch{ node.removeAttribute('href'); continue; } node.setAttribute('rel','nofollow noopener'); continue; }
+          if (tag==='a' && attr.name==='href'){
+            try { new URL(attr.value); } catch { node.removeAttribute('href'); continue; }
+            node.setAttribute('rel','nofollow noopener');
+            continue;
+          }
           node.removeAttribute(attr.name);
         }
       }
+
+      // Drop empty paragraphs
       doc.querySelectorAll('p').forEach(p=>{ if(!p.textContent.trim()) p.remove(); });
-      let html = doc.body.innerHTML.replace(/\n+/g,'\n').replace(/\s{3,}/g,' ');
+
+      return (doc.body.innerHTML || '').replace(/\n+/g,'\n').replace(/\s{3,}/g,' ').trim();
+    }
+
+    // Minimal Markdown → HTML
+    function mdToHtml(src){
+      src = src.replace(/\r\n?/g,'\n');
+      src = collapseBlankLines(src.trim());
+      src = src.replace(/^\s*•\s+/gm,'- '); // bullet char support
+
+      const lines = src.split('\n');
+      let html = '', inUL=false, inOL=false, inP=false, inBQ=false, inCode=false;
+
+      const closeP=()=>{ if(inP){ html+='</p>\n'; inP=false; } };
+      const closeLists=()=>{ if(inUL){ html+='</ul>\n'; inUL=false; } if(inOL){ html+='</ol>\n'; inOL=false; } };
+      const closeBQ=()=>{ if(inBQ){ html+='</blockquote>\n'; inBQ=false; } };
+      const inline = s=>{
+        s = escapeHtml(s);
+        s = s.replace(/\[([^\]]+)\]\(([^)\s]+)\)/g,'<a href="$2" rel="nofollow noopener">$1</a>');
+        s = s.replace(/\*\*([^*]+)\*\*/g,'<strong>$1</strong>').replace(/__([^_]+)__/g,'<strong>$1</strong>');
+        s = s.replace(/(?<!\*)\*([^*]+)\*(?!\*)/g,'<em>$1</em>').replace(/(?<!_)_([^_]+)_(?!_)/g,'<em>$1</em>');
+        s = s.replace(/`([^`]+)`/g,(_,c)=>'<code>'+c.replaceAll('&','&amp;').replaceAll('<','&lt;').replaceAll('>','&gt;')+'</code>');
+        return s;
+      };
+
+      for (const line of lines){
+        const fence = line.match(/^```(.*)?$/);
+        if (fence){ if(!inCode){ closeP(); closeLists(); closeBQ(); inCode=true; html+='<pre><code>'; } else { inCode=false; html+='</code></pre>\n'; } continue; }
+        if (inCode){ html += escapeHtml(line)+'\n'; continue; }
+        if (/^\s*$/.test(line)){ closeP(); closeBQ(); continue; }
+
+        const h = line.match(/^(#{1,6})\s+(.+)$/);
+        if (h){ closeP(); closeLists(); closeBQ(); const lvl=h[1].length; html += `<h${lvl}>${inline(h[2].trim())}</h${lvl}>\n`; continue; }
+
+        const bq = line.match(/^>\s?(.*)$/);
+        if (bq){ closeP(); closeLists(); if(!inBQ){ html+='<blockquote>\n'; inBQ=true; } html+=`<p>${inline(bq[1])}</p>\n`; continue; }
+
+        const ul = line.match(/^\s*[-*+]\s+(.+)$/);
+        const ol = line.match(/^\s*(\d+)[\.)]\s+(.+)$/);
+        if (ul){ closeP(); closeBQ(); if(!inUL){ html+='<ul>\n'; inUL=true; } html+=`<li>${inline(ul[1])}</li>\n`; continue; }
+        if (ol){ closeP(); closeBQ(); if(!inOL){ html+='<ol>\n'; inOL=true; } html+=`<li>${inline(ol[2])}</li>\n`; continue; }
+
+        if (/^(-{3,}|\*{3,}|_{3,})$/.test(line.trim())){ closeP(); closeLists(); closeBQ(); html+='<hr />\n'; continue; }
+
+        if(!inP){ closeLists(); closeBQ(); html+='<p>'; inP=true; } else { html+=' '; }
+        html += inline(line.trim());
+      }
+      closeP(); closeLists(); closeBQ();
       return html.trim();
     }
 
-    function mdToHtml(src){
-      src = src.replace(/\r\n?/g,'\n'); src = collapseBlankLines(src.trim());
-      src = src.replace(/^\s*•\s+/gm,'- ');
-      const lines = src.split('\n');
-      let out = '', inUL=false,inOL=false,inP=false,inBQ=false,inCode=false;
-      const closePara=()=>{ if(inP){ out+='</p>\n'; inP=false; } };
-      const closeLists=()=>{ if(inUL){ out+='</ul>\n'; inUL=false;} if(inOL){ out+='</ol>\n'; inOL=false; } };
-      const closeBQ=()=>{ if(inBQ){ out+='</blockquote>\n'; inBQ=false; } };
-      const inline=(s)=>{ s=escapeHtml(s); s=s.replace(/\[([^\]]+)\]\(([^)\s]+)\)/g,'<a href="$2" rel="nofollow noopener">$1</a>'); s=s.replace(/\*\*([^*]+)\*\*/g,'<strong>$1</strong>').replace(/__([^_]+)__/g,'<strong>$1</strong>'); s=s.replace(/(?<!\*)\*([^*]+)\*(?!\*)/g,'<em>$1</em>').replace(/(?<!_)_([^_]+)_(?!_)/g,'<em>$1</em>'); s=s.replace(/`([^`]+)`/g,(_,c)=>'<code>'+c.replaceAll('&','&amp;').replaceAll('<','&lt;').replaceAll('>','&gt;')+'</code>'); return s; };
-      for (const line of lines){
-        const fence=line.match(/^```(.*)?$/); if(fence){ if(!inCode){ closePara(); closeLists(); closeBQ(); inCode=true; out+='<pre><code>'; } else { inCode=false; out+='</code></pre>\n'; } continue; }
-        if(inCode){ out+=escapeHtml(line)+'\n'; continue; }
-        if(/^\s*$/.test(line)){ closePara(); closeBQ(); continue; }
-        const h=line.match(/^(#{1,6})\s+(.+)$/); if(h){ closePara(); closeLists(); closeBQ(); const lvl=h[1].length; out+=`<h${lvl}>${inline(h[2].trim())}</h${lvl}>\n`; continue; }
-        const bq=line.match(/^>\s?(.*)$/); if(bq){ closePara(); closeLists(); if(!inBQ){ out+='<blockquote>\n'; inBQ=true; } out+=`<p>${inline(bq[1])}</p>\n`; continue; }
-        const ul=line.match(/^\s*[-*+]\s+(.+)$/); const ol=line.match(/^\s*(\d+)[\.)]\s+(.+)$/);
-        if(ul){ closePara(); closeBQ(); if(!inUL){ out+='<ul>\n'; inUL=true; } out+=`<li>${inline(ul[1])}</li>\n`; continue; }
-        if(ol){ closePara(); closeBQ(); if(!inOL){ out+='<ol>\n'; inOL=true; } out+=`<li>${inline(ol[2])}</li>\n`; continue; }
-        if(/^(-{3,}|\*{3,}|_{3,})$/.test(line.trim())){ closePara(); closeLists(); closeBQ(); out+='<hr />\n'; continue; }
-        if(!inP){ closeLists(); closeBQ(); out+='<p>'; inP=true; } else { out+=' '; }
-        out+=inline(line.trim());
-      }
-      closePara(); closeLists(); closeBQ();
-      return out.trim();
+    // Always-on tightening for Google Docs (also fixes bullet spacing)
+    function tightenForDocs(html){
+      if (!html) return html;
+      return html
+        .replace(/<p>\s*<\/p>/g,'')                       // remove empty paragraphs
+        .replace(/(<\/p>\s*(?:<p>\s*)+)+/g,'</p><p>')     // collapse multi-blank paras
+        .replace(/(<br\s*\/?\s*>\s*){2,}/gi,'<br>')       // collapse multiple <br>
+        .replace(/\s{2,}/g,' ')                           // collapse extra spaces
+        .replace(/\u00A0+/g,' ')                          // normalize &nbsp;
+        // list-specific tightening:
+        .replace(/<\/li>\s+<li>/g,'</li><li>')            // no gap inside a list
+        .replace(/<\/(ul|ol)>\s+<\1>/g,'</$1><$1>')       // no gap between same-level lists
+        .replace(/<\/(ul|ol)>\s+<(ul|ol)>/g,'</$1><$2>')  // no gap between different list types
+        .replace(/<li>\s+/g,'<li>')                       // trim start of list items
+        .replace(/\s+<\/li>/g,'</li>')                    // trim end of list items
+        .replace(/<\/li>\s+<(ul|ol)>/g,'</li><$1>')       // nested lists without stray spaces
+        ;
     }
 
     function getInputHTML(){
@@ -142,51 +197,75 @@
       if (!html.trim() || /^<br>$/i.test(html.trim())) return '';
       return html;
     }
-    function tightenForDocs(html){
-      if (!html) return html;
-      html = html.replace(/<p>\s*<\/p>/g,'')
-                 .replace(/(<\/p>\s*(?:<p>\s*)+)+/g,'</p><p>')
-                 .replace(/(<br\s*\/?\s*>\s*){2,}/gi,'<br>')
-                 .replace(/\s{2,}/g,' ')
-                 .replace(/<li>([\s\S]*?)<\/li>/g,(m,inner)=>'<li>'+inner.trim()+'</li>');
-      return html;
-    }
 
     function clean(){
       let raw = getInputHTML();
       if (!raw.trim()) { out.innerHTML=''; return; }
       let html = isProbablyHTML(raw) ? cleanHTML(raw) : mdToHtml(raw);
-      const tight = document.getElementById('tight');
-      if (tight && tight.checked) html = tightenForDocs(html);
+      html = tightenForDocs(html);          // ALWAYS tighten for Docs
       out.innerHTML = html;
     }
 
+    // Clipboard helpers
     async function copyFormatted(){
       const html = out.innerHTML; const text = out.textContent || '';
       if(!html) return;
       if (navigator.clipboard && window.ClipboardItem){
-        try{ const item = new ClipboardItem({ 'text/html': new Blob([html],{type:'text/html'}), 'text/plain': new Blob([text],{type:'text/plain'}) }); await navigator.clipboard.write([item]); flash('Copied formatted HTML to clipboard'); return; }catch(e){}
+        try{
+          const item = new ClipboardItem({
+            'text/html': new Blob([html],{type:'text/html'}),
+            'text/plain': new Blob([text],{type:'text/plain'})
+          });
+          await navigator.clipboard.write([item]);
+          flash('Copied formatted HTML to clipboard');
+          return;
+        }catch(e){}
       }
-      const range = document.createRange(); range.selectNodeContents(out); const sel = window.getSelection(); sel.removeAllRanges(); sel.addRange(range); const ok=document.execCommand('copy'); sel.removeAllRanges(); flash(ok?'Copied formatted content':'Copy failed — select & copy manually');
+      const r=document.createRange(); r.selectNodeContents(out);
+      const s=window.getSelection(); s.removeAllRanges(); s.addRange(r);
+      const ok=document.execCommand('copy'); s.removeAllRanges();
+      flash(ok?'Copied formatted content':'Copy failed — select & copy manually');
     }
-    async function copyPlain(){ const text = out.textContent||''; if(!text) return; try{ await navigator.clipboard.writeText(text); flash('Copied plain text'); }catch(e){ flash('Clipboard blocked — select & copy manually'); } }
+    async function copyPlain(){ const t=out.textContent||''; if(!t) return; try{ await navigator.clipboard.writeText(t); flash('Copied plain text'); }catch{ flash('Clipboard blocked — select & copy manually'); } }
     function selectAllOutput(){ const r=document.createRange(); r.selectNodeContents(out); const s=window.getSelection(); s.removeAllRanges(); s.addRange(r); flash('Selected output — press ⌘/Ctrl+C'); }
-    function flash(msg){ const b=document.createElement('div'); b.textContent=msg; Object.assign(b.style,{position:'fixed',left:'50%',bottom:'24px',transform:'translateX(-50%)',background:'#12192b',color:'#fff',padding:'10px 14px',borderRadius:'10px',border:'1px solid #2a3550',boxShadow:'0 6px 30px rgba(0,0,0,.35)',zIndex:9999,fontSize:'13px',opacity:'0',transition:'opacity .12s ease-out'}); document.body.appendChild(b); requestAnimationFrame(()=>b.style.opacity='1'); setTimeout(()=>{ b.style.opacity='0'; b.addEventListener('transitionend',()=>b.remove(),{once:true}); },1300); }
 
+    function resetAll(){ input.innerHTML=''; out.innerHTML=''; }
+
+    function flash(msg){
+      const b=document.createElement('div'); b.textContent=msg;
+      Object.assign(b.style,{position:'fixed',left:'50%',bottom:'24px',transform:'translateX(-50%)',
+        background:'#12192b',color:'#fff',padding:'10px 14px',borderRadius:'10px',border:'1px solid #2a3550',
+        boxShadow:'0 6px 30px rgba(0,0,0,.35)',zIndex:9999,fontSize:'13px',opacity:'0',transition:'opacity .12s'});
+      document.body.appendChild(b); requestAnimationFrame(()=>b.style.opacity='1');
+      setTimeout(()=>{ b.style.opacity='0'; b.addEventListener('transitionend',()=>b.remove(),{once:true}); },1300);
+    }
+
+    // Wire up
     $('#cleanBtn').addEventListener('click', clean);
-    $('#clearBtn').addEventListener('click', ()=> input.innerHTML='');
+    $('#resetBtn').addEventListener('click', resetAll);
     $('#copyHtmlBtn').addEventListener('click', copyFormatted);
     $('#copyTxtBtn').addEventListener('click', copyPlain);
     $('#selectAllBtn').addEventListener('click', selectAllOutput);
 
-    input.addEventListener('keydown', (e)=>{ if ((e.metaKey||e.ctrlKey) && e.key==='Enter'){ e.preventDefault(); clean(); } if (e.shiftKey && e.key==='Enter'){ e.preventDefault(); clean(); } });
+    // Keyboard: Clean on Ctrl/Cmd+Enter or Shift+Enter
+    input.addEventListener('keydown',(e)=>{
+      if ((e.metaKey||e.ctrlKey) && e.key==='Enter'){ e.preventDefault(); clean(); }
+      if (e.shiftKey && e.key==='Enter'){ e.preventDefault(); clean(); }
+    });
 
-    // Sanitize if user pastes into the OUTPUT panel directly
-    out.addEventListener('paste', ()=>{ setTimeout(()=>{ out.querySelectorAll('*').forEach(el=>{ for(const attr of [...el.attributes]){ if(!(el.tagName.toLowerCase()==='a' && attr.name==='href')) el.removeAttribute(attr.name); } }); },0); });
+    // If user pastes directly into OUTPUT, scrub attributes after paste
+    out.addEventListener('paste', ()=>{ setTimeout(()=>{ out.querySelectorAll('*').forEach(el=>{
+      for(const attr of [...el.attributes]){ if(!(el.tagName.toLowerCase()==='a' && attr.name==='href')) el.removeAttribute(attr.name); }
+    }); },0); });
 
-    // Seed example
-    input.textContent = `# Example\n\n• **Goal:** Keep formatting, bullets, headings\n• Remove extra chat spacing before pasting to Docs\n\n> Paste rich text here, hit Clean, then Copy formatted.`;
-    clean();
+    // Seed demo text
+    input.textContent = `# Example
+
+- **Goal:** Keep formatting & bullets
+  - Nested bullet
+- Remove chatty extra spacing
+
+> Paste rich text here, hit Clean, then “Copy formatted”.`;
   </script>
 </body>
 </html>
