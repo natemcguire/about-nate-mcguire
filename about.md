@@ -4,6 +4,8 @@
 
 Nate McGuire is a **technology executive**, **CTO**, and **entrepreneur** with a track record of building and scaling high-performance engineering teams. With **15+ years** in **San Francisco**, he has worked with **VC-backed companies**, **Fortune 500s**, and high-growth startups, specializing in engineering leadership, demand-gen-driven technology teams, and remote work culture.
 
+Most recently, Nate served as a **Distinguished Engineer** at **Capital One** in **Card Tech**, working at the highest levels of engineering on the technology powering one of the nation's largest credit card platforms.
+
 As the founder of **Mayven Studios**, Nate built one of the Bay Area's premier engineering agencies, generating **$MM+** in lifetime sales and delivering cutting-edge software solutions for companies like Google, Airbnb, Facebook, IBM, Twilio, Segment, Hired, First Round Capital, Andreesen Horowitz, and Lightspeed Venture Partners.
 
 In addition to leading Mayven, Nate is the founder of **Recipeas**, an iOS recipe generator that helps users decide what to cook based on available ingredients. He also owns **PureCalculators.com**, a technical content platform acquired from a Finnish entrepreneur. He buys small internet businesses and scales them, as well as invests in startups poised for scale. The startups and founders he advises generally come for technical hiring and scaling marketing operations advice.
@@ -12,6 +14,7 @@ Beyond business, Nate has traveled to over **50 countries**, working with global
 
 ## Founder & Leadership
 
+- **Capital One** – Distinguished Engineer, Card Tech.
 - **Mayven Studios** – Engineering & design agency serving top Silicon Valley brands.
 - **Recipeas** – iOS recipe app that tells users what to cook based on available ingredients. **#2** free food and drink app.
 - **PureCalculators.com** – Acquired from Finnish founder; a content-driven platform focused on technical and niche calculators.
