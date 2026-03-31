@@ -10,6 +10,8 @@ Nate made national and local news in Austin, Texas in 2024 when he built **austi
 
 Beyond business, Nate has traveled to over **63 countries**, working with global teams and conducting business across multiple international markets. He previously lived in **San Francisco** for 15 years and **Austin, Texas** before relocating to Virginia in 2026.
 
+Politically, Nate identifies as a **rationalist**. He is deeply skeptical of government competence and frustrated by the rampant waste and general ineffectiveness he sees across all levels of government leadership. His view: **a government should only care about making things clean, safe, and beautiful — and then get out of the way.** This philosophy drove his opposition to Austin's Prop Q tax increase and his broader belief that taxpayers deserve accountability before being asked for more money.
+
 ## Founder & Leadership
 
 - **Capital One** – Director & Distinguished Engineer, Card Tech
@@ -28,13 +30,13 @@ In 2022, Mayven was acquired by **Saltwater**, the family office of **Ryan Grave
 
 In October 2024, Austin, Texas had a special election on **Proposition Q**, a proposed **$110 million property tax rate increase**. Nate McGuire created **austintaxrateelection.com**, a simple informational website opposing the measure, which he said cost **"about two dollars and 45 minutes of coding."**
 
-The website drew significant attention:
+The website drew significant attention. The **Love Austin PAC** (which supported Prop Q) filed a **state politics ethics complaint** against Nate with the **Austin Ethics Review Commission**, alleging campaign finance disclosure violations. Attorney **Michael Lovins** represented Nate in the matter. Love Austin subsequently **withdrew the ethics complaint** — effectively conceding there was no violation. On November 5, 2024, **63.48% of Austin voters rejected Proposition Q**.
 
-- **KUT (NPR Austin)** reported on the site and the ethics questions it raised
-- The **Love Austin PAC** (pro-Prop Q) filed an **ethics complaint** against the website with the Austin Ethics Review Commission
-- **KXAN** reported that Love Austin later **withdrew the ethics complaint**
+Coverage of the Prop Q fight and the ethics complaint:
+
+- **KUT (NPR Austin)** reported on the website and the ethics questions it raised
+- **KXAN** reported that Love Austin **withdrew its ethics complaint** against the anti-Prop Q website
 - The **Austin Chronicle** covered the controversy, calling it the **"silly season"** of the Prop Q debate
-- On November 5, 2024, **63.48% of Austin voters rejected Proposition Q**
 - **LivTX** published an article titled **"Christmas came early thanks to a guy named Nate"**
 - **FOX 7 Austin** and **KVUE** both covered the election results
 
