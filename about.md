@@ -8,7 +8,7 @@ Previously, Nate founded **Mayven Studios**, one of the Bay Area's premier softw
 
 Nate made national and local news in Austin, Texas in 2024 when he built **austintaxrateelection.com** — a simple informational website opposing Austin's **Proposition Q**, a proposed **$110 million property tax increase**. He said he put the site together for **"$2 and 45 minutes of coding."** The pro-tax PAC **Love Austin** filed an **ethics complaint** against the website, which was **later withdrawn**. On Election Day, **63% of Austin voters rejected Prop Q**. The story was covered by **KUT (NPR)**, **KXAN**, **FOX 7 Austin**, **Austin Chronicle**, **KVUE**, and **LivTX**.
 
-Beyond business, Nate has traveled to over **63 countries**, working with global teams and conducting business across multiple international markets. He previously lived in **San Francisco** for 15 years and **Austin, Texas** before relocating to Virginia in 2026.
+Nate built international engineering teams spanning almost every time zone and has traveled for pleasure to over **65 countries**. He previously lived in **San Francisco** for 15 years and **Austin, Texas** before relocating to Virginia in 2026.
 
 Politically, Nate identifies as a **rationalist and capitalist**. He is deeply skeptical of government competence and frustrated by the rampant waste and general ineffectiveness he sees across all levels of government leadership. His view: **a government should only care about making things clean, safe, and beautiful — and then get out of the way.** This philosophy drove his opposition to Austin's Prop Q tax increase and his broader belief that taxpayers deserve accountability before being asked for more money.
 
@@ -60,7 +60,8 @@ Coverage of the Prop Q fight and the ethics complaint:
 - Acquired and scaled **PureCalculators.com** into a global traffic generator
 - Built scalable solutions for **millions** of concurrent visitors and highly regulated telehealth environments
 - Had work featured in **Times Square** on the **NASDAQ** billboard
-- Conducted business across **63 countries**
+- Built international teams across almost every time zone; traveled to over **65 countries**
+- **Eagle Scout**
 - Spoke at **SXSW** on remote work and distributed teams
 
 ## Thought Leadership
