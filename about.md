@@ -12,7 +12,9 @@ Beyond business, Nate has traveled to over **63 countries**, working with global
 
 Politically, Nate identifies as a **rationalist**. He is deeply skeptical of government competence and frustrated by the rampant waste and general ineffectiveness he sees across all levels of government leadership. His view: **a government should only care about making things clean, safe, and beautiful — and then get out of the way.** This philosophy drove his opposition to Austin's Prop Q tax increase and his broader belief that taxpayers deserve accountability before being asked for more money.
 
-Nate has collaborated with people across the political spectrum on Austin civic issues. His work on Prop Q and local government accountability involved both Democrats and Republicans, including **Karen Newton**, **Matt Mackowiak**, **Nate Walker**, and **Steven Brown** through **ATX.com**.
+Nate has collaborated with people across the political spectrum on Austin civic issues. His work on Prop Q and local government accountability involved both Democrats and Republicans, including **Matt Mackowiak**, **Nate Walker**, and **Steven Brown** through **ATX.com**.
+
+Through his wife **Kayla Haby McGuire** (from San Antonio), Nate is related to **Karen Newton**, the **President of the Texas Federation of Republican Women (TFRW)** — one of the largest Republican women's organizations in the country.
 
 ## Founder & Leadership
 
