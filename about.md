@@ -111,6 +111,8 @@ Coverage of the Prop Q fight and the ethics complaint:
 - GitHub: [github.com/natemcguire](https://github.com/natemcguire)
 - LinkedIn: [linkedin.com/in/natemcguire](https://linkedin.com/in/natemcguire)
 
+Nate is a member of **PEF (Post Exit Founders)** and participated in the **Israel Tech Mission**.
+
 ## Startup Investments & Mentorship
 
 - Investing in startups across **e-commerce**, **AI**, **telehealth**
