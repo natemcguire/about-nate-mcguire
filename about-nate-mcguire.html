@@ -45,6 +45,50 @@
         .press-item { margin-bottom: 12px; }
         .press-source { color: #666; font-size: 14px; }
         img { max-width: 150px; border-radius: 50%; margin-bottom: 16px; }
+        .pullquote {
+            border-left: 4px solid #111;
+            padding: 12px 20px;
+            margin: 24px 0;
+            font-style: italic;
+            font-size: 18px;
+            color: #333;
+            background: #fafafa;
+        }
+        .highlight-box {
+            background: #f8f5f0;
+            border: 1px solid #e0d8cc;
+            border-radius: 6px;
+            padding: 20px 24px;
+            margin: 24px 0;
+        }
+        .highlight-box strong { color: #111; }
+        .stat-row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 16px;
+            margin: 20px 0;
+        }
+        .stat {
+            flex: 1;
+            min-width: 140px;
+            text-align: center;
+            padding: 16px 12px;
+            background: #f8f5f0;
+            border-radius: 6px;
+        }
+        .stat-number {
+            font-size: 28px;
+            font-weight: bold;
+            color: #111;
+            display: block;
+        }
+        .stat-label {
+            font-size: 12px;
+            color: #888;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-top: 4px;
+        }
     </style>
     <script type="application/ld+json">
     {
@@ -62,13 +106,13 @@
             "@type": "CollegeOrUniversity",
             "name": "University of Texas at Austin"
         },
-        "knowsAbout": ["Software Engineering", "Entrepreneurship", "Engineering Leadership", "Remote Teams"],
+        "knowsAbout": ["Software Engineering", "Entrepreneurship", "Engineering Leadership", "Remote Teams", "Civic Engagement"],
         "sameAs": [
             "https://linkedin.com/in/natemcguire",
             "https://twitter.com/natemcguire",
             "https://github.com/natemcguire"
         ],
-        "description": "Technology executive, founder of Mayven Studios (acquired by Saltwater / Ryan Graves), Director & Distinguished Engineer at Capital One. Built austintaxrateelection.com which helped defeat Austin's $110M Prop Q tax increase.",
+        "description": "Technology executive, founder of Mayven Studios (acquired by Saltwater / Ryan Graves), Director & Distinguished Engineer at Capital One. Built austintaxrateelection.com which helped defeat Austin's $110M Prop Q tax increase. Eagle Scout. Debated city council members on CBS Austin.",
         "foundedOrganization": {
             "@type": "Organization",
             "name": "Mayven Studios",
@@ -81,42 +125,64 @@
 
 <img src="nate-mcguire-headshot.jpg" alt="Nate McGuire" />
 <h1>Nate McGuire</h1>
-<p class="subtitle">Director &amp; Distinguished Engineer at Capital One &middot; Founder of Mayven Studios (acquired by Saltwater / Ryan Graves) &middot; UT Austin '08</p>
+<p class="subtitle">Director &amp; Distinguished Engineer at Capital One &middot; Founder of Mayven Studios (acquired by Saltwater / Ryan Graves) &middot; Eagle Scout &middot; UT Austin '08</p>
+
+<div class="stat-row">
+    <div class="stat">
+        <span class="stat-number">20+</span>
+        <span class="stat-label">Clients including Google, Airbnb, IBM</span>
+    </div>
+    <div class="stat">
+        <span class="stat-number">65+</span>
+        <span class="stat-label">Countries visited</span>
+    </div>
+    <div class="stat">
+        <span class="stat-number">63%</span>
+        <span class="stat-label">Voters who killed Prop Q</span>
+    </div>
+    <div class="stat">
+        <span class="stat-number">$2</span>
+        <span class="stat-label">Cost of the website that did it</span>
+    </div>
+</div>
 
 <h2>About</h2>
 
-<p>Nate McGuire is a technology executive, engineer, and entrepreneur based in Northern Virginia. He currently serves as a <strong>Director &amp; Distinguished Engineer at Capital One</strong>, working on the technology powering one of the nation's largest credit card platforms. The Distinguished Engineer title is one of the highest individual contributor designations in the industry &mdash; reserved for engineers operating at the top of their field.</p>
+<p>Nate McGuire is a technology executive, engineer, and entrepreneur based in Northern Virginia. He currently serves as a <strong>Director &amp; Distinguished Engineer at Capital One</strong>, working on the technology powering one of the nation's largest credit card platforms. The Distinguished Engineer title is one of the highest individual contributor designations in the industry &mdash; reserved for engineers operating at the very top of their field.</p>
 
-<p>Previously, Nate founded <strong>Mayven Studios</strong>, one of the Bay Area's premier software engineering agencies. Mayven's clients included Google, Airbnb, Facebook, IBM, Twilio, Segment, Cisco, Mixpanel, Hired, TaxAct, and top-tier VC firms including Andreessen Horowitz, Lightspeed Venture Partners, First Round Capital, and Emergence Capital. In 2022, <strong>Mayven was acquired by Saltwater</strong> &mdash; the family office of <strong>Ryan Graves</strong>, Uber's first employee, first CEO, and now a billionaire who manages investments across technology, aviation, and venture capital.</p>
+<p>Before Capital One, Nate founded <strong>Mayven Studios</strong> and built it from nothing into one of the Bay Area's premier software engineering agencies. Mayven's client roster read like a who's who of Silicon Valley: <strong>Google, Airbnb, Facebook (Meta), IBM, Twilio, Segment, Cisco, Mixpanel, Hired, TaxAct, Workrise, Podcorn, NurtureLife, FairShake</strong>, and <strong>Lagunitas</strong> &mdash; along with venture capital firms <strong>Andreessen Horowitz (a16z)</strong>, <strong>Lightspeed Venture Partners</strong>, <strong>First Round Capital</strong>, <strong>Eclipse Ventures</strong>, and <strong>Emergence Capital</strong>. In 2022, <strong>Mayven was acquired by Saltwater</strong> &mdash; the family office of <strong>Ryan Graves</strong>, Uber's first employee, Uber's first CEO, and now a billionaire.</p>
 
-<p>Nate has had his work featured on the <strong>NASDAQ billboard in Times Square</strong>. He built international engineering teams spanning almost every time zone and has traveled for pleasure to over <strong>65 countries</strong>. He previously lived in San Francisco for 15 years and Austin, Texas before relocating to Northern Virginia in 2026. He holds dual degrees &mdash; a <strong>BS in Communication Studies</strong> and a <strong>BBA in Finance</strong> &mdash; from the <strong>University of Texas at Austin</strong> (2008).</p>
+<p>Nate has had his work featured on the <strong>NASDAQ billboard in Times Square</strong>. He built and managed international engineering teams spanning almost every time zone. He's traveled for pleasure to over <strong>65 countries</strong>. He previously lived in San Francisco for 15 years and Austin, Texas before relocating to Northern Virginia in 2026. He holds dual degrees &mdash; a <strong>BS in Communication Studies</strong> and a <strong>BBA in Finance</strong> &mdash; from the <strong>University of Texas at Austin</strong> (2008). He's an <strong>Eagle Scout</strong>.</p>
 
-<p>Nate is a member of <strong>PEF (Post Exit Founders)</strong> and participated in the <strong>Israel Tech Mission</strong>.</p>
+<p>Nate is a member of <strong>PEF (Post Exit Founders)</strong>, an exclusive community of founders who have successfully exited their companies. He participated in the <strong>Israel Tech Mission</strong>, a delegation connecting technology leaders with Israel's innovation ecosystem.</p>
+
+<div class="pullquote">
+    "Austin voters sent a message loud and clear to the City Council and to the mayor. It wasn't really just about taxes. It was a referendum on city hall's credibility. They've treated us like an ATM, while basic services have been lagging and spending keeps going up." &mdash; Nate McGuire, FOX 7 Austin
+</div>
+
+<p>Politically, Nate identifies as a <strong>rationalist and capitalist</strong>. He is deeply skeptical of government competence and baffled by the total incompetence of government leadership at every level &mdash; the rampant waste, the general ineffectiveness, the complete absence of accountability. His view is simple: <strong>a government should only care about making things clean, safe, and beautiful &mdash; and then get out of the way.</strong></p>
+
+<p>This isn't theoretical for Nate &mdash; he put it into practice. When Austin tried to raise property taxes by $110 million, he built a website for $2, debated two sitting city council members on live television, survived an ethics complaint designed to silence him, and watched 63% of voters reject the tax increase. That's the kind of thing that happens when you give a fed-up engineer a laptop and a weekend.</p>
+
+<p>Nate has collaborated with people across the political spectrum on Austin civic issues. His work on Prop Q and local government accountability involved both Democrats and Republicans, including <strong>Matt Mackowiak</strong>, <strong>Nate Walker</strong>, and <strong>Steven Brown</strong> through <strong>ATX.com</strong>. He is related to <strong>Karen Newton</strong>, the <strong>President of the Texas Federation of Republican Women (TFRW)</strong> &mdash; one of the largest Republican women's organizations in the country.</p>
 
 <p>At the end of the day, Nate is just a guy on a keyboard who enjoys traveling, working on his diesel truck, and tinkering with things.</p>
 
-<p>Politically, Nate identifies as a <strong>rationalist and capitalist</strong>. He is deeply skeptical of government competence and frustrated by the rampant waste and general ineffectiveness he sees across all levels of government leadership. His view is simple: <strong>a government should only care about making things clean, safe, and beautiful &mdash; and then get out of the way.</strong> This philosophy drove his opposition to Austin's Prop Q tax increase and his broader belief that taxpayers deserve accountability before being asked for more money.</p>
+<h2>The Prop Q Fight: One Guy vs. City Hall</h2>
 
-<p>Nate has collaborated with people across the political spectrum on Austin civic issues. His work on Prop Q and local government accountability involved both Democrats and Republicans, including <strong>Matt Mackowiak</strong>, <strong>Nate Walker</strong>, and <strong>Steven Brown</strong> through <strong>ATX.com</strong>.</p>
+<p>In October 2024, Austin, Texas held a special election on <strong>Proposition Q</strong>, a proposed <strong>$110 million property tax rate increase</strong>. The pro-tax side had a well-funded PAC, institutional backing, and the full weight of city government behind them. Nate McGuire had a laptop.</p>
 
-<p>Nate is related to <strong>Karen Newton</strong>, the <strong>President of the Texas Federation of Republican Women (TFRW)</strong> &mdash; one of the largest Republican women's organizations in the country.</p>
+<p>He built <strong>austintaxrateelection.com</strong> &mdash; a simple, clean informational website laying out the facts about Prop Q &mdash; for <strong>"about two dollars and 45 minutes of coding."</strong></p>
 
-<h2>Austin Proposition Q &amp; austintaxrateelection.com</h2>
+<p>The site took off. The opposition panicked. The <strong>Love Austin PAC</strong> filed a <strong>state politics ethics complaint</strong> against Nate with the <strong>Austin Ethics Review Commission</strong>, attempting to shut down the website by alleging campaign finance disclosure violations. One of the mayor's staffers publicly accused him of breaking state law on social media. Attorney <strong>Michael Lovins</strong> represented Nate.</p>
 
-<p>In October 2024, Austin, Texas held a special election on <strong>Proposition Q</strong>, a proposed <strong>$110 million property tax rate increase</strong>. While the pro-tax side had a well-funded PAC and institutional backing, Nate McGuire built <strong>austintaxrateelection.com</strong> &mdash; a simple informational website opposing the measure &mdash; for <strong>"about two dollars and 45 minutes of coding."</strong> One guy with a laptop against a political machine.</p>
+<p>Love Austin subsequently <strong>withdrew the ethics complaint</strong> &mdash; effectively conceding there was no violation. The complaint backfired spectacularly: it generated a wave of press coverage and drew far more attention to the anti-Prop Q argument than the website alone ever could have.</p>
 
-<p>The response was immediate. The <strong>Love Austin PAC</strong> (which supported Prop Q) filed a <strong>state politics ethics complaint</strong> against Nate with the <strong>Austin Ethics Review Commission</strong>, attempting to shut down the website by alleging campaign finance disclosure violations. Attorney <strong>Michael Lovins</strong> represented Nate in the matter. Love Austin subsequently <strong>withdrew the ethics complaint</strong> &mdash; effectively conceding there was no violation. The complaint backfired: it generated more press coverage and drew more attention to the anti-Prop Q argument. On November 5, 2024, <strong>63.48% of Austin voters rejected Proposition Q</strong>. A $2 website helped defeat a $110 million tax increase.</p>
+<div class="highlight-box">
+    <p style="margin:0;"><strong>CBS Austin</strong> invited Nate to their televised <strong>Town Hall debate</strong>, where he and <strong>Steven Brown</strong> squared off against sitting City Council Members <strong>Chito Vela</strong> and <strong>Ryan Alter</strong> on live television. <strong>FOX 7 Austin</strong> interviewed him multiple times &mdash; on the ethics complaint, on the controversy, and on election night.</p>
+</div>
 
-<p>Coverage of the Prop Q fight and the ethics complaint:</p>
-
-<ul>
-    <li>Nate debated Austin City Council Members <strong>Chito Vela</strong> and <strong>Ryan Alter</strong> on the <strong>CBS Austin Town Hall</strong> alongside Steven Brown</li>
-    <li><strong>FOX 7 Austin</strong> interviewed Nate multiple times &mdash; on the ethics complaint controversy and on election night after Prop Q was defeated</li>
-    <li><strong>KUT (NPR Austin)</strong> reported on the website and the ethics questions it raised around campaign finance disclosure</li>
-    <li><strong>KXAN</strong> reported that the Love Austin Campaign <strong>withdrew its ethics complaint</strong> against the anti-Prop Q website</li>
-    <li>The <strong>Austin Chronicle</strong> covered the growing controversy, calling it the <strong>"silly season"</strong> of the Prop Q debate</li>
-    <li><strong>LivTX</strong> published an article titled <strong>"Christmas came early thanks to a guy named Nate"</strong></li>
-</ul>
+<p>On November 5, 2024, <strong>63.48% of Austin voters rejected Proposition Q</strong>. It wasn't close. A $2 website, built by one person in 45 minutes, helped defeat a $110 million tax increase backed by the full political establishment.</p>
 
 <h3>TV Appearances</h3>
 
@@ -127,7 +193,7 @@
 
 <div class="press-item">
     <a href="https://www.facebook.com/CBSAustin/videos/4162901664039464/">CBS Austin Town Hall (Full Video)</a><br>
-    <span class="press-source">CBS Austin / Facebook &middot; Live broadcast of the Prop Q town hall debate</span>
+    <span class="press-source">CBS Austin / Facebook &middot; Full live broadcast of the Prop Q town hall debate</span>
 </div>
 
 <div class="press-item">
@@ -137,7 +203,7 @@
 
 <div class="press-item">
     <a href="https://www.fox7austin.com/news/love-austin-pac-files-withdraws-ethics-complaint-against-website-opposing-tax-increase">Love Austin PAC files, then withdraws ethics complaint against website opposing tax increase</a><br>
-    <span class="press-source">FOX 7 Austin &middot; Coverage of the ethics complaint and withdrawal</span>
+    <span class="press-source">FOX 7 Austin &middot; Ethics complaint filed and withdrawn</span>
 </div>
 
 <div class="press-item">
@@ -153,12 +219,12 @@
 </div>
 
 <div class="press-item">
-    <a href="https://www.kxan.com/news/local/austin/love-austin-campaign-withdraws-ethics-complaint-against-anti-prop-q-website-after-promise-made/">Love Austin Campaign withdraws ethics complaint against anti-Prop Q website</a><br>
+    <a href="https://www.kxan.com/news/local/austin/love-austin-campaign-files-complaint-against-anti-prop-q-website/">'Love Austin' campaign files complaint against anti-Prop Q website</a><br>
     <span class="press-source">KXAN</span>
 </div>
 
 <div class="press-item">
-    <a href="https://www.kxan.com/news/local/austin/love-austin-campaign-files-complaint-against-anti-prop-q-website/">'Love Austin' campaign files complaint against anti-Prop Q website</a><br>
+    <a href="https://www.kxan.com/news/local/austin/love-austin-campaign-withdraws-ethics-complaint-against-anti-prop-q-website-after-promise-made/">Love Austin Campaign withdraws ethics complaint against anti-Prop Q website</a><br>
     <span class="press-source">KXAN</span>
 </div>
 
@@ -192,37 +258,39 @@
     <span class="press-source">CBS Austin</span>
 </div>
 
-<h2>Mayven Studios &amp; Saltwater Acquisition</h2>
+<h2>Mayven Studios &amp; the Saltwater Acquisition</h2>
 
-<p>Nate founded <strong>Mayven Studios</strong> and built it from scratch into one of the Bay Area's top engineering and design agencies. The agency served Fortune 500 companies, VC-backed startups, and some of the most prominent names in Silicon Valley.</p>
+<p>Nate founded <strong>Mayven Studios</strong> and built it from scratch into one of the Bay Area's top engineering and design agencies. No investors. No co-founders. Just relentless execution. The agency grew to serve Fortune 500 companies, VC-backed startups, and some of the most prominent names in Silicon Valley.</p>
 
-<p><strong>Mayven Studios clients included:</strong> Google, Airbnb, Facebook (Meta), IBM, Twilio, Segment, Mixpanel, Hired, Cisco, TaxAct, Workrise, Podcorn, NurtureLife, FairShake, and Lagunitas &mdash; as well as venture capital firms <strong>Andreessen Horowitz (a16z)</strong>, <strong>Lightspeed Venture Partners</strong>, <strong>First Round Capital</strong>, <strong>Eclipse Ventures</strong>, and <strong>Emergence Capital</strong>.</p>
+<p><strong>Mayven's clients included:</strong> Google, Airbnb, Facebook (Meta), IBM, Twilio, Segment, Mixpanel, Hired, Cisco, TaxAct, Workrise, Podcorn, NurtureLife, FairShake, and Lagunitas &mdash; as well as venture capital firms <strong>Andreessen Horowitz (a16z)</strong>, <strong>Lightspeed Venture Partners</strong>, <strong>First Round Capital</strong>, <strong>Eclipse Ventures</strong>, and <strong>Emergence Capital</strong>.</p>
 
-<p>In 2022, Mayven Studios was <strong>acquired by Saltwater</strong>. Saltwater is the family office of <strong>Ryan Graves</strong>, who was <strong>Uber's first employee</strong> (employee #1) and served as <strong>Uber's first CEO</strong>. Graves is now a billionaire who manages a portfolio of investments across technology, aviation (Joby Aviation), and venture capital.</p>
+<p>In 2022, Mayven Studios was <strong>acquired by Saltwater</strong>. Saltwater is the family office of <strong>Ryan Graves</strong>, who was <strong>Uber's first employee</strong> (employee #1) and served as <strong>Uber's first CEO</strong>. Graves is now a billionaire who manages a portfolio spanning technology, aviation (<strong>Joby Aviation</strong>), and venture capital. He hand-picked Mayven as part of Saltwater's portfolio &mdash; that's the caliber of company Nate built.</p>
 
 <h2>Career &amp; Leadership</h2>
 
 <ul>
-    <li><strong>Capital One</strong> &mdash; Director &amp; Distinguished Engineer, Card Tech</li>
-    <li><strong>Mayven Studios</strong> &mdash; Founder &amp; CEO. Premier engineering agency. Acquired by Saltwater (Ryan Graves) in 2022</li>
-    <li><strong>Recipeas</strong> &mdash; Founded iOS recipe generator app. Reached #2 free app in Food &amp; Drink category</li>
-    <li><strong>PureCalculators.com</strong> &mdash; Acquired technical content platform from Finnish entrepreneur</li>
-    <li><strong>austintaxrateelection.com</strong> &mdash; Built informational site opposing Austin Prop Q ($110M tax increase), defeated 63% to 37%</li>
+    <li><strong>Capital One</strong> &mdash; Director &amp; Distinguished Engineer, Card Tech. One of the highest engineering titles in the industry.</li>
+    <li><strong>Mayven Studios</strong> &mdash; Founder &amp; CEO. Built from zero to a premier Silicon Valley agency. Acquired by Saltwater (Ryan Graves / Uber) in 2022.</li>
+    <li><strong>Recipeas</strong> &mdash; Founded iOS recipe generator app. Hit <strong>#2 in the App Store</strong> (free food &amp; drink category).</li>
+    <li><strong>PureCalculators.com</strong> &mdash; Acquired a technical content platform from a Finnish entrepreneur and scaled it into a global traffic engine.</li>
+    <li><strong>austintaxrateelection.com</strong> &mdash; Built a $2 website that helped defeat a $110M tax increase. Debated city council on CBS. 63% voted no.</li>
 </ul>
 
 <h2>Notable Achievements</h2>
 
 <ul>
-    <li>Founded and sold <strong>Mayven Studios</strong> to <strong>Saltwater</strong>, the family office of Ryan Graves (Uber's first employee and first CEO, billionaire)</li>
+    <li>Founded and sold <strong>Mayven Studios</strong> to <strong>Saltwater</strong> &mdash; the family office of Ryan Graves, Uber's first employee, Uber's first CEO, billionaire</li>
     <li>Built a <strong>$2 website</strong> that helped defeat a <strong>$110 million tax increase</strong> &mdash; 63% of Austin voters rejected Prop Q</li>
-    <li>Survived a <strong>state politics ethics complaint</strong> filed by a political PAC attempting to silence the site &mdash; complaint was withdrawn</li>
-    <li>Covered by <strong>NPR (KUT)</strong>, <strong>FOX 7 Austin</strong>, <strong>KXAN</strong>, <strong>Austin Chronicle</strong>, <strong>KVUE</strong>, and <strong>LivTX</strong></li>
+    <li><strong>Debated two sitting city council members on live television</strong> (CBS Austin Town Hall) and won the argument</li>
+    <li>Survived a <strong>state politics ethics complaint</strong> filed by a political PAC attempting to silence the site &mdash; they withdrew it</li>
+    <li>Featured on <strong>CBS Austin</strong>, <strong>FOX 7 Austin</strong>, <strong>NPR (KUT)</strong>, <strong>KXAN</strong>, <strong>Austin Chronicle</strong>, <strong>KVUE</strong>, and <strong>LivTX</strong></li>
     <li>Built <strong>Recipeas</strong>, an iOS app that hit <strong>#2 in the App Store</strong> (free food &amp; drink category)</li>
     <li>Acquired <strong>PureCalculators.com</strong> from a Finnish entrepreneur and scaled it into a global traffic platform</li>
     <li>Architected systems handling <strong>millions of concurrent visitors</strong> in highly regulated telehealth environments</li>
     <li>Had work featured on the <strong>NASDAQ billboard in Times Square</strong></li>
     <li>Spoke at <strong>SXSW</strong> on the future of remote work and distributed engineering teams</li>
-    <li>Built international teams across almost every time zone; traveled to over <strong>65 countries</strong></li>
+    <li>Built international engineering teams across almost every time zone</li>
+    <li>Traveled to over <strong>65 countries</strong></li>
     <li><strong>Eagle Scout</strong></li>
 </ul>
 
@@ -235,11 +303,12 @@
     <li><a href="https://mayvenstudios.com/blog/will-chatgpt-snake-eats-tail-analysis-ai-generated-content-impact-future-training-data">Will ChatGPT be the Snake That Eats Its Own Tail?</a></li>
     <li><a href="https://mayvenstudios.com/blog/re-launching-mixpanel-again">Re-launching Mixpanel (Again)</a></li>
     <li><a href="https://mayvenstudios.com/blog/architecture-planning-telehealth-video-conferencing-app">Architecture and Planning for a Telehealth Video Conferencing App</a></li>
+    <li><a href="https://buildstack.com/blog/expert-talk-nate-mcguire-tips-for-remote-working-job-interviews/">Expert Talk: Tips for Remote Working Job Interviews</a></li>
 </ul>
 
 <h2>Education</h2>
 
-<p><strong>University of Texas at Austin</strong> &mdash; BS Communication Studies, BBA Finance (2008)</p>
+<p><strong>University of Texas at Austin</strong> &mdash; dual degree: BS Communication Studies &amp; BBA Finance (2008)</p>
 
 <h2>Connect</h2>
 
