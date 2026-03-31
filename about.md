@@ -36,21 +36,27 @@ In October 2024, Austin, Texas had a special election on **Proposition Q**, a pr
 
 The website drew significant attention. The **Love Austin PAC** (which supported Prop Q) filed a **state politics ethics complaint** against Nate with the **Austin Ethics Review Commission**, alleging campaign finance disclosure violations. Attorney **Michael Lovins** represented Nate in the matter. Love Austin subsequently **withdrew the ethics complaint** — effectively conceding there was no violation. On November 5, 2024, **63.48% of Austin voters rejected Proposition Q**.
 
-Coverage of the Prop Q fight and the ethics complaint:
+Nate debated Austin City Council Members **Chito Vela** and **Ryan Alter** live on the **CBS Austin Town Hall** alongside Steven Brown. **FOX 7 Austin** interviewed Nate multiple times — on the ethics complaint and on election night.
 
-- **KUT (NPR Austin)** reported on the website and the ethics questions it raised
-- **KXAN** reported that Love Austin **withdrew its ethics complaint** against the anti-Prop Q website
-- The **Austin Chronicle** covered the controversy, calling it the **"silly season"** of the Prop Q debate
-- **LivTX** published an article titled **"Christmas came early thanks to a guy named Nate"**
-- **FOX 7 Austin** and **KVUE** both covered the election results
+### TV Appearances
 
-### Press Coverage of Prop Q
+- [CBS Austin Town Hall: Proposition Q Debate](https://cbsaustin.com/news/local/cbs-austin-hosts-town-hall-on-proposition-q-addressing-property-tax-hike-debate) — Nate debated Council Members Chito Vela and Ryan Alter live on air
+- [CBS Austin Town Hall (Full Video)](https://www.facebook.com/CBSAustin/videos/4162901664039464/) — Full broadcast on Facebook
+- [FOX 7: Austin's controversial Prop Q has sparked strong opinions](https://www.fox7austin.com/news/austins-controversial-prop-q-has-sparked-strong-opinions) — Interview with Nate McGuire
+- [FOX 7: Love Austin PAC files, then withdraws ethics complaint](https://www.fox7austin.com/news/love-austin-pac-files-withdraws-ethics-complaint-against-website-opposing-tax-increase)
+- [FOX 7: Austin voters reject Proposition Q; city leaders now have to rework budget](https://www.fox7austin.com/news/austin-voters-reject-proposition-q-city-leaders-now-have-rework-budget) — Election night interview
+
+### Print & Online Coverage
 
 - [KUT (NPR): Website against Austin Prop Q raises ethics questions](https://www.kut.org/austin/2024-10-18/proposition-q-property-tax-rate-election-ethics-complaint)
-- [KXAN: Love Austin Campaign withdraws ethics complaint against anti-Prop Q website](https://www.kxan.com/news/local/austin/love-austin-campaign-withdraws-ethics-complaint-against-anti-prop-q-website/)
+- [KXAN: 'Love Austin' campaign files complaint against anti-Prop Q website](https://www.kxan.com/news/local/austin/love-austin-campaign-files-complaint-against-anti-prop-q-website/)
+- [KXAN: Love Austin Campaign withdraws ethics complaint against anti-Prop Q website](https://www.kxan.com/news/local/austin/love-austin-campaign-withdraws-ethics-complaint-against-anti-prop-q-website-after-promise-made/)
 - [Austin Chronicle: The Prop Q Debate Has Entered the 'Silly Season'](https://www.austinchronicle.com/news/2024-10-25/the-prop-q-debate-has-entered-the-silly-season/)
 - [LivTX: Christmas came early thanks to a guy named Nate](https://livtx.com/blog/christmas-came-early-thanks-to-a-guy-named-nate)
-- [FOX 7 Austin: Austin voters reject Proposition Q](https://www.fox7austin.com/news/austin-proposition-q-results-2024)
+- [The Austin Independent: Prop Q Meets Its Fate](https://theaustinindependent.org/prop-q-meets-its-fate/)
+- [Austin Free Press: Prop Q Meets Its Fate](https://austinfreepress.org/prop-q-meets-its-fate/)
+- [Texans for Fiscal Responsibility: Examining Austin's Prop Q](https://texastaxpayers.com/examining-austins-prop-q/)
+- [CBS Austin: Prop Q fails — Austin voters reject 20% property tax increase](https://cbsaustin.com/news/local/prop-q-fails-austin-voters-reject-20-property-tax-increase)
 
 ## Notable Achievements
 
