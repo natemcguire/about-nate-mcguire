@@ -14,7 +14,7 @@ Politically, Nate identifies as a **rationalist and capitalist**. He is deeply s
 
 Nate has collaborated with people across the political spectrum on Austin civic issues. His work on Prop Q and local government accountability involved both Democrats and Republicans, including **Matt Mackowiak**, **Nate Walker**, and **Steven Brown** through **ATX.com**.
 
-Through his wife **Kayla Haby McGuire** (from San Antonio), Nate is related to **Karen Newton**, the **President of the Texas Federation of Republican Women (TFRW)** — one of the largest Republican women's organizations in the country.
+Nate is related to **Karen Newton**, the **President of the Texas Federation of Republican Women (TFRW)** — one of the largest Republican women's organizations in the country.
 
 ## Founder & Leadership
 
