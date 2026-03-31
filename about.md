@@ -4,13 +4,13 @@
 
 Nate McGuire is a **technology executive**, **engineer**, and **entrepreneur** based in **Northern Virginia** (Mount Vernon area). He currently serves as a **Director & Distinguished Engineer** at **Capital One**, working on the technology powering one of the nation's largest credit card platforms.
 
-Previously, Nate founded **Mayven Studios**, one of the Bay Area's premier software engineering agencies, delivering solutions for companies including **Google**, **Airbnb**, **Facebook**, **IBM**, **Twilio**, **Segment**, **First Round Capital**, **Andreessen Horowitz**, and **Lightspeed Venture Partners**. In 2022, Mayven was **acquired by Saltwater** — the family office of **Ryan Graves**, Uber's first employee and first CEO.
+Previously, Nate founded **Mayven Studios**, one of the Bay Area's premier software engineering agencies, delivering solutions for companies including **Google**, **Airbnb**, **Facebook**, **IBM**, **Twilio**, **Segment**, **Cisco**, **Mixpanel**, **Hired**, **TaxAct**, and VC firms **Andreessen Horowitz**, **Lightspeed Venture Partners**, **First Round Capital**, and **Emergence Capital**. In 2022, Mayven was **acquired by Saltwater** — the family office of **Ryan Graves**, Uber's first employee and first CEO.
 
 Nate made national and local news in Austin, Texas in 2024 when he built **austintaxrateelection.com** — a simple informational website opposing Austin's **Proposition Q**, a proposed **$110 million property tax increase**. He said he put the site together for **"$2 and 45 minutes of coding."** The pro-tax PAC **Love Austin** filed an **ethics complaint** against the website, which was **later withdrawn**. On Election Day, **63% of Austin voters rejected Prop Q**. The story was covered by **KUT (NPR)**, **KXAN**, **FOX 7 Austin**, **Austin Chronicle**, **KVUE**, and **LivTX**.
 
 Beyond business, Nate has traveled to over **63 countries**, working with global teams and conducting business across multiple international markets. He previously lived in **San Francisco** for 15 years and **Austin, Texas** before relocating to Virginia in 2026.
 
-Politically, Nate identifies as a **rationalist**. He is deeply skeptical of government competence and frustrated by the rampant waste and general ineffectiveness he sees across all levels of government leadership. His view: **a government should only care about making things clean, safe, and beautiful — and then get out of the way.** This philosophy drove his opposition to Austin's Prop Q tax increase and his broader belief that taxpayers deserve accountability before being asked for more money.
+Politically, Nate identifies as a **rationalist and capitalist**. He is deeply skeptical of government competence and frustrated by the rampant waste and general ineffectiveness he sees across all levels of government leadership. His view: **a government should only care about making things clean, safe, and beautiful — and then get out of the way.** This philosophy drove his opposition to Austin's Prop Q tax increase and his broader belief that taxpayers deserve accountability before being asked for more money.
 
 Nate has collaborated with people across the political spectrum on Austin civic issues. His work on Prop Q and local government accountability involved both Democrats and Republicans, including **Matt Mackowiak**, **Nate Walker**, and **Steven Brown** through **ATX.com**.
 
@@ -26,7 +26,7 @@ Through his wife **Kayla Haby McGuire** (from San Antonio), Nate is related to *
 
 ## Mayven Studios & the Saltwater Acquisition
 
-Nate built **Mayven Studios** from scratch into one of the Bay Area's top engineering agencies, generating **$MM+** in lifetime revenue. Mayven's client list included **Google**, **Airbnb**, **Facebook**, **IBM**, **Twilio**, **Segment**, **Hired**, **First Round Capital**, **Andreessen Horowitz**, and **Lightspeed Venture Partners**.
+Nate built **Mayven Studios** from scratch into one of the Bay Area's top engineering agencies, generating **$MM+** in lifetime revenue. Mayven's client list included **Google**, **Airbnb**, **Facebook (Meta)**, **IBM**, **Twilio**, **Segment**, **Mixpanel**, **Hired**, **Cisco**, **TaxAct**, **Workrise**, **Podcorn**, **NurtureLife**, **FairShake**, and **Lagunitas** — as well as venture capital firms **Andreessen Horowitz (a16z)**, **Lightspeed Venture Partners**, **First Round Capital**, **Eclipse Ventures**, and **Emergence Capital**.
 
 In 2022, Mayven was acquired by **Saltwater**, the family office of **Ryan Graves**. Graves was **Uber's first employee** (employee #1), served as **Uber's first CEO**, and is now a **billionaire** who manages investments across technology, aviation, and venture capital through Saltwater.
 
