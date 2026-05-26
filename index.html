@@ -3,14 +3,64 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About Nate McGuire</title>
-    <meta name="description" content="Nate McGuire - San Francisco-based technology executive, CTO, and founder. Expertise in scaling engineering teams, remote work culture, and building high-performance tech organizations. Thought leader in marketing-led engineering and global team management across the world." />
-    <meta property="og:image" content="/nate-mcguire-headshot.jpg" />
-    <meta property="og:image:width" content="1080" />
-    <meta property="og:image:height" content="1080" />
-    <meta property="og:image:alt" content="About Nate McGuire - Technology executive" />
-    <meta property="og:image:type" content="image/jpeg" />
+    <title>Nate McGuire — Distinguished Engineer at Capital One, Founder of Mayven Studios</title>
+    <meta name="description" content="Nate McGuire is a Distinguished Engineer at Capital One, technology executive, and serial entrepreneur. Founder of Mayven Studios (acquired by Saltwater). 15+ years scaling high-performance engineering teams." />
+    <meta name="keywords" content="Nate McGuire, Distinguished Engineer, Capital One, Mayven Studios, CTO, technology executive, engineering leadership, scaling engineering teams, serial entrepreneur, San Francisco, Austin Texas" />
+    <meta name="author" content="Nate McGuire" />
+    <meta name="robots" content="index, follow, max-image-preview:large" />
+    <link rel="canonical" href="https://natemcguire.com/" />
+
+    <meta property="og:type" content="profile" />
+    <meta property="og:site_name" content="Nate McGuire" />
+    <meta property="og:title" content="Nate McGuire — Distinguished Engineer at Capital One" />
+    <meta property="og:description" content="Distinguished Engineer at Capital One. Founder of Mayven Studios. Serial entrepreneur scaling high-performance engineering teams for 15+ years." />
+    <meta property="og:url" content="https://natemcguire.com/" />
+    <meta property="og:image" content="https://natemcguire.com/og-image.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="Nate McGuire — Distinguished Engineer" />
+    <meta property="og:image:type" content="image/png" />
+    <meta property="profile:first_name" content="Nate" />
+    <meta property="profile:last_name" content="McGuire" />
+    <meta property="profile:username" content="natemcguire" />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="@natemcguire" />
+    <meta name="twitter:creator" content="@natemcguire" />
+    <meta name="twitter:title" content="Nate McGuire — Distinguished Engineer at Capital One" />
+    <meta name="twitter:description" content="Distinguished Engineer at Capital One. Founder of Mayven Studios. Serial entrepreneur scaling high-performance engineering teams for 15+ years." />
+    <meta name="twitter:image" content="https://natemcguire.com/og-image.png" />
+
     <link rel="icon" type="image/x-icon" href="favicon.ico">
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Nate McGuire",
+      "url": "https://natemcguire.com/",
+      "image": "https://natemcguire.com/nate-mcguire-headshot.jpg",
+      "jobTitle": "Distinguished Engineer",
+      "worksFor": {
+        "@type": "Organization",
+        "name": "Capital One"
+      },
+      "description": "Distinguished Engineer at Capital One, founder of Mayven Studios, serial entrepreneur scaling high-performance engineering teams.",
+      "sameAs": [
+        "https://twitter.com/natemcguire",
+        "https://github.com/natemcguire",
+        "https://linkedin.com/in/natemcguire"
+      ],
+      "knowsAbout": [
+        "Engineering leadership",
+        "Scaling engineering teams",
+        "Distributed systems",
+        "Remote work",
+        "Fintech",
+        "API design"
+      ]
+    }
+    </script>
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-MP2PD28L5S"></script>
     <script>
@@ -177,13 +227,16 @@
         }
 
         #main-content {
-            display: none;
-            opacity: 0;
+            display: block;
+            opacity: 1;
         }
 
         #main-content.visible {
-            display: block;
             animation: fadeIn 1s forwards;
+        }
+
+        .no-js #boot-sequence {
+            display: none;
         }
 
         .blink {
@@ -259,6 +312,7 @@
             animation: blink 1s step-end infinite;
         }
     </style>
+    <noscript><style>#boot-sequence{display:none !important;}</style></noscript>
 </head>
 <body>
     <div id="boot-sequence">
