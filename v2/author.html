@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Author Nate McGuire — Writings on Scaling Engineering Teams</title>
+    <meta name="description" content="Author Nate McGuire writes about scaling high-performance engineering teams, API design, remote-first culture, and engineering leadership. Distinguished Engineer at Capital One." />
+    <meta name="robots" content="index, follow, max-image-preview:large" />
+    <link rel="canonical" href="https://natemcguire.com/author" />
+
+    <meta property="og:type" content="profile" />
+    <meta property="og:site_name" content="Nate McGuire" />
+    <meta property="og:title" content="Author Nate McGuire — Writings on Scaling Engineering Teams" />
+    <meta property="og:description" content="Author Nate McGuire's writings on engineering leadership, scaling dev teams, remote work, and API design." />
+    <meta property="og:url" content="https://natemcguire.com/author" />
+    <meta property="og:image" content="https://natemcguire.com/og-image.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="Author Nate McGuire — Distinguished Engineer" />
+    <meta property="og:image:type" content="image/png" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="@natemcguire" />
+    <meta name="twitter:creator" content="@natemcguire" />
+    <meta name="twitter:title" content="Author Nate McGuire — Writings on Scaling Engineering Teams" />
+    <meta name="twitter:description" content="Author Nate McGuire's writings on engineering leadership, scaling dev teams, remote work, and API design." />
+    <meta name="twitter:image" content="https://natemcguire.com/og-image.png" />
+
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "ProfilePage",
+      "mainEntity": {
+        "@type": "Person",
+        "name": "Nate McGuire",
+        "alternateName": "Author Nate McGuire",
+        "url": "https://natemcguire.com/author",
+        "image": "https://natemcguire.com/og-image.png",
+        "jobTitle": "Distinguished Engineer",
+        "worksFor": { "@type": "Organization", "name": "Capital One" },
+        "sameAs": [
+          "https://twitter.com/natemcguire",
+          "https://github.com/natemcguire",
+          "https://linkedin.com/in/natemcguire",
+          "https://medium.com/@natemcguire"
+        ]
+      }
+    }
+    </script>
+
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-MP2PD28L5S"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-MP2PD28L5S');
+    </script>
+
+    <style>
+        :root { --paper:#f7f5ee; --ink:#1B1464; --accent:#002FA7; --muted:#6F6A8C; --rule:#1B1464; }
+        * { box-sizing: border-box; }
+        html, body {
+            background: var(--paper); color: var(--ink); margin: 0; padding: 0;
+            font-family: "JetBrains Mono","SF Mono",ui-monospace,Menlo,Consolas,monospace;
+            font-size: 16px; line-height: 1.55; -webkit-font-smoothing: antialiased;
+        }
+        .wrap { max-width: 720px; margin: 0 auto; padding: 40px 24px 80px; }
+        header.top {
+            display:flex; justify-content:space-between; align-items:baseline;
+            border-bottom: 2px solid var(--rule); padding-bottom: 14px; margin-bottom: 36px;
+        }
+        header.top .brand { font-weight:700; font-size:14px; letter-spacing:0.04em; text-transform: uppercase; }
+        nav a {
+            color: var(--ink); text-decoration: none; margin-left: 18px;
+            font-size: 14px; border-bottom: 2px solid transparent; padding-bottom: 2px;
+        }
+        nav a:hover { border-bottom-color: var(--accent); color: var(--accent); }
+        nav a[aria-current="page"] { border-bottom-color: var(--ink); }
+        h1 { font-size: 38px; line-height: 1.05; margin: 0 0 8px; font-weight: 800; letter-spacing: -0.02em; }
+        .role { font-size: 15px; color: var(--muted); margin: 0 0 36px; letter-spacing: 0.02em; }
+        .role b { color: var(--ink); font-weight: 700; }
+        h2 {
+            font-size: 13px; text-transform: uppercase; letter-spacing: 0.12em;
+            margin: 48px 0 14px; font-weight: 700;
+            border-top: 2px solid var(--rule); padding-top: 14px;
+        }
+        h3 {
+            font-size: 12px; text-transform: uppercase; letter-spacing: 0.14em;
+            margin: 28px 0 10px; font-weight: 700; color: var(--accent);
+        }
+        p { margin: 0 0 16px; }
+        a { color: var(--accent); text-decoration: none; border-bottom: 1px solid var(--accent); }
+        a:hover { background: var(--accent); color: var(--paper); }
+        .lede { font-size: 18px; line-height: 1.55; }
+        ul.plain { list-style: none; padding: 0; margin: 0; }
+        ul.plain li { padding: 10px 0; border-bottom: 1px solid var(--rule); }
+        ul.plain li:last-child { border-bottom: none; }
+        .meta { font-size: 12px; color: var(--muted); text-transform: uppercase; letter-spacing: 0.08em; }
+        .principle {
+            border: 2px solid var(--rule);
+            padding: 18px 18px 6px;
+            margin: 0 0 16px;
+        }
+        .principle .n {
+            font-size: 11px; text-transform: uppercase; letter-spacing: 0.18em;
+            color: var(--accent); font-weight: 700;
+        }
+        .principle h4 {
+            margin: 6px 0 10px; font-size: 18px; line-height: 1.3; font-weight: 800;
+        }
+        .principle p { margin: 0 0 12px; font-size: 15px; }
+        footer {
+            margin-top: 72px; padding-top: 18px; border-top: 2px solid var(--rule);
+            font-size: 12px; color: var(--muted); text-transform: uppercase;
+            letter-spacing: 0.1em; display: flex; justify-content: space-between;
+        }
+        .corner {
+            position: fixed; top: 12px; right: 16px; font-size: 10px;
+            letter-spacing: 0.2em; text-transform: uppercase; color: var(--muted);
+            background: var(--paper); padding: 4px 8px; border: 1px solid var(--rule); z-index: 10;
+        }
+        @media (max-width: 600px) {
+            .wrap { padding: 24px 18px 60px; }
+            h1 { font-size: 30px; }
+            header.top { flex-direction: column; align-items: flex-start; gap: 12px; }
+            nav a:first-child { margin-left: 0; }
+        }
+    </style>
+</head>
+<body>
+    <div class="wrap">
+        <header class="top">
+            <div class="brand">nate mcguire</div>
+            <nav>
+                <a href="/">bio</a>
+                <a href="/author" aria-current="page">author</a>
+                <a href="/about">about</a>
+                <a href="/speaking">speaking</a>
+                <a href="/work-with-me">work</a>
+            </nav>
+        </header>
+
+        <h1>Author Nate McGuire</h1>
+        <p class="role"><b>Distinguished Engineer</b> · Capital One · writing on scaling dev teams, API design &amp; remote-first culture</p>
+
+        <p class="lede">Author Nate McGuire writes about the messy, real-world work of building software organizations — not the hype. The Distinguished Engineer title at Capital One is reserved for the top fraction of a percent of engineers, so the writing tends to reflect that altitude: practical, opinionated, biased toward what actually works in production.</p>
+
+        <h2>Philosophy of scaling dev teams</h2>
+
+        <div class="principle">
+            <div class="n">No. 01</div>
+            <h4>Engineering is a P&amp;L, not a cost center.</h4>
+            <p>Most engineering orgs are run as cost centers — which is why they feel like cost centers. The teams that compound are the ones that wire engineering directly into demand-gen, performance marketing, and revenue. Marketing-led engineering isn't a buzzword; it's the difference between an org that grows headcount and one that grows leverage.</p>
+        </div>
+
+        <div class="principle">
+            <div class="n">No. 02</div>
+            <h4>"We're not family" — accountability over coddling.</h4>
+            <p>The healthiest engineering cultures aren't the friendliest. They're the ones with the clearest expectations, the fastest feedback loops, and the highest tolerance for hard conversations. High-performance teams are built on autonomy, discipline, and results — not on perks and process.</p>
+        </div>
+
+        <div class="principle">
+            <div class="n">No. 03</div>
+            <h4>Location-agnostic hiring is better, not cheaper.</h4>
+            <p>People sell remote work as a cost-savings story. That's the wrong frame. Location-agnostic hiring lets you assemble a team that would be impossible to recruit in any one city. The right answer to "where should this engineer live?" is almost always "wherever they do their best work."</p>
+        </div>
+
+        <div class="principle">
+            <div class="n">No. 04</div>
+            <h4>Architecture follows org design (and vice versa).</h4>
+            <p>Conway's Law is the cheat code most engineering leaders ignore. If you want microservices, you need teams shaped like microservices. If your org chart is a monolith, your system will be too — no matter how clever your AWS diagram. Scaling teams <em>is</em> scaling the system.</p>
+        </div>
+
+        <div class="principle">
+            <div class="n">No. 05</div>
+            <h4>Optimize for cycle time above almost everything else.</h4>
+            <p>Code review SLAs. Deploy speed. Time-to-first-PR for new hires. Cycle time is the leading indicator of team health. When cycle time goes up, every other metric — quality, morale, retention — eventually follows it down.</p>
+        </div>
+
+        <h2>Press &amp; speaking</h2>
+        <ul class="plain">
+            <li><a href="https://www.youtube.com/watch?v=aqCFTpvE4Q0&t=153s">SXSW panel — Modern Work: Finding structure in an officeless world</a></li>
+            <li><a href="https://medium.com/@natemcguire/remote-work-is-here-to-stay-so-now-what-1680e8a4398">Remote Work Is Here to Stay — So, Now What?</a></li>
+            <li><a href="https://medium.com/@natemcguire/if-software-is-eating-the-world-your-office-is-also-on-the-menu-56122126f3df">If 'Software is Eating the World,' your office is also on the menu</a></li>
+            <li><a href="https://medium.com/@natemcguire/time-is-money-and-money-is-time-how-do-you-manage-both-505bff438ebe">Time is Money and Money is Time</a></li>
+            <li><a href="https://medium.com/@natemcguire/growing-remote-4f774df06fed">Growing Remote</a></li>
+        </ul>
+
+        <h2>Writings</h2>
+
+        <h3>AI &amp; the future of software</h3>
+        <ul class="plain">
+            <li><a href="https://mayvenstudios.com/blog/will-chatgpt-snake-eats-tail-analysis-ai-generated-content-impact-future-training-data">Will ChatGPT be the Snake That Eats Its Own Tail?</a></li>
+            <li><a href="https://mayvenstudios.com/blog/power-personalization-how-use-data-ai-deliver-targeted-marketing-messages">The Power of Personalization — AI &amp; Targeted Marketing</a></li>
+        </ul>
+
+        <h3>API design &amp; architecture</h3>
+        <ul class="plain">
+            <li><a href="https://mayvenstudios.com/blog/embracing-microservices-architecture-large-enterprises-key-insights-benefits">Embracing Microservices Architecture for Large Enterprises</a></li>
+            <li><a href="https://mayvenstudios.com/blog/designing-effective-rest-apis-guide-software-developers">Designing Effective REST APIs</a></li>
+            <li><a href="https://mayvenstudios.com/blog/unlocking-business-value-apis-business-analysts-perspective">Unlocking Business Value Through APIs</a></li>
+            <li><a href="https://mayvenstudios.com/blog/state-api-design-2023">The State of API Design in 2023</a></li>
+            <li><a href="https://mayvenstudios.com/blog/architecture-planning-telehealth-video-conferencing-app">Architecture for a Telehealth Video Conferencing App</a></li>
+        </ul>
+
+        <h3>MVPs &amp; building things</h3>
+        <ul class="plain">
+            <li><a href="https://mayvenstudios.com/blog/how-build-ecommerce-mvp">How to Build an eCommerce MVP</a></li>
+            <li><a href="https://mayvenstudios.com/blog/what-is-mvp">What is an MVP?</a></li>
+            <li><a href="https://mayvenstudios.com/blog/how-build-mvp-step-step-guide">How to Build an MVP — A Step-by-Step Guide</a></li>
+            <li><a href="https://mayvenstudios.com/blog/planning-build-mvp-what-do-you-need">Planning to Build an MVP</a></li>
+            <li><a href="https://mayvenstudios.com/blog/review-best-web-application-development-frameworks-build-mvp">Best Frameworks to Build an MVP</a></li>
+            <li><a href="https://mayvenstudios.com/blog/review-lean-startup-book">Review — The Lean Startup</a></li>
+            <li><a href="https://mayvenstudios.com/blog/benefits-using-low-code-platform-rapid-prototyping">Low-Code Platforms for Rapid Prototyping</a></li>
+        </ul>
+
+        <h3>Engineering leadership &amp; process</h3>
+        <ul class="plain">
+            <li><a href="https://mayvenstudios.com/blog/tdd-todays-engineering-teams-test-driven-development">TDD for Today's Engineering Teams</a></li>
+            <li><a href="https://mayvenstudios.com/blog/benefits-using-agile-methodologies-software-development">The Benefits of Agile Methodologies</a></li>
+            <li><a href="https://mayvenstudios.com/blog/benefits-continuous-integration-delivery-software-development">CI/CD in Software Development</a></li>
+            <li><a href="https://mayvenstudios.com/blog/best-practices-testing-debugging-software">Best Practices for Testing and Debugging</a></li>
+            <li><a href="https://mayvenstudios.com/blog/recruiting-tips-building-strong-software-development-team">Recruiting a Strong Software Team</a></li>
+            <li><a href="https://mayvenstudios.com/blog/how-much-does-it-cost-hire-team-developers">How Much Does It Cost to Hire a Team of Developers?</a></li>
+        </ul>
+
+        <h3>Remote work &amp; distributed teams</h3>
+        <ul class="plain">
+            <li><a href="https://mayvenstudios.com/blog/how-build-digital-products-remote-team">How to Build Digital Products With a Remote Team</a></li>
+            <li><a href="https://mayvenstudios.com/blog/how-effectively-communicate-your-remote-software-development-team">Communicating With Remote Software Teams</a></li>
+        </ul>
+
+        <h3>Marketing, growth &amp; strategy</h3>
+        <ul class="plain">
+            <li><a href="https://mayvenstudios.com/blog/re-launching-mixpanel-again">Re-launching Mixpanel (Again)</a></li>
+            <li><a href="https://mayvenstudios.com/blog/how-does-googles-core-web-vitals-work">How Does Google's Core Web Vitals Work?</a></li>
+            <li><a href="https://mayvenstudios.com/blog/best-ab-testing-tools-your-marketing-site">Best A/B Testing Tools</a></li>
+            <li><a href="https://mayvenstudios.com/blog/maximizing-roi-best-practices-measuring-optimizing-marketing-campaigns">Maximizing ROI in Marketing Campaigns</a></li>
+            <li><a href="https://mayvenstudios.com/blog/should-you-try-influencer-marketing-your-business">Should You Try Influencer Marketing?</a></li>
+            <li><a href="https://mayvenstudios.com/blog/basics-content-marketing-startups-tech-companies">Content Marketing for Startups</a></li>
+            <li><a href="https://mayvenstudios.com/blog/how-tell-compelling-brand-story">How to Tell a Compelling Brand Story</a></li>
+            <li><a href="https://mayvenstudios.com/blog/how-implement-successful-digital-transformation-strategy">Digital Transformation Strategy</a></li>
+            <li><a href="https://mayvenstudios.com/blog/benefits-migrating-drupal-wordpress">Migrating From Drupal to WordPress</a></li>
+            <li><a href="https://mayvenstudios.com/blog/how-clear-wpengine-cache">How to Clear Your WPEngine Cache</a></li>
+        </ul>
+
+        <h3>Dev stories &amp; throwbacks</h3>
+        <ul class="plain">
+            <li><a href="https://medium.com/@natemcguire">Find older posts on Medium</a></li>
+        </ul>
+
+        <footer>
+            <span>© nate mcguire</span>
+            <span>natemcguire.com / v2</span>
+        </footer>
+    </div>
+</body>
+</html>

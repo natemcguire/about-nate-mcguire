@@ -1,0 +1,19 @@
+# Legacy URLs from the old DOS-era site -> new equivalents
+/about-nate-mcguire        /about           301
+/about-nate-mcguire.html   /about           301
+/author-nate-mcguire       /author          301
+/author-nate-mcguire.html  /author          301
+/retro-profile             /                301
+/retro-profile.html        /                301
+
+# Old single-purpose pages -> closest new home
+/cycle-ios-8-swift-and-the-apple-watch-cycling-tracker        /author  301
+/cycle-ios-8-swift-and-the-apple-watch-cycling-tracker.html   /author  301
+/clean-gpt        /          301
+/clean-gpt.html   /          301
+/land-rover                                         /   301
+/land-rover.html                                    /   301
+/land-rover-details                                 /   301
+/land-rover-details.html                            /   301
+/land-rover-defender-110-TDi-200-1993               /   301
+/land-rover-defender-110-TDi-200-1993.html          /   301

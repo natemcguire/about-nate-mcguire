@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>404 — Page not found · Nate McGuire</title>
+    <meta name="robots" content="noindex, follow" />
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <style>
+        :root { --paper:#f7f5ee; --ink:#1B1464; --accent:#002FA7; --muted:#6F6A8C; --rule:#1B1464; }
+        * { box-sizing: border-box; }
+        html, body {
+            background: var(--paper); color: var(--ink); margin: 0; padding: 0;
+            font-family: "JetBrains Mono","SF Mono",ui-monospace,Menlo,Consolas,monospace;
+            font-size: 16px; line-height: 1.55; -webkit-font-smoothing: antialiased;
+            min-height: 100vh;
+        }
+        .wrap {
+            max-width: 720px; margin: 0 auto; padding: 80px 24px;
+            display: flex; flex-direction: column; align-items: flex-start; min-height: 100vh;
+        }
+        .code {
+            font-size: 120px; line-height: 1; font-weight: 900;
+            letter-spacing: -0.04em; margin: 0 0 12px;
+        }
+        h1 { font-size: 28px; margin: 0 0 8px; font-weight: 800; letter-spacing: -0.01em; }
+        p { margin: 0 0 16px; }
+        a { color: var(--accent); text-decoration: none; border-bottom: 1px solid var(--accent); font-weight: 700; }
+        a:hover { background: var(--accent); color: var(--paper); }
+        .links { margin-top: 24px; display: flex; gap: 20px; flex-wrap: wrap; font-size: 14px; }
+        .meta { color: var(--muted); font-size: 13px; text-transform: uppercase; letter-spacing: 0.12em; }
+        @media (max-width: 600px) { .code { font-size: 88px; } .wrap { padding: 48px 18px; } }
+    </style>
+</head>
+<body>
+    <div class="wrap">
+        <span class="meta">404</span>
+        <div class="code">not found</div>
+        <h1>That page isn't here.</h1>
+        <p>You may have followed an old link from the previous version of the site. Try one of these instead:</p>
+        <div class="links">
+            <a href="/">bio</a>
+            <a href="/author">author</a>
+            <a href="/about">about</a>
+            <a href="/speaking">speaking</a>
+            <a href="/work-with-me">work with me</a>
+        </div>
+    </div>
+</body>
+</html>

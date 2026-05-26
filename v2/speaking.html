@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nate McGuire — Speaker on Scaling Engineering Teams</title>
+    <meta name="description" content="Nate McGuire speaks on scaling engineering teams, remote-first culture, marketing-led engineering, and AI for product orgs. Past venues include SXSW and NASDAQ (Times Square). Book him for keynotes, panels, and podcasts." />
+    <meta name="robots" content="index, follow, max-image-preview:large" />
+    <link rel="canonical" href="https://natemcguire.com/speaking" />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Nate McGuire" />
+    <meta property="og:title" content="Nate McGuire — Speaker on Scaling Engineering" />
+    <meta property="og:description" content="Keynotes, panels, podcasts on scaling engineering teams, remote-first culture, and marketing-led engineering." />
+    <meta property="og:url" content="https://natemcguire.com/speaking" />
+    <meta property="og:image" content="https://natemcguire.com/og-image.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="Nate McGuire — Speaker on Scaling Engineering" />
+    <meta property="og:image:type" content="image/png" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="@natemcguire" />
+    <meta name="twitter:creator" content="@natemcguire" />
+    <meta name="twitter:title" content="Nate McGuire — Speaker on Scaling Engineering" />
+    <meta name="twitter:description" content="Keynotes, panels, podcasts on scaling engineering teams, remote-first culture, and marketing-led engineering." />
+    <meta name="twitter:image" content="https://natemcguire.com/og-image.png" />
+
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-MP2PD28L5S"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-MP2PD28L5S');
+    </script>
+
+    <style>
+        :root { --paper:#f7f5ee; --ink:#1B1464; --accent:#002FA7; --muted:#6F6A8C; --rule:#1B1464; }
+        * { box-sizing: border-box; }
+        html, body {
+            background: var(--paper); color: var(--ink); margin: 0; padding: 0;
+            font-family: "JetBrains Mono","SF Mono",ui-monospace,Menlo,Consolas,monospace;
+            font-size: 16px; line-height: 1.55; -webkit-font-smoothing: antialiased;
+        }
+        .wrap { max-width: 720px; margin: 0 auto; padding: 40px 24px 80px; }
+        header.top {
+            display:flex; justify-content:space-between; align-items:baseline;
+            border-bottom: 2px solid var(--rule); padding-bottom: 14px; margin-bottom: 36px;
+        }
+        header.top .brand { font-weight:700; font-size:14px; letter-spacing:0.04em; text-transform: uppercase; }
+        nav a {
+            color: var(--ink); text-decoration: none; margin-left: 18px;
+            font-size: 14px; border-bottom: 2px solid transparent; padding-bottom: 2px;
+        }
+        nav a:hover { border-bottom-color: var(--accent); color: var(--accent); }
+        nav a[aria-current="page"] { border-bottom-color: var(--ink); }
+        h1 { font-size: 38px; line-height: 1.05; margin: 0 0 8px; font-weight: 800; letter-spacing: -0.02em; }
+        .role { font-size: 15px; color: var(--muted); margin: 0 0 36px; letter-spacing: 0.02em; }
+        .role b { color: var(--ink); font-weight: 700; }
+        h2 {
+            font-size: 13px; text-transform: uppercase; letter-spacing: 0.12em;
+            margin: 48px 0 14px; font-weight: 700;
+            border-top: 2px solid var(--rule); padding-top: 14px;
+        }
+        p { margin: 0 0 16px; }
+        a { color: var(--accent); text-decoration: none; border-bottom: 1px solid var(--accent); }
+        a:hover { background: var(--accent); color: var(--paper); }
+        .lede { font-size: 18px; line-height: 1.55; }
+        ul.plain { list-style: none; padding: 0; margin: 0; }
+        ul.plain li { padding: 10px 0; border-bottom: 1px solid var(--rule); }
+        ul.plain li:last-child { border-bottom: none; }
+        ul.plain li b { display: block; margin-bottom: 4px; }
+        .topic {
+            border: 2px solid var(--rule);
+            padding: 18px;
+            margin: 0 0 16px;
+        }
+        .topic .label {
+            font-size: 11px; text-transform: uppercase; letter-spacing: 0.18em;
+            color: var(--accent); font-weight: 700; margin: 0 0 8px;
+        }
+        .topic h4 {
+            margin: 0 0 8px; font-size: 18px; font-weight: 800;
+        }
+        .topic p { margin: 0; font-size: 15px; }
+        .formats {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            border: 2px solid var(--rule);
+            margin: 16px 0;
+        }
+        .formats .fmt {
+            padding: 18px 14px;
+            border-right: 2px solid var(--rule);
+        }
+        .formats .fmt:last-child { border-right: none; }
+        .formats .fmt .l {
+            font-size: 11px; text-transform: uppercase; letter-spacing: 0.16em;
+            color: var(--accent); font-weight: 700; margin-bottom: 6px;
+        }
+        .formats .fmt .n { font-size: 16px; font-weight: 700; display: block; margin-bottom: 4px; }
+        .formats .fmt .d { font-size: 13px; color: var(--muted); }
+        .meta { font-size: 12px; color: var(--muted); text-transform: uppercase; letter-spacing: 0.08em; }
+        .cta {
+            border: 2px solid var(--accent);
+            background: var(--accent);
+            color: var(--paper);
+            padding: 22px;
+            margin: 24px 0 0;
+            text-align: center;
+        }
+        .cta a {
+            color: var(--paper); border-bottom-color: var(--paper);
+            font-weight: 700; font-size: 18px;
+        }
+        .cta a:hover { background: var(--paper); color: var(--accent); border-bottom-color: var(--paper); }
+        .cta .label {
+            display: block; font-size: 11px; letter-spacing: 0.2em;
+            text-transform: uppercase; margin-bottom: 6px; opacity: 0.85;
+        }
+        footer {
+            margin-top: 72px; padding-top: 18px; border-top: 2px solid var(--rule);
+            font-size: 12px; color: var(--muted); text-transform: uppercase;
+            letter-spacing: 0.1em; display: flex; justify-content: space-between;
+        }
+        .corner {
+            position: fixed; top: 12px; right: 16px; font-size: 10px;
+            letter-spacing: 0.2em; text-transform: uppercase; color: var(--muted);
+            background: var(--paper); padding: 4px 8px; border: 1px solid var(--rule); z-index: 10;
+        }
+        @media (max-width: 600px) {
+            .wrap { padding: 24px 18px 60px; }
+            h1 { font-size: 30px; }
+            header.top { flex-direction: column; align-items: flex-start; gap: 12px; }
+            nav a:first-child { margin-left: 0; }
+            .formats { grid-template-columns: 1fr; }
+            .formats .fmt { border-right: none; border-bottom: 2px solid var(--rule); }
+            .formats .fmt:last-child { border-bottom: none; }
+        }
+    </style>
+</head>
+<body>
+    <div class="wrap">
+        <header class="top">
+            <div class="brand">nate mcguire</div>
+            <nav>
+                <a href="/">bio</a>
+                <a href="/author">author</a>
+                <a href="/about">about</a>
+                <a href="/speaking" aria-current="page">speaking</a>
+                <a href="/work-with-me">work</a>
+            </nav>
+        </header>
+
+        <h1>Speaking</h1>
+        <p class="role"><b>Distinguished Engineer</b> · Capital One · keynotes, panels &amp; podcasts on scaling engineering teams</p>
+
+        <p class="lede">Nate speaks at conferences, on podcasts, and at corporate events on the operating realities of building software organizations — drawing from 15+ years building engineering teams, a Fortune 100 day job, and a founder's track record. Past venues include SXSW and NASDAQ in Times Square.</p>
+
+        <h2>Formats</h2>
+        <div class="formats">
+            <div class="fmt">
+                <div class="l">Format 01</div>
+                <span class="n">Keynote</span>
+                <span class="d">25–45 min, custom narrative for your audience</span>
+            </div>
+            <div class="fmt">
+                <div class="l">Format 02</div>
+                <span class="n">Panel / fireside</span>
+                <span class="d">moderated discussion, 30–60 min</span>
+            </div>
+            <div class="fmt">
+                <div class="l">Format 03</div>
+                <span class="n">Podcast</span>
+                <span class="d">guest spot, remote or in-studio</span>
+            </div>
+        </div>
+
+        <h2>Topics</h2>
+
+        <div class="topic">
+            <div class="label">Topic 01</div>
+            <h4>Scaling engineering for marketing-led organizations</h4>
+            <p>How to align engineering with demand-gen, performance marketing, and revenue growth. Why most product-led engineering playbooks fail in marketing-driven companies — and what to do instead. Useful for CTOs, CMOs, and founder-CEOs whose growth engine is paid acquisition.</p>
+        </div>
+
+        <div class="topic">
+            <div class="label">Topic 02</div>
+            <h4>"We're not family" — building a culture of accountability</h4>
+            <p>A leadership philosophy that contrasts high-accountability, results-driven management with overprotective, overly hands-on leadership styles. How to build autonomy, discipline, and high performance without coddling teams. Hits hardest with people manager audiences.</p>
+        </div>
+
+        <div class="topic">
+            <div class="label">Topic 03</div>
+            <h4>Remote work &amp; the global engineering team</h4>
+            <p>Lessons from a decade-plus as a pioneer of remote-first engineering — long before "remote work" was a buzzword. The realities of building distributed teams, scaling across timezones, and maintaining culture without an office. "Location-agnostic hiring isn't cheaper — it's better." A staple talk; works for engineering, HR, and operating audiences.</p>
+        </div>
+
+        <div class="topic">
+            <div class="label">Topic 04</div>
+            <h4>Engineering as a P&amp;L: the economics of scaling dev teams</h4>
+            <p>Most engineering orgs are run as cost centers, which is why they feel like cost centers. How to wire engineering into revenue, measure leverage instead of throughput, and build an engineering org your CFO actually understands.</p>
+        </div>
+
+        <div class="topic">
+            <div class="label">Topic 05</div>
+            <h4>API design &amp; microservices at enterprise scale</h4>
+            <p>Patterns from years of designing APIs and microservices for Fortune 500s and high-growth startups in regulated industries (fintech, telehealth). What actually breaks at scale, what doesn't, and the org-design implications most architects ignore. Technical audience.</p>
+        </div>
+
+        <div class="topic">
+            <div class="label">Topic 06</div>
+            <h4>AI &amp; the future of engineering work</h4>
+            <p>What changes for engineering orgs when LLMs are real co-workers, not toys. Hiring, code review, leverage, cost — and the long game on training data, model collapse, and the "snake eating its own tail." Forward-looking; great for founder/investor audiences.</p>
+        </div>
+
+        <h2>Past venues &amp; press</h2>
+        <ul class="plain">
+            <li><b>SXSW (panel)</b><span class="meta">Modern Work: Finding structure in an officeless world — <a href="https://www.youtube.com/watch?v=aqCFTpvE4Q0&t=153s">watch</a></span></li>
+            <li><b>NASDAQ — Times Square</b><span class="meta">work featured on the NASDAQ billboard</span></li>
+            <li><b>Long-form essays</b><span class="meta">Medium &amp; the Mayven Studios blog — see <a href="/author">/author</a> for the catalog</span></li>
+        </ul>
+
+        <h2>What I'm best at</h2>
+        <ul class="plain">
+            <li><b>Operator-grounded talks</b><span class="meta">stories from actual companies, not generic frameworks</span></li>
+            <li><b>Cross-functional audiences</b><span class="meta">technical enough for engineers, accessible for execs and marketers</span></li>
+            <li><b>Spicy takes done well</b><span class="meta">opinions audiences remember, without the cringe</span></li>
+            <li><b>Q&amp;A &amp; live moderation</b><span class="meta">comfortable on unscripted panels; quick on follow-ups</span></li>
+        </ul>
+
+        <h2>Logistics</h2>
+        <ul class="plain">
+            <li><b>Travel</b><span class="meta">based in Austin, TX. Will travel for the right event. Remote/virtual works too.</span></li>
+            <li><b>Fees</b><span class="meta">flexible — vary by audience, format, and whether the event aligns with my current focus. Always open to non-profit and community events.</span></li>
+            <li><b>Lead time</b><span class="meta">prefer 6+ weeks for a keynote; podcasts and panels can move faster.</span></li>
+            <li><b>Headshot &amp; bio</b><span class="meta">press bios on the <a href="/about">about page</a>; high-res headshot on request.</span></li>
+        </ul>
+
+        <h2>Book Nate</h2>
+        <p>Email is the fastest path. Include: the event, the audience, format, date, and what you'd like me to leave the audience with.</p>
+
+        <div class="cta">
+            <span class="label">Booking inquiries</span>
+            <a href="mailto:nate.mcguire@gmail.com?subject=Speaking%20inquiry%20%E2%80%94%20%5Bevent%20name%5D">nate.mcguire@gmail.com</a>
+        </div>
+
+        <footer>
+            <span>© nate mcguire</span>
+            <span>natemcguire.com / v2</span>
+        </footer>
+    </div>
+</body>
+</html>

@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Nate McGuire — Distinguished Engineer, Founder, Operator</title>
+    <meta name="description" content="About Nate McGuire — Distinguished Engineer at Capital One, founder of Mayven Studios (acquired by Saltwater), operator and investor in a portfolio of small internet businesses." />
+    <meta name="robots" content="index, follow, max-image-preview:large" />
+    <link rel="canonical" href="https://natemcguire.com/about" />
+
+    <meta property="og:type" content="profile" />
+    <meta property="og:site_name" content="Nate McGuire" />
+    <meta property="og:title" content="About Nate McGuire — Distinguished Engineer, Founder, Operator" />
+    <meta property="og:description" content="Detailed bio, press bios, and what Nate is currently working on." />
+    <meta property="og:url" content="https://natemcguire.com/about" />
+    <meta property="og:image" content="https://natemcguire.com/og-image.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="About Nate McGuire" />
+    <meta property="og:image:type" content="image/png" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="@natemcguire" />
+    <meta name="twitter:creator" content="@natemcguire" />
+    <meta name="twitter:title" content="About Nate McGuire — Distinguished Engineer, Founder" />
+    <meta name="twitter:description" content="Detailed bio, press bios, side projects, and what Nate is currently working on." />
+    <meta name="twitter:image" content="https://natemcguire.com/og-image.png" />
+
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-MP2PD28L5S"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-MP2PD28L5S');
+    </script>
+
+    <style>
+        :root { --paper:#f7f5ee; --ink:#1B1464; --accent:#002FA7; --muted:#6F6A8C; --rule:#1B1464; }
+        * { box-sizing: border-box; }
+        html, body {
+            background: var(--paper); color: var(--ink); margin: 0; padding: 0;
+            font-family: "JetBrains Mono","SF Mono",ui-monospace,Menlo,Consolas,monospace;
+            font-size: 16px; line-height: 1.55; -webkit-font-smoothing: antialiased;
+        }
+        .wrap { max-width: 720px; margin: 0 auto; padding: 40px 24px 80px; }
+        header.top {
+            display:flex; justify-content:space-between; align-items:baseline;
+            border-bottom: 2px solid var(--rule); padding-bottom: 14px; margin-bottom: 36px;
+        }
+        header.top .brand { font-weight:700; font-size:14px; letter-spacing:0.04em; text-transform: uppercase; }
+        nav a {
+            color: var(--ink); text-decoration: none; margin-left: 18px;
+            font-size: 14px; border-bottom: 2px solid transparent; padding-bottom: 2px;
+        }
+        nav a:hover { border-bottom-color: var(--accent); color: var(--accent); }
+        nav a[aria-current="page"] { border-bottom-color: var(--ink); }
+        h1 { font-size: 38px; line-height: 1.05; margin: 0 0 8px; font-weight: 800; letter-spacing: -0.02em; }
+        .role { font-size: 15px; color: var(--muted); margin: 0 0 36px; letter-spacing: 0.02em; }
+        .role b { color: var(--ink); font-weight: 700; }
+        h2 {
+            font-size: 13px; text-transform: uppercase; letter-spacing: 0.12em;
+            margin: 48px 0 14px; font-weight: 700;
+            border-top: 2px solid var(--rule); padding-top: 14px;
+        }
+        h3 {
+            font-size: 12px; text-transform: uppercase; letter-spacing: 0.14em;
+            margin: 28px 0 8px; font-weight: 700; color: var(--accent);
+        }
+        p { margin: 0 0 16px; }
+        a { color: var(--accent); text-decoration: none; border-bottom: 1px solid var(--accent); }
+        a:hover { background: var(--accent); color: var(--paper); }
+        .lede { font-size: 18px; line-height: 1.55; }
+        ul.plain { list-style: none; padding: 0; margin: 0; }
+        ul.plain li { padding: 10px 0; border-bottom: 1px solid var(--rule); }
+        ul.plain li:last-child { border-bottom: none; }
+        ul.plain li b { display: block; margin-bottom: 4px; }
+        .meta { font-size: 12px; color: var(--muted); text-transform: uppercase; letter-spacing: 0.08em; }
+        .bio-card {
+            border: 2px solid var(--rule);
+            padding: 18px;
+            margin: 0 0 16px;
+        }
+        .bio-card .label {
+            font-size: 11px; text-transform: uppercase; letter-spacing: 0.18em;
+            color: var(--accent); font-weight: 700; margin: 0 0 8px;
+        }
+        .bio-card p { margin: 0; font-size: 15px; }
+        .bio-card.long p + p { margin-top: 12px; }
+        footer {
+            margin-top: 72px; padding-top: 18px; border-top: 2px solid var(--rule);
+            font-size: 12px; color: var(--muted); text-transform: uppercase;
+            letter-spacing: 0.1em; display: flex; justify-content: space-between;
+        }
+        .corner {
+            position: fixed; top: 12px; right: 16px; font-size: 10px;
+            letter-spacing: 0.2em; text-transform: uppercase; color: var(--muted);
+            background: var(--paper); padding: 4px 8px; border: 1px solid var(--rule); z-index: 10;
+        }
+        @media (max-width: 600px) {
+            .wrap { padding: 24px 18px 60px; }
+            h1 { font-size: 30px; }
+            header.top { flex-direction: column; align-items: flex-start; gap: 12px; }
+            nav a:first-child { margin-left: 0; }
+        }
+    </style>
+</head>
+<body>
+    <div class="wrap">
+        <header class="top">
+            <div class="brand">nate mcguire</div>
+            <nav>
+                <a href="/">bio</a>
+                <a href="/author">author</a>
+                <a href="/about" aria-current="page">about</a>
+                <a href="/speaking">speaking</a>
+                <a href="/work-with-me">work</a>
+            </nav>
+        </header>
+
+        <h1>About</h1>
+        <p class="role"><b>Distinguished Engineer</b> at Capital One · founder, Mayven Studios (acquired) · investor &amp; operator · Austin, TX</p>
+
+        <p class="lede">A longer-form companion to the <a href="/">bio page</a>: press-ready blurbs, background, side projects (deliberately under-named), and the things people most often ask about.</p>
+
+        <h2>Press bios</h2>
+
+        <div class="bio-card">
+            <div class="label">80 characters</div>
+            <p>Nate McGuire is a serial entrepreneur and technology leader based in Austin, TX.</p>
+        </div>
+
+        <div class="bio-card">
+            <div class="label">300 characters</div>
+            <p>Nate McGuire is a <b>Distinguished Engineer at Capital One</b> and the founder of <b>Mayven Studios</b> (acquired by Saltwater/Ryan Graves). With 15+ years scaling engineering teams for Google, Airbnb, IBM, and A16z-backed startups, he now focuses on engineering leadership, marketing-led tech, and AI-driven products.</p>
+        </div>
+
+        <div class="bio-card long">
+            <div class="label">Longer bio</div>
+            <p>Nate McGuire has spent over a decade leading <b>software engineering</b>, <b>e-commerce</b>, and <b>telehealth</b> initiatives. He is currently a <b>Distinguished Engineer at Capital One</b> in Card Tech, working at the highest levels of engineering on the technology powering one of the nation's largest credit-card platforms.</p>
+            <p>Before Capital One, he built <b>Mayven Studios</b> into a top-tier engineering and design agency, delivering scalable software for Fortune 500s and VC-backed startups including Google, Airbnb, Facebook, IBM, Twilio, Segment, Hired, First Round Capital, Andreessen Horowitz, and Lightspeed Venture Partners. Mayven was acquired by Saltwater (Ryan Graves, founding employee of Uber).</p>
+            <p>Beyond Mayven, Nate has founded and operated a small portfolio of internet businesses across consumer apps and technical content. He invests in and advises early-stage startups on engineering hiring, technical strategy, and scaling marketing operations.</p>
+            <p>An early pioneer of remote-first engineering, Nate has founded companies and led teams of engineers as large as 300 — business primarily out of California and Silicon Valley, with talent sourced globally. He built distributed teams long before remote work was a category, and brings deep experience in async culture and location-agnostic hiring. He has traveled to more than 60 countries and has spoken at SXSW and other industry events on scaling technical teams, remote-work culture, and leadership strategies.</p>
+        </div>
+
+        <h2>Background</h2>
+        <ul class="plain">
+            <li><b>15+ years</b><span class="meta">leading engineering teams across SaaS, marketplaces, fintech &amp; telehealth</span></li>
+            <li><b>Distinguished Engineer · Capital One</b><span class="meta">Card Tech — one of the most senior IC roles at the company</span></li>
+            <li><b>Founder · Mayven Studios (acquired)</b><span class="meta">tens of millions in lifetime sales; clients incl. Google, Airbnb, IBM, A16z, Lightspeed</span></li>
+            <li><b>Cross-functional leadership</b><span class="meta">marketing-led and product-led engineering orgs</span></li>
+            <li><b>Stack-agnostic</b><span class="meta">web, mobile, hardware — pragmatic across languages &amp; platforms</span></li>
+        </ul>
+
+        <h2>What he's doing now</h2>
+        <ul class="plain">
+            <li><b>Day job</b><span class="meta">Distinguished Engineer · Capital One Card Tech</span></li>
+            <li><b>Operating</b><span class="meta">a small portfolio of internet businesses he founded or acquired — covering consumer apps and technical-content sites. Deliberately under the radar.</span></li>
+            <li><b>Investing</b><span class="meta">early-stage startups across e-commerce, AI, and telehealth</span></li>
+            <li><b>Advising</b><span class="meta">founders on engineering hiring, technical strategy, and scaling demand-gen-driven engineering orgs</span></li>
+            <li><b>Speaking &amp; writing</b><span class="meta">see <a href="/author">/author</a> for the full catalog</span></li>
+        </ul>
+
+        <h2>Notable</h2>
+        <ul class="plain">
+            <li>Built <b>Mayven Studios</b> into a Bay Area top-tier engineering agency. Acquired by <b>Saltwater</b>.</li>
+            <li>Architected systems serving <b>millions</b> of concurrent visitors in highly regulated environments (incl. telehealth).</li>
+            <li>Had work featured on the <b>NASDAQ billboard in Times Square</b>.</li>
+            <li><b>Pioneer of remote work</b> — founded companies and led engineering teams as large as <b>300</b>. Business primarily California / Silicon Valley; sourced talent globally and built early distributed teams. Traveled to <b>60+ countries</b>.</li>
+            <li>Spoke at <b>SXSW</b> on remote work and modern engineering culture.</li>
+        </ul>
+
+        <h2>Topics he's known for</h2>
+        <ul class="plain">
+            <li><b>Scaling engineering for marketing-led organizations</b><span class="meta">aligning eng with demand-gen, performance marketing &amp; revenue</span></li>
+            <li><b>"We're not family" — accountability over coddling</b><span class="meta">high-autonomy, high-discipline cultures</span></li>
+            <li><b>Remote &amp; location-agnostic hiring</b><span class="meta">"it's not cheaper, it's better"</span></li>
+            <li><b>API design &amp; microservices at enterprise scale</b><span class="meta">regulated systems, fintech, telehealth</span></li>
+            <li><b>Buying and operating small internet businesses</b><span class="meta">acquisition, scaling, and steady-state operation</span></li>
+        </ul>
+
+        <h2>Headshot &amp; logos</h2>
+        <p>High-res headshot &amp; press assets available on request — <a href="https://twitter.com/natemcguire">DM on X</a>.</p>
+
+        <h2>Connect</h2>
+        <ul class="plain">
+            <li><b>x / twitter</b><span class="meta"><a href="https://twitter.com/natemcguire">@natemcguire</a></span></li>
+            <li><b>github</b><span class="meta"><a href="https://github.com/natemcguire">github.com/natemcguire</a></span></li>
+            <li><b>linkedin</b><span class="meta"><a href="https://linkedin.com/in/natemcguire">linkedin.com/in/natemcguire</a></span></li>
+            <li><b>medium</b><span class="meta"><a href="https://medium.com/@natemcguire">medium.com/@natemcguire</a></span></li>
+        </ul>
+
+        <footer>
+            <span>© nate mcguire</span>
+            <span>natemcguire.com / v2</span>
+        </footer>
+    </div>
+</body>
+</html>

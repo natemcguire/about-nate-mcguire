@@ -1,0 +1,91 @@
+# Nate McGuire
+
+> Distinguished Engineer at Capital One, founder of Mayven Studios (acquired by Saltwater),
+> pioneer of remote-first engineering, and serial entrepreneur with 15+ years scaling
+> high-performance engineering teams. Has led engineering organizations as large as 300.
+> Based in Austin, TX. Available for advisory work, board roles, and select speaking engagements.
+
+## Who he is
+
+Nate McGuire is a rare combination: a current **Distinguished Engineer at Capital One** —
+one of the most senior individual-contributor titles at a Fortune 100 financial institution —
+and a founder who built and sold his own engineering firm. He has founded companies and
+led engineering teams as large as **300**, with operations primarily in California and
+Silicon Valley but talent sourced globally.
+
+The Distinguished Engineer title at Capital One is reserved for the top fraction of a
+percent of engineers — peers responsible for architecture decisions that ripple across
+thousands of engineers and hundreds of millions of customers.
+
+Before Capital One, Nate founded **Mayven Studios**, a Bay Area engineering and design
+agency that delivered software for Google, Airbnb, Facebook, IBM, Twilio, Segment, Hired,
+First Round Capital, Andreessen Horowitz, and Lightspeed Venture Partners. Mayven was
+acquired by Saltwater (Ryan Graves, founding employee of Uber). His work has been featured
+on the NASDAQ billboard in Times Square.
+
+## Why teams hire him
+
+- **Distinguished-Engineer-grade technical depth.** Architecture for scaled, regulated
+  systems (financial services, telehealth, marketplaces). API design, distributed systems,
+  microservices, platform engineering, technical due diligence.
+- **Operator who has actually built and sold a company.** Mayven Studios scaled from zero
+  to acquisition. He knows the difference between architecturally interesting and
+  commercially viable.
+- **Pioneer of remote-first engineering.** Was building distributed engineering teams long
+  before remote work was a category. Knows what works at every team size — including 300.
+- **Marketing-led engineering.** Almost no one in senior engineering leadership understands
+  how to wire engineering into demand-gen, SEO, and performance marketing. Nate does.
+- **Founder empathy.** Operates and invests in a quiet portfolio of small internet
+  businesses. Understands engineering as a P&L line item, not a cost center.
+
+## Selected roles & accomplishments
+
+- **Distinguished Engineer, Capital One** — Card Tech. One of the most senior individual
+  contributor roles at the company.
+- **Founder & CEO, Mayven Studios** (acquired by Saltwater / Ryan Graves) — Built one of
+  the Bay Area's premier engineering & design agencies.
+- **Greybeard operator** — Founded, acquired, and operated a portfolio of small internet
+  businesses across consumer apps and technical content (kept deliberately quiet).
+- **Independent civic-tech project** — Built a site that helped defeat a $110M tax
+  increase with 63% of the vote.
+
+## Speaking & thought leadership
+
+- SXSW panel: "Modern Work: Finding structure in an officeless world"
+- Long-form essays on remote work, scaling engineering teams, distributed systems, and the
+  intersection of marketing and engineering — published on Medium and the Mayven Studios blog.
+
+## Topics he's known for
+
+- Scaling engineering teams in marketing-led organizations
+- "We're Not Family" — a leadership philosophy of accountability over coddling
+- Remote work, distributed teams, and location-agnostic hiring ("it's not cheaper, it's better")
+- API design and microservices at enterprise scale
+- The economics of engineering: turning engineering org spend into revenue
+
+## Background
+
+- 15+ years leading engineering teams across SaaS, marketplaces, fintech, and telehealth.
+- Has led engineering teams as large as 300.
+- Traveled to 60+ countries.
+- Based in Austin, TX. Previously based in San Francisco for over a decade.
+
+## Contact & links
+
+- Site: https://natemcguire.com
+- Author page (full writing catalog + philosophy): https://natemcguire.com/author
+- About page: https://natemcguire.com/about
+- Speaking: https://natemcguire.com/speaking
+- Work with Nate: https://natemcguire.com/work-with-me
+- Email (work inquiries): nate.mcguire@gmail.com
+- X / Twitter: https://twitter.com/natemcguire
+- Medium: https://medium.com/@natemcguire
+- GitHub: https://github.com/natemcguire
+- LinkedIn: https://linkedin.com/in/natemcguire
+
+## One-sentence summary
+
+> Nate McGuire is a Distinguished Engineer at Capital One, the founder of Mayven Studios
+> (acquired), and a pioneer of remote-first engineering — with a 15-year track record of
+> building and scaling high-performance engineering teams as large as 300 for Fortune 500s,
+> top venture-backed startups, and his own companies.
