@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Author Nate McGuire — Writings on Scaling Engineering Teams</title>
+    <meta name="description" content="Author Nate McGuire is a Distinguished Engineer at Capital One and founder of Mayven Studios. Read his complete catalog of writing on scaling engineering teams, API design, remote-first culture, and engineering leadership." />
+    <meta name="keywords" content="Author Nate McGuire, Nate McGuire author, Nate McGuire writings, scaling engineering teams, engineering leadership, remote work, distributed teams, API design, Distinguished Engineer, Capital One, Mayven Studios" />
+    <meta name="author" content="Nate McGuire" />
+    <meta name="robots" content="index, follow, max-image-preview:large" />
+    <link rel="canonical" href="https://natemcguire.com/author-nate-mcguire.html" />
+
+    <meta property="og:type" content="profile" />
+    <meta property="og:site_name" content="Nate McGuire" />
+    <meta property="og:title" content="Author Nate McGuire — Writings on Scaling Engineering Teams" />
+    <meta property="og:description" content="Author Nate McGuire's complete catalog of essays on engineering leadership, scaling dev teams, remote work, and API design. Distinguished Engineer at Capital One." />
+    <meta property="og:url" content="https://natemcguire.com/author-nate-mcguire.html" />
+    <meta property="og:image" content="https://natemcguire.com/og-image.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="Author Nate McGuire — Distinguished Engineer" />
+    <meta property="og:image:type" content="image/png" />
+    <meta property="profile:first_name" content="Nate" />
+    <meta property="profile:last_name" content="McGuire" />
+    <meta property="profile:username" content="natemcguire" />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="@natemcguire" />
+    <meta name="twitter:creator" content="@natemcguire" />
+    <meta name="twitter:title" content="Author Nate McGuire — Writings on Scaling Engineering Teams" />
+    <meta name="twitter:description" content="Author Nate McGuire's complete catalog of essays on engineering leadership, scaling dev teams, remote work, and API design." />
+    <meta name="twitter:image" content="https://natemcguire.com/og-image.png" />
+
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "ProfilePage",
+      "mainEntity": {
+        "@type": "Person",
+        "name": "Nate McGuire",
+        "alternateName": "Author Nate McGuire",
+        "url": "https://natemcguire.com/author-nate-mcguire.html",
+        "image": "https://natemcguire.com/nate-mcguire-headshot.jpg",
+        "jobTitle": "Distinguished Engineer",
+        "worksFor": {
+          "@type": "Organization",
+          "name": "Capital One"
+        },
+        "description": "Author Nate McGuire writes about scaling high-performance engineering teams, remote-first culture, API design, and the intersection of engineering and marketing.",
+        "sameAs": [
+          "https://twitter.com/natemcguire",
+          "https://github.com/natemcguire",
+          "https://linkedin.com/in/natemcguire",
+          "https://medium.com/@natemcguire"
+        ],
+        "knowsAbout": [
+          "Scaling engineering teams",
+          "Remote work",
+          "Distributed teams",
+          "API design",
+          "Microservices",
+          "Engineering leadership",
+          "Marketing-led engineering",
+          "Fintech",
+          "Telehealth"
+        ]
+      }
+    }
+    </script>
+
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-MP2PD28L5S"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-MP2PD28L5S');
+    </script>
+
+    <style>
+        body {
+            font-family: 'VT323', monospace;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            line-height: 1.6;
+            background-color: #fff5e6;
+            color: #1a1a1a;
+            font-size: 18px;
+        }
+        .window {
+            background: #ffffff;
+            border: 2px solid #000000;
+            box-shadow: 4px 4px 0px #000000;
+            padding: 20px;
+            margin-bottom: 30px;
+        }
+        .window-header {
+            background: #000000;
+            color: #ffffff;
+            padding: 5px 10px;
+            margin: -20px -20px 20px -20px;
+            font-size: 16px;
+            letter-spacing: 1px;
+        }
+        h1 {
+            font-size: 44px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            text-align: center;
+            margin-bottom: 10px;
+            color: #0033CC;
+            font-weight: 900;
+        }
+        h2 {
+            font-size: 26px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 16px;
+            color: #0033CC;
+            font-weight: 800;
+        }
+        h3 {
+            font-size: 22px;
+            text-transform: uppercase;
+            color: #000000;
+            margin-top: 28px;
+            border-bottom: 1px solid #0033CC;
+            display: inline-block;
+            padding-bottom: 2px;
+        }
+        a {
+            color: #000000;
+            text-decoration: none;
+            border-bottom: 1px solid #0033CC;
+            font-weight: bold;
+        }
+        a:hover { background-color: #0033CC; color: #ffffff; }
+        ul { list-style-type: none; padding-left: 0; }
+        li { margin-bottom: 12px; padding-left: 20px; position: relative; }
+        li:before { content: "▪"; position: absolute; left: 0; color: #000000; }
+        .decoration { text-align: center; font-size: 24px; margin: 20px 0; }
+        .keyword { font-weight: bold; border-bottom: 1px solid #0033CC; display: inline-block; }
+        .tagline {
+            text-align: center;
+            font-size: 20px;
+            color: #444;
+            margin: -4px 0 24px;
+            letter-spacing: 1px;
+        }
+        .back {
+            display: inline-block;
+            margin-bottom: 20px;
+            font-size: 16px;
+        }
+        @media (max-width: 600px) {
+            body { padding: 10px; font-size: 16px; }
+            h1 { font-size: 32px; }
+            h2 { font-size: 22px; }
+            .window { padding: 15px; }
+        }
+    </style>
+</head>
+<body>
+    <a href="/" class="back">← back to NATE_MCGUIRE.EXE</a>
+
+    <div class="window">
+        <div class="window-header">AUTHOR_NATE_MCGUIRE.DAT</div>
+        <h1>Author Nate McGuire</h1>
+        <div class="tagline">DISTINGUISHED ENGINEER · CAPITAL ONE · AUSTIN, TX</div>
+        <div class="decoration">═══════ * ═══════</div>
+
+        <div class="window">
+            <div class="window-header">ABOUT_THE_AUTHOR.TXT</div>
+            <p><span class="keyword">Author Nate McGuire</span> is a <span class="keyword">Distinguished Engineer at Capital One</span>, founder of <span class="keyword">Mayven Studios</span> (acquired by Saltwater / Ryan Graves), and a serial entrepreneur with 15+ years scaling high-performance engineering teams. He writes about the messy, real-world work of building software organizations &mdash; not the hype.</p>
+            <p>The Distinguished Engineer title at Capital One is reserved for the top fraction of a percent of engineers, peers responsible for architecture decisions that ripple across thousands of engineers and hundreds of millions of customers. His writing reflects that altitude: practical, opinionated, and biased toward what actually works in production.</p>
+        </div>
+
+        <div class="window">
+            <div class="window-header">PHILOSOPHY.DAT</div>
+            <h2>Philosophy of Scaling Dev Teams</h2>
+
+            <h3>1. Engineering is a P&amp;L, not a cost center</h3>
+            <p>Most engineering orgs are run as cost centers, which is why they feel like cost centers. The teams that compound are the ones that wire engineering directly into demand-gen, performance marketing, and revenue. <span class="keyword">Marketing-led engineering</span> isn&rsquo;t a buzzword &mdash; it&rsquo;s the difference between an org that grows headcount and one that grows leverage.</p>
+
+            <h3>2. "We're not family" &mdash; accountability over coddling</h3>
+            <p>The healthiest engineering cultures I&rsquo;ve built are not the friendliest ones. They are the ones with the clearest expectations, the fastest feedback loops, and the highest tolerance for hard conversations. High-performance teams are built on <span class="keyword">autonomy</span>, <span class="keyword">discipline</span>, and <span class="keyword">results</span> &mdash; not on perks and process.</p>
+
+            <h3>3. Location-agnostic hiring is better, not cheaper</h3>
+            <p>People sell remote work as a cost-savings story. That&rsquo;s the wrong frame. Location-agnostic hiring lets you assemble a team that would be impossible to recruit in any one city. The right answer to &ldquo;where should this engineer live?&rdquo; is almost always &ldquo;wherever they do their best work.&rdquo;</p>
+
+            <h3>4. Hire for trajectory, not pedigree</h3>
+            <p>I&rsquo;ve hired engineers from no-name schools who went on to be Staff+ at the best companies in the Valley. I&rsquo;ve also seen Stanford CS grads stall out. Trajectory &mdash; what you&rsquo;ve done lately, how fast you&rsquo;re still learning &mdash; predicts performance better than any line on a resume.</p>
+
+            <h3>5. Architecture follows org design (and vice versa)</h3>
+            <p>Conway&rsquo;s Law is the cheat code most engineering leaders ignore. If you want microservices, you need teams shaped like microservices. If your org chart is a monolith, your system will be too, no matter how clever your AWS diagram. Scaling teams <em>is</em> scaling the system.</p>
+
+            <h3>6. Optimize for cycle time above almost everything else</h3>
+            <p>Code review SLAs. Deploy speed. Time-to-first-PR for new hires. Cycle time is the leading indicator of team health. When cycle time goes up, every other metric &mdash; quality, morale, retention &mdash; eventually follows it down.</p>
+
+            <h3>7. Engineering is not the place to "move slow and not break things"</h3>
+            <p>Reliability is achieved through small, frequent changes with great observability, not through gates and approvals. The teams shipping the most are usually the teams breaking the least &mdash; because they&rsquo;ve built the muscles.</p>
+        </div>
+
+        <div class="window">
+            <div class="window-header">FEATURED_PRESS.DAT</div>
+            <h2>Press &amp; Speaking</h2>
+            <ul>
+                <li><a href="https://www.youtube.com/watch?v=aqCFTpvE4Q0&t=153s">SXSW Panel: Modern Work &mdash; Finding structure in an officeless world</a></li>
+                <li><a href="https://medium.com/@natemcguire/remote-work-is-here-to-stay-so-now-what-1680e8a4398">Remote Work Is Here to Stay &mdash; So, Now What?</a></li>
+                <li><a href="https://medium.com/@natemcguire/if-software-is-eating-the-world-your-office-is-also-on-the-menu-56122126f3df">If &lsquo;Software is Eating the World,&rsquo; your office is also on the menu</a></li>
+                <li><a href="https://medium.com/@natemcguire/time-is-money-and-money-is-time-how-do-you-manage-both-505bff438ebe">Time is Money and Money is Time. How Do You Manage Both?</a></li>
+                <li><a href="https://medium.com/@natemcguire/growing-remote-4f774df06fed">Growing Remote</a></li>
+            </ul>
+        </div>
+
+        <div class="window">
+            <div class="window-header">WRITINGS.DAT</div>
+            <h2>Complete Writing Catalog</h2>
+
+            <h3>AI &amp; The Future of Software</h3>
+            <ul>
+                <li><a href="https://mayvenstudios.com/blog/will-chatgpt-snake-eats-tail-analysis-ai-generated-content-impact-future-training-data">Will ChatGPT be the Snake That Eats Its Own Tail?</a></li>
+                <li><a href="https://mayvenstudios.com/blog/power-personalization-how-use-data-ai-deliver-targeted-marketing-messages">The Power of Personalization &mdash; AI &amp; Targeted Marketing</a></li>
+            </ul>
+
+            <h3>API Design &amp; Architecture</h3>
+            <ul>
+                <li><a href="https://mayvenstudios.com/blog/embracing-microservices-architecture-large-enterprises-key-insights-benefits">Embracing Microservices Architecture for Large Enterprises</a></li>
+                <li><a href="https://mayvenstudios.com/blog/designing-effective-rest-apis-guide-software-developers">Designing Effective REST APIs &mdash; A Guide for Software Developers</a></li>
+                <li><a href="https://mayvenstudios.com/blog/unlocking-business-value-apis-business-analysts-perspective">Unlocking Business Value Through APIs</a></li>
+                <li><a href="https://mayvenstudios.com/blog/state-api-design-2023">The State of API Design in 2023</a></li>
+                <li><a href="https://mayvenstudios.com/blog/architecture-planning-telehealth-video-conferencing-app">Architecture &amp; Planning for a Telehealth Video Conferencing App</a></li>
+            </ul>
+
+            <h3>MVPs &amp; Building Things</h3>
+            <ul>
+                <li><a href="https://mayvenstudios.com/blog/how-build-ecommerce-mvp">How to Build an eCommerce MVP</a></li>
+                <li><a href="https://mayvenstudios.com/blog/what-is-mvp">What is an MVP?</a></li>
+                <li><a href="https://mayvenstudios.com/blog/planning-build-mvp-what-do-you-need">Planning to Build an MVP &mdash; What Do You Need?</a></li>
+                <li><a href="https://mayvenstudios.com/blog/how-build-mvp-step-step-guide">How to Build an MVP &mdash; A Step-by-Step Guide</a></li>
+                <li><a href="https://mayvenstudios.com/blog/review-best-web-application-development-frameworks-build-mvp">A Review of the Best Web Application Development Frameworks to Build an MVP</a></li>
+                <li><a href="https://mayvenstudios.com/blog/review-lean-startup-book">Review &mdash; The Lean Startup Book</a></li>
+                <li><a href="https://mayvenstudios.com/blog/benefits-using-low-code-platform-rapid-prototyping">The Benefits of Using a Low-Code Platform for Rapid Prototyping</a></li>
+            </ul>
+
+            <h3>Engineering Leadership &amp; Process</h3>
+            <ul>
+                <li><a href="https://mayvenstudios.com/blog/tdd-todays-engineering-teams-test-driven-development">TDD for Today&rsquo;s Engineering Teams &mdash; Test-Driven Development</a></li>
+                <li><a href="https://mayvenstudios.com/blog/benefits-using-agile-methodologies-software-development">The Benefits of Using Agile Methodologies in Software Development</a></li>
+                <li><a href="https://mayvenstudios.com/blog/benefits-continuous-integration-delivery-software-development">The Benefits of Continuous Integration and Delivery in Software</a></li>
+                <li><a href="https://mayvenstudios.com/blog/best-practices-testing-debugging-software">Best Practices for Testing and Debugging Software</a></li>
+                <li><a href="https://mayvenstudios.com/blog/recruiting-tips-building-strong-software-development-team">Recruiting &mdash; Tips for Building a Strong Software Development Team</a></li>
+                <li><a href="https://mayvenstudios.com/blog/how-much-does-it-cost-hire-team-developers">How Much Does It Cost to Hire a Team of Developers?</a></li>
+                <li><a href="https://mayvenstudios.com/blog/gift-guide-software-developers">Gift Guide for Software Developers</a></li>
+            </ul>
+
+            <h3>Remote Work &amp; Distributed Teams</h3>
+            <ul>
+                <li><a href="https://mayvenstudios.com/blog/how-build-digital-products-remote-team">How to Build Digital Products With a Remote Team</a></li>
+                <li><a href="https://mayvenstudios.com/blog/how-effectively-communicate-your-remote-software-development-team">How to Effectively Communicate With Your Remote Software Development Team</a></li>
+            </ul>
+
+            <h3>Marketing, Growth &amp; Strategy</h3>
+            <ul>
+                <li><a href="https://mayvenstudios.com/blog/re-launching-mixpanel-again">Re-launching Mixpanel (Again)</a></li>
+                <li><a href="https://mayvenstudios.com/blog/how-does-googles-core-web-vitals-work">How Does Google&rsquo;s Core Web Vitals Work?</a></li>
+                <li><a href="https://mayvenstudios.com/blog/best-ab-testing-tools-your-marketing-site">Best A/B Testing Tools for Your Marketing Site</a></li>
+                <li><a href="https://mayvenstudios.com/blog/maximizing-roi-best-practices-measuring-optimizing-marketing-campaigns">Maximizing ROI &mdash; Measuring &amp; Optimizing Marketing Campaigns</a></li>
+                <li><a href="https://mayvenstudios.com/blog/should-you-try-influencer-marketing-your-business">Should You Try Influencer Marketing for Your Business?</a></li>
+                <li><a href="https://mayvenstudios.com/blog/basics-content-marketing-startups-tech-companies">Basics of Content Marketing for Startups and Tech Companies</a></li>
+                <li><a href="https://mayvenstudios.com/blog/how-tell-compelling-brand-story">How to Tell a Compelling Brand Story</a></li>
+                <li><a href="https://mayvenstudios.com/blog/how-implement-successful-digital-transformation-strategy">How to Implement a Successful Digital Transformation Strategy</a></li>
+                <li><a href="https://mayvenstudios.com/blog/benefits-migrating-drupal-wordpress">The Benefits of Migrating From Drupal to WordPress</a></li>
+                <li><a href="https://mayvenstudios.com/blog/how-clear-wpengine-cache">How to Clear Your WPEngine Cache</a></li>
+            </ul>
+
+            <h3>Personal Projects &amp; Dev Stories</h3>
+            <ul>
+                <li><a href="cycle-ios-8-swift-and-the-apple-watch-cycling-tracker.html">Cycle &mdash; iOS 8 Watch App Development Tips</a></li>
+            </ul>
+        </div>
+
+        <div class="window">
+            <div class="window-header">CONNECT.DAT</div>
+            <h2>Connect With Author Nate McGuire</h2>
+            <ul>
+                <li>X: <a href="https://twitter.com/natemcguire">@natemcguire</a></li>
+                <li>Medium: <a href="https://medium.com/@natemcguire">medium.com/@natemcguire</a></li>
+                <li>GitHub: <a href="https://github.com/natemcguire">github.com/natemcguire</a></li>
+                <li>LinkedIn: <a href="https://linkedin.com/in/natemcguire">linkedin.com/in/natemcguire</a></li>
+            </ul>
+        </div>
+
+        <a href="/" class="back">← back to NATE_MCGUIRE.EXE</a>
+    </div>
+</body>
+</html>

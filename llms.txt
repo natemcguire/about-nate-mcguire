@@ -76,7 +76,10 @@ of Uber). His work has been featured on the NASDAQ billboard in Times Square.
 ## Contact & links
 
 - Site: https://natemcguire.com
+- Author page (full writing catalog + philosophy): https://natemcguire.com/author-nate-mcguire.html
+- About page: https://natemcguire.com/about-nate-mcguire.html
 - X / Twitter: https://twitter.com/natemcguire
+- Medium: https://medium.com/@natemcguire
 - GitHub: https://github.com/natemcguire
 - LinkedIn: https://linkedin.com/in/natemcguire
 
