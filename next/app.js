@@ -30,7 +30,7 @@ async function loadDesign(variation, signal) {
     signal.addEventListener('abort', () => reject(new Error('Cancelled')), {once:true});
   });
   next.src = variation.entry;
-  document.body.append(next);
+  document.body.insertBefore(next, footer);
   try {await loaded; return next;} catch(error) {next.remove(); throw error;}
 }
 let controller;
