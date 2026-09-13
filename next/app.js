@@ -58,7 +58,7 @@ for (const button of buttons) button.addEventListener('click', async () => {
     pending = await loadDesign(variation, thisController.signal);
     if (token !== request) {pending.remove(); return;}
     frame?.remove(); frame = pending; current = variation.id;
-    profile.hidden = true; footer.hidden = true;
+    profile.hidden = true; footer.hidden = false;
     document.body.classList.add('viewing-design');
     pending.hidden = false;
     active(model);

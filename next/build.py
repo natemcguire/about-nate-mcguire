@@ -36,7 +36,7 @@ page = f'''<!doctype html>
 <script>window.dataLayer=window.dataLayer||[];function gtag(){{dataLayer.push(arguments);}}gtag('js',new Date());gtag('config','G-MP2PD28L5S');</script>
 <link rel="stylesheet" href="base.css">
 <script src="app.js" type="module"></script>
-</head><body>
+</head><body><!--email_off-->
 <header class="design-bar" hidden>
 <span class="design-label">Generate a design with</span>
 <div class="controls" role="group" aria-label="Choose a design collection">
@@ -52,8 +52,8 @@ page = f'''<!doctype html>
 <dl class="record">{fields}</dl>
 <div class="syntax closing" aria-hidden="true">}}</div>
 </main>
-<footer>© Nate McGuire</footer>
-</body></html>
+<footer class="site-footer"><nav aria-label="More about Nate"><a href="/">bio</a><a href="/author">author</a><a href="/about">about</a><a href="/speaking">speaking</a><a href="/work-with-me">work</a></nav><span>© Nate McGuire</span></footer>
+<!--/email_off--></body></html>
 '''
 (ROOT / 'index.html').write_text(page)
 print('Built next/index.html from content.json')

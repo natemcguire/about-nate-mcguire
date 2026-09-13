@@ -34,116 +34,12 @@
       gtag('js', new Date());
       gtag('config', 'G-MP2PD28L5S');
     </script>
-
-    <style>
-        :root { --paper:#f7f5ee; --ink:#1B1464; --accent:#002FA7; --muted:#6F6A8C; --rule:#1B1464; }
-        * { box-sizing: border-box; }
-        html, body {
-            background: var(--paper); color: var(--ink); margin: 0; padding: 0;
-            font-family: "JetBrains Mono","SF Mono",ui-monospace,Menlo,Consolas,monospace;
-            font-size: 16px; line-height: 1.55; -webkit-font-smoothing: antialiased;
-        }
-        .wrap { max-width: 720px; margin: 0 auto; padding: 40px 24px 80px; }
-        header.top {
-            display:flex; justify-content:space-between; align-items:baseline;
-            border-bottom: 2px solid var(--rule); padding-bottom: 14px; margin-bottom: 36px;
-        }
-        header.top .brand { font-weight:700; font-size:14px; letter-spacing:0.04em; text-transform: uppercase; }
-        nav a {
-            color: var(--ink); text-decoration: none; margin-left: 18px;
-            font-size: 14px; border-bottom: 2px solid transparent; padding-bottom: 2px;
-        }
-        nav a:hover { border-bottom-color: var(--accent); color: var(--accent); }
-        nav a[aria-current="page"] { border-bottom-color: var(--ink); }
-        h1 { font-size: 38px; line-height: 1.05; margin: 0 0 8px; font-weight: 800; letter-spacing: -0.02em; }
-        .role { font-size: 15px; color: var(--muted); margin: 0 0 36px; letter-spacing: 0.02em; }
-        .role b { color: var(--ink); font-weight: 700; }
-        h2 {
-            font-size: 13px; text-transform: uppercase; letter-spacing: 0.12em;
-            margin: 48px 0 14px; font-weight: 700;
-            border-top: 2px solid var(--rule); padding-top: 14px;
-        }
-        p { margin: 0 0 16px; }
-        a { color: var(--accent); text-decoration: none; border-bottom: 1px solid var(--accent); }
-        a:hover { background: var(--accent); color: var(--paper); }
-        .lede { font-size: 18px; line-height: 1.55; }
-        ul.plain { list-style: none; padding: 0; margin: 0; }
-        ul.plain li { padding: 10px 0; border-bottom: 1px solid var(--rule); }
-        ul.plain li:last-child { border-bottom: none; }
-        ul.plain li b { display: block; margin-bottom: 4px; }
-        .topic {
-            border: 2px solid var(--rule);
-            padding: 18px;
-            margin: 0 0 16px;
-        }
-        .topic .label {
-            font-size: 11px; text-transform: uppercase; letter-spacing: 0.18em;
-            color: var(--accent); font-weight: 700; margin: 0 0 8px;
-        }
-        .topic h4 {
-            margin: 0 0 8px; font-size: 18px; font-weight: 800;
-        }
-        .topic p { margin: 0; font-size: 15px; }
-        .formats {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            border: 2px solid var(--rule);
-            margin: 16px 0;
-        }
-        .formats .fmt {
-            padding: 18px 14px;
-            border-right: 2px solid var(--rule);
-        }
-        .formats .fmt:last-child { border-right: none; }
-        .formats .fmt .l {
-            font-size: 11px; text-transform: uppercase; letter-spacing: 0.16em;
-            color: var(--accent); font-weight: 700; margin-bottom: 6px;
-        }
-        .formats .fmt .n { font-size: 16px; font-weight: 700; display: block; margin-bottom: 4px; }
-        .formats .fmt .d { font-size: 13px; color: var(--muted); }
-        .meta { font-size: 12px; color: var(--muted); text-transform: uppercase; letter-spacing: 0.08em; }
-        .cta {
-            border: 2px solid var(--accent);
-            background: var(--accent);
-            color: var(--paper);
-            padding: 22px;
-            margin: 24px 0 0;
-            text-align: center;
-        }
-        .cta a {
-            color: var(--paper); border-bottom-color: var(--paper);
-            font-weight: 700; font-size: 18px;
-        }
-        .cta a:hover { background: var(--paper); color: var(--accent); border-bottom-color: var(--paper); }
-        .cta .label {
-            display: block; font-size: 11px; letter-spacing: 0.2em;
-            text-transform: uppercase; margin-bottom: 6px; opacity: 0.85;
-        }
-        footer {
-            margin-top: 72px; padding-top: 18px; border-top: 2px solid var(--rule);
-            font-size: 12px; color: var(--muted); text-transform: uppercase;
-            letter-spacing: 0.1em; display: flex; justify-content: space-between;
-        }
-        .corner {
-            position: fixed; top: 12px; right: 16px; font-size: 10px;
-            letter-spacing: 0.2em; text-transform: uppercase; color: var(--muted);
-            background: var(--paper); padding: 4px 8px; border: 1px solid var(--rule); z-index: 10;
-        }
-        @media (max-width: 600px) {
-            .wrap { padding: 24px 18px 60px; }
-            h1 { font-size: 30px; }
-            header.top { flex-direction: column; align-items: flex-start; gap: 12px; }
-            nav a:first-child { margin-left: 0; }
-            .formats { grid-template-columns: 1fr; }
-            .formats .fmt { border-right: none; border-bottom: 2px solid var(--rule); }
-            .formats .fmt:last-child { border-bottom: none; }
-        }
-    </style>
+    <link rel="stylesheet" href="/style.css">
 </head>
 <body>
     <div class="wrap">
         <header class="top">
-            <div class="brand">nate mcguire</div>
+            <a href="/" class="brand">nate mcguire</a>
             <nav>
                 <a href="/">bio</a>
                 <a href="/author">author</a>
@@ -154,7 +50,7 @@
         </header>
 
         <h1>Speaking</h1>
-        <p class="role"><b>Distinguished Engineer</b> · Capital One · keynotes, panels &amp; podcasts on scaling engineering teams</p>
+        <p class="role"><b>Staff Engineer</b> · Capital One · keynotes, panels &amp; podcasts on scaling engineering teams</p>
 
         <p class="lede">Nate speaks at conferences, on podcasts, and at corporate events on the operating realities of building software organizations — drawing from 15+ years building engineering teams, a Fortune 100 day job, and a founder's track record. Past venues include SXSW and NASDAQ in Times Square.</p>
 
@@ -232,7 +128,7 @@
 
         <h2>Logistics</h2>
         <ul class="plain">
-            <li><b>Travel</b><span class="meta">based in Austin, TX. Will travel for the right event. Remote/virtual works too.</span></li>
+            <li><b>Travel</b><span class="meta">based in McLean, VA. Will travel for the right event. Remote/virtual works too.</span></li>
             <li><b>Fees</b><span class="meta">flexible — vary by audience, format, and whether the event aligns with my current focus. Always open to non-profit and community events.</span></li>
             <li><b>Lead time</b><span class="meta">prefer 6+ weeks for a keynote; podcasts and panels can move faster.</span></li>
             <li><b>Headshot &amp; bio</b><span class="meta">press bios on the <a href="/about">about page</a>; high-res headshot on request.</span></li>
@@ -243,7 +139,7 @@
 
         <div class="cta">
             <span class="label">Booking inquiries</span>
-            <a href="mailto:nate.mcguire@gmail.com?subject=Speaking%20inquiry%20%E2%80%94%20%5Bevent%20name%5D">nate.mcguire@gmail.com</a>
+            <a href="mailto:n@natemcguire.com?subject=Speaking%20inquiry%20%E2%80%94%20%5Bevent%20name%5D">n@natemcguire.com</a>
         </div>
 
         <footer>
