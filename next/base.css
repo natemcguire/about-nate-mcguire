@@ -55,3 +55,6 @@ body.viewing-design { height:100vh; height:100dvh; overflow:hidden; display:flex
 .secondary-page a { overflow-wrap:anywhere; }
 .secondary-page table { width:100%; border-collapse:collapse; }
 .secondary-page td,.secondary-page th { padding:8px; border-bottom:1px solid var(--line); text-align:left; }
+.design-bar { font:16px/1.65 ui-monospace,SFMono-Regular,Consolas,monospace; }
+.design-bar { --ink:#202124; --muted:#686a70; --line:#dddfe3; --accent:#244dce; }
+.secondary-page h1 { overflow-wrap:anywhere; }

@@ -48,19 +48,28 @@ urls=['https://natemcguire.com/','https://natemcguire.com/author','https://natem
 (ROOT/'release/wrangler.toml').write_text((ROOT/'v2/wrangler.toml').read_text().replace('pages_build_output_dir = "."','pages_build_output_dir = "site"'))
 print(f'Built release/site: {len(manifest["variations"])} approved designs; writing archive preserved.')
 
-# Plain secondary pages share the understated footer, not the model gallery UI.
+# Every reading page shares the model selector and keeps its selected design.
+from themes import build_themes
+(OUT/'designs/themes.json').write_text(json.dumps(build_themes(ROOT)))
 base=(ROOT/'next/index.html').read_text()
 footer=re.search(r'<footer.*?</footer>',base,re.S).group()
-for name in ['about','author','speaking','work-with-me']:
- old=(ROOT/'v2'/f'{name}.html').read_text()
- body=re.split(r'</header>',old,maxsplit=1)[1].split('<footer>')[0]
+bar=re.search(r'<header class="design-bar".*?</header>',base,re.S).group()
+assets=''.join(re.findall(r'<(?:link rel="stylesheet"|script src="app.js)[^>]*>(?:</script>)?',base))
+assets=assets.replace('href="base.css','href="/base.css').replace('src="app.js','src="/app.js')
+sources=[ROOT/'v2'/f'{name}.html' for name in ['about','author','speaking','work-with-me']]+list((ROOT/'v2/author').glob('*.html'))
+for source in sources:
+ old=source.read_text()
+ body=re.split(r'</header>',old,maxsplit=1)[1]
+ body=re.split(r'<footer\b',body,maxsplit=1)[0]
  body=body.replace('McLean, VA','Alexandria, Virginia')
+ override=ROOT/'next/pages'/source.name
+ if source.parent.name!='author' and override.exists(): body=override.read_text()
+ if source.name=='author.html':
+  body='<h1>Writing</h1><p>Notes on building software, growing teams, and running a business.</p><p><a href="https://medium.com/@natemcguire">Follow on Medium ↗</a></p>'+body[body.index('<h2>Writings</h2>'):]
  head=old.split('</head>')[0]
  head=re.sub(r'<link rel="stylesheet"[^>]*>','',head)
- page=head+'<link rel="stylesheet" href="/base.css"></head><body><!--email_off--><main class="secondary-page">'+body+'</main>'+footer+'<!--/email_off--></body></html>'
- (OUT/f'{name}.html').write_text(page)
-# Secondary pages also need fresh shared styling in browsers holding an older /base.css.
-style_version=hashlib.sha256((ROOT/'next/base.css').read_bytes()).hexdigest()[:12]
-for page in OUT.glob('*.html'):
- text=page.read_text().replace('href="/base.css"',f'href="/base.css?v={style_version}"')
- page.write_text(text)
+ tail='<script src="/author/tldr.js" defer></script>' if source.parent.name=='author' else ''
+ page=head+assets+'</head><body><!--email_off-->'+bar+'<main class="secondary-page" id="profile">'+body+'</main>'+footer+tail+'<!--/email_off--></body></html>'
+ (OUT/source.relative_to(ROOT/'v2')).write_text(page)
+
+(OUT/'404.html').write_text('<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Page not found — Nate McGuire</title>'+assets+'</head><body>'+bar+'<main id="profile" class="secondary-page"><h1>Page not found</h1><p><a href="/">Back to Nate McGuire</a></p></main>'+footer+'</body></html>')
