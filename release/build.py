@@ -59,3 +59,8 @@ for name in ['about','author','speaking','work-with-me']:
  head=re.sub(r'<link rel="stylesheet"[^>]*>','',head)
  page=head+'<link rel="stylesheet" href="/base.css"></head><body><!--email_off--><main class="secondary-page">'+body+'</main>'+footer+'<!--/email_off--></body></html>'
  (OUT/f'{name}.html').write_text(page)
+# Secondary pages also need fresh shared styling in browsers holding an older /base.css.
+style_version=hashlib.sha256((ROOT/'next/base.css').read_bytes()).hexdigest()[:12]
+for page in OUT.glob('*.html'):
+ text=page.read_text().replace('href="/base.css"',f'href="/base.css?v={style_version}"')
+ page.write_text(text)
