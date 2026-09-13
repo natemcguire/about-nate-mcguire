@@ -33,9 +33,10 @@ shutil.copytree(ROOT/'v2/functions',ROOT/'release/functions',dirs_exist_ok=True)
 redirects=(ROOT/'v2/_redirects').read_text()
 # Secondary pages remain available from the quiet footer.
 (OUT/'_redirects').write_text(redirects)
-(OUT/'_headers').write_text('''/designs/*
+(OUT/'_headers').write_text('''/*
+  Cache-Control: no-cache
+/designs/*
   X-Robots-Tag: noindex
-  Cache-Control: public, max-age=0, must-revalidate
 /content.json
   X-Robots-Tag: noindex
 ''')

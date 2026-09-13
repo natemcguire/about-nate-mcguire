@@ -1,6 +1,6 @@
 """Regenerate static HTML from the shared, reviewable content. No dependencies."""
 from pathlib import Path
-import html, json
+import html, json, hashlib
 ROOT = Path(__file__).resolve().parent
 c = json.loads((ROOT / 'content.json').read_text())
 e = html.escape
@@ -40,8 +40,8 @@ page = f'''<!doctype html>
 <script type="application/ld+json">{json.dumps({"@context":"https://schema.org","@type":"Person","name":c['name'],"jobTitle":c['role'],"worksFor":{"@type":"Organization","name":c['company']},"url":"https://natemcguire.com/","description":c['bio'],"sameAs":[v['url'] for v in c['links'] if v['url'].startswith('https:')]})}</script>
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-MP2PD28L5S"></script>
 <script>window.dataLayer=window.dataLayer||[];function gtag(){{dataLayer.push(arguments);}}gtag('js',new Date());gtag('config','G-MP2PD28L5S');</script>
-<link rel="stylesheet" href="base.css">
-<script src="app.js" type="module"></script>
+<link rel="stylesheet" href="base.css?v={hashlib.sha256((ROOT / "base.css").read_bytes()).hexdigest()[:12]}">
+<script src="app.js?v={hashlib.sha256((ROOT / "app.js").read_bytes()).hexdigest()[:12]}" type="module"></script>
 </head><body><!--email_off-->
 <header class="design-bar" hidden>
 <span class="design-label">Generate a design with</span>
