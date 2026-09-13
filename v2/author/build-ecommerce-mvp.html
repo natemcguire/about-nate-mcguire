@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Build an eCommerce MVP in a Weekend — Nate McGuire</title>
+    <meta name="description" content="Shopify, Stripe, a domain, and a product page. If you&#x27;re scoping six months of engineering before you sell anything, you&#x27;ve already lost." />
+    <meta name="author" content="Nate McGuire" />
+    <meta name="robots" content="index, follow, max-image-preview:large" />
+    <link rel="canonical" href="https://natemcguire.com/author/build-ecommerce-mvp" />
+
+    <meta property="og:type" content="article" />
+    <meta property="og:site_name" content="Nate McGuire" />
+    <meta property="og:title" content="Build an eCommerce MVP in a Weekend" />
+    <meta property="og:description" content="Shopify, Stripe, a domain, and a product page. If you&#x27;re scoping six months of engineering before you sell anything, you&#x27;ve already lost." />
+    <meta property="og:url" content="https://natemcguire.com/author/build-ecommerce-mvp" />
+    <meta property="og:image" content="https://natemcguire.com/og-image.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="article:author" content="Nate McGuire" />
+    <meta property="article:published_time" content="2026-05-26" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="@natemcguire" />
+    <meta name="twitter:creator" content="@natemcguire" />
+    <meta name="twitter:title" content="Build an eCommerce MVP in a Weekend" />
+    <meta name="twitter:description" content="Shopify, Stripe, a domain, and a product page. If you&#x27;re scoping six months of engineering before you sell anything, you&#x27;ve already lost." />
+    <meta name="twitter:image" content="https://natemcguire.com/og-image.png" />
+
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <link rel="stylesheet" href="/style.css">
+    <link rel="stylesheet" href="/author/article.css">
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Article",
+      "headline": "Build an eCommerce MVP in a Weekend",
+      "author": { "@type": "Person", "name": "Nate McGuire", "url": "https://natemcguire.com/" },
+      "publisher": { "@type": "Person", "name": "Nate McGuire" },
+      "url": "https://natemcguire.com/author/build-ecommerce-mvp",
+      "image": "https://natemcguire.com/og-image.png",
+      "datePublished": "2026-05-26",
+      "articleSection": "MVPs",
+      "description": "Shopify, Stripe, a domain, and a product page. If you're scoping six months of engineering before you sell anything, you've already lost."
+    }
+    </script>
+
+    
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-MP2PD28L5S"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-MP2PD28L5S');
+    </script>
+</head>
+<body>
+    <div class="wrap article-wrap">
+        <header class="top">
+            <a href="/" class="brand">nate mcguire</a>
+            <nav>
+                <a href="/">bio</a>
+                <a href="/author" aria-current="page">author</a>
+                <a href="/about">about</a>
+                <a href="/speaking">speaking</a>
+                <a href="/work-with-me">work</a>
+            </nav>
+        </header>
+
+        <p class="article-meta">
+            <a href="/author">MVPs</a>
+            <span class="dot">·</span>
+            <span class="meta">May 2026</span>
+        </p>
+
+        <h1 class="article-h1">Build an eCommerce MVP in a Weekend</h1>
+        <p class="article-hook">Shopify, Stripe, a domain, and a product page. If you&#x27;re scoping six months of engineering before you sell anything, you&#x27;ve already lost.</p>
+
+        <article class="article-body">
+        <p>Founders bring me decks about ecommerce platforms they're going to build. The deck has a custom checkout, a recommendation engine, a loyalty program, a multi-currency engine, an inventory management system, an order pipeline integrating with three fulfillment partners, and a custom search built on Elasticsearch. The launch date is nine months out. The founder is excited.</p>
+        <p>I ask: have you sold one of these things to a customer yet?</p>
+        <p>The answer is almost always no.</p>
+        <p>This is the disease. Engineers and engineer-adjacent founders think about the platform. The platform is not the business. The business is the <em>product they're selling</em>, the <em>audience they're selling it to</em>, and the <em>margin between the cost to acquire that customer and the lifetime value of that customer</em>. The platform is plumbing. Plumbing is not where the differentiation is. Plumbing is solved.</p>
+        <p>If you're building an ecommerce business in 2026, your MVP is this: <a href="https://www.shopify.com/">Shopify</a>, a domain, a product page, a Stripe-routed checkout (Shopify handles this for you), and a single ad or organic content piece driving traffic to that page. Shopify reported powering <a href="https://news.shopify.com/shopify-reports-second-quarter-2024-results">over 10% of US ecommerce GMV</a> as of 2024 — you're not the special snowflake whose use case it can't handle. Total cost: about $50 in software, $20 in domain, whatever you spend on ads. Total time: a weekend. Total custom code: zero.</p>
+        <p>Paul Graham's essay <a href="http://paulgraham.com/ds.html"><em>Do Things That Don't Scale</em></a> applies here — the founders of Stripe famously <a href="http://paulgraham.com/ds.html">installed it in person at customer offices</a>; the founders of DoorDash drove the food themselves; the founders of Airbnb shot the listing photos. The platform was always the last problem they solved. If you can't get a single customer to swipe a card on the Shopify version, you don't have a business problem you can solve by building a custom platform. You have a <em>product</em> problem or an <em>audience</em> problem or a <em>pricing</em> problem, and shipping a fancier platform won't fix any of them. The platform is the last thing to optimize.</p>
+        <p>This is the order of operations:</p>
+        <p><strong>1. Product page.</strong> A real photo of the real product, a price, a description, an Add to Cart button. Shopify gives you this. So does Squarespace, Webflow Commerce, BigCommerce, or six other things. Pick whichever you can move fastest on. The aesthetic doesn't matter at this stage; the <em>clarity</em> matters. Can a stranger land on this page and understand what they're being asked to buy, what it costs, and why it might be for them?</p>
+        <p><strong>2. Checkout.</strong> Shopify's checkout is already optimized harder than anything you would build in six months. Use it. The number of founders who say "but we need a custom checkout for [reason]" and then ship a worse checkout that converts 20% worse is high. The 20% conversion delta will kill your business faster than whatever the custom flow was supposed to add.</p>
+        <p><strong>3. One acquisition channel.</strong> Either you have one specific channel you believe works (a TikTok account, a niche subreddit, an email list, a community you're part of) or you spend $200 on Meta ads to test the simplest possible audience. If you have neither, you don't have a business yet — you have a product idea looking for a market.</p>
+        <p><strong>4. Measure what happened.</strong> People landed. Some percentage clicked Buy. Some percentage of those completed checkout. Some percentage of those came back for a second purchase. Those four numbers tell you almost everything you need to know about whether the business has legs. They are dramatically more important than anything about your platform architecture.</p>
+        <p><strong>5. Now ask what's broken.</strong> If nobody landed, your channel is wrong. If they landed but didn't buy, your product or page is wrong. If they bought but never came back, your retention story is wrong. If they came back, you have a business and now you can start thinking about scale. Each of these failure modes has a different remediation, and <em>none</em> of them is "build a custom platform."</p>
+        <p>The actual case for leaving Shopify exists, and I want to be honest about when it shows up. You leave Shopify when:</p>
+        <p>You're doing a million dollars a month in GMV and Shopify's transaction fees on top of payment processing are now eating real margin you could recover by going direct with a payment processor. The math: Shopify Plus is roughly 0.2% transaction fee plus their subscription, so on a million a month that's $2k+ a month in transaction fees alone — meaningful, not catastrophic. Run the actual math; don't assume.</p>
+        <p>You have a product or business model Shopify can't handle. Subscription-with-customization, B2B with negotiated pricing, marketplace with multiple sellers, and configure-to-order products with complex pricing rules all eventually outgrow Shopify. They don't outgrow it in your first year.</p>
+        <p>You have a customer experience that genuinely doesn't fit the Shopify pattern — a quiz-driven product recommendation, a try-before-you-buy flow that needs custom payment-hold logic, an experience that's primarily mobile-app rather than web. Some of this can be done in Shopify with apps; some of it can't. Be honest about which.</p>
+        <p>You're at a scale where the Shopify CDN, Shopify checkout latency, or Shopify infrastructure quirks are actually costing you measurable revenue. This is a real problem at the level of Allbirds or Glossier. It is not a real problem at the level of "we did $80k last year."</p>
+        <p>For 99% of ecommerce founders, the answer is "stay on Shopify until you have a quantifiable, dollar-denominated reason to leave." Most never leave, and they're fine. Some leave at the right time and benefit. Almost nobody who left early says "I'm glad I left early."</p>
+        <p>A few specific traps worth flagging because I see them often:</p>
+        <p><strong>Don't build a custom CMS.</strong> You will spend three months making your product team's job worse. Shopify's product admin, plus a half-decent theme, is fine. If you genuinely have content needs Shopify can't handle, plug in a headless CMS (Sanity, Contentful, Notion-as-CMS, even Webflow) and run it alongside.</p>
+        <p><strong>Don't build a custom search.</strong> Shopify's search is mediocre. Algolia plugs into Shopify in an hour and is 100x better. The hosted Algolia for Shopify integration is cheap and excellent.</p>
+        <p><strong>Don't build custom analytics.</strong> Shopify analytics is sufficient. If you need more, pipe orders into a real analytics tool (Mixpanel, PostHog, Heap). Don't write your own funnel-tracking code; you will lose a year.</p>
+        <p><strong>Don't optimize taxes early.</strong> Shopify Tax exists, it's reasonable, it covers most US states out of the box. International is harder. If you're shipping internationally on day one, Avalara or TaxJar plus the Shopify integration covers the cases. Don't build the tax engine yourself; it's a multi-decade problem domain and you will not solve it well.</p>
+        <p><strong>Do invest in product photography.</strong> This is the one area where almost every founder underspends. Get a real camera, real lighting, and shoot the product as if it matters, because it does. The product page conversion delta between "iPhone snap in a kitchen" and "actual product photo" is enormous, and it's the cheapest leverage you can buy.</p>
+        <p><strong>Do invest in copywriting.</strong> Same logic. The headline, the bullet points, the description — these are all conversion levers. Write them, A/B test them, rewrite them. The platform underneath is irrelevant if the copy doesn't sell.</p>
+        <p>The painful truth: most "ecommerce platform" projects are engineers building software because building software is what they know how to do, instead of doing the harder work of finding a market, sourcing a product, and acquiring a customer. The platform is a comforting place to hide. The hard part of ecommerce is not the platform. Build the smallest thing that can take money. Take money. Then decide what to build next.</p>
+        <p>If you're not selling, the platform doesn't matter. If you're selling, the platform mostly still doesn't matter. The customer doesn't care.</p>
+        </article>
+
+        <footer class="article-footer">
+            <p><a href="/author">← more from /author</a></p>
+        </footer>
+    </div>
+    <script src="/author/tldr.js" defer></script>
+</body>
+</html>

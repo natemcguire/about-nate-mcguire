@@ -1,0 +1,4 @@
+site/
+functions/
+wrangler.toml
+*.log

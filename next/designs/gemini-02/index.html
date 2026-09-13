@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><meta name="robots" content="noindex,follow"><meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'unsafe-inline'; style-src 'unsafe-inline'; img-src data:; font-src data:; connect-src 'none'; object-src 'none'; base-uri 'none'; form-action 'none'">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nate McGuire &mdash; Systems, Leadership &amp; Internet Ventures</title>
+  <style>
+    :root {
+      --bg: #07090e;
+      --card-bg: rgba(16, 21, 31, 0.75);
+      --card-border: rgba(56, 189, 248, 0.16);
+      --text-main: #f1f5f9;
+      --text-muted: #94a3b8;
+      --cyan: #38bdf8;
+      --emerald: #10b981;
+      --indigo: #818cf8;
+      --font-sans: -apple-system, BlinkMacSystemFont, 'Inter', 'Segoe UI', Roboto, sans-serif;
+      --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      background: var(--bg);
+      color: var(--text-main);
+      font-family: var(--font-sans);
+      line-height: 1.6;
+      min-height: 100vh;
+      overflow-x: hidden;
+      position: relative;
+    }
+    #constellation {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 0;
+      pointer-events: none;
+    }
+    .content-wrapper {
+      position: relative;
+      z-index: 1;
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 3rem 1.5rem 5rem;
+    }
+    a:focus-visible, button:focus-visible {
+      outline: 2px solid var(--cyan);
+      outline-offset: 3px;
+    }
+    .status-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.35rem 0.85rem;
+      background: rgba(16, 185, 129, 0.1);
+      border: 1px solid rgba(16, 185, 129, 0.3);
+      border-radius: 999px;
+      font-family: var(--font-mono);
+      font-size: 0.8125rem;
+      color: var(--emerald);
+      margin-bottom: 2rem;
+    }
+    .status-dot {
+      width: 8px;
+      height: 8px;
+      background: var(--emerald);
+      border-radius: 50%;
+      box-shadow: 0 0 8px var(--emerald);
+      animation: pulse 2s infinite;
+    }
+    @keyframes pulse {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50% { opacity: 0.5; transform: scale(0.85); }
+    }
+    .hero-title {
+      font-size: clamp(2.75rem, 7vw, 5.25rem);
+      font-weight: 800;
+      line-height: 1.05;
+      letter-spacing: -0.03em;
+      margin-bottom: 1.25rem;
+      background: linear-gradient(135deg, #ffffff 40%, var(--cyan) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .role-lead {
+      font-size: 1.35rem;
+      color: var(--cyan);
+      font-weight: 500;
+      margin-bottom: 1.5rem;
+    }
+    .bio-copy {
+      font-size: clamp(1.15rem, 2vw, 1.4rem);
+      color: var(--text-muted);
+      max-width: 760px;
+      line-height: 1.5;
+      margin-bottom: 3.5rem;
+    }
+    .interactive-card {
+      background: var(--card-bg);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border: 1px solid var(--card-border);
+      border-radius: 14px;
+      padding: 2rem;
+      margin-bottom: 2.5rem;
+      transition: border-color 0.2s ease, box-shadow 0.2s ease;
+    }
+    .interactive-card:hover {
+      border-color: rgba(56, 189, 248, 0.4);
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.35);
+    }
+    .section-tag {
+      font-family: var(--font-mono);
+      font-size: 0.8125rem;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--cyan);
+      margin-bottom: 1.25rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    .section-tag::before {
+      content: "//";
+      opacity: 0.5;
+    }
+    .track-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.5rem;
+      margin-top: 1rem;
+    }
+    .track-block {
+      background: rgba(255, 255, 255, 0.02);
+      border: 1px solid rgba(255, 255, 255, 0.06);
+      padding: 1.5rem;
+      border-radius: 10px;
+    }
+    .track-block h3 {
+      font-size: 1.2rem;
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+      color: #fff;
+    }
+    .track-block p {
+      font-size: 0.95rem;
+      color: var(--text-muted);
+      line-height: 1.5;
+    }
+    .client-list {
+      display: flex;
+      gap: 0.75rem;
+      margin-top: 1rem;
+      flex-wrap: wrap;
+    }
+    .client-tag {
+      font-family: var(--font-mono);
+      font-size: 0.8rem;
+      padding: 0.25rem 0.65rem;
+      background: rgba(56, 189, 248, 0.1);
+      border: 1px solid rgba(56, 189, 248, 0.25);
+      color: var(--cyan);
+      border-radius: 4px;
+    }
+    .focus-interactive {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.25rem;
+      margin-top: 1rem;
+    }
+    @media (max-width: 768px) {
+      .focus-interactive { grid-template-columns: 1fr; }
+    }
+    .focus-btn {
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      padding: 1.5rem;
+      border-radius: 10px;
+      text-align: left;
+      cursor: pointer;
+      color: var(--text-main);
+      transition: all 0.2s ease;
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+    .focus-btn:hover, .focus-btn.active {
+      background: rgba(56, 189, 248, 0.1);
+      border-color: var(--cyan);
+      transform: translateY(-2px);
+    }
+    .focus-btn-num {
+      font-family: var(--font-mono);
+      font-size: 0.75rem;
+      color: var(--cyan);
+    }
+    .focus-btn-title {
+      font-size: 1.15rem;
+      font-weight: 700;
+    }
+    .focus-btn-desc {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      line-height: 1.4;
+    }
+    .links-bar {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      margin-top: 2rem;
+    }
+    .link-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.65rem;
+      padding: 0.85rem 1.5rem;
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      border-radius: 8px;
+      color: var(--text-main);
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 0.95rem;
+      transition: all 0.2s ease;
+    }
+    .link-pill:hover {
+      background: var(--cyan);
+      color: #07090e;
+      border-color: var(--cyan);
+      transform: translateY(-2px);
+    }
+    .footer-note {
+      margin-top: 4rem;
+      padding-top: 2rem;
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      font-family: var(--font-mono);
+      font-size: 0.8125rem;
+      color: var(--text-muted);
+      gap: 1rem;
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .status-dot { animation: none; }
+      .interactive-card, .focus-btn, .link-pill { transition: none; transform: none; }
+    }
+  </style>
+</head>
+<body>
+  <canvas id="constellation" aria-hidden="true"></canvas>
+  
+  <main class="content-wrapper">
+    <div class="status-badge">
+      <span class="status-dot"></span>
+      <span>Capital One &bull; Card Tech &bull; Staff Engineer</span>
+    </div>
+
+    <h1 class="hero-title">Nate McGuire</h1>
+    <div class="role-lead">Staff Engineer &bull; Alexandria, Virginia</div>
+    
+    <p class="bio-copy">
+      Engineer, founder, and operator. I build software and teams, and invest in and advise small internet businesses.
+    </p>
+
+    <section class="interactive-card" aria-label="Core Disciplines">
+      <div class="section-tag">CORE ARCHITECTURAL FOCUS</div>
+      <div class="focus-interactive" role="region" aria-label="Focus Areas">
+        <div class="focus-btn active" tabindex="0">
+          <span class="focus-btn-num">01</span>
+          <div class="focus-btn-title">Software Architecture</div>
+          <div class="focus-btn-desc"></div>
+        </div>
+        <div class="focus-btn" tabindex="0">
+          <span class="focus-btn-num">02</span>
+          <div class="focus-btn-title">Engineering Leadership</div>
+          <div class="focus-btn-desc"></div>
+        </div>
+        <div class="focus-btn" tabindex="0">
+          <span class="focus-btn-num">03</span>
+          <div class="focus-btn-title">Internet Businesses</div>
+          <div class="focus-btn-desc"></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="interactive-card" aria-label="Proven Track Record">
+      <div class="section-tag">SYSTEMS TRACK RECORD &amp; EXPERIENCE</div>
+      <div class="track-grid">
+        <div class="track-block">
+          <h3>15+ Years Building Software</h3>
+          <p>15+ years building software and leading engineering teams.</p>
+        </div>
+        <div class="track-block">
+          <h3>Mayven Studios &rarr; Saltwater</h3>
+          <p>Founder of Mayven Studios, acquired by Saltwater, Ryan Graves’ holding company.</p>
+        </div>
+        <div class="track-block">
+          <h3>Client Impact</h3>
+          <p>At Mayven, built software for companies including:</p>
+          <div class="client-list">
+            <span class="client-tag">Google</span>
+            <span class="client-tag">Airbnb</span>
+            <span class="client-tag">IBM</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section aria-label="Get in Touch">
+      <div class="section-tag">CONNECTED CHANNELS</div>
+      <div class="links-bar">
+        <a href="mailto:n@natemcguire.com" class="link-pill" target="_blank" rel="noopener noreferrer">Email Direct</a>
+        <a href="https://github.com/natemcguire" class="link-pill" target="_blank" rel="noopener noreferrer">GitHub</a>
+        <a href="https://linkedin.com/in/natemcguire" class="link-pill" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+        <a href="https://twitter.com/natemcguire" class="link-pill" target="_blank" rel="noopener noreferrer">X / Twitter</a>
+        <a href="https://medium.com/@natemcguire" class="link-pill" target="_blank" rel="noopener noreferrer">Writing</a>
+      </div>
+    </section>
+
+    <footer class="footer-note">
+      <span>Nate McGuire &bull; Alexandria, VA</span>
+      <span>Card Tech</span>
+    </footer>
+  </main>
+
+  <script>
+    (function() {
+      const canvas = document.getElementById('constellation');
+      const ctx = canvas.getContext('2d');
+      let width, height;
+      let particles = [];
+      const isReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+      function resize() {
+        width = canvas.width = window.innerWidth;
+        height = canvas.height = window.innerHeight;
+        createParticles();
+      }
+
+      function createParticles() {
+        particles = [];
+        const count = Math.min(Math.floor((width * height) / 16000), 55);
+        for (let i = 0; i < count; i++) {
+          particles.push({
+            x: Math.random() * width,
+            y: Math.random() * height,
+            vx: (Math.random() - 0.5) * 0.45,
+            vy: (Math.random() - 0.5) * 0.45,
+            radius: Math.random() * 1.5 + 1
+          });
+        }
+      }
+
+      function draw() {
+        ctx.clearRect(0, 0, width, height);
+        
+        for (let i = 0; i < particles.length; i++) {
+          const p1 = particles[i];
+          if (!isReduced) {
+            p1.x += p1.vx;
+            p1.y += p1.vy;
+            if (p1.x < 0) p1.x = width;
+            if (p1.x > width) p1.x = 0;
+            if (p1.y < 0) p1.y = height;
+            if (p1.y > height) p1.y = 0;
+          }
+
+          ctx.beginPath();
+          ctx.arc(p1.x, p1.y, p1.radius, 0, Math.PI * 2);
+          ctx.fillStyle = 'rgba(56, 189, 248, 0.4)';
+          ctx.fill();
+
+          for (let j = i + 1; j < particles.length; j++) {
+            const p2 = particles[j];
+            const dx = p1.x - p2.x;
+            const dy = p1.y - p2.y;
+            const dist = Math.sqrt(dx * dx + dy * dy);
+            if (dist < 130) {
+              ctx.beginPath();
+              ctx.moveTo(p1.x, p1.y);
+              ctx.lineTo(p2.x, p2.y);
+              ctx.strokeStyle = 'rgba(56, 189, 248, ' + (0.15 * (1 - dist / 130)) + ')';
+              ctx.lineWidth = 1;
+              ctx.stroke();
+            }
+          }
+        }
+
+        if (!isReduced) {
+          requestAnimationFrame(draw);
+        }
+      }
+
+      window.addEventListener('resize', resize);
+      resize();
+      draw();
+    })();
+  </script>
+</body>
+</html>

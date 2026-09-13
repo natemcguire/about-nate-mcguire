@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your API Is the Product — Nate McGuire</title>
+    <meta name="description" content="Stop thinking of APIs as a technical surface. They&#x27;re a P&amp;L. Every developer integrating you is a customer, and every breaking change is churn." />
+    <meta name="author" content="Nate McGuire" />
+    <meta name="robots" content="index, follow, max-image-preview:large" />
+    <link rel="canonical" href="https://natemcguire.com/author/apis-are-the-product" />
+
+    <meta property="og:type" content="article" />
+    <meta property="og:site_name" content="Nate McGuire" />
+    <meta property="og:title" content="Your API Is the Product" />
+    <meta property="og:description" content="Stop thinking of APIs as a technical surface. They&#x27;re a P&amp;L. Every developer integrating you is a customer, and every breaking change is churn." />
+    <meta property="og:url" content="https://natemcguire.com/author/apis-are-the-product" />
+    <meta property="og:image" content="https://natemcguire.com/og-image.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="article:author" content="Nate McGuire" />
+    <meta property="article:published_time" content="2026-05-26" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="@natemcguire" />
+    <meta name="twitter:creator" content="@natemcguire" />
+    <meta name="twitter:title" content="Your API Is the Product" />
+    <meta name="twitter:description" content="Stop thinking of APIs as a technical surface. They&#x27;re a P&amp;L. Every developer integrating you is a customer, and every breaking change is churn." />
+    <meta name="twitter:image" content="https://natemcguire.com/og-image.png" />
+
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <link rel="stylesheet" href="/style.css">
+    <link rel="stylesheet" href="/author/article.css">
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Article",
+      "headline": "Your API Is the Product",
+      "author": { "@type": "Person", "name": "Nate McGuire", "url": "https://natemcguire.com/" },
+      "publisher": { "@type": "Person", "name": "Nate McGuire" },
+      "url": "https://natemcguire.com/author/apis-are-the-product",
+      "image": "https://natemcguire.com/og-image.png",
+      "datePublished": "2026-05-26",
+      "articleSection": "Architecture",
+      "description": "Stop thinking of APIs as a technical surface. They're a P&L. Every developer integrating you is a customer, and every breaking change is churn."
+    }
+    </script>
+
+    
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-MP2PD28L5S"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-MP2PD28L5S');
+    </script>
+</head>
+<body>
+    <div class="wrap article-wrap">
+        <header class="top">
+            <a href="/" class="brand">nate mcguire</a>
+            <nav>
+                <a href="/">bio</a>
+                <a href="/author" aria-current="page">author</a>
+                <a href="/about">about</a>
+                <a href="/speaking">speaking</a>
+                <a href="/work-with-me">work</a>
+            </nav>
+        </header>
+
+        <p class="article-meta">
+            <a href="/author">Architecture</a>
+            <span class="dot">·</span>
+            <span class="meta">May 2026</span>
+        </p>
+
+        <h1 class="article-h1">Your API Is the Product</h1>
+        <p class="article-hook">Stop thinking of APIs as a technical surface. They&#x27;re a P&amp;L. Every developer integrating you is a customer, and every breaking change is churn.</p>
+
+        <article class="article-body">
+        <p>There's a version of the API conversation where it's treated as plumbing — a backend tool for the frontend team. This was wrong twenty years ago and is catastrophically wrong now. For any company whose business model involves another company's engineer touching your service, the API <em>is</em> the product. The dashboard is a courtesy. The frontend is a demo. The API is what pays the bills.</p>
+        <p>Stripe figured this out and built a multi-hundred-billion-dollar company on it — read their <a href="https://docs.stripe.com/api">API reference</a> and you'll see the discipline. Twilio did. Plaid did. Algolia, Auth0, Datadog, Segment — all learned that if engineers can integrate you on a Saturday afternoon, you have a moat marketing can't buy.</p>
+        <p>That lesson scales down. Even if you're a vertical SaaS with twenty enterprise customers, the moment any of them want to push or pull data programmatically, your API surface is part of your renewal conversation. The integration <em>is</em> the product to that customer. Make it painful, and they'll route around you. Make it easy, and they'll build internal tooling on top of you, making it hard to leave.</p>
+        <p>Treat the API like a product, not a side channel. This means a few specific things.</p>
+        <p><strong>Backwards compatibility is a feature, not a constraint.</strong> Every breaking change to a published API is a churn event. Some customers will silently migrate. Some will silently leave. Almost none will tell you why. The cost of a breaking change is invisible to you and very visible to your customer. Make breaking changes rare: add fields, never remove them; introduce new endpoints, never repurpose old ones; if you must break, deprecate-with-headers for at least 12 months and email every consumer you can identify. The Stripe move of pinning a version per customer is overkill for most teams, but the discipline — "we promise the surface you integrated against will continue to work" — is right.</p>
+        <p><strong>Your docs are a sales asset, treat them that way.</strong> Engineers read the docs before touching the API. Bad docs lose deals you didn't know you were in. Good docs win deals your sales team didn't know existed. Companies that do this right — Stripe, Resend, Linear, Anthropic — invest serious headcount in docs as a discipline. Code samples in five languages, copy-paste-runnable. A getting-started flow that produces a working call in under three minutes. Real-world recipes for common integration shapes. An interactive playground to hit your API with my data without writing a client first. This is product work, not technical writing.</p>
+        <p><strong>Latency is part of the contract, even if you didn't say so.</strong> The moment your API is in someone's hot path, your p99 is their p99. If their checkout flow uses your fraud-check API and it takes 800ms at p99, their checkout takes 800ms at p99. You won't hear about this until they're already pulling the integration. Publish your latency SLO, monitor it, and treat regressions like outages. The team owning the endpoint should be on call for it. The team using the endpoint internally should test it like an external customer would.</p>
+        <p><strong>Errors are part of the surface, design them like UI.</strong> An API error is a UI for engineers at 2am during an incident. The error code should be stable (so customers can branch on it). The error message should be useful (so the engineer at 2am knows what to fix). The error response should always have the same shape (so client code can handle errors uniformly). If your error responses vary wildly, you're causing engineering pain at every integrator. Stop.</p>
+        <p><strong>Rate limits are a product decision.</strong> Setting them too low strangles legitimate use. Setting them too high invites abuse and incident-causing traffic patterns. Set them deliberately based on customer tier, communicate them clearly via response headers (<code>X-RateLimit-Remaining</code>, <code>X-RateLimit-Reset</code>), return a useful 429 with <code>Retry-After</code>, and have a path for customers to request a higher limit without negotiating with a sales rep. Smooth APIs treat rate limits as part of the pricing surface — "your tier gives you 1000 req/min, here's how to upgrade if you need more" — rather than a hidden cliff that triggers support tickets.</p>
+        <p><strong>Webhooks and async are a separate product.</strong> Stripe's <a href="https://docs.stripe.com/webhooks">webhooks documentation</a> is the reference implementation everyone copies; if you're shipping events to customers, that page is the spec. If you accept events from customers via API, you eventually need to send events back. Webhooks are the standard answer. They're also where APIs go to die, because most teams ship them with no idempotency, no signing, no retry policy, no replay surface, and no observability. The right shape is well-documented: HMAC-signed payloads with a shared secret, at-least-once delivery, exponential backoff retries with a dead-letter at 24+ hours, a debug surface where customers can replay or inspect recent deliveries, and clear documentation of timestamp tolerance and replay-attack protection. Stripe's webhook docs are again the reference implementation. Read them. Copy the shape.</p>
+        <p><strong>SDKs are eventually mandatory.</strong> If your API is good enough that more than a handful of customers integrate, they'll start asking for SDKs. You have two options: ship them, or watch every customer reinvent your client wrapper, badly. Shipping SDKs in two or three languages (TypeScript, Python, and one or two others depending on your customer base) is a moderate investment that pays back in faster integration, fewer support tickets, and better surface-level consistency. Auto-generated SDKs from OpenAPI specs are usable in 2026; they weren't five years ago. The bar is lower now.</p>
+        <p>The reason all of this matters — and this is what engineering leaders often miss — is that none of these things show up on the engineering roadmap unless someone says "the API is the product." The default disposition of a backend team is "the API connects our frontend to our database." From that frame, you optimize for internal velocity, not customer surface stability. You ship breaking changes because they're convenient. You let docs rot. You set latency budgets based on what's easy for you, not what's required for them. The result is an API that works but loses you customers you never knew you were competing for.</p>
+        <p>Get the framing right and a lot of decisions become obvious. Docs are a P0. Backwards compatibility is a P0. Errors get designed, not bolted on. Latency gets owned. Webhooks get budget. And the team that ships the API ends up doing some of the most impactful product work in the company, because every other team — internal and external — depends on what they ship.</p>
+        <p>If your business model involves an integration partner, an embedded use case, a developer customer, or any sort of programmatic surface to your data: you are an API company. Act like it.</p>
+        </article>
+
+        <footer class="article-footer">
+            <p><a href="/author">← more from /author</a></p>
+        </footer>
+    </div>
+    <script src="/author/tldr.js" defer></script>
+</body>
+</html>

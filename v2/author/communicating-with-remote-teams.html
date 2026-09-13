@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>How to Actually Communicate With a Remote Engineering Team — Nate McGuire</title>
+    <meta name="description" content="More meetings is the wrong answer. More writing is the right one. Here&#x27;s the operating model that worked across 17 countries." />
+    <meta name="author" content="Nate McGuire" />
+    <meta name="robots" content="index, follow, max-image-preview:large" />
+    <link rel="canonical" href="https://natemcguire.com/author/communicating-with-remote-teams" />
+
+    <meta property="og:type" content="article" />
+    <meta property="og:site_name" content="Nate McGuire" />
+    <meta property="og:title" content="How to Actually Communicate With a Remote Engineering Team" />
+    <meta property="og:description" content="More meetings is the wrong answer. More writing is the right one. Here&#x27;s the operating model that worked across 17 countries." />
+    <meta property="og:url" content="https://natemcguire.com/author/communicating-with-remote-teams" />
+    <meta property="og:image" content="https://natemcguire.com/og-image.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="article:author" content="Nate McGuire" />
+    <meta property="article:published_time" content="2026-05-26" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="@natemcguire" />
+    <meta name="twitter:creator" content="@natemcguire" />
+    <meta name="twitter:title" content="How to Actually Communicate With a Remote Engineering Team" />
+    <meta name="twitter:description" content="More meetings is the wrong answer. More writing is the right one. Here&#x27;s the operating model that worked across 17 countries." />
+    <meta name="twitter:image" content="https://natemcguire.com/og-image.png" />
+
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <link rel="stylesheet" href="/style.css">
+    <link rel="stylesheet" href="/author/article.css">
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Article",
+      "headline": "How to Actually Communicate With a Remote Engineering Team",
+      "author": { "@type": "Person", "name": "Nate McGuire", "url": "https://natemcguire.com/" },
+      "publisher": { "@type": "Person", "name": "Nate McGuire" },
+      "url": "https://natemcguire.com/author/communicating-with-remote-teams",
+      "image": "https://natemcguire.com/og-image.png",
+      "datePublished": "2026-05-26",
+      "articleSection": "Remote work",
+      "description": "More meetings is the wrong answer. More writing is the right one. Here's the operating model that worked across 17 countries."
+    }
+    </script>
+
+    
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-MP2PD28L5S"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-MP2PD28L5S');
+    </script>
+</head>
+<body>
+    <div class="wrap article-wrap">
+        <header class="top">
+            <a href="/" class="brand">nate mcguire</a>
+            <nav>
+                <a href="/">bio</a>
+                <a href="/author" aria-current="page">author</a>
+                <a href="/about">about</a>
+                <a href="/speaking">speaking</a>
+                <a href="/work-with-me">work</a>
+            </nav>
+        </header>
+
+        <p class="article-meta">
+            <a href="/author">Remote work</a>
+            <span class="dot">·</span>
+            <span class="meta">May 2026</span>
+        </p>
+
+        <h1 class="article-h1">How to Actually Communicate With a Remote Engineering Team</h1>
+        <p class="article-hook">More meetings is the wrong answer. More writing is the right one. Here&#x27;s the operating model that worked across 17 countries.</p>
+
+        <article class="article-body">
+        <p>A pattern I see at almost every remote engineering org that's struggling: leadership responds to "we feel disconnected" by adding more meetings. More all-hands. More skip-levels. More standups. More 1:1s. More syncs. The calendar fills up, the team gets exhausted, the disconnection worsens, and management blames remote work.</p>
+        <p>It isn't remote work. It's <em>more synchronous communication</em> in the wrong direction. The fix is more <em>writing</em>, not more meetings.</p>
+        <p>Meetings <em>feel</em> like communication, but they're not the solution. This insight distinguishes remote-native teams from those failing at remote. Let me defend it.</p>
+        <p><a href="https://handbook.gitlab.com/handbook/company/culture/all-remote/">GitLab's all-remote handbook</a> articulates the operating model I'll describe — they documented what most distributed companies learn through experience.</p>
+        <p><strong>Why writing scales and meetings don't.</strong></p>
+        <p>A meeting includes only attendees. A document includes everyone who reads it, now or later. Meetings have a per-attendee cost (time). Documents have near-zero marginal cost for additional readers. Meetings are real-time; miss it, lose it. Documents are async; read on your schedule.</p>
+        <p>Over a year, the math is overwhelming. Teams that default to writing build a searchable knowledge base, include people across time zones, and free up calendars. Teams that default to meetings burn time, fragment attention, and exclude absentees.</p>
+        <p>Writing is <em>harder</em> than talking. The first time you ask an engineer to write a one-pager instead of "hopping on a quick call," they resist. The second time, less so. By the fifth, they see how much faster they can move with a doc. Discipline grows over months, not days.</p>
+        <p><strong>The specific communication shape that works.</strong></p>
+        <p>Here's what I converged on at Mayven across 17 countries. Other teams will have variants, but the principles transfer.</p>
+        <p><strong>Default-public written communication.</strong> Most team communication happens in public Slack channels, docs everyone can read, PRs visible to the team. DMs are for personal matters — feedback, sensitive 1:1s, scheduling. The norm: if it's about the <em>work</em>, do it openly.</p>
+        <p>Privacy concerns are mostly imaginary — engineers asking questions, sharing opinions, debugging together. Openness benefits are enormous: new hires can read history and understand decisions; adjacent areas stay informed without being meeting-tagged; institutional knowledge accumulates instead of evaporating with each off-boarding.</p>
+        <p><strong>Asynchronous status updates.</strong> Every team writes a short update — daily or weekly — on what's shipped, in flight, or blocked. These replace team-status meetings. They take five to fifteen minutes to write, less than five to read.</p>
+        <p>Format matters less than consistency. Some teams use "yesterday / today / blockers." Some write a paragraph. Some use tools like Range, Status Hero, Geekbot. Pick one and stick with it for six months before changing.</p>
+        <p>The underrated benefit: when management wants to know what the team is doing, they read updates. They don't ask the team. They don't schedule a "check-in." They read. Zero interruption cost.</p>
+        <p><strong>Decision documents.</strong> For meaningful technical or product decisions, someone writes it up first. Context, options, recommendation. Shared in the relevant channel. Stakeholders comment async.</p>
+        <p>If comments resolve the question, no meeting happens. If they surface real disagreement or open questions, a short, focused meeting follows — with the doc as the agenda.</p>
+        <p>This is the <a href="https://www.aboutamazon.com/news/company-news/2017-letter-to-shareholders">Amazon six-page-memo model</a> and it works. The first meeting, people complain because they expected to "discuss" without preparation. By the third, they prefer it, because the meeting takes 20 minutes instead of 60 and produces an actual decision.</p>
+        <p><strong>Project docs that stay alive.</strong> Every meaningful project has a living document — usually in Notion, Linear, or Confluence — capturing what it is, why it's being built, who's responsible, what's been decided, what's in flight, and the rollout plan. It's the single source of truth.</p>
+        <p>The trap: creating these docs at kickoff and never updating them. A stale project doc is worse than none, because people act on outdated info. The discipline: update the project doc whenever a meaningful decision changes, after each meeting, when something ships. Make it part of the workflow.</p>
+        <p><strong>Aggressive Slack channel discipline.</strong> Channels named after their purpose (<code>#eng-payments</code>, <code>#eng-platform</code>, <code>#design-reviews</code>), pinned topics, archived when projects end. Threads for sub-conversations to prevent fragmentation. Reactions as lightweight acks so people don't type "thanks" every time.</p>
+        <p>Slack is the synchronous-feeling tool in the async stack. Used well, it accelerates communication. Used poorly, it becomes a fire hose that drowns the team. Discipline matters.</p>
+        <p><strong>Code review as communication.</strong> PR reviews are high-quality communication artifacts in a remote team. They're focused (specific code), substantive (work is in the PR), durable (discussion lives forever). Investing in good PR review culture — thoughtful comments, real engagement, prompt turnaround — pays dividends beyond immediate code quality.</p>
+        <p>The norm: PRs reviewed within hours, not days. Reviewers comment on substance, not nitpicks (autoformatters handle nitpicks). Authors respond to feedback. The PR review <em>is</em> the meeting, in writing, where substantive engineering conversation happens.</p>
+        <p><strong>Where meetings still matter.</strong></p>
+        <p>Some conversations don't work async, and forcing them async produces worse outcomes than just having the meeting. Those conversations:</p>
+        <p><strong>Brainstorming and creative generation.</strong> Real-time interaction generates more and better ideas than async iteration. Plan brainstorming sessions deliberately, with structure (a prompt, a time box, divergent then convergent phases), and capture output in a doc afterward.</p>
+        <p><strong>Difficult interpersonal conversations.</strong> Conflict resolution, feedback that's hard to deliver in writing, tough performance conversations — these work better in person. Don't try to do them in Slack.</p>
+        <p><strong>High-stakes decisions where principals need to wrestle with tradeoffs together.</strong> Big architectural calls, major product pivots, executive-level decisions. Participants benefit from being in the room — physical or virtual — because back-and-forth surfaces considerations async wouldn't.</p>
+        <p><strong>Onboarding pairs.</strong> New hires benefit from time with a peer or manager to ramp up. Less than a meeting and more than a doc — pair programming, screen-sharing walkthroughs, working sessions.</p>
+        <p><strong>Off-sites.</strong> Periodic in-person time for the whole team. Cadence varies by company — quarterly, semi-annually, annually. The off-site isn't where the work happens. It's where the <em>relationships</em> get built that make the rest of the year's async communication work. Hugely worth the cost.</p>
+        <p>For all these meetings, the discipline still applies: written agenda, written outcome, default time under an hour, prep work done in advance.</p>
+        <p><strong>Specific anti-patterns to kill.</strong></p>
+        <p><strong>Recurring "status" meetings.</strong> Daily standups in a remote team almost always devolve into status reports. Replace with async written updates.</p>
+        <p><strong>"Quick syncs" that aren't quick.</strong> A 30-minute meeting for a 2-minute Slack message. The meeting is calendared because it feels safer than asking the question in writing. Train the team to write the question first.</p>
+        <p><strong>The "we should hop on a call" reflex.</strong> When someone asks a question in writing and another's first instinct is "let's hop on a call," push back. Ask if the question genuinely needs voice or if typing the answer is uncomfortable. Usually, the typed answer in five minutes is fine.</p>
+        <p><strong>Skip-levels that become surveillance.</strong> A skip-level with a clear purpose (career development, signal from the ground) is valuable. A skip-level with subtext "I'm checking up on your manager" is corrosive. The team will sense the difference within a quarter.</p>
+        <p><strong>Camera-on culture as a proxy for engagement.</strong> Cameras on every meeting is exhausting and not a true signal of engagement. Let people choose. Audio-on is enough most of the time.</p>
+        <p><strong>Communication and time zones.</strong></p>
+        <p>If your team spans more than six hours of time zones, asynchronous is mandatory. Synchronous meetings catch one or two time zones and exclude the rest. The team must operate with <em>expected response time</em> in hours, not minutes, resolving most conversations over a 24-hour cycle.</p>
+        <p>The benefit: a question asked at end-of-day in San Francisco is answered overnight by the team in Eastern Europe, and the asker wakes up with the answer ready. The team is <em>literally producing 24 hours per day</em>, with overlap times for genuinely real-time things.</p>
+        <p>This requires <em>discipline about not expecting fast responses</em>. If managers ping engineers off-hours expecting a response, the model breaks down. The team feels always-on. Good remote leaders are religious about respecting offline time.</p>
+        <p><strong>The cultural piece.</strong></p>
+        <p>Remote communication, done well, produces a <em>different culture</em> than in-office communication. Less hallway-chat, more deep work. Less ambient awareness, more deliberate documentation. Less spontaneous, more thoughtful.</p>
+        <p>This isn't worse. It's different. Some prefer the in-office model. Some prefer remote-async. Companies trying both — hybrid without commitment — usually get neither.</p>
+        <p>Pick a side. Build the muscles. Communicate accordingly. Teams that do this well become unstoppable. Teams that don't will keep adding meetings and wondering why nothing improves.</p>
+        </article>
+
+        <footer class="article-footer">
+            <p><a href="/author">← more from /author</a></p>
+        </footer>
+    </div>
+    <script src="/author/tldr.js" defer></script>
+</body>
+</html>

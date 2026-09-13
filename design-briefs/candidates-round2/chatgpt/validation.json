@@ -1,0 +1,42 @@
+[
+  {
+    "id": "chatgpt-01",
+    "factsAndLinks": true,
+    "scriptSyntax": true,
+    "reducedMotion": true,
+    "networkOrStorage": false,
+    "sha256": "82a8e844b415a7eb7828204d34f134e6465a0c2459ed39bbf0884f725242f538"
+  },
+  {
+    "id": "chatgpt-05",
+    "factsAndLinks": true,
+    "scriptSyntax": true,
+    "reducedMotion": true,
+    "networkOrStorage": false,
+    "sha256": "60b7a9ad2aed8f4afe8ac399bed0bb841f3fb3adda2fee9a3d7748e588daf422"
+  },
+  {
+    "id": "chatgpt-02",
+    "factsAndLinks": true,
+    "scriptSyntax": true,
+    "reducedMotion": true,
+    "networkOrStorage": false,
+    "sha256": "295e414feaca251d585bcb849442845b33e3c2086dd7fea7881c4a989667f22d"
+  },
+  {
+    "id": "chatgpt-03",
+    "factsAndLinks": true,
+    "scriptSyntax": true,
+    "reducedMotion": true,
+    "networkOrStorage": false,
+    "sha256": "92d5ec140bf920979868686cceb73037f2c85edac727517f0373d27236dd77cf"
+  },
+  {
+    "id": "chatgpt-04",
+    "factsAndLinks": true,
+    "scriptSyntax": true,
+    "reducedMotion": true,
+    "networkOrStorage": false,
+    "sha256": "4b56c7af08a7f16dddf644ff85d0b75a57d2a79f8c285fb5dc9be866dc2ff8c5"
+  }
+]

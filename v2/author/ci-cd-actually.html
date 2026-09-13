@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>What CI/CD Actually Costs (and What It Saves) — Nate McGuire</title>
+    <meta name="description" content="The pitch is faster releases. The real value is fewer rollbacks. Here&#x27;s the math, and where it breaks." />
+    <meta name="author" content="Nate McGuire" />
+    <meta name="robots" content="index, follow, max-image-preview:large" />
+    <link rel="canonical" href="https://natemcguire.com/author/ci-cd-actually" />
+
+    <meta property="og:type" content="article" />
+    <meta property="og:site_name" content="Nate McGuire" />
+    <meta property="og:title" content="What CI/CD Actually Costs (and What It Saves)" />
+    <meta property="og:description" content="The pitch is faster releases. The real value is fewer rollbacks. Here&#x27;s the math, and where it breaks." />
+    <meta property="og:url" content="https://natemcguire.com/author/ci-cd-actually" />
+    <meta property="og:image" content="https://natemcguire.com/og-image.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="article:author" content="Nate McGuire" />
+    <meta property="article:published_time" content="2026-05-26" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="@natemcguire" />
+    <meta name="twitter:creator" content="@natemcguire" />
+    <meta name="twitter:title" content="What CI/CD Actually Costs (and What It Saves)" />
+    <meta name="twitter:description" content="The pitch is faster releases. The real value is fewer rollbacks. Here&#x27;s the math, and where it breaks." />
+    <meta name="twitter:image" content="https://natemcguire.com/og-image.png" />
+
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <link rel="stylesheet" href="/style.css">
+    <link rel="stylesheet" href="/author/article.css">
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Article",
+      "headline": "What CI/CD Actually Costs (and What It Saves)",
+      "author": { "@type": "Person", "name": "Nate McGuire", "url": "https://natemcguire.com/" },
+      "publisher": { "@type": "Person", "name": "Nate McGuire" },
+      "url": "https://natemcguire.com/author/ci-cd-actually",
+      "image": "https://natemcguire.com/og-image.png",
+      "datePublished": "2026-05-26",
+      "articleSection": "Engineering leadership",
+      "description": "The pitch is faster releases. The real value is fewer rollbacks. Here's the math, and where it breaks."
+    }
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.4/dist/chart.umd.min.js" defer></script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-MP2PD28L5S"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-MP2PD28L5S');
+    </script>
+</head>
+<body>
+    <div class="wrap article-wrap">
+        <header class="top">
+            <a href="/" class="brand">nate mcguire</a>
+            <nav>
+                <a href="/">bio</a>
+                <a href="/author" aria-current="page">author</a>
+                <a href="/about">about</a>
+                <a href="/speaking">speaking</a>
+                <a href="/work-with-me">work</a>
+            </nav>
+        </header>
+
+        <p class="article-meta">
+            <a href="/author">Engineering leadership</a>
+            <span class="dot">·</span>
+            <span class="meta">May 2026</span>
+        </p>
+
+        <h1 class="article-h1">What CI/CD Actually Costs (and What It Saves)</h1>
+        <p class="article-hook">The pitch is faster releases. The real value is fewer rollbacks. Here&#x27;s the math, and where it breaks.</p>
+
+        <article class="article-body">
+        <p>The pitch for CI/CD at every conference is the same: continuous integration plus continuous delivery means faster releases, faster feedback, and higher developer productivity. True, but misleading. The real benefit — the one that justifies the engineering investment — is <em>fewer catastrophic rollbacks</em>, <em>fewer all-hands-on-deck production incidents</em>, and <em>fewer multi-week feature freezes when something inevitably breaks</em>. Speed is a side effect. Reliability is the product.</p>
+        <p>Executives buy CI/CD for speed, then balk when gains are smaller than promised. Speed gains are real but modest — 20-30% better deploy frequency, not 10x. Reliability gains, however, are significant — often a 50-80% reduction in incidents and a 90%+ reduction in incident severity. That's the part worth paying for.</p>
+        <p>Let's break down the math.</p>
+        <p>Google's <a href="https://dora.dev/research/">DORA <em>Accelerate State of DevOps</em></a> program offers the clearest empirical case. It measures deploy frequency, lead time, change failure rate, and time to restore across thousands of organizations. Elite performers deploy on demand and recover from failures in under an hour; low performers deploy monthly and take a week to recover. The gap is roughly two orders of magnitude.</p>
+        <p><strong>Without CI/CD (or with bad CI/CD):</strong></p>
+        <p>You deploy weekly or biweekly. Each deploy is large — weeks of changes from multiple engineers. When something breaks, debugging is hard because you don't know the cause. Rollbacks are scary, reverting two weeks of work, so you forward-fix under pressure, risking further breaks. Each incident takes hours and disrupts other work. The team fears deploys, batches more changes, and worsens the cycle.</p>
+        <p>The hidden cost is enormous. Senior engineer time wasted on incidents. Customer goodwill burned. Feature work delayed. Morale damaged. Quarterly planning derailed by unplanned firefights.</p>
+        <p>A single multi-hour incident pulling four engineers, breaching SLOs, and damaging customer relationships costs $50k-$200k in direct and opportunity cost. Most orgs on the "deploy biweekly, panic when it breaks" model face this monthly.</p>
+        <p><strong>With good CI/CD:</strong></p>
+        <p>You deploy continuously — many times a day. Each deploy is small. When something breaks, you know the cause because there are only one or two changes. Rollback is a single click, reverting ten minutes of work, not two weeks. Most incidents are caught by alerts within minutes, rolled back automatically by deployment guards, or contained by feature flags. Incidents are shorter and less severe.</p>
+        <p>The cost of a regression drops by an order of magnitude. One incident might cost 20 minutes of one engineer plus an automated rollback. Multiply across the year and the savings are substantial.</p>
+        <p>That's the value pitch, properly framed.</p>
+        <figure class="article-figure article-figure-chart"><div class="chart-wrap"><canvas id="chart-1"></canvas></div><script>document.addEventListener("DOMContentLoaded",function(){var el=document.getElementById("chart-1");if(!el||!window.Chart)return;new Chart(el,{"type":"line","data":{"labels":["1","5","10","25","50","100","250","500"],"datasets":[{"label":"Mean time to detect (minutes)","data":[5,8,12,22,45,90,180,360],"borderColor":"#002fa7","tension":0.3,"yAxisID":"y"},{"label":"Mean time to recover (minutes)","data":[10,20,40,90,180,360,720,1440],"borderColor":"#c41e3a","tension":0.3,"yAxisID":"y"}]},"options":{"responsive":true,"maintainAspectRatio":false,"plugins":{"legend":{"position":"bottom"},"title":{"display":true,"text":"Detect / recover time vs deploy size (illustrative)"}},"scales":{"x":{"title":{"display":true,"text":"Changes per deploy"}},"y":{"type":"logarithmic","title":{"display":true,"text":"Minutes (log scale)"}}}}});});</script><figcaption>Pattern across teams I've worked with — deploy size and time-to-recover compound non-linearly. The first principle of CI/CD: ship small to recover fast.</figcaption></figure>
+        <p>Now the costs.</p>
+        <p><strong>Engineering investment to set up.</strong> A real CI/CD pipeline isn't a Heroku button. It needs:</p>
+        <p>A reliable, fast, and meaningful test suite. Most teams have flaky or slow tests; fixing this is a real investment — often a quarter of work for a senior engineer.</p>
+        <p>A deploy pipeline that ships in minutes, not hours. Optimize container builds, warm deploy targets, ensure artifact caching works. Many teams have hour-long pipelines they need to fix.</p>
+        <p>Feature flags. You can't do CI/CD safely without them. The team needs a flag service (LaunchDarkly, Statsig, Unleash, or homegrown), usage patterns, and cleanup discipline. Without flags, half-shipped features become landmines.</p>
+        <p>Observability. Deploying twenty times a day means knowing within minutes if something breaks. Real APM, logging, and alerting on critical metrics are essential. Datadog, Grafana, New Relic, Honeycomb — pick one and build fast alerts.</p>
+        <p>Progressive deployment. Canary releases, blue-green, percentage-based rollouts. Modern infrastructure (Kubernetes plus a service mesh, or Vercel's "preview environment") makes this easier. Set it up and use it.</p>
+        <p>Rollback automation. Revert any deploy with one click. Most teams have a rollback button but haven't tested it under pressure. Test it. In production. On a weekday afternoon.</p>
+        <p><strong>Cultural investment to operate.</strong> The pipeline is easy; culture is hard. Google's <a href="https://sre.google/sre-book/table-of-contents/">SRE Book</a> covers this culture at scale; the chapters on release engineering and error budgets are worth reading. Teams used to large, infrequent deploys must learn to ship small, often. This is a real adjustment. The rules change:</p>
+        <p>PRs should be small. Long-lived feature branches die. Trunk-based development becomes default.</p>
+        <p>Code review must be fast. If a PR waits two days for review, your CI/CD pipeline is meaningless because the bottleneck is upstream. Commit to reviewing within hours.</p>
+        <p>Test discipline becomes critical. If tests are unreliable, deploys are unreliable, and the team stops trusting the pipeline. Flaky tests are critical bugs.</p>
+        <p>Deploy ownership shifts to the code-writing team, not a separate deploy team. If ops carries the pager, coders don't feel the consequences of bad code in production. CI/CD requires "you build it, you run it."</p>
+        <p><strong>Where CI/CD breaks the math.</strong></p>
+        <p>Some domains don't fit the model cleanly.</p>
+        <p>Mobile apps. App Store and Play Store review cycles still exist. You can't deploy continuously in the same sense. Mitigate with aggressive feature-flagging and over-the-air JavaScript updates for React Native. But deploy cadence is slower.</p>
+        <p>Regulated industries. Financial services, healthcare, government — compliance regimes limit deploy speed. Some can be worked around with audit logs and segregation; some can't. Plan for regulatory friction.</p>
+        <p>Embedded systems. Software on hardware means "deploy" has a different meaning. Continuous integration applies. Continuous deployment usually doesn't.</p>
+        <p>Very large monorepos with slow tests. If tests take an hour, CI/CD breaks down — the cycle time is too long. The answer is parallelization and partitioning, but the work is substantial.</p>
+        <p>Database migrations. Forward-compatible, backward-compatible migrations are a discipline. CI/CD teams treat migrations as multi-step deploys: new schema first, code second, cleanup third. "Schema and code in one deploy" eventually burns you.</p>
+        <p><strong>Terminology footnote.</strong> Continuous Integration (CI) means merging changes to a shared mainline frequently and validating with automated tests. Continuous Delivery (CD) ensures every merge is <em>deployable</em> — ready to go, even if a human decides when to push it. Continuous Deployment (also CD) means <em>automatically</em> deploying every merge that passes CI. Most teams should aim for full Continuous Deployment, but Continuous Delivery is a meaningful intermediate state, especially for regulated industries.</p>
+        <p><strong>Tooling state of the art in 2026.</strong></p>
+        <p>GitHub Actions is the most common CI substrate and is fine. CircleCI, Buildkite, and GitLab CI are viable. Self-hosted runners are common because hosted runners are slow and expensive at scale.</p>
+        <p>Vercel, Fly, Railway, Render, and major cloud PaaS offerings do CD reasonably out of the box. If your app fits, take the easy path.</p>
+        <p>Kubernetes with ArgoCD or Flux is standard for larger orgs. The complexity is real; the productivity at scale is real.</p>
+        <p>Feature flagging: LaunchDarkly is the leader, expensive but worth it. Statsig is cheaper and good. Unleash is open-source and works fine. Don't roll your own.</p>
+        <p>Observability: Datadog if affordable, Grafana Cloud or self-hosted if not. Honeycomb for tracing. Sentry for error monitoring is table stakes.</p>
+        <p><strong>2026 footnote.</strong> As AI coding tools generate more code, the case for CI/CD strengthens. Model-written code fails differently than human-written code — plausible-looking but contextually wrong. Catching this at scale requires rigorous CI, fast deploys, and aggressive observability. Teams adopting AI coding without CI/CD discipline are setting up a regression catastrophe.</p>
+        <p><strong>Bottom line.</strong> CI/CD is a high-leverage engineering investment. The return is in fewer incidents, not faster releases. If your team ships biweekly and fears deploys, fixing this is the most impactful thing the engineering org can do. Not to impress VCs with speed, but to stop the team from being on fire every other week. That's what the business actually needs.</p>
+        <p>Worth the cost. Mostly. Almost always. Do it.</p>
+        </article>
+
+        <footer class="article-footer">
+            <p><a href="/author">← more from /author</a></p>
+        </footer>
+    </div>
+    <script src="/author/tldr.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recruiting Engineers When Everyone Is Doing It Wrong — Nate McGuire</title>
+    <meta name="description" content="Take-home tests, whiteboard coding, and culture fit interviews mostly don&#x27;t work. Here&#x27;s what does, after hiring hundreds at Mayven." />
+    <meta name="author" content="Nate McGuire" />
+    <meta name="robots" content="index, follow, max-image-preview:large" />
+    <link rel="canonical" href="https://natemcguire.com/author/recruiting-engineers" />
+
+    <meta property="og:type" content="article" />
+    <meta property="og:site_name" content="Nate McGuire" />
+    <meta property="og:title" content="Recruiting Engineers When Everyone Is Doing It Wrong" />
+    <meta property="og:description" content="Take-home tests, whiteboard coding, and culture fit interviews mostly don&#x27;t work. Here&#x27;s what does, after hiring hundreds at Mayven." />
+    <meta property="og:url" content="https://natemcguire.com/author/recruiting-engineers" />
+    <meta property="og:image" content="https://natemcguire.com/og-image.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="article:author" content="Nate McGuire" />
+    <meta property="article:published_time" content="2026-05-26" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="@natemcguire" />
+    <meta name="twitter:creator" content="@natemcguire" />
+    <meta name="twitter:title" content="Recruiting Engineers When Everyone Is Doing It Wrong" />
+    <meta name="twitter:description" content="Take-home tests, whiteboard coding, and culture fit interviews mostly don&#x27;t work. Here&#x27;s what does, after hiring hundreds at Mayven." />
+    <meta name="twitter:image" content="https://natemcguire.com/og-image.png" />
+
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <link rel="stylesheet" href="/style.css">
+    <link rel="stylesheet" href="/author/article.css">
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Article",
+      "headline": "Recruiting Engineers When Everyone Is Doing It Wrong",
+      "author": { "@type": "Person", "name": "Nate McGuire", "url": "https://natemcguire.com/" },
+      "publisher": { "@type": "Person", "name": "Nate McGuire" },
+      "url": "https://natemcguire.com/author/recruiting-engineers",
+      "image": "https://natemcguire.com/og-image.png",
+      "datePublished": "2026-05-26",
+      "articleSection": "Engineering leadership",
+      "description": "Take-home tests, whiteboard coding, and culture fit interviews mostly don't work. Here's what does, after hiring hundreds at Mayven."
+    }
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.4/dist/chart.umd.min.js" defer></script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-MP2PD28L5S"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-MP2PD28L5S');
+    </script>
+</head>
+<body>
+    <div class="wrap article-wrap">
+        <header class="top">
+            <a href="/" class="brand">nate mcguire</a>
+            <nav>
+                <a href="/">bio</a>
+                <a href="/author" aria-current="page">author</a>
+                <a href="/about">about</a>
+                <a href="/speaking">speaking</a>
+                <a href="/work-with-me">work</a>
+            </nav>
+        </header>
+
+        <p class="article-meta">
+            <a href="/author">Engineering leadership</a>
+            <span class="dot">·</span>
+            <span class="meta">May 2026</span>
+        </p>
+
+        <h1 class="article-h1">Recruiting Engineers When Everyone Is Doing It Wrong</h1>
+        <p class="article-hook">Take-home tests, whiteboard coding, and culture fit interviews mostly don&#x27;t work. Here&#x27;s what does, after hiring hundreds at Mayven.</p>
+
+        <article class="article-body">
+        <p>I've hired hundreds of engineers over fifteen years across two companies and advisory roles. I've reviewed hiring processes at two dozen others. The standard interview loop most companies run is mostly noise — it identifies whether the candidate can prepare for the format, not whether they can do the job. Engineers who aced our process turned out mediocre. Engineers I almost passed on turned out exceptional. The interview poorly correlates with on-the-job performance, yet we keep running the same broken process.</p>
+        <p>Here's what's broken and what works.</p>
+        <p><strong>Whiteboard coding and live-coding interviews mostly don't work.</strong></p>
+        <p>They claim to test clear thinking and coding under pressure. In reality, they test if the candidate spent the last three weekends on LeetCode. The questions are algorithmic puzzles unrelated to the job. The pressure is artificial. The signal is whether the candidate prepared, not whether they're good.</p>
+        <p>The exception is when the live-coding session is <em>highly relevant to the actual job</em>. If you're hiring a frontend engineer and give them a real bug in a React component to diagnose and fix, that's useful — that's Monday's work. If you're hiring a backend engineer and present a real API design problem with real constraints, also useful. The trick is making the exercise resemble actual work, not a competitive programming round.</p>
+        <p>Most companies don't do this. They give "reverse a linked list" or "two-sum" because it's easy to administer and grade. The candidate studies for that format, gets the offer, and never reverses a linked list at work. The hire was selected for the wrong skill.</p>
+        <p><strong>Take-home tests are mostly worse, despite better optics.</strong></p>
+        <p>Take-homes look better — the candidate has time, no pressure, can show real work. The problem is they test how much time the candidate is willing to spend on a speculative interview. Senior engineers with options decline four-hour take-homes for uncertain jobs. Junior engineers desperate for a job spend twenty hours and over-deliver. The take-home thus <em>selects against</em> the people you most want to hire.</p>
+        <p>Calibration is also an issue. The take-home is graded by whichever engineer reviews it, and "good" varies wildly. The same submission could pass or fail depending on the reviewer. The bar moves.</p>
+        <p>A take-home can be useful when it's <em>short and clearly bounded</em> — "spend two hours on this, send what you have, we'll discuss" — and when it's used as discussion fuel rather than a pass/fail gate. Beyond two hours, the cost to the candidate exceeds the signal you'll get.</p>
+        <p><strong>"Culture fit" interviews are usually a hidden bias machine.</strong></p>
+        <p>The intent is to assess team compatibility. The execution is usually a conversation with vague questions and answers, leading to a vibe-based assessment that correlates with "did they remind me of myself." This is how teams end up homogeneous in unintended ways. The data on culture-fit interviews is brutal — low predictive validity, high bias, often the deciding factor in offers. The classic meta-analysis here is <a href="https://mavweb.mnsu.edu/howard/Schmidt%20and%20Hunter%201998%20Validity%20and%20Utility%20Psychological%20Bulletin.pdf">Schmidt &amp; Hunter, <em>The Validity and Utility of Selection Methods in Personnel Psychology</em></a> (1998), which found work-sample tests and structured interviews outperform unstructured "vibes-based" conversations.</p>
+        <figure class="article-figure article-figure-chart"><div class="chart-wrap"><canvas id="chart-1"></canvas></div><script>document.addEventListener("DOMContentLoaded",function(){var el=document.getElementById("chart-1");if(!el||!window.Chart)return;new Chart(el,{"type":"bar","data":{"labels":["Work sample test","Structured interview","Cognitive ability test","Job knowledge test","Peer ratings","Reference check","Years of experience","Unstructured interview","Years of education","Interests","Graphology"],"datasets":[{"label":"Predictive validity (r)","data":[0.54,0.51,0.51,0.48,0.49,0.26,0.18,0.38,0.10,0.10,0.02],"backgroundColor":["#002fa7","#002fa7","#002fa7","#002fa7","#002fa7","#666","#666","#c41e3a","#c41e3a","#c41e3a","#c41e3a"]}]},"options":{"responsive":true,"maintainAspectRatio":false,"indexAxis":"y","plugins":{"legend":{"display":false},"title":{"display":true,"text":"Predictive validity of selection methods (Schmidt & Hunter, 1998)"}},"scales":{"x":{"beginAtZero":true,"max":0.7,"title":{"display":true,"text":"Correlation with job performance"}}}}});});</script><figcaption>Validity coefficients from <a href="https://mavweb.mnsu.edu/howard/Schmidt%20and%20Hunter%201998%20Validity%20and%20Utility%20Psychological%20Bulletin.pdf">Schmidt &amp; Hunter (1998)</a>. Work samples and structured interviews are roughly 2x as predictive as the unstructured interview most companies actually use.</figcaption></figure>
+        <p>To assess culture, use <em>structured questions</em>, ideally about <em>specific past situations</em>. "Tell me about a time you disagreed with a teammate about a technical decision" is better than "are you a team player?" Structured behavioral questions are tedious to ask, but the signal is better, and the bias is reduced.</p>
+        <p><strong>Coding screen as a phone interview is fine if it's calibrated.</strong></p>
+        <p>A 45-minute phone or video coding screen with a focused, realistic problem is a reasonable first filter. It catches candidates who can't code at all (a real and common failure mode in 2026, despite all the bootcamps). It's cheap. The signal is limited but the cost is also limited.</p>
+        <p><strong>What actually works.</strong></p>
+        <p>After trial and error, here's the loop I converged on at Mayven and refined at Capital One.</p>
+        <p><strong>Step one: a realistic, scoped technical conversation.</strong> Forty-five minutes, video call, a senior engineer on our side. The candidate is given a small, realistic problem — usually a system design or a debugging walkthrough relevant to the role. The interviewer is <em>engaged</em> — they ask clarifying questions, push on assumptions, share constraints, take the conversation in interesting directions. This is not a pop quiz. It's a conversation between engineers about a problem.</p>
+        <p>What you're looking for: does this person think clearly? Do they ask good questions? Are they comfortable with ambiguity? Do they engage with the problem or perform a memorized answer? Can they navigate a real engineering conversation?</p>
+        <p>What you're <em>not</em> looking for: whether they got the "right" answer. Most realistic problems don't have one. The answer is in the <em>thinking</em>.</p>
+        <p><strong>Step two: a structured behavioral interview.</strong> Forty-five to sixty minutes, video, ideally with someone other than the technical interviewer. The questions are pre-defined: "tell me about the most ambitious thing you've shipped." "Tell me about a time you were wrong about a technical decision." "Tell me about a conflict with a teammate and how it resolved." "Tell me about a project that failed and what you took away."</p>
+        <p>The questions are about specific past situations, not hypotheticals. (Hypotheticals are nearly useless — people perform their best self in hypotheticals.) You're listening for: do they take ownership of their failures? Are they able to articulate what they learned? Do they reflect honestly on their own contributions and mistakes? Are they specific or vague? Can they name the people they worked with and what those people contributed?</p>
+        <p>This is the highest-signal interview I've found. Structured behavioral interviews have the best predictive validity of any standard interview format. Most companies skip this in favor of one more coding round, which is exactly backwards.</p>
+        <p><strong>Step three: a portfolio review.</strong> Sixty minutes, video, with a small group. The candidate shows real work. A GitHub repo they wrote, a system they designed, a project they led, a problem they solved. They walk through what they did, why, what was hard, what they'd do differently.</p>
+        <p>This is where senior engineers really emerge. They can talk fluently about real systems they built. They can articulate tradeoffs. They know what went well and what didn't. They are honest about the messy parts.</p>
+        <p>The catch: candidates who can't share their work (because everything they've done is proprietary) need an alternate path. The alternate is a deep technical conversation about a hypothetical system — "tell me how you'd build this thing for our company." It's not as good as real work but it's close.</p>
+        <p><strong>Step four: a working session.</strong> This is the controversial one. For senior hires, I want them to work with us — for a half day, a day, or sometimes two days — on a real problem we have. We pay them for the time. We work alongside them. We see how they actually behave when they're problem-solving, when they're stuck, when they're collaborating.</p>
+        <p>The advantages: this is <em>by far</em> the strongest signal. It's what they'll actually be doing if we hire them. The bias-reduction is huge because everyone is operating in the actual context. We've identified great hires and we've also identified bad fits much earlier with this.</p>
+        <p>The disadvantages: candidates with current jobs can't always do this. Candidates we don't end up hiring still got paid for their time, which costs real money. Not all candidates are willing.</p>
+        <p>For roles where a working session is feasible, I run it. The hit rate is substantially higher.</p>
+        <p><strong>A few smaller things that matter.</strong></p>
+        <p><strong>Speed of process.</strong> A great candidate has multiple offers. If your process takes three weeks, they will accept somewhere else. Compress the loop. From first call to offer should be under two weeks for senior hires, under one week for hot candidates. The companies that consistently win on hiring have fast processes.</p>
+        <p><strong>Reference checks are underrated.</strong> Talk to two or three people who worked with the candidate, ideally including someone they reported to and someone who reported to them. Ask specific questions. The signal here is <em>much</em> better than people assume, and the cost is low. The candidates who lie or exaggerate are usually filtered out at this stage if you actually do the calls.</p>
+        <p><strong>Stop relying on resumes.</strong> Resumes have always been weak signal. They are now near-noise — LLMs polish them, the average resume is far better written than the candidate is. A candidate's portfolio, GitHub, technical writing, talks, or open-source work tells you much more than a resume.</p>
+        <p><strong>Stop discounting non-traditional backgrounds.</strong> The best engineer I ever hired was a self-taught former teacher with no CS degree. The worst was an MIT graduate with all the right credentials. Your interview process should evaluate on what they can do, not where they went to school or how many years they've been doing it.</p>
+        <p><strong>Look for taste.</strong> This is hard to measure but matters enormously. Does this person have opinions about technology? Are those opinions informed? Can they tell good code from bad? Do they care about craft? Engineers with taste write better code, mentor better, and make better technical decisions. Try to identify this in the portfolio review and the technical conversation.</p>
+        <p><strong>Reject quickly and respectfully.</strong> The candidates you don't hire still talk about your company. Make the rejection fast (within days), specific where possible (don't pretend "we went with another candidate" if the real answer is "you didn't pass the bar"), and respectful. The way you treat candidates who don't make it is the most visible signal of your engineering culture to the market.</p>
+        <p><strong>AI-tool fluency is now part of the bar, but not the way most companies are testing it.</strong> A senior engineer in 2026 who hasn't fluently integrated Claude Code, Cursor, Codex, or equivalent into their daily workflow is probably 2x slower than peers who have. The cost of code is going to zero, and the engineers who treat that as a fact rather than a fad are the ones worth hiring. The trap in assessing this: do not ban AI tools in interviews. That's the modern equivalent of banning a search engine in a 2010 interview — you're filtering for people who pretend not to use the standard toolkit, not for people who use it well. Instead, <em>watch them use the tools</em> in the working session. Do they prompt well? Do they catch the model's mistakes? Do they know when to take over and when to delegate? That signal is much richer than whether they can solve a problem from scratch on a whiteboard.</p>
+        <p><strong>The hardest skill to hire for, by far, is judgment.</strong> The ability to make good decisions when constraints are unclear, when tradeoffs are subtle, when the data is incomplete. This is the senior engineer's actual job, and it's the thing whiteboard coding tests not at all and structured interviews barely touch. The portfolio review and the working session are the best surfaces for it. If you have to choose what to optimize the hiring loop for, optimize for judgment.</p>
+        <p>Hiring engineers is the highest-leverage thing an engineering leader does. A great hire compounds for years. A bad hire compounds, also, in the wrong direction. Spend the time. Run the better process. The ROI is enormous.</p>
+        </article>
+
+        <footer class="article-footer">
+            <p><a href="/author">← more from /author</a></p>
+        </footer>
+    </div>
+    <script src="/author/tldr.js" defer></script>
+</body>
+</html>

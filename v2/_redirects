@@ -6,6 +6,10 @@
 /retro-profile             /                301
 /retro-profile.html        /                301
 
+# Header shorthand -> current work page
+/work                       /work-with-me    301
+/work/                      /work-with-me    301
+
 # Old single-purpose pages -> closest new home
 /cycle-ios-8-swift-and-the-apple-watch-cycling-tracker        /author  301
 /cycle-ios-8-swift-and-the-apple-watch-cycling-tracker.html   /author  301
@@ -17,3 +21,66 @@
 /land-rover-details.html                            /   301
 /land-rover-defender-110-TDi-200-1993               /   301
 /land-rover-defender-110-TDi-200-1993.html          /   301
+
+# Old /writing/ index and posts -> /author (writing section consolidated)
+/writing                                                       /author  301
+/writing/                                                      /author  301
+/writing/refactor-with-ai-you-could-rewrite                    /author  301
+/writing/serverless-bill-that-broke-the-budget-pitch           /author  301
+
+# Mayven blog imports -> rewritten posts under /author
+# Kept articles: redirect to the new slug
+/blog/will-chatgpt-snake-eats-tail-analysis-ai-generated-content-impact-future-training-data  /author/ai-snake-eating-its-tail   301
+/blog/embracing-microservices-architecture-large-enterprises-key-insights-benefits   /author/microservices-arent-the-answer   301
+/blog/designing-effective-rest-apis-guide-software-developers   /author/rest-api-design   301
+/blog/unlocking-business-value-apis-business-analysts-perspective   /author/apis-are-the-product   301
+/blog/state-api-design-2023   /author/state-of-api-design-2023   301
+/blog/architecture-planning-telehealth-video-conferencing-app   /author/telehealth-video-architecture   301
+/blog/what-is-mvp   /author/what-is-mvp   301
+/blog/what-is-an-mvp   /author/what-is-mvp   301
+/blog/how-build-ecommerce-mvp   /author/build-ecommerce-mvp   301
+/blog/build-ecommerce-mvp   /author/build-ecommerce-mvp   301
+/blog/how-build-mvp-step-step-guide   /author/how-to-build-an-mvp   301
+/blog/build-mvp-step-step-guide   /author/how-to-build-an-mvp   301
+/blog/planning-build-mvp-what-do-you-need   /author/planning-an-mvp   301
+/blog/mvp-planning-checklist-what-do-i-need   /author/planning-an-mvp   301
+/blog/review-best-web-application-development-frameworks-build-mvp   /author/mvp-frameworks   301
+/blog/review-lean-startup-book   /author/lean-startup-review   301
+/blog/benefits-using-low-code-platform-rapid-prototyping   /author/low-code-prototyping   301
+/blog/tdd-todays-engineering-teams-test-driven-development   /author/tdd-in-practice   301
+/blog/benefits-using-agile-methodologies-software-development   /author/agile-without-the-theater   301
+/blog/benefits-continuous-integration-delivery-software-development   /author/ci-cd-actually   301
+/blog/best-practices-testing-debugging-software   /author/testing-and-debugging   301
+/blog/recruiting-tips-building-strong-software-development-team   /author/recruiting-engineers   301
+/blog/how-much-does-it-cost-hire-team-developers   /author/cost-to-hire-developers   301
+/blog/much-cost-hire-team-developers   /author/cost-to-hire-developers   301
+/blog/how-build-digital-products-remote-team   /author/remote-product-development   301
+/blog/build-digital-products-remote-team   /author/remote-product-development   301
+/blog/how-effectively-communicate-your-remote-software-development-team   /author/communicating-with-remote-teams   301
+/blog/effectively-communicate-remote-software-development-team   /author/communicating-with-remote-teams   301
+
+# Killed marketing/SEO articles -> /author landing
+/blog/re-launching-mixpanel-again   /author   301
+/blog/re-launching-mixpanel   /author   301
+/blog/how-does-googles-core-web-vitals-work   /author   301
+/blog/best-ab-testing-tools-your-marketing-site   /author   301
+/blog/best-ab-testing-tools-marketing-site   /author   301
+/blog/maximizing-roi-best-practices-measuring-optimizing-marketing-campaigns   /author   301
+/blog/should-you-try-influencer-marketing-your-business   /author   301
+/blog/should-try-influencer-marketing-business   /author   301
+/blog/basics-content-marketing-startups-tech-companies   /author   301
+/blog/how-tell-compelling-brand-story   /author   301
+/blog/tell-compelling-brand-story   /author   301
+/blog/how-implement-successful-digital-transformation-strategy   /author   301
+/blog/implement-successful-digital-transformation-strategy   /author   301
+/blog/benefits-migrating-drupal-wordpress   /author   301
+/blog/how-clear-wpengine-cache   /author   301
+/blog/clear-wpengine-cache   /author   301
+/blog/power-personalization-how-use-data-ai-deliver-targeted-marketing-messages   /author   301
+/blog/power-personalization-use-data-ai-deliver-targeted-marketing-messages   /author   301
+/blog/gift-guide-software-developers   /author   301
+/blog/gift-guide-for-software-developers   /author   301
+
+# Catch-all for any remaining /blog/* paths
+/blog/*   /author   301
+/blog     /author   301

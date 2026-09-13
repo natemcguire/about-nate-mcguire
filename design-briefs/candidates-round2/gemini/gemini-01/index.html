@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nate McGuire — Staff Engineer &amp; Operator</title>
+  <style>
+    :root {
+      --bg: #f8f6f0;
+      --surface: #ffffff;
+      --ink: #141413;
+      --ink-muted: #5e5e5b;
+      --rule: #dedad0;
+      --accent: #b83419;
+      --focus-ring: #b83419;
+      --font-display: -apple-system, BlinkMacSystemFont, 'Helvetica Neue', 'Segoe UI', Arial, sans-serif;
+      --font-serif: Georgia, 'Times New Roman', serif;
+      --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      background-color: var(--bg);
+      color: var(--ink);
+      font-family: var(--font-display);
+      line-height: 1.45;
+      -webkit-font-smoothing: antialiased;
+      min-height: 100vh;
+      position: relative;
+    }
+    a:focus-visible, button:focus-visible {
+      outline: 2px solid var(--focus-ring);
+      outline-offset: 3px;
+    }
+    .grid-overlay {
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      z-index: 999;
+      display: none;
+      background-image:
+        linear-gradient(to right, rgba(184, 52, 25, 0.07) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(184, 52, 25, 0.07) 1px, transparent 1px);
+      background-size: 24px 24px;
+    }
+    body.show-grid .grid-overlay { display: block; }
+    .container {
+      max-width: 1240px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+      border-left: 1px solid var(--rule);
+      border-right: 1px solid var(--rule);
+      min-height: 100vh;
+      background: var(--bg);
+    }
+    header {
+      padding: 2.5rem 0 1.5rem;
+      border-bottom: 2px solid var(--ink);
+    }
+    .top-meta {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      font-family: var(--font-mono);
+      font-size: 0.8125rem;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      color: var(--ink-muted);
+      margin-bottom: 1.5rem;
+      gap: 0.75rem;
+    }
+    .meta-group { display: flex; gap: 1.5rem; align-items: center; }
+    .grid-toggle-btn {
+      background: none;
+      border: 1px solid var(--ink-muted);
+      color: var(--ink);
+      font-family: var(--font-mono);
+      font-size: 0.75rem;
+      padding: 0.25rem 0.6rem;
+      cursor: pointer;
+      text-transform: uppercase;
+      border-radius: 2px;
+      transition: all 0.15s ease;
+    }
+    .grid-toggle-btn:hover { background: var(--ink); color: var(--bg); }
+    .masthead-title {
+      font-size: clamp(3rem, 9vw, 8.5rem);
+      font-weight: 900;
+      letter-spacing: -0.04em;
+      line-height: 0.88;
+      text-transform: uppercase;
+      color: var(--ink);
+      margin-bottom: 1rem;
+    }
+    .role-strip {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr;
+      border-top: 1px solid var(--ink);
+      padding-top: 0.75rem;
+      font-size: 1rem;
+      font-weight: 600;
+      gap: 1.5rem;
+    }
+    @media (max-width: 768px) {
+      .role-strip { grid-template-columns: 1fr; gap: 0.5rem; }
+    }
+    .hero-statement {
+      padding: 4rem 0;
+      border-bottom: 1px solid var(--rule);
+    }
+    .statement-text {
+      font-family: var(--font-serif);
+      font-size: clamp(1.75rem, 3.5vw, 3rem);
+      line-height: 1.25;
+      font-weight: 400;
+      color: var(--ink);
+      max-width: 960px;
+    }
+    .statement-text strong {
+      font-weight: 700;
+      color: var(--accent);
+    }
+    .main-grid {
+      display: grid;
+      grid-template-columns: 7fr 5fr;
+      border-bottom: 1px solid var(--rule);
+    }
+    @media (max-width: 860px) {
+      .main-grid { grid-template-columns: 1fr; }
+    }
+    .section-column {
+      padding: 3rem 2rem 3rem 0;
+      border-right: 1px solid var(--rule);
+    }
+    .side-column {
+      padding: 3rem 0 3rem 2rem;
+    }
+    @media (max-width: 860px) {
+      .section-column { border-right: none; border-bottom: 1px solid var(--rule); padding: 2.5rem 0; }
+      .side-column { padding: 2.5rem 0; }
+    }
+    .col-header {
+      font-family: var(--font-mono);
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--accent);
+      margin-bottom: 2rem;
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+    .col-header::after {
+      content: "";
+      flex: 1;
+      height: 1px;
+      background: var(--rule);
+    }
+    .timeline-item {
+      margin-bottom: 2.5rem;
+      position: relative;
+    }
+    .timeline-item:last-child { margin-bottom: 0; }
+    .item-year {
+      font-family: var(--font-mono);
+      font-size: 0.8125rem;
+      color: var(--ink-muted);
+      margin-bottom: 0.25rem;
+    }
+    .item-title {
+      font-size: 1.35rem;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      margin-bottom: 0.5rem;
+    }
+    .item-desc {
+      color: var(--ink-muted);
+      font-size: 1.05rem;
+      line-height: 1.55;
+    }
+    .client-chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-top: 0.75rem;
+    }
+    .chip {
+      display: inline-block;
+      padding: 0.25rem 0.65rem;
+      background: var(--surface);
+      border: 1px solid var(--rule);
+      font-family: var(--font-mono);
+      font-size: 0.75rem;
+      border-radius: 2px;
+      color: var(--ink);
+    }
+    .focus-list {
+      display: flex;
+      flex-direction: column;
+      gap: 1.25rem;
+      margin-bottom: 3rem;
+    }
+    .focus-card {
+      background: var(--surface);
+      border: 1px solid var(--rule);
+      padding: 1.25rem;
+      border-left: 4px solid var(--ink);
+      transition: transform 0.15s ease, border-color 0.15s ease;
+    }
+    .focus-card:hover {
+      transform: translateX(4px);
+      border-left-color: var(--accent);
+    }
+    .focus-card h4 {
+      font-size: 1.15rem;
+      font-weight: 700;
+      margin-bottom: 0.25rem;
+    }
+    .focus-card p {
+      font-size: 0.925rem;
+      color: var(--ink-muted);
+    }
+    .links-section {
+      padding: 3rem 0;
+    }
+    .links-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 1rem;
+      margin-top: 1.5rem;
+    }
+    .comm-link {
+      display: flex;
+      flex-direction: column;
+      padding: 1.25rem;
+      background: var(--surface);
+      border: 1px solid var(--rule);
+      text-decoration: none;
+      color: var(--ink);
+      transition: all 0.2s ease;
+      position: relative;
+    }
+    .comm-link:hover {
+      background: var(--ink);
+      color: var(--bg);
+      border-color: var(--ink);
+    }
+    .comm-link:hover .link-arrow {
+      transform: translate(2px, -2px);
+      color: var(--accent);
+    }
+    .link-meta {
+      font-family: var(--font-mono);
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      opacity: 0.7;
+      margin-bottom: 0.5rem;
+    }
+    .link-name {
+      font-size: 1.125rem;
+      font-weight: 700;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .link-arrow { transition: transform 0.2s ease; }
+    footer {
+      padding: 2.5rem 0 3.5rem;
+      border-top: 1px solid var(--ink);
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      font-family: var(--font-mono);
+      font-size: 0.8125rem;
+      color: var(--ink-muted);
+      gap: 1rem;
+    }
+    @media (prefers-reduced-motion: reduce) {
+      * { transition: none !important; animation: none !important; }
+    }
+  </style>
+</head>
+<body>
+  <div class="grid-overlay" id="gridOverlay" aria-hidden="true"></div>
+  <div class="container">
+    <header>
+      <div class="top-meta">
+        <div class="meta-group">
+          <span>Alexandria, Virginia</span>
+          <span>/</span>
+          <span id="liveClock">Alexandria local time</span>
+        </div>
+        <div class="meta-group">
+          <span>Edition: 2026</span>
+          <button class="grid-toggle-btn" id="gridBtn" aria-pressed="false" title="Toggle structural grid layout guide">
+            Grid Layout: Off
+          </button>
+        </div>
+      </div>
+      <h1 class="masthead-title">Nate McGuire</h1>
+      <div class="role-strip">
+        <div>Staff Engineer &mdash; Capital One, Card Tech</div>
+        <div>Location &mdash; Alexandria, VA</div>
+        <div>Discipline &mdash; Software &amp; Teams</div>
+      </div>
+    </header>
+
+    <section class="hero-statement" aria-label="Executive Bio">
+      <p class="statement-text">
+        Engineer, founder, and operator. I build <strong>software and teams</strong>, and invest in and advise <strong>small internet businesses</strong>.
+      </p>
+    </section>
+
+    <div class="main-grid">
+      <section class="section-column" aria-label="Career Background">
+        <h2 class="col-header">Track Record &amp; Background</h2>
+        
+        <article class="timeline-item">
+          <div class="item-year">CURRENT ROLE</div>
+          <h3 class="item-title">Capital One &mdash; Card Tech</h3>
+          <p class="item-desc">Staff Engineer at Capital One, Card Tech. Based in Alexandria, Virginia.</p>
+        </article>
+
+        <article class="timeline-item">
+          <div class="item-year">FOUNDER &amp; OPERATOR</div>
+          <h3 class="item-title">Mayven Studios &rarr; Acquired by Saltwater</h3>
+          <p class="item-desc">Founder of Mayven Studios, acquired by Saltwater, Ryan Graves’ holding company.</p>
+        </article>
+
+        <article class="timeline-item">
+          <div class="item-year">CLIENTS</div>
+          <h3 class="item-title">Software for Clients</h3>
+          <p class="item-desc">At Mayven, built software for companies including Google, Airbnb, and IBM.</p>
+          <div class="client-chips" aria-label="Clients built for at Mayven">
+            <span class="chip">Google</span>
+            <span class="chip">Airbnb</span>
+            <span class="chip">IBM</span>
+          </div>
+        </article>
+
+        <article class="timeline-item">
+          <div class="item-year">EXPERIENCE TIMELINE</div>
+          <h3 class="item-title">15+ Years in Engineering</h3>
+          <p class="item-desc">15+ years building software and leading engineering teams.</p>
+        </article>
+      </section>
+
+      <aside class="side-column" aria-label="Areas of Focus">
+        <h2 class="col-header">Core Focus Areas</h2>
+        <div class="focus-list">
+          <div class="focus-card">
+            <h4>Software Architecture</h4>
+            
+          </div>
+          <div class="focus-card">
+            <h4>Engineering Leadership</h4>
+            
+          </div>
+          <div class="focus-card">
+            <h4>Internet Businesses</h4>
+            
+          </div>
+        </div>
+      </aside>
+    </div>
+
+    <section class="links-section" aria-label="Channels and Outbound Links">
+      <h2 class="col-header">Direct Communications &amp; Profiles</h2>
+      <div class="links-grid">
+        <a href="mailto:n@natemcguire.com" class="comm-link">
+          <span class="link-meta">Direct Inbox</span>
+          <span class="link-name">Email <span class="link-arrow">&nearr;</span></span>
+        </a>
+        <a href="https://github.com/natemcguire" target="_blank" rel="noopener noreferrer" class="comm-link">
+          <span class="link-meta">Code &amp; Repos</span>
+          <span class="link-name">GitHub <span class="link-arrow">&nearr;</span></span>
+        </a>
+        <a href="https://linkedin.com/in/natemcguire" target="_blank" rel="noopener noreferrer" class="comm-link">
+          <span class="link-meta">Professional</span>
+          <span class="link-name">LinkedIn <span class="link-arrow">&nearr;</span></span>
+        </a>
+        <a href="https://twitter.com/natemcguire" target="_blank" rel="noopener noreferrer" class="comm-link">
+          <span class="link-meta">Social / Thoughts</span>
+          <span class="link-name">X (Twitter) <span class="link-arrow">&nearr;</span></span>
+        </a>
+        <a href="https://medium.com/@natemcguire" target="_blank" rel="noopener noreferrer" class="comm-link">
+          <span class="link-meta">Articles &amp; Essays</span>
+          <span class="link-name">Writing <span class="link-arrow">&nearr;</span></span>
+        </a>
+      </div>
+    </section>
+
+    <footer>
+      <div>&copy; Nate McGuire &bull; Alexandria, VA</div>
+      <div>Capital One &bull; Card Tech &bull; Staff Engineer</div>
+    </footer>
+  </div>
+
+  <script>
+    (function() {
+      const gridBtn = document.getElementById('gridBtn');
+      gridBtn.addEventListener('click', function() {
+        const isActive = document.body.classList.toggle('show-grid');
+        gridBtn.setAttribute('aria-pressed', isActive ? 'true' : 'false');
+        gridBtn.textContent = isActive ? 'Grid Layout: On' : 'Grid Layout: Off';
+      });
+
+      function updateClock() {
+        const clockEl = document.getElementById('liveClock');
+        const now = new Date();
+        const options = { timeZone: 'America/New_York', hour12: false, hour: '2-digit', minute: '2-digit', second: '2-digit' };
+        clockEl.textContent = 'Alexandria time ' + new Intl.DateTimeFormat('en-US', options).format(now);
+      }
+      setInterval(updateClock, 1000);
+      updateClock();
+    })();
+  </script>
+</body>
+</html>

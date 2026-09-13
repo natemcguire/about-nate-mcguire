@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Best Framework to Build an MVP Is the One You Already Know — Nate McGuire</title>
+    <meta name="description" content="Founders ask which stack. The answer is whichever stack you can ship tonight. Stop optimizing for a refactor you&#x27;ll never do." />
+    <meta name="author" content="Nate McGuire" />
+    <meta name="robots" content="index, follow, max-image-preview:large" />
+    <link rel="canonical" href="https://natemcguire.com/author/mvp-frameworks" />
+
+    <meta property="og:type" content="article" />
+    <meta property="og:site_name" content="Nate McGuire" />
+    <meta property="og:title" content="The Best Framework to Build an MVP Is the One You Already Know" />
+    <meta property="og:description" content="Founders ask which stack. The answer is whichever stack you can ship tonight. Stop optimizing for a refactor you&#x27;ll never do." />
+    <meta property="og:url" content="https://natemcguire.com/author/mvp-frameworks" />
+    <meta property="og:image" content="https://natemcguire.com/og-image.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="article:author" content="Nate McGuire" />
+    <meta property="article:published_time" content="2026-05-26" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="@natemcguire" />
+    <meta name="twitter:creator" content="@natemcguire" />
+    <meta name="twitter:title" content="The Best Framework to Build an MVP Is the One You Already Know" />
+    <meta name="twitter:description" content="Founders ask which stack. The answer is whichever stack you can ship tonight. Stop optimizing for a refactor you&#x27;ll never do." />
+    <meta name="twitter:image" content="https://natemcguire.com/og-image.png" />
+
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <link rel="stylesheet" href="/style.css">
+    <link rel="stylesheet" href="/author/article.css">
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Article",
+      "headline": "The Best Framework to Build an MVP Is the One You Already Know",
+      "author": { "@type": "Person", "name": "Nate McGuire", "url": "https://natemcguire.com/" },
+      "publisher": { "@type": "Person", "name": "Nate McGuire" },
+      "url": "https://natemcguire.com/author/mvp-frameworks",
+      "image": "https://natemcguire.com/og-image.png",
+      "datePublished": "2026-05-26",
+      "articleSection": "MVPs",
+      "description": "Founders ask which stack. The answer is whichever stack you can ship tonight. Stop optimizing for a refactor you'll never do."
+    }
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.4/dist/chart.umd.min.js" defer></script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-MP2PD28L5S"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-MP2PD28L5S');
+    </script>
+</head>
+<body>
+    <div class="wrap article-wrap">
+        <header class="top">
+            <a href="/" class="brand">nate mcguire</a>
+            <nav>
+                <a href="/">bio</a>
+                <a href="/author" aria-current="page">author</a>
+                <a href="/about">about</a>
+                <a href="/speaking">speaking</a>
+                <a href="/work-with-me">work</a>
+            </nav>
+        </header>
+
+        <p class="article-meta">
+            <a href="/author">MVPs</a>
+            <span class="dot">·</span>
+            <span class="meta">May 2026</span>
+        </p>
+
+        <h1 class="article-h1">The Best Framework to Build an MVP Is the One You Already Know</h1>
+        <p class="article-hook">Founders ask which stack. The answer is whichever stack you can ship tonight. Stop optimizing for a refactor you&#x27;ll never do.</p>
+
+        <article class="article-body">
+        <p>--- The question I get most from founders building their first product is: what stack should I use? They want me to say Next.js, Rails, Django, Laravel, T3, Remix, SvelteKit, or this week's framework du jour. They want a definitive answer to stop deliberating and start building.</p>
+        <p>The answer is: whichever framework has the most AI-coding-tool support and the best ecosystem, in that order. Five years ago, I'd have said "whichever you know best," because the bottleneck was your fluency. In 2026, the bottleneck has moved. The model writing 70% of your code doesn't have your fluency — it has whatever fluency the training data gave it. So your framework choice now is partly about <em>what the model is good at</em>, not just what you are.</p>
+        <p>Founders often feel disappointed by this answer, expecting a technical depth signal, not an operational one. But here's why it's right: almost every framework choice for an MVP is reversible. Founders imagine the company at scale, where rewriting the platform from Rails to Go is a major undertaking. But they're building at <em>zero customers</em>, where switching stacks is a weekend's work. The cost of being wrong about the stack at MVP time is roughly zero. The cost of being late, or never shipping, is enormous.</p>
+        <p>So the framework question becomes: which framework lets <em>you</em>, the founder, ship the fastest? The answer depends on what you know.</p>
+        <p>If you've shipped Rails apps before, build the MVP in Rails. Don't switch to Next.js because the YC batch is on Next.js.</p>
+        <p>If you've shipped Django apps before, build it in Django. Yes, even in 2026. Django still works. Instagram was Django at huge scale.</p>
+        <p>If you've shipped Next.js before, build it in Next.js. Don't switch to Remix because someone on Hacker News said Remix has better routing.</p>
+        <p>If you've shipped Laravel before, build it in Laravel. PHP is fine. The internet runs on PHP. WordPress runs on PHP. Most of your competitors are running on PHP and lying about it.</p>
+        <p>If you have <em>no</em> framework experience, you're picking a learning curve plus a shipping curve. The frameworks I'd recommend in 2026 for absolute beginners, ranked by learnability, ecosystem, and ability to ship something real:</p>
+        <p>For reference, the <a href="https://survey.stackoverflow.co/2024/technology/#1-web-frameworks-and-technologies">Stack Overflow 2024 Developer Survey</a> puts Node, React, and Next near the top of professional usage, with Django and Rails further down but still well-represented. The point isn't that one is "winning" — it's that any of them has enough community, libraries, and AI-assistant training data to ship your idea this week.</p>
+        <figure class="article-figure article-figure-chart"><div class="chart-wrap"><canvas id="chart-1"></canvas></div><script>document.addEventListener("DOMContentLoaded",function(){var el=document.getElementById("chart-1");if(!el||!window.Chart)return;new Chart(el,{"type":"bar","data":{"labels":["Node.js","React","Next.js","Express","Vue","Django","Spring Boot","FastAPI","ASP.NET","Ruby on Rails","Laravel","Flask","Phoenix"],"datasets":[{"label":"% of professional devs (2024)","data":[40.8,39.5,17.9,17.8,16.4,12.7,12.7,9.9,9.7,4.7,7.0,8.3,1.0],"backgroundColor":"#002fa7"}]},"options":{"responsive":true,"maintainAspectRatio":false,"indexAxis":"y","plugins":{"legend":{"display":false},"title":{"display":true,"text":"Web framework usage among professional developers"}},"scales":{"x":{"beginAtZero":true,"title":{"display":true,"text":"% reporting use"}}}}});});</script><figcaption>Source: <a href="https://survey.stackoverflow.co/2024/technology/#1-web-frameworks-and-technologies">Stack Overflow Developer Survey 2024</a>. Multi-select question; numbers don't sum to 100.</figcaption></figure>
+        <p><strong>Next.js with the App Router on Vercel</strong> is the right general-purpose default for a typical web MVP in 2026. It's TypeScript by default, has good docs, has a deploy story that works without thinking, and — most importantly — is the framework with the most LLM-coding-assistant training data. Claude Code, Cursor, Codex, Copilot, and the rest will all help you most with Next.js because that's what they've seen most of. This is no longer a tiebreaker; it's <em>the</em> tiebreaker. The negatives are real — the framework is over-engineered for what most MVPs need, the App Router has rough edges, and you can spend a day fighting hydration mismatches — but those negatives are smaller than the negative of picking something with worse AI tooling.</p>
+        <p><strong>Ruby on Rails 8</strong> is the right answer if you want maximum velocity and you're willing to learn one framework deeply. Rails in 2026 is genuinely better than it was in 2015 — Hotwire works, Turbo works, the deploy story with Kamal is good. The hiring market for Rails developers is worse than it used to be, which matters if you intend to hire engineers. For a solo or small-team MVP, that doesn't matter.</p>
+        <p><strong>Django + HTMX</strong> is a slept-on combination. You get Python (which means easy ML integration, good library ecosystem, decent AI-assistant support), you get Django's batteries-included approach (admin panel, ORM, auth, migrations), and you get a frontend story (HTMX) that doesn't require building a separate SPA. The total complexity is much lower than the React/Next.js variant. If your MVP doesn't need a complex frontend, this is faster than any JavaScript option.</p>
+        <p><strong>Phoenix on Elixir</strong> if you have an excuse to use it. Excellent for real-time features (chat, live updates, multiplayer). LiveView is genuinely a different paradigm and it's good. The downside is the ecosystem is smaller and AI tooling assistance is worse. Worth it if your product is real-time-first.</p>
+        <p><strong>Laravel</strong> if you already know PHP or have a PHP-experienced co-founder. Modern Laravel is genuinely good. The deploy story is well-trodden. The downside is the same as Rails — smaller and shrinking hiring market — and again, doesn't matter for the MVP.</p>
+        <p>What I would <em>not</em> recommend in 2026 for a first MVP from a beginner:</p>
+        <p><strong>Anything microservices.</strong> You're one person. You don't need three services. You need one service that works.</p>
+        <p><strong>Anything Kubernetes-first.</strong> You don't need Kubernetes. You need a Heroku-shaped deploy target (Heroku itself, Render, Fly.io, Railway, Vercel). Kubernetes is a tool for a problem you do not yet have.</p>
+        <p><strong>Anything edge-first.</strong> Cloudflare Workers, Deno Deploy, and similar are great technologies but constrained — no long-lived connections, limited compute, weird storage stories. Use them for specific edge cases, not as your primary substrate.</p>
+        <p><strong>Anything Rust.</strong> Rust is a great language. It is slow to write in. You will ship 2-4x slower than you would in any of the above. There are real cases where the Rust performance pays back, but they are not MVP cases. If you find yourself reaching for Rust because it's "the right tool," you've optimized for the wrong axis.</p>
+        <p><strong>Anything custom-built.</strong> Building your own framework is the most expensive form of procrastination available to engineers. Don't.</p>
+        <p>The thing that matters more than the framework choice is the <em>substrate choices around the framework</em>. Database: Postgres. Always Postgres. Don't use MongoDB, MySQL, or DynamoDB for an MVP. Postgres is boring and right. Auth: use the platform (Clerk, Supabase Auth, NextAuth, Devise, whatever) — don't build it yourself. Payments: Stripe, hosted checkout, don't write payment code. Email: Postmark or Resend. File storage: S3 or R2. Deploy: a managed PaaS. The decision tree around the framework is "use the standard well-known thing for everything you don't have to differentiate on," and the framework is just one node in that tree.</p>
+        <p>A specific framing that helps. When someone asks me "should I use Next.js or Rails," I ask: "what specifically would be different about the customer experience if you picked one versus the other?" Almost always, the honest answer is "nothing." The customer doesn't know what framework you used. They know whether your product is good. The framework affects your <em>internal velocity</em>, not the <em>output</em>. So pick the one that maximizes your velocity, which is the one you know.</p>
+        <p>One more important thing. Once you have product-market fit and you're scaling, the framework choice will be revisited. That revisit is healthy. Many successful companies were rewritten once or twice as they scaled — Twitter went Rails to Scala, Shopify is still Rails but has carved out components, Stripe started in PHP and is now mostly Ruby and Scala, Facebook started in PHP and built Hack to keep PHP at scale. The pattern is: ship in the language you know, get to PMF, then rewrite the parts that need to be rewritten with the benefit of knowing what your actual workload looks like. That's a much better path than spending six months in framework-selection paralysis pretending you know what you'll need at scale.</p>
+        <p>So: which framework should you use? The one with the best AI-tool support that maps to your problem domain — which in 2026 means Next.js, Django, or Rails for most teams. If you don't know any, pick Next.js or Django and start building. The framework will not save a bad business idea. The framework will not kill a good business idea. The market will. Go meet the market.</p>
+        </article>
+
+        <footer class="article-footer">
+            <p><a href="/author">← more from /author</a></p>
+        </footer>
+    </div>
+    <script src="/author/tldr.js" defer></script>
+</body>
+</html>

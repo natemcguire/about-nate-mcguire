@@ -1,0 +1,22 @@
+{
+  "version": "2026-09-12",
+  "name": "Nate McGuire",
+  "role": "Staff Engineer",
+  "company": "Capital One",
+  "team": "Card Tech",
+  "location": "Alexandria, Virginia",
+  "bio": "Engineer, founder, and operator. I build software and teams, and invest in and advise small internet businesses.",
+  "background": [
+    "Founder of Mayven Studios, acquired by Saltwater, Ryan Graves’ holding company.",
+    "At Mayven, built software for companies including Google, Airbnb, and IBM.",
+    "15+ years building software and leading engineering teams."
+  ],
+  "focus": ["Software architecture", "Engineering leadership", "Internet businesses"],
+  "links": [
+    {"label": "Email", "url": "mailto:n@natemcguire.com"},
+    {"label": "GitHub", "url": "https://github.com/natemcguire"},
+    {"label": "LinkedIn", "url": "https://linkedin.com/in/natemcguire"},
+    {"label": "X", "url": "https://twitter.com/natemcguire"},
+    {"label": "Writing", "url": "https://medium.com/@natemcguire"}
+  ]
+}

@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+<meta charset='utf-8'>
+<meta name='viewport' content='width=device-width,initial-scale=1'>
+<title>Nate McGuire — Drawing</title>
+<style>
+:root{--navy:#16324f;--line:#8aa4bb;--paper:#e8eef3;--mark:#c45a12}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--paper);color:var(--navy);font:16px/1.5 system-ui,sans-serif;min-height:100vh;background-image:linear-gradient(rgba(22,50,79,.11) 1px,transparent 1px),linear-gradient(90deg,rgba(22,50,79,.11) 1px,transparent 1px);background-size:28px 28px}
+a{color:inherit}
+:focus-visible{outline:2px solid var(--mark);outline-offset:3px}
+.skip{position:absolute;left:-999px}
+.skip:focus{left:8px;top:8px;background:#fff;padding:8px;z-index:9}
+#hx,#hy{position:fixed;background:rgba(196,90,18,.45);pointer-events:none;z-index:6;display:none}
+#hx{height:1px;left:0;right:0;top:50%}
+#hy{width:1px;top:0;bottom:0;left:50%}
+.wrap{display:grid;grid-template-columns:1fr 280px;min-height:100vh}
+main{padding:28px 32px 120px}
+.meta{display:flex;justify-content:space-between;font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:#4d6780;border:1px solid var(--navy);padding:8px 10px}
+h1{font-weight:500;font-size:clamp(36px,6vw,64px);letter-spacing:-.03em;line-height:1;margin:28px 0 10px}
+.role{font-size:13px;letter-spacing:.14em;text-transform:uppercase;color:#4d6780}
+bio{display:block;max-width:38em;margin:18px 0 28px}
+svg.plan{width:100%;max-width:720px;height:auto;border:1px solid var(--navy);background:rgba(255,255,255,.35)}
+.room{cursor:pointer;transition:fill .2s}
+.room:hover,.room:focus,.room.on{fill:rgba(196,90,18,.18)}
+.legend{margin-top:18px;max-width:40em}
+.legend section{display:block;border-top:1px solid var(--navy);padding:14px 0}
+.legend section.on{display:block;background:rgba(196,90,18,.08);border-top-color:var(--mark)}
+.legend h2{font-size:15px;letter-spacing:.12em;text-transform:uppercase;margin-bottom:6px}
+aside{border-left:1px solid var(--navy);padding:16px;display:flex;flex-direction:column;gap:12px;background:rgba(255,255,255,.5)}
+.block{border:1px solid var(--navy);padding:12px;font-size:11px;letter-spacing:.08em;text-transform:uppercase;line-height:1.6}
+.block b{display:block;font-size:13px;letter-spacing:.02em;text-transform:none;margin-top:4px}
+.focus button{display:block;width:100%;text-align:left;background:transparent;border:1px solid var(--navy);color:var(--navy);padding:8px 10px;margin:6px 0 0;cursor:pointer;font:12px/1.3 system-ui,sans-serif;letter-spacing:.08em;text-transform:uppercase}
+.focus button:hover,.focus button.on{background:var(--navy);color:var(--paper)}
+.links a{display:inline-block;margin:8px 12px 0 0;font-size:12px;letter-spacing:.1em;text-transform:uppercase}
+#xy{font-variant-numeric:tabular-nums;color:#4d6780}
+@media(max-width:860px){.wrap{grid-template-columns:1fr}aside{border-left:0;border-top:1px solid var(--navy)}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important}}
+</style>
+</head>
+<body>
+<a class='skip' href='#main'>Skip to content</a>
+<div id='hx'></div><div id='hy'></div>
+<div class='wrap'>
+<main id='main'>
+<div class='meta'><span>Sheet 01 / Site plan</span><span id='xy'>X 000 · Y 000</span></div>
+<h1>Nate McGuire</h1>
+<p class='role'>Staff Engineer · Capital One · Card Tech · Alexandria, Virginia</p>
+<bio>Engineer, founder, and operator. I build software and teams, and invest in and advise small internet businesses.</bio>
+<svg class='plan' viewBox='0 0 720 340' role='group' aria-labelledby='pt'>
+<title id='pt'>Plan of work: Mayven, clients, Capital One, focus</title>
+<rect x='1' y='1' width='718' height='338' fill='none' stroke='#16324f'/>
+<rect class='room on' id='r1' role='button' aria-label='Mayven Studios' tabindex='0' data-p='p1' x='24' y='24' width='300' height='180' fill='rgba(22,50,79,.06)' stroke='#16324f'/>
+<text x='40' y='52' font-size='12' letter-spacing='2' fill='#16324f'>A · STUDIO</text>
+<rect class='room' id='r2' role='button' aria-label='Mayven clients' tabindex='0' data-p='p2' x='340' y='24' width='356' height='180' fill='rgba(22,50,79,.03)' stroke='#16324f'/>
+<text x='356' y='52' font-size='12' letter-spacing='2' fill='#16324f'>B · CLIENTS</text>
+<rect class='room' id='r3' role='button' aria-label='Capital One Card Tech' tabindex='0' data-p='p3' x='24' y='220' width='430' height='96' fill='rgba(22,50,79,.03)' stroke='#16324f'/>
+<text x='40' y='248' font-size='12' letter-spacing='2' fill='#16324f'>C · CARD TECH</text>
+<rect class='room' id='r4' role='button' aria-label='Focus' tabindex='0' data-p='p4' x='470' y='220' width='226' height='96' fill='rgba(22,50,79,.03)' stroke='#16324f'/>
+<text x='486' y='248' font-size='12' letter-spacing='2' fill='#16324f'>D · FIELD</text>
+</svg>
+<div class='legend'>
+<section class='on' id='p1'><h2>A · Mayven Studios</h2><p>Founder of Mayven Studios, acquired by Saltwater, Ryan Graves’ holding company.</p></section>
+<section id='p2'><h2>B · Clients</h2><p>At Mayven, built software for companies including Google, Airbnb, and IBM.</p></section>
+<section id='p3'><h2>C · Capital One</h2><p>Staff Engineer on Card Tech. 15+ years building software and leading engineering teams. Based in Alexandria, Virginia.</p></section>
+<section id='p4'><h2>D · Focus</h2><p>Software architecture. Engineering leadership. Internet businesses.</p></section>
+</div>
+</main>
+<aside>
+<div class='block'><b>Nate McGuire</b>Staff Engineer<br>Capital One / Card Tech<br>Alexandria, Virginia<br>Scale: 15+ years</div>
+<div class='focus' role='group' aria-label='Highlight a section'>
+<button class='on' data-p='p1'>A Studio</button>
+<button data-p='p2'>B Clients</button>
+<button data-p='p3'>C Card Tech</button>
+<button data-p='p4'>D Field</button>
+</div>
+<nav class='links' aria-label='Contact'>
+<a href='mailto:n@natemcguire.com'>Email</a>
+<a href='https://github.com/natemcguire'>GitHub</a>
+<a href='https://linkedin.com/in/natemcguire'>LinkedIn</a>
+<a href='https://twitter.com/natemcguire'>X</a>
+<a href='https://medium.com/@natemcguire'>Writing</a>
+</nav>
+</aside>
+</div>
+<script>
+(function(){
+var reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
+var hx=document.getElementById('hx'),hy=document.getElementById('hy'),xy=document.getElementById('xy');
+if(!reduce){hx.style.display=hy.style.display='block';addEventListener('mousemove',function(e){hx.style.top=e.clientY+'px';hy.style.left=e.clientX+'px';xy.textContent='X '+String(e.clientX).padStart(3,'0')+' · Y '+String(e.clientY).padStart(3,'0');});}
+function show(id){
+document.querySelectorAll('.legend section').forEach(function(s){s.classList.toggle('on',s.id===id);});
+document.querySelectorAll('.room').forEach(function(r){r.classList.toggle('on',r.getAttribute('data-p')===id);});
+document.querySelectorAll('.focus button').forEach(function(b){b.classList.toggle('on',b.getAttribute('data-p')===id);});
+}
+document.querySelectorAll('.room, .focus button').forEach(function(el){
+el.addEventListener('click',function(){show(el.getAttribute('data-p'));});
+el.addEventListener('keydown',function(e){if(e.key==='Enter'||e.key===' '){e.preventDefault();show(el.getAttribute('data-p'));}});
+});
+var order=['p1','p2','p3','p4'],i=0;
+addEventListener('keydown',function(e){
+if(!e.target.matches('.room, .focus button'))return;
+if(e.key==='ArrowRight'||e.key==='ArrowDown'){e.preventDefault();i=(i+1)%4;show(order[i]);}
+if(e.key==='ArrowLeft'||e.key==='ArrowUp'){e.preventDefault();i=(i+3)%4;show(order[i]);}
+});
+})();
+</script>
+</body>
+</html>

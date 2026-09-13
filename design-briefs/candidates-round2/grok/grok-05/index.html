@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+<meta charset='utf-8'>
+<meta name='viewport' content='width=device-width,initial-scale=1'>
+<title>Nate McGuire</title>
+<style>
+:root{--bg:#d7ff3a;--ink:#11150a;--flash:#ff3b1f}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--ink);font:18px/1.4 system-ui,sans-serif;overflow-x:hidden}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--ink);outline-offset:3px}
+.skip{position:absolute;left:-999px}
+.skip:focus{left:8px;top:8px;background:#fff;padding:8px;z-index:9}
+.stamp{position:fixed;top:14px;right:14px;z-index:4;border:2px solid var(--ink);padding:6px 10px;font:11px/1.3 system-ui,sans-serif;letter-spacing:.14em;text-transform:uppercase;background:var(--bg)}
+.hero{min-height:100vh;padding:8vh 4vw 0;display:flex;flex-direction:column;justify-content:flex-end}
+h1{font-size:clamp(64px,18vw,240px);line-height:.78;letter-spacing:-.07em;font-weight:800;text-transform:uppercase}
+h1 span{display:inline-block;will-change:transform}
+.bio{max-width:34em;font-size:clamp(18px,2.4vw,28px);font-weight:600;margin:4vh 0 3vh}
+.slug{border-top:3px solid var(--ink);border-bottom:3px solid var(--ink);overflow:hidden;white-space:nowrap;background:var(--ink);color:var(--bg);font-weight:800;letter-spacing:.08em;text-transform:uppercase;font-size:clamp(14px,2vw,22px)}
+.slug inner{display:inline-block;padding:10px 0;animation:marq 18s linear infinite}
+@keyframes marq{to{transform:translateX(-50%)}}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:0;border-bottom:3px solid var(--ink)}
+.cell{padding:6vh 4vw;border-right:3px solid var(--ink);border-bottom:3px solid var(--ink)}
+.cell:nth-child(2n){border-right:0}
+.n{font-size:12px;letter-spacing:.18em;text-transform:uppercase;font-weight:800;margin-bottom:.6em}
+h2{font-size:clamp(22px,3vw,36px);letter-spacing:-.03em;text-transform:uppercase;margin-bottom:.4em}
+.flash{background:var(--flash);color:var(--ink);border-right:3px solid var(--ink)}
+footer{padding:5vh 4vw 8vh;display:flex;flex-wrap:wrap;gap:14px 24px;background:var(--ink);color:var(--bg)}
+footer a{font-weight:800;letter-spacing:.12em;text-transform:uppercase;font-size:13px;text-decoration:none;border-bottom:2px solid var(--bg)}
+footer a:focus-visible{outline-color:var(--bg)}footer a:hover{color:var(--bg);border-color:var(--flash)}
+@media(max-width:700px){.grid{grid-template-columns:1fr}.cell{border-right:0}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.slug{white-space:normal;overflow:visible}.slug inner{animation:none}h1 span{transform:none!important}}
+</style>
+</head>
+<body>
+<a class='skip' href='#main'>Skip to content</a>
+<div class='stamp'>Alexandria, VA<br>Staff Engineer<br>Capital One · Card Tech</div>
+<header class='hero' id='top'>
+<h1 id='nm' aria-label='Nate McGuire'><span>N</span><span>a</span><span>t</span><span>e</span><br><span>M</span><span>c</span><span>G</span><span>u</span><span>i</span><span>r</span><span>e</span></h1>
+<p class='bio' id='main'>Engineer, founder, and operator. I build software and teams, and invest in and advise small internet businesses.</p>
+</header>
+<div class='slug' aria-hidden='false'><inner>Software architecture · Engineering leadership · Internet businesses · Software architecture · Engineering leadership · Internet businesses · </inner></div>
+<div class='grid'>
+<article class='cell' id='m'>
+<p class='n'>01 Founder</p>
+<h2>Mayven Studios</h2>
+<p>Founder of Mayven Studios, acquired by Saltwater, Ryan Graves’ holding company.</p>
+</article>
+<article class='cell'>
+<p class='n'>02 Clients</p>
+<h2>Google Airbnb IBM</h2>
+<p>At Mayven, built software for companies including Google, Airbnb, and IBM.</p>
+</article>
+<article class='cell'>
+<p class='n'>03 Tenure</p>
+<h2>15+ years</h2>
+<p>Fifteen-plus years building software and leading engineering teams.</p>
+</article>
+<article class='cell flash'>
+<p class='n'>04 Now</p>
+<h2>Card Tech</h2>
+<p>Staff Engineer at Capital One, Card Tech. Based in Alexandria, Virginia.</p>
+</article>
+</div>
+<footer>
+<a href='mailto:n@natemcguire.com'>Email</a>
+<a href='https://github.com/natemcguire'>GitHub</a>
+<a href='https://linkedin.com/in/natemcguire'>LinkedIn</a>
+<a href='https://twitter.com/natemcguire'>X</a>
+<a href='https://medium.com/@natemcguire'>Writing</a>
+</footer>
+<script>
+(function(){
+if(matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+var letters=[].slice.call(document.querySelectorAll('#nm span'));
+var mx=innerWidth/2,my=innerHeight/2;
+addEventListener('pointermove',function(e){mx=e.clientX;my=e.clientY;});
+function tick(){
+letters.forEach(function(el){var r=el.getBoundingClientRect();var cx=r.left+r.width/2,cy=r.top+r.height/2;var dx=mx-cx,dy=my-cy;var d=Math.sqrt(dx*dx+dy*dy)||1;var f=Math.max(0,140-d)/140;el.style.transform='translate('+(dx/d*f*-14)+'px,'+(dy/d*f*-14)+'px)';});
+requestAnimationFrame(tick);
+}
+requestAnimationFrame(tick);
+})();
+</script>
+</body>
+</html>

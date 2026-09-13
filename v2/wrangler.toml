@@ -1,0 +1,7 @@
+name = "natemcguire-v2"
+compatibility_date = "2024-10-01"
+pages_build_output_dir = "."
+
+[[kv_namespaces]]
+binding = "TLDR_CACHE"
+id = "c8954ad30c524097a59bfd98eb06576c"

@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TDD in Practice, Not in Theory — Nate McGuire</title>
+    <meta name="description" content="Strict TDD is a religion. Tests-as-you-go is engineering. The distinction matters more than the dogma." />
+    <meta name="author" content="Nate McGuire" />
+    <meta name="robots" content="index, follow, max-image-preview:large" />
+    <link rel="canonical" href="https://natemcguire.com/author/tdd-in-practice" />
+
+    <meta property="og:type" content="article" />
+    <meta property="og:site_name" content="Nate McGuire" />
+    <meta property="og:title" content="TDD in Practice, Not in Theory" />
+    <meta property="og:description" content="Strict TDD is a religion. Tests-as-you-go is engineering. The distinction matters more than the dogma." />
+    <meta property="og:url" content="https://natemcguire.com/author/tdd-in-practice" />
+    <meta property="og:image" content="https://natemcguire.com/og-image.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="article:author" content="Nate McGuire" />
+    <meta property="article:published_time" content="2026-05-26" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="@natemcguire" />
+    <meta name="twitter:creator" content="@natemcguire" />
+    <meta name="twitter:title" content="TDD in Practice, Not in Theory" />
+    <meta name="twitter:description" content="Strict TDD is a religion. Tests-as-you-go is engineering. The distinction matters more than the dogma." />
+    <meta name="twitter:image" content="https://natemcguire.com/og-image.png" />
+
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <link rel="stylesheet" href="/style.css">
+    <link rel="stylesheet" href="/author/article.css">
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Article",
+      "headline": "TDD in Practice, Not in Theory",
+      "author": { "@type": "Person", "name": "Nate McGuire", "url": "https://natemcguire.com/" },
+      "publisher": { "@type": "Person", "name": "Nate McGuire" },
+      "url": "https://natemcguire.com/author/tdd-in-practice",
+      "image": "https://natemcguire.com/og-image.png",
+      "datePublished": "2026-05-26",
+      "articleSection": "Engineering leadership",
+      "description": "Strict TDD is a religion. Tests-as-you-go is engineering. The distinction matters more than the dogma."
+    }
+    </script>
+
+    
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-MP2PD28L5S"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-MP2PD28L5S');
+    </script>
+</head>
+<body>
+    <div class="wrap article-wrap">
+        <header class="top">
+            <a href="/" class="brand">nate mcguire</a>
+            <nav>
+                <a href="/">bio</a>
+                <a href="/author" aria-current="page">author</a>
+                <a href="/about">about</a>
+                <a href="/speaking">speaking</a>
+                <a href="/work-with-me">work</a>
+            </nav>
+        </header>
+
+        <p class="article-meta">
+            <a href="/author">Engineering leadership</a>
+            <span class="dot">·</span>
+            <span class="meta">May 2026</span>
+        </p>
+
+        <h1 class="article-h1">TDD in Practice, Not in Theory</h1>
+        <p class="article-hook">Strict TDD is a religion. Tests-as-you-go is engineering. The distinction matters more than the dogma.</p>
+
+        <article class="article-body">
+        <p>There's a particular kind of engineer who argues about test-driven development at conferences but doesn't write tests at home. This is the worst mix of dogma and practice — they defend the purity of red-green-refactor while shipping untested code. Somehow, this is how TDD is often discussed in our industry.</p>
+        <p>Let me give a more honest accounting.</p>
+        <p>TDD in the strict Kent Beck sense — as in his book <a href="https://www.amazon.com/Test-Driven-Development-Kent-Beck/dp/0321146530"><em>Test-Driven Development: By Example</em></a> (2002) — write the failing test first, write the minimum code to pass, refactor, repeat, never skip the order — is a real practice with real merits. It forces you to think about the interface before implementation, produces high test coverage, gives constant feedback, and tends to produce smaller, decomposable code. These merits are real and desirable.</p>
+        <p>The downsides are real too. Strict TDD is <em>slow</em> during exploration phases when you don't know what you're building. Tests written before design stabilization often test the wrong things, get discarded, and you've paid for them twice. Writing failing tests first works better in domains with well-understood inputs and outputs (parsers, business logic, math-heavy code) and worse in emergent design domains (UI work, exploratory data pipelines, integration with external systems).</p>
+        <p>Almost nobody who claims to do TDD actually does strict TDD. Good engineers write tests close to writing code, not necessarily before, and prioritize tests where being wrong is costly. This "tests-as-you-go" or "test-first-ish" captures most of strict TDD's value without the dogma.</p>
+        <p>Here's how I think about test discipline:</p>
+        <p><strong>What to test heavily.</strong> Anything where being wrong is expensive. Business logic that calculates money. State machines that must be correct. Data transformations with uncontrolled inputs. Edge cases in date/time handling, character encoding, currency conversion. Boundary conditions around limits (pagination, rate limits, retries). Code behind an API contract observable to customers. Code handling authorization. Cryptographic code (which you shouldn't write, but if you do, test it).</p>
+        <p>For all of these, write the tests. Before, after, during — order matters less than existence. Aim for branch coverage, not line coverage; interesting bugs hide in untaken branches.</p>
+        <p><strong>What to test lightly.</strong> Integration glue code. UI rendering (a snapshot test or two suffices). Code where tests mostly re-assert obvious behavior. Code to be discarded in the next release. Configuration and wiring code where value lies in production deploy success, not unit tests.</p>
+        <p><strong>What to barely test at all.</strong> Throwaway prototypes. Spikes. Code you'll delete next week. The Bubble version of your MVP. Anything where being wrong means "we throw it away and learn." Test fewer of these than your conscience suggests; you're trading test-writing time against learning velocity, and at the prototype stage, learning is the asset.</p>
+        <p><strong>Integration tests are underrated.</strong> A high proportion of production bugs occur at seams — between services, modules, the app and the database. Unit tests don't catch these. Teams investing in integration tests (real database, real network calls to test doubles, real end-to-end through the system) have <em>dramatically</em> fewer production incidents than those who don't, regardless of unit test coverage. Integration tests cost more per test but offer higher value per test, favoring investment.</p>
+        <p><strong>End-to-end tests are usually overrated.</strong> Selenium suites, Playwright suites that exercise the whole UI, big tests that take 20 minutes to run — these feel comprehensive but are slow, flaky, expensive to maintain, and produce ambiguous failures. ("The login button is broken" — is it the JavaScript, auth service, database, CSS?) Have a few true E2E tests for critical paths (sign-up, checkout, main user flow). Don't aim for full E2E coverage. The math doesn't work.</p>
+        <p><strong>Property-based testing is the secret weapon nobody uses.</strong> Tools like <a href="https://hypothesis.works/">Hypothesis</a> (Python), QuickCheck (Haskell, ported to many languages), or <a href="https://github.com/dubzzz/fast-check">fast-check</a> (JavaScript) generate test inputs across a range of property-defined possibilities and find counter-examples. Hillel Wayne's writing on <a href="https://www.hillelwayne.com/post/property-testing-complications/">property-based testing as the next step after TDD</a> is the best operator-grade introduction. For algorithmic code, this catches bugs that example-based tests will <em>never</em> catch. The investment to learn it is one afternoon. The payoff is enormous on the right code. Mostly unused in our industry. Try it.</p>
+        <p><strong>Test brittleness is a real cost.</strong> If tests break every time you refactor, they're <em>holding your code back</em>, not protecting it. Tests should assert on behavior, not implementation. A test that mocks the database, cache, logger, and queue tests whether the code calls the mocks as expected. That's not a test of behavior. It's a test of one possible implementation. Refactor the implementation, and you must rewrite the test. After a few cycles, the team stops refactoring because it breaks tests, and the codebase ossifies. This is one of the most insidious failure modes in a tested codebase.</p>
+        <p>The fix is to assert on observable behavior — the output, state, external side effects. Avoid mocking inside your own bounded context; mock only at the boundary (third-party API, queue, email service). Use real instances of your own classes wherever possible.</p>
+        <p><strong>Speed matters more than people admit.</strong> A test suite that takes 20 minutes to run is a test suite people skip. Engineers will run "just the relevant tests" before pushing. The CI will run the full suite, but a 20-minute CI loop means PR reviews happen in batches and engineering velocity craters. Aim for a unit suite under 30 seconds, an integration suite under three minutes, an E2E suite under ten. If you're over these numbers, fixing test suite speed is one of the highest-leverage things an engineering team can do.</p>
+        <p><strong>Flaky tests are bugs.</strong> Every time a test fails intermittently and someone re-runs CI to make it pass, the team trains itself to ignore test failures. Eventually, a real test failure gets re-run and ignored too. Flaky tests should be treated like production incidents — investigate, root-cause, fix. If you can't fix it, delete the test. A deleted test is better than a flaky test, because a deleted test forces you to acknowledge what you don't have, while a flaky test gives false confidence.</p>
+        <p><strong>Coverage numbers are vanity.</strong> A team with 90% line coverage and bad tests has worse quality than a team with 40% coverage and good tests. Don't set coverage targets. Set "we test the things that matter, and we know which things matter" as the bar. This is harder to measure and far more useful.</p>
+        <p><strong>AI-generated tests are now the default, and that's the new failure mode.</strong> Claude Code, Cursor, and Codex will generate tests alongside the code they write. The output is usually fine for easy cases and dangerously thin on hard ones. Worse, the model often writes tests that <em>match its own implementation</em> rather than tests that verify <em>the intended behavior</em>, meaning tests pass even when the code is wrong, because both are wrong in the same direction. The discipline: read the tests as critically as you read the code, and add the edge cases the model didn't think of. The cost of writing tests has fallen; the cost of <em>knowing what to test</em> has not.</p>
+        <p>Finally: the cultural part. Engineers who care about testing tend to ship more reliable software, and those who don't ship more bugs. This is true on average. But it is <em>not</em> true that the most rigorous testers are the best engineers. The best engineers I've worked with have nuanced views about what to test, when to test, and what testing costs. The worst-tested codebases come from engineers who don't write tests because they "know their code works" (fragile arrogance), or those who test everything with full mock pyramids, resulting in change-resistant codebases (fragile rigor). The right disposition is in the middle: tests are a tool, the tool has costs, use the tool when the cost is worth it.</p>
+        <p>Write tests. Write fewer than dogma demands, more than your instincts suggest, and target them where being wrong is expensive. That's TDD in practice. The theory is fine. The theory will not ship the product.</p>
+        </article>
+
+        <footer class="article-footer">
+            <p><a href="/author">← more from /author</a></p>
+        </footer>
+    </div>
+    <script src="/author/tldr.js" defer></script>
+</body>
+</html>

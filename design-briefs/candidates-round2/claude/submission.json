@@ -1,0 +1,105 @@
+{
+  "model": "claude",
+  "modelVersion": "claude-opus-5",
+  "generatedAt": "2026-09-13",
+  "status": "pending",
+  "approved": false,
+  "provenance": {
+    "tool": "Claude Code CLI",
+    "requestedModel": "opus",
+    "actualModel": "claude-opus-5",
+    "evidence": "generation-output.json:modelUsage",
+    "rawOutput": "generation-output.json",
+    "prompt": "generation-prompt.txt"
+  },
+  "variations": [
+    {
+      "id": "claude-01",
+      "name": "The Ledger",
+      "entry": "claude-01/index.html",
+      "rationale": "A letterpress broadsheet: warm paper stock, a centered masthead set in old-style serif, hairline rules and a real editorial grid. The delight is a Tufte-style sidenote system \u2014 each record entry carries a margin gloss that draws its red leader rule and slides in on hover or focus, while a folio bar with a reading-progress hairline slips down once you leave the masthead. Every note sits in normal document flow on small screens, so nothing depends on hover or script.",
+      "status": "pending",
+      "approved": false
+    },
+    {
+      "id": "claude-02",
+      "name": "Orbit",
+      "entry": "claude-02/index.html",
+      "rationale": "A quiet observatory. A canvas starfield drifts and leans toward the pointer behind a centered orbital diagram whose three dashed rings carry satellites around a core stamped with the current role; the three focus areas are pinned around the system as labels that light their own ring on hover. Below, the record runs as a luminous timeline. The diagram is decorative and aria-hidden, so the identical facts read as plain text with canvas, script, or motion disabled.",
+      "status": "pending",
+      "approved": false
+    },
+    {
+      "id": "claude-03",
+      "name": "Blueprint",
+      "entry": "claude-03/index.html",
+      "rationale": "A drafting sheet: cyan hairline grid on deep navy, plate callouts, dimension lines and a proper title block anchoring the page. The interaction is a drafting crosshair with a live coordinate readout that tracks the pointer, paired with SVG plate rules that ink themselves in on scroll via stroke-dashoffset. Both effects are pointer-and-motion gated; the underlying document is a plain, fully readable technical spec.",
+      "status": "pending",
+      "approved": false
+    },
+    {
+      "id": "claude-04",
+      "name": "Overprint",
+      "entry": "claude-04/index.html",
+      "rationale": "A risograph poster on cream stock: fluorescent pink and blue inks knocked together with multiply blending, halftone fields, hard-shadow blocks and slabs set at a tilt. The signature move is misregistration \u2014 duplicate ink layers of the headline slide against the pointer, and a Shift Inks button (keyboard-operable) re-rolls the plate offsets and swaps the palette. The black plate is the real text, duplicates are aria-hidden, and reduced motion locks a tidy static registration.",
+      "status": "pending",
+      "approved": false
+    },
+    {
+      "id": "claude-05",
+      "name": "Specimen",
+      "entry": "claude-05/index.html",
+      "rationale": "The site as a type specimen sheet: pure white, one red, a colossal grotesque name, and every block of content labelled in the gutter with its point size like a foundry proof. Two interactions carry it \u2014 the name is split into letters that lift, tilt and redden as the cursor passes, and a native range slider live-sets the tracking of the headline with a mono readout, so it is fully keyboard operable. Without script the name renders as ordinary text and the slider simply disappears.",
+      "status": "pending",
+      "approved": false
+    }
+  ],
+  "reviewEdits": [
+    {
+      "file": "claude-01/index.html",
+      "before": "I founded Mayven Studios and ran it through its acquisition by Saltwater.",
+      "after": "I founded Mayven Studios, which was acquired by Saltwater.",
+      "reason": "Keep copy to sourced facts without explanatory internal commentary."
+    },
+    {
+      "file": "claude-01/index.html",
+      "before": "Studio clients \u2014 not employers.",
+      "after": "",
+      "reason": "Keep copy to sourced facts without explanatory internal commentary."
+    },
+    {
+      "file": "claude-03/index.html",
+      "before": "My company. Founded, built, and run through its acquisition by Saltwater, Ryan Graves\u2019 holding company.",
+      "after": "I founded Mayven Studios, which was acquired by Saltwater, Ryan Graves\u2019 holding company.",
+      "reason": "Keep copy to sourced facts without explanatory internal commentary."
+    },
+    {
+      "file": "claude-03/index.html",
+      "before": "Client engagements, not employers.",
+      "after": "",
+      "reason": "Keep copy to sourced facts without explanatory internal commentary."
+    },
+    {
+      "file": "claude-03/index.html",
+      "before": "Building software and leading engineering teams, continuously, for more than fifteen years.",
+      "after": "15+ years building software and leading engineering teams.",
+      "reason": "Keep copy to sourced facts without explanatory internal commentary."
+    },
+    {
+      "file": "claude-04/index.html",
+      "before": "My company. Founded it, built it, and sold it to Saltwater \u2014 Ryan Graves\u2019 holding company.",
+      "after": "I founded Mayven Studios, which was acquired by Saltwater \u2014 Ryan Graves\u2019 holding company.",
+      "reason": "Keep copy to sourced facts without explanatory internal commentary."
+    },
+    {
+      "file": "claude-04/index.html",
+      "before": "Building software and leading engineering teams, for more than fifteen years running.",
+      "after": "15+ years building software and leading engineering teams.",
+      "reason": "Keep copy to sourced facts without explanatory internal commentary."
+    }
+  ],
+  "validation": {
+    "static": "passed",
+    "visual": "pending parent browser QA"
+  }
+}

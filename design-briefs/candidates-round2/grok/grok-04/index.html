@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+<meta charset='utf-8'>
+<meta name='viewport' content='width=device-width,initial-scale=1'>
+<title>Nate McGuire</title>
+<style>
+:root{--ink:#101010;--paper:#f4f1ea;--split:44%}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font:17px/1.5 system-ui,sans-serif;color:var(--ink);background:var(--paper)}
+a{color:inherit}
+:focus-visible{outline:2px solid #e24;outline-offset:3px}
+.skip{position:absolute;left:-999px}
+.skip:focus{left:8px;top:8px;background:#fff;padding:8px;z-index:12}
+.frame{display:grid;grid-template-columns:var(--split) 1fr;min-height:100vh;position:relative}
+.left{background:var(--ink);color:var(--paper);padding:36px 28px 48px;position:sticky;top:0;height:100vh;overflow:auto;display:flex;flex-direction:column}
+.vname{writing-mode:vertical-rl;transform:rotate(180deg);font-size:clamp(40px,7vh,84px);letter-spacing:.08em;font-weight:600;line-height:1;margin-bottom:auto}
+.left p{max-width:22em;color:#c9c4ba;margin-top:20px}
+.modes{display:flex;gap:8px;margin-top:22px}
+.modes button{background:transparent;color:var(--paper);border:1px solid #c9c4ba;padding:8px 12px;cursor:pointer;font:11px/1 system-ui,sans-serif;letter-spacing:.14em;text-transform:uppercase}
+.modes button[aria-pressed='true']{background:var(--paper);color:var(--ink)}
+.handle{position:absolute;top:0;bottom:0;left:var(--split);width:14px;margin-left:-7px;cursor:ew-resize;z-index:5;background:transparent}
+.handle::after{content:'';position:absolute;left:6px;top:0;bottom:0;width:2px;background:#e24}
+.right{padding:40px 7vw 80px}
+.right .tag{font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:#666;margin-bottom:10px}
+h2{font-size:clamp(22px,3vw,32px);font-weight:600;letter-spacing:-.02em;margin:0 0 8px}
+.block{padding:28px 0;border-bottom:1px solid #ddd;opacity:1;transition:background .25s}
+.block.hi{opacity:1}
+.eng .e,.op .o{opacity:1}
+.eng .o,.op .e{opacity:1}.eng .e,.op .o{background:rgba(16,16,16,.035)}
+.focus{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px}
+.focus span{border:1px solid var(--ink);padding:.4em .75em;font-size:13px}
+.links{display:flex;flex-wrap:wrap;gap:12px 18px;margin-top:28px}
+.links a{font-size:12px;letter-spacing:.12em;text-transform:uppercase}
+@media(max-width:760px){.frame{display:block}.left{position:static;height:auto}.handle{display:none}.vname{writing-mode:horizontal-tb;transform:none;font-size:42px;margin-bottom:8px}}
+@media(prefers-reduced-motion:reduce){*{transition:none!important}html{scroll-behavior:auto}}
+</style>
+</head>
+<body class='eng'>
+<a class='skip' href='#main'>Skip to content</a>
+<div class='frame' id='frame'>
+<section class='left' aria-label='Identity'>
+<h1 class='vname'>Nate McGuire</h1>
+<p>Engineer, founder, and operator. I build software and teams, and invest in and advise small internet businesses.</p>
+<p>Staff Engineer · Capital One · Card Tech<br>Alexandria, Virginia</p>
+<div class='modes'>
+<button type='button' id='be' aria-pressed='true'>Engineer</button>
+<button type='button' id='bo' aria-pressed='false'>Operator</button>
+</div>
+</section>
+<div class='handle' id='handle' role='separator' aria-orientation='vertical' tabindex='0' aria-label='Resize panels' aria-valuemin='28' aria-valuemax='68' aria-valuenow='44'></div>
+<main class='right' id='main'>
+<p class='tag'>Background</p>
+<article class='block hi e' id='b1'>
+<h2>Mayven Studios</h2>
+<p>Founder of Mayven Studios, acquired by Saltwater, Ryan Graves’ holding company.</p>
+</article>
+<article class='block e' id='b2'>
+<h2>Software, as a practice</h2>
+<p>15+ years building software and leading engineering teams. Staff Engineer at Capital One on Card Tech.</p>
+</article>
+<article class='block o' id='b3'>
+<h2>Clients at Mayven</h2>
+<p>At Mayven, built software for companies including Google, Airbnb, and IBM.</p>
+</article>
+<article class='block o' id='b4'>
+<h2>Internet businesses</h2>
+<p>I invest in and advise small internet businesses, alongside architecture and engineering leadership.</p>
+<div class='focus'>
+<span>Software architecture</span>
+<span>Engineering leadership</span>
+<span>Internet businesses</span>
+</div>
+</article>
+<nav class='links'>
+<a href='mailto:n@natemcguire.com'>Email</a>
+<a href='https://github.com/natemcguire'>GitHub</a>
+<a href='https://linkedin.com/in/natemcguire'>LinkedIn</a>
+<a href='https://twitter.com/natemcguire'>X</a>
+<a href='https://medium.com/@natemcguire'>Writing</a>
+</nav>
+</main>
+</div>
+<script>
+(function(){
+var be=document.getElementById('be'),bo=document.getElementById('bo');
+function mode(m){document.body.className=m;be.setAttribute('aria-pressed',m==='eng');bo.setAttribute('aria-pressed',m==='op');document.querySelectorAll('.block').forEach(function(b){b.classList.toggle('hi', (m==='eng'&&b.classList.contains('e'))||(m==='op'&&b.classList.contains('o')));});}
+be.onclick=function(){mode('eng');};bo.onclick=function(){mode('op');};
+var h=document.getElementById('handle'),frame=document.getElementById('frame'),drag=false;
+function applySplit(value){var p=Math.min(68,Math.max(28,value));document.documentElement.style.setProperty('--split',p+'%');h.setAttribute('aria-valuenow',Math.round(p));}
+function setSplit(px){var r=frame.getBoundingClientRect();applySplit((px-r.left)/r.width*100);}
+h.addEventListener('pointerdown',function(e){drag=true;h.setPointerCapture(e.pointerId);});
+addEventListener('pointerup',function(){drag=false;});
+addEventListener('pointermove',function(e){if(drag) setSplit(e.clientX);});
+h.addEventListener('keydown',function(e){if(!['ArrowLeft','ArrowRight','Home','End'].includes(e.key))return;e.preventDefault();var cur=parseFloat(getComputedStyle(document.documentElement).getPropertyValue('--split'))||44;applySplit(e.key==='Home'?28:e.key==='End'?68:cur+(e.key==='ArrowLeft'?-2:2));});
+})();
+</script>
+</body>
+</html>

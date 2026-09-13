@@ -1,0 +1,211 @@
+<!doctype html>
+<html lang='en'>
+<head>
+<meta charset='utf-8'>
+<meta name='viewport' content='width=device-width,initial-scale=1'>
+<title>Nate McGuire — Staff Engineer, Capital One</title>
+<meta name='description' content='Technical profile of Nate McGuire, Staff Engineer at Capital One, Card Tech, Alexandria, Virginia.'>
+<meta name='color-scheme' content='dark'>
+<style>
+*,*::before,*::after{box-sizing:border-box}
+:root{
+  --navy:#0a1a2b;--navy2:#08131f;--cyan:#79d2ff;--paper:#eaf4fb;--dim:#7f9ab0;--hot:#ffb64d;
+  --mono:ui-monospace,'SF Mono',SFMono-Regular,Menlo,Consolas,'Liberation Mono',monospace;
+  --sans:'Helvetica Neue',Helvetica,Arial,sans-serif;
+}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--navy);color:var(--paper);font:400 16px/1.6 var(--sans);overflow-x:hidden;
+  background-image:
+    linear-gradient(rgba(121,210,255,.075) 1px,transparent 1px),
+    linear-gradient(90deg,rgba(121,210,255,.075) 1px,transparent 1px),
+    linear-gradient(rgba(121,210,255,.03) 1px,transparent 1px),
+    linear-gradient(90deg,rgba(121,210,255,.03) 1px,transparent 1px);
+  background-size:120px 120px,120px 120px,24px 24px,24px 24px}
+a{color:inherit}
+::selection{background:var(--cyan);color:var(--navy2)}
+:focus-visible{outline:2px solid var(--hot);outline-offset:3px}
+.skip{position:absolute;left:-9999px;background:var(--cyan);color:var(--navy2);padding:10px 15px;font:700 12px var(--mono);z-index:80}
+.skip:focus{left:10px;top:10px}
+.sheet{max-width:1220px;margin:0 auto;padding:0 18px}
+.frame{border:1px solid rgba(121,210,255,.42);margin:14px 0 0;padding:0 clamp(14px,3.4vw,40px) 0;position:relative}
+.frame::before,.frame::after{content:'';position:absolute;width:13px;height:13px;border:1px solid var(--cyan)}
+.frame::before{left:-1px;top:-1px;border-right:0;border-bottom:0}
+.frame::after{right:-1px;bottom:-1px;border-left:0;border-top:0}
+
+.tag{font:600 10.5px/1.5 var(--mono);letter-spacing:.22em;text-transform:uppercase;color:var(--cyan)}
+.dimrow{display:flex;align-items:center;gap:12px;padding:20px 0 0;color:var(--dim)}
+.dimrow .ln{flex:1;height:1px;background:rgba(121,210,255,.35);position:relative}
+.dimrow .ln::before,.dimrow .ln::after{content:'';position:absolute;top:-4px;width:1px;height:9px;background:var(--cyan)}
+.dimrow .ln::before{left:0}.dimrow .ln::after{right:0}
+.dimrow span{font:600 10.5px/1 var(--mono);letter-spacing:.2em;text-transform:uppercase;white-space:nowrap}
+
+h1{margin:16px 0 6px;font-size:clamp(44px,10.6vw,132px);line-height:.88;letter-spacing:-.035em;font-weight:700;text-transform:uppercase}
+h1 .thin{display:block;font-weight:300;color:var(--cyan);letter-spacing:-.02em}
+.sub{max-width:46ch;font-size:clamp(17px,2.3vw,21px);line-height:1.5;color:#c6dcec;margin:20px 0 0}
+.specs{display:grid;grid-template-columns:repeat(auto-fit,minmax(158px,1fr));gap:1px;background:rgba(121,210,255,.28);border:1px solid rgba(121,210,255,.28);margin:34px 0 44px}
+.spec{background:var(--navy);padding:15px 16px}
+.spec dt{font:600 10px/1.6 var(--mono);letter-spacing:.2em;text-transform:uppercase;color:var(--dim)}
+.spec dd{margin:3px 0 0;font-size:16.5px;font-weight:600;letter-spacing:-.005em}
+
+.plate{padding:46px 0;border-top:1px dashed rgba(121,210,255,.32);display:grid;grid-template-columns:1fr;gap:22px}
+@media(min-width:900px){.plate{grid-template-columns:200px 1fr;gap:40px}}
+.plate .pid{position:sticky;top:20px;align-self:start}
+.plate .pid b{display:block;font:700 34px/1 var(--mono);color:var(--cyan);letter-spacing:-.02em}
+.plate .pid span{display:block;margin-top:8px;font:600 10px/1.7 var(--mono);letter-spacing:.2em;text-transform:uppercase;color:var(--dim)}
+h2{margin:0 0 18px;font-size:clamp(24px,3.4vw,34px);letter-spacing:-.02em;font-weight:600}
+
+.notes{list-style:none;margin:0;padding:0;display:grid;gap:1px;background:rgba(121,210,255,.22)}
+.notes li{background:var(--navy);padding:20px 22px;display:grid;grid-template-columns:auto 1fr;gap:16px;align-items:start;transition:background .3s ease}
+.notes li:hover{background:#0d2437}
+.notes .cal{font:700 11px/1.7 var(--mono);letter-spacing:.14em;color:var(--hot);border:1px solid var(--hot);border-radius:999px;padding:1px 9px}
+.notes h3{margin:0 0 5px;font-size:19px;font-weight:600;letter-spacing:-.01em}
+.notes p{margin:0;color:#b3cbdd;max-width:60ch;font-size:15.5px}
+
+.drawline{display:block;width:100%;height:26px;overflow:visible}
+.drawline path,.drawline line{stroke:var(--cyan);stroke-width:1;fill:none;stroke-dasharray:1;stroke-dashoffset:1;transition:stroke-dashoffset 1.5s ease}
+.drawline.in path,.drawline.in line{stroke-dashoffset:0}
+
+.sys{display:grid;gap:14px;grid-template-columns:repeat(auto-fit,minmax(232px,1fr))}
+.sys div{border:1px solid rgba(121,210,255,.3);padding:22px 20px;position:relative;overflow:hidden}
+.sys div::before{content:attr(data-n);position:absolute;right:10px;top:4px;font:700 52px/1 var(--mono);color:rgba(121,210,255,.12)}
+.sys b{display:block;font-size:19.5px;font-weight:600;letter-spacing:-.01em;margin-bottom:6px}
+.sys p{margin:0;color:var(--dim);font:500 11px/1.6 var(--mono);letter-spacing:.14em;text-transform:uppercase}
+
+.conn{list-style:none;margin:0;padding:0}
+.conn li{border-bottom:1px dashed rgba(121,210,255,.28)}
+.conn li:first-child{border-top:1px dashed rgba(121,210,255,.28)}
+.conn a{display:grid;grid-template-columns:auto 1fr auto;gap:14px;align-items:center;padding:17px 4px;text-decoration:none;transition:padding-left .3s ease,color .3s ease}
+.conn a:hover,.conn a:focus-visible{padding-left:16px;color:var(--cyan)}
+.conn .id{font:700 11px/1 var(--mono);letter-spacing:.16em;color:var(--hot)}
+.conn .nm{font-size:clamp(19px,2.6vw,25px);font-weight:600;letter-spacing:-.015em}
+.conn .url{font:500 11.5px/1 var(--mono);color:var(--dim);letter-spacing:.04em;text-align:right;word-break:break-all}
+@media(max-width:520px){.conn a{grid-template-columns:auto 1fr}.conn .url{grid-column:1/-1;text-align:left;padding-left:26px}}
+
+.titleblock{margin:44px 0 34px;border:1px solid rgba(121,210,255,.42);display:grid;grid-template-columns:1fr;background:rgba(8,19,31,.7)}
+@media(min-width:720px){.titleblock{grid-template-columns:1.5fr 1fr 1fr 1fr}}
+.tb{padding:14px 18px;border-top:1px solid rgba(121,210,255,.24)}
+@media(min-width:720px){.tb{border-top:0;border-left:1px solid rgba(121,210,255,.24)}.tb:first-child{border-left:0}}
+.tb span{display:block;font:600 9.5px/1.7 var(--mono);letter-spacing:.22em;text-transform:uppercase;color:var(--dim)}
+.tb b{display:block;font-size:15px;font-weight:600;margin-top:2px}
+
+#cross{position:fixed;inset:0;pointer-events:none;z-index:70;opacity:0;transition:opacity .25s}
+#cross .v,#cross .h{position:absolute;background:rgba(121,210,255,.34)}
+#cross .v{top:0;bottom:0;width:1px}#cross .h{left:0;right:0;height:1px}
+#cross .rd{position:absolute;font:600 10px/1 var(--mono);letter-spacing:.14em;color:var(--navy2);background:var(--cyan);padding:4px 7px;transform:translate(12px,12px);white-space:nowrap}
+@media(hover:none),(prefers-reduced-motion:reduce){#cross{display:none}}
+@media(prefers-reduced-motion:reduce){
+  .drawline path,.drawline line{stroke-dashoffset:0;transition:none}
+  *{transition-duration:.001ms !important;animation:none !important}
+}
+</style>
+</head>
+<body>
+<a class='skip' href='#main'>Skip to content</a>
+<div id='cross' aria-hidden='true'><i class='v'></i><i class='h'></i><b class='rd'>X:0000 Y:0000</b></div>
+
+<div class='sheet'>
+<div class='frame'>
+
+  <header>
+    <div class='dimrow'><span class='tag'>Subject</span><span class='ln'></span><span>Rev. 2026.09</span></div>
+    <h1>Nate<span class='thin'>McGuire</span></h1>
+    <div class='dimrow'><span>Alexandria, Virginia</span><span class='ln'></span><span>15+ years overall length</span></div>
+    <p class='sub'>Engineer, founder, and operator. I build software and teams, and invest in and advise small internet businesses.</p>
+    <dl class='specs'>
+      <div class='spec'><dt>Role</dt><dd>Staff Engineer</dd></div>
+      <div class='spec'><dt>Organization</dt><dd>Capital One</dd></div>
+      <div class='spec'><dt>Team</dt><dd>Card Tech</dd></div>
+      <div class='spec'><dt>Located</dt><dd>Alexandria, VA</dd></div>
+    </dl>
+  </header>
+
+  <main id='main'>
+    <section class='plate' aria-labelledby='pa'>
+      <div class='pid'><b>A</b><span>Record<br>of works</span></div>
+      <div>
+        <h2 id='pa'>Assemblies, previously built</h2>
+        <svg class='drawline' viewBox='0 0 600 26' preserveAspectRatio='none' aria-hidden='true'>
+          <line x1='0' y1='13' x2='600' y2='13' pathLength='1'></line>
+          <path d='M0 6 L0 20' pathLength='1'></path>
+          <path d='M600 6 L600 20' pathLength='1'></path>
+        </svg>
+        <ul class='notes'>
+          <li><span class='cal'>A1</span><div><h3>Mayven Studios</h3><p>I founded Mayven Studios, which was acquired by Saltwater, Ryan Graves’ holding company.</p></div></li>
+          <li><span class='cal'>A2</span><div><h3>Google · Airbnb · IBM</h3><p>At Mayven, I built software for companies including Google, Airbnb, and IBM. </p></div></li>
+          <li><span class='cal'>A3</span><div><h3>15+ years of load</h3><p>15+ years building software and leading engineering teams.</p></div></li>
+        </ul>
+      </div>
+    </section>
+
+    <section class='plate' aria-labelledby='pb'>
+      <div class='pid'><b>B</b><span>Systems<br>in focus</span></div>
+      <div>
+        <h2 id='pb'>Where the attention goes</h2>
+        <svg class='drawline' viewBox='0 0 600 26' preserveAspectRatio='none' aria-hidden='true'>
+          <line x1='0' y1='13' x2='600' y2='13' pathLength='1'></line>
+        </svg>
+        <div class='sys'>
+          <div data-n='01'><b>Software architecture</b><p>Structure</p></div>
+          <div data-n='02'><b>Engineering leadership</b><p>Teams</p></div>
+          <div data-n='03'><b>Internet businesses</b><p>Invest &amp; advise</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section class='plate' aria-labelledby='pc'>
+      <div class='pid'><b>C</b><span>Connection<br>details</span></div>
+      <div>
+        <h2 id='pc'>Terminations</h2>
+        <ul class='conn'>
+          <li><a href='mailto:n@natemcguire.com'><span class='id'>C1</span><span class='nm'>Email</span><span class='url'>n@natemcguire.com</span></a></li>
+          <li><a href='https://github.com/natemcguire' rel='me noopener'><span class='id'>C2</span><span class='nm'>GitHub</span><span class='url'>github.com/natemcguire</span></a></li>
+          <li><a href='https://linkedin.com/in/natemcguire' rel='me noopener'><span class='id'>C3</span><span class='nm'>LinkedIn</span><span class='url'>linkedin.com/in/natemcguire</span></a></li>
+          <li><a href='https://twitter.com/natemcguire' rel='me noopener'><span class='id'>C4</span><span class='nm'>X</span><span class='url'>twitter.com/natemcguire</span></a></li>
+          <li><a href='https://medium.com/@natemcguire' rel='me noopener'><span class='id'>C5</span><span class='nm'>Writing</span><span class='url'>medium.com/@natemcguire</span></a></li>
+        </ul>
+      </div>
+    </section>
+  </main>
+
+  <div class='titleblock'>
+    <div class='tb'><span>Drawing</span><b>Nate McGuire — personal profile</b></div>
+    <div class='tb'><span>Role</span><b>Staff Engineer</b></div>
+    <div class='tb'><span>Org / Team</span><b>Capital One · Card Tech</b></div>
+    <div class='tb'><span>Location</span><b>Alexandria, Virginia</b></div>
+  </div>
+
+</div>
+</div>
+
+<script>
+(function(){
+  var calm=window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var fine=window.matchMedia&&window.matchMedia('(hover: hover) and (pointer: fine)').matches;
+  var cr=document.getElementById('cross');
+  if(cr&&fine&&!calm){
+    var v=cr.querySelector('.v'),h=cr.querySelector('.h'),rd=cr.querySelector('.rd'),q=false,px=0,py=0;
+    function pad(n){n=Math.round(n);var s=''+n;while(s.length<4){s='0'+s;}return s;}
+    function paint(){
+      q=false;v.style.left=px+'px';h.style.top=py+'px';
+      rd.style.left=px+'px';rd.style.top=py+'px';
+      rd.textContent='X:'+pad(px)+'  Y:'+pad(py);
+    }
+    window.addEventListener('pointermove',function(e){
+      px=e.clientX;py=e.clientY;cr.style.opacity='1';
+      if(!q){q=true;requestAnimationFrame(paint);}
+    },{passive:true});
+    window.addEventListener('pointerleave',function(){cr.style.opacity='0';},{passive:true});
+  }
+  var lines=document.querySelectorAll('.drawline');
+  if(calm||!('IntersectionObserver' in window)){
+    for(var i=0;i<lines.length;i++){lines[i].classList.add('in');}
+    return;
+  }
+  var io=new IntersectionObserver(function(es){
+    es.forEach(function(en){if(en.isIntersecting){en.target.classList.add('in');io.unobserve(en.target);}});
+  },{threshold:.4});
+  for(var j=0;j<lines.length;j++){io.observe(lines[j]);}
+})();
+</script>
+</body>
+</html>

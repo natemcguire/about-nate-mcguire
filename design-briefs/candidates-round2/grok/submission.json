@@ -1,0 +1,159 @@
+{
+  "provider": "xAI",
+  "modelVersion": "grok-4.6",
+  "generationMethod": "xAI Chat Completions API via authenticated Mac mini",
+  "responseId": "45377427-df13-9c24-be0f-9985e03ecdf5",
+  "variations": [
+    {
+      "id": "grok-01",
+      "model": "grok",
+      "modelVersion": "grok-4.6",
+      "name": "Folio",
+      "entry": "grok-01/index.html",
+      "rationale": "Print-magazine masthead: cream stock, serif display, issue well plus sticky rail. A reading bar and in-issue index choreograph scroll without hiding copy.",
+      "generatedAt": "2026-09-13T22:06:15+00:00",
+      "contentVersion": "2026-09-12",
+      "review": {
+        "nate": "pending",
+        "agent": "pending"
+      }
+    },
+    {
+      "id": "grok-02",
+      "model": "grok",
+      "modelVersion": "grok-4.6",
+      "name": "Title Block",
+      "entry": "grok-02/index.html",
+      "rationale": "Architectural drawing board: measured grid, CAD title block, plan of career rooms. A crosshair HUD and keyboard-cycled spaces make the sheet feel spatial.",
+      "generatedAt": "2026-09-13T22:06:15+00:00",
+      "contentVersion": "2026-09-12",
+      "review": {
+        "nate": "pending",
+        "agent": "pending"
+      }
+    },
+    {
+      "id": "grok-03",
+      "model": "grok",
+      "modelVersion": "grok-4.6",
+      "name": "Nocturne",
+      "entry": "grok-03/index.html",
+      "rationale": "Night-sky editorial: gold on near-black, CSS constellation, chapters as star points. Scroll tightens the name; keyboard walks the sky without trapping the page.",
+      "generatedAt": "2026-09-13T22:06:15+00:00",
+      "contentVersion": "2026-09-12",
+      "review": {
+        "nate": "pending",
+        "agent": "pending"
+      }
+    },
+    {
+      "id": "grok-04",
+      "model": "grok",
+      "modelVersion": "grok-4.6",
+      "name": "Twin Plate",
+      "entry": "grok-04/index.html",
+      "rationale": "Split plate: engineer and operator share one sheet. A draggable seam and two modes reweight the same facts; vertical identity type holds the axis.",
+      "generatedAt": "2026-09-13T22:06:15+00:00",
+      "contentVersion": "2026-09-12",
+      "review": {
+        "nate": "pending",
+        "agent": "pending"
+      }
+    },
+    {
+      "id": "grok-05",
+      "model": "grok",
+      "modelVersion": "grok-4.6",
+      "name": "Hot Metal",
+      "entry": "grok-05/index.html",
+      "rationale": "Poster type as architecture: acid field, overlapping display letters that magnetize to the pointer, a marching focus slug, and stamp-like facts. Loud on purpose.",
+      "generatedAt": "2026-09-13T22:06:15+00:00",
+      "contentVersion": "2026-09-12",
+      "review": {
+        "nate": "pending",
+        "agent": "pending"
+      }
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1818,
+    "completion_tokens": 10824,
+    "total_tokens": 21840,
+    "prompt_tokens_details": {
+      "text_tokens": 1818,
+      "audio_tokens": 0,
+      "image_tokens": 0,
+      "cached_tokens": 512
+    },
+    "completion_tokens_details": {
+      "reasoning_tokens": 9198,
+      "audio_tokens": 0,
+      "accepted_prediction_tokens": 0,
+      "rejected_prediction_tokens": 0
+    },
+    "num_sources_used": 0,
+    "cost_in_usd_ticks": 1230000000
+  },
+  "integrationCorrections": [
+    {
+      "id": "grok-02",
+      "change": "All profile facts stay visible without JavaScript."
+    },
+    {
+      "id": "grok-02",
+      "change": "Diagram selects emphasis without hiding other facts."
+    },
+    {
+      "id": "grok-02",
+      "change": "Make diagram controls accessible inside SVG group."
+    },
+    {
+      "id": "grok-02",
+      "change": "Use group semantics for highlighting controls."
+    },
+    {
+      "id": "grok-02",
+      "change": "Keep ordinary arrow-key scrolling outside diagram controls."
+    },
+    {
+      "id": "grok-02",
+      "change": "Remove unsupported authorship claim."
+    },
+    {
+      "id": "grok-03",
+      "change": "Remove internal factual-validation commentary from page copy."
+    },
+    {
+      "id": "grok-03",
+      "change": "Avoid animated tracking overflowing the mobile name."
+    },
+    {
+      "id": "grok-04",
+      "change": "Use semantic profile heading."
+    },
+    {
+      "id": "grok-04",
+      "change": "Remove design-process commentary."
+    },
+    {
+      "id": "grok-04",
+      "change": "Keep body content readable in default view."
+    },
+    {
+      "id": "grok-04",
+      "change": "Emphasize selected mode with background instead of reducing text contrast."
+    },
+    {
+      "id": "grok-05",
+      "change": "Use readable text contrast on orange panel."
+    },
+    {
+      "id": "grok-05",
+      "change": "Provide contrasting focus indication on dark footer."
+    },
+    {
+      "id": "grok-05",
+      "change": "Keep all focus areas visible when motion is reduced."
+    }
+  ]
+}

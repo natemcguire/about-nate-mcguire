@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>How to Build an MVP — Nate McGuire</title>
+    <meta name="description" content="Most MVP advice is a checklist. The real work is killing scope. Here&#x27;s how I do it." />
+    <meta name="author" content="Nate McGuire" />
+    <meta name="robots" content="index, follow, max-image-preview:large" />
+    <link rel="canonical" href="https://natemcguire.com/author/how-to-build-an-mvp" />
+
+    <meta property="og:type" content="article" />
+    <meta property="og:site_name" content="Nate McGuire" />
+    <meta property="og:title" content="How to Build an MVP" />
+    <meta property="og:description" content="Most MVP advice is a checklist. The real work is killing scope. Here&#x27;s how I do it." />
+    <meta property="og:url" content="https://natemcguire.com/author/how-to-build-an-mvp" />
+    <meta property="og:image" content="https://natemcguire.com/og-image.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="article:author" content="Nate McGuire" />
+    <meta property="article:published_time" content="2026-05-26" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="@natemcguire" />
+    <meta name="twitter:creator" content="@natemcguire" />
+    <meta name="twitter:title" content="How to Build an MVP" />
+    <meta name="twitter:description" content="Most MVP advice is a checklist. The real work is killing scope. Here&#x27;s how I do it." />
+    <meta name="twitter:image" content="https://natemcguire.com/og-image.png" />
+
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <link rel="stylesheet" href="/style.css">
+    <link rel="stylesheet" href="/author/article.css">
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Article",
+      "headline": "How to Build an MVP",
+      "author": { "@type": "Person", "name": "Nate McGuire", "url": "https://natemcguire.com/" },
+      "publisher": { "@type": "Person", "name": "Nate McGuire" },
+      "url": "https://natemcguire.com/author/how-to-build-an-mvp",
+      "image": "https://natemcguire.com/og-image.png",
+      "datePublished": "2026-05-26",
+      "articleSection": "MVPs",
+      "description": "Most MVP advice is a checklist. The real work is killing scope. Here's how I do it."
+    }
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.4/dist/chart.umd.min.js" defer></script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-MP2PD28L5S"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-MP2PD28L5S');
+    </script>
+</head>
+<body>
+    <div class="wrap article-wrap">
+        <header class="top">
+            <a href="/" class="brand">nate mcguire</a>
+            <nav>
+                <a href="/">bio</a>
+                <a href="/author" aria-current="page">author</a>
+                <a href="/about">about</a>
+                <a href="/speaking">speaking</a>
+                <a href="/work-with-me">work</a>
+            </nav>
+        </header>
+
+        <p class="article-meta">
+            <a href="/author">MVPs</a>
+            <span class="dot">·</span>
+            <span class="meta">May 2026</span>
+        </p>
+
+        <h1 class="article-h1">How to Build an MVP</h1>
+        <p class="article-hook">Most MVP advice is a checklist. The real work is killing scope. Here&#x27;s how I do it.</p>
+
+        <article class="article-body">
+        <p>Google "how to build an MVP," and you'll find a thousand articles: identify the problem, define the audience, list features, build the minimum set, launch, iterate. This advice is as useful as "to make a cake, combine ingredients and bake." Nobody fails at MVPs for skipping the checklist. They fail because they can't cut the scope enough to ship.</p>
+        <p>The hard part of an MVP isn't building. It's killing.</p>
+        <p>Here's what actually happens. A founder lists 23 features they want to build. They cut 5, feeling decisive. Now with 18 features, they face 14 months of work for a two-person team. Six months in, they've half-built everything, run out of money, and shut down.</p>
+        <p>The MVP that could have worked had three features. Two were on the original list. One emerged after talking to real customers, who didn't want any of the original 23.</p>
+        <figure class="article-figure article-figure-chart"><div class="chart-wrap"><canvas id="chart-1"></canvas></div><script>document.addEventListener("DOMContentLoaded",function(){var el=document.getElementById("chart-1");if(!el||!window.Chart)return;new Chart(el,{"type":"bar","data":{"labels":["Original scope","After founder's cut","After honest scoping","What customers actually wanted"],"datasets":[{"label":"Number of features","data":[23,18,3,3],"backgroundColor":["#002fa7","#002fa7","#c41e3a","#c41e3a"]}]},"options":{"responsive":true,"maintainAspectRatio":false,"plugins":{"legend":{"display":false},"title":{"display":true,"text":"The scope-cutting gap (illustrative)"}},"scales":{"y":{"beginAtZero":true,"title":{"display":true,"text":"Features"}}}}});});</script><figcaption>Pattern observed across hundreds of MVP-stage advisory conversations. The cut that founders make is rarely deep enough; the cut customer behavior validates is almost always smaller still.</figcaption></figure>
+        <p>This is the pattern. Founders cut 22%. They needed to cut 87%. Cutting is hard because every feature <em>feels</em> essential when you imagine a complete product. Nobody imagines the product as a <em>coupon for one specific test</em> — which is what an MVP is.</p>
+        <p>Here's my process for a real MVP.</p>
+        <p><strong>Step 1: Write down the riskiest assumption.</strong> Not the riskiest technical assumption — the riskiest <em>business</em> assumption. If it's false, there's no business. Examples: "small business owners will pay $50/month," "doctors will choose us over the existing tool," "this demographic will adopt a new daily habit," "unit economics work at scale-target X." There's always one. Write it as a single sentence.</p>
+        <p>Can't pick one? You don't understand your business. Talk to twenty potential customers first.</p>
+        <p><strong>Step 2: Design the cheapest experiment to test that one assumption.</strong> Not the product. The experiment. It may not involve software. It might be a landing page, a manual workflow, a Zapier chain, a clickable Figma prototype, a $200 ad campaign with a fake checkout. The experiment's output is <em>evidence</em>, not a product.</p>
+        <p>If you're writing a 20-page spec, you've stopped designing an experiment and started designing the product. Stop. Re-scope.</p>
+        <p><strong>Step 3: Build only what the experiment requires.</strong> Discipline matters here. If the experiment is "will doctors choose us side-by-side," you don't need a working clinical product — just a high-fidelity demo. If it's "will small businesses pay $50/month," you don't need a billing engine — just a landing page with a Stripe checkout. If it's "can we deliver this service profitably," you don't need software — just perform the service manually for ten customers and measure the economics.</p>
+        <p>The urge will be to add things. "We need user accounts." "We need a dashboard." "We need email notifications." Each is a delay disguised as a feature. Ask: <em>does the experiment require this to produce a verdict?</em> If no, don't build it. Build it later if validated. Don't build it if invalidated.</p>
+        <p><strong>Step 4: Run the experiment in public.</strong> Put real money on the line — your own for ads, or asking customers for real cards. Vague intent ("I would buy this") isn't real evidence. A swiped card is. A signed pilot agreement is. Internal optimism isn't.</p>
+        <p><strong>Step 5: Write down what you learned in one sentence.</strong> If you can't, you ran a bad experiment. If you can, you know what to do next — either tackle the next-riskiest assumption or pivot/kill the business.</p>
+        <p>This loop runs maybe four to six times before you have something approximating a real product. Each loop should be cheaper than the last — meaning each "no" outcome should be discovered with less capital. The total cost of finding out if your business works should be a fraction of building the full thing.</p>
+        <p>A few tactical tips:</p>
+        <p><strong>The cost of code is going to zero, and the MVP playbook has to follow.</strong> In 2022, Bubble, Glide, Softr, Airtable, Zapier were the go-tos. In 2026, <a href="https://www.claude.com/product/claude-code">Claude Code</a>, <a href="https://cursor.com/">Cursor</a>, <a href="https://openai.com/codex/">Codex</a>, and others produce a working Next.js or Django app faster than Bubble, and it's <em>yours</em> — a real repo to fork, scale, and extend. The no-code platform tax is gone.</p>
+        <p>Use multiple AI tools in rotation. Senior operators use Claude Code for architecture-level reasoning and refactors, plus Cursor or GitHub Copilot for in-line completions, and swap in Codex, Gemini, or Aider for specific niches. The models have different blind spots; swapping is worth it to catch mistakes.</p>
+        <p>Avoid the trap: AI coding is chemically fun in a way regular engineering isn't. The dopamine hit of watching code stream into your editor is real, and it'll eat your day producing things that don't advance the business. Stay disciplined. Ship something that runs in front of a customer. Measure its impact. <em>Then</em> do another loop. When code costs nothing, the constraint is <em>what's worth writing</em> — and founders who lose confuse output velocity with progress.</p>
+        <p><strong>Do things that don't scale.</strong> Paul Graham's <a href="http://paulgraham.com/ds.html">essay</a> is still correct. Stripe was installed in person by founders. DoorDash delivered the food themselves. Airbnb shot the listing photos. During the MVP phase, test if the transaction is real by running it manually and learning what's hard before automating.</p>
+        <p><strong>Set a hard budget.</strong> Decide on day one how much money and time you're willing to spend before re-evaluating. If the budget runs out without validation, stop and reassess — don't keep going on momentum. Founders with hard budgets pivot at the right time. Those without sink savings into a bad idea over 18 months.</p>
+        <p><strong>Avoid "we're building the foundation."</strong> Many founders try to build a "scalable architecture" during the MVP phase to save a rewrite later. The rewrite will happen anyway because what you build will be wrong, as the version you ship is for a different customer than the one you scoped. Stop optimizing for the rewrite. Optimize for learning.</p>
+        <p><strong>Avoid "we're different."</strong> Every founder thinks their case is special enough that normal rules don't apply. Almost none are. If you argue your industry, customer, or product is unique enough to need the full version before testing — pause. You're likely wrong. MVP rules apply to telehealth, fintech, defense tech, biotech, deep tech, and consumer apps. The substrates differ. The discipline doesn't.</p>
+        <p><strong>The hardest thing about MVPs.</strong> You'll feel embarrassed by what you ship. It won't feel like a real product. The UI will look bad. The marketing will feel weak. Your engineer friends will pity you.</p>
+        <p>This is correct. The MVP should embarrass you. If not, you over-built. Reid Hoffman said: "If you're not embarrassed by the first version of your product, you've launched too late." It's a quote, not a substitute for reality, but it points to something real. The cost of polish is time. Time is the resource you don't have.</p>
+        <p>Ship the embarrassing thing. Measure what happened. Decide what to build next. That's the entire game.</p>
+        </article>
+
+        <footer class="article-footer">
+            <p><a href="/author">← more from /author</a></p>
+        </footer>
+    </div>
+    <script src="/author/tldr.js" defer></script>
+</body>
+</html>

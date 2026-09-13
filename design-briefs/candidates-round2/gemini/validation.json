@@ -1,0 +1,40 @@
+{
+  "checks": [
+    {
+      "file": "gemini-01/index.html",
+      "content": "required names/facts and five exact contacts present",
+      "javascript": "node --check passed",
+      "remoteAssets": false,
+      "sha256": "69af3433af6f61f5f1bc1a7d9bb0f917b1f26bc43ce07325393710c212131097"
+    },
+    {
+      "file": "gemini-02/index.html",
+      "content": "required names/facts and five exact contacts present",
+      "javascript": "node --check passed",
+      "remoteAssets": false,
+      "sha256": "6c330374912a54b057e2aaa8253a9cd14717da5826ecadcd35a0251f672f2901"
+    },
+    {
+      "file": "gemini-03/index.html",
+      "content": "required names/facts and five exact contacts present",
+      "javascript": "node --check passed",
+      "remoteAssets": false,
+      "sha256": "83506733fa306ee8c077718d37bb775919ef8943106efccf82d28a408849c8ea"
+    },
+    {
+      "file": "gemini-04/index.html",
+      "content": "required names/facts and five exact contacts present",
+      "javascript": "node --check passed",
+      "remoteAssets": false,
+      "sha256": "93d228f8b7f467e2c2782fe0b0938d945705979b6aa1c64183613c070c8cd0fc"
+    },
+    {
+      "file": "gemini-05/index.html",
+      "content": "required names/facts and five exact contacts present",
+      "javascript": "node --check passed",
+      "remoteAssets": false,
+      "sha256": "ededbeae9e71d95d927f0ad35985f81a7377045d610c69e077bd5def896d502b"
+    }
+  ],
+  "browserValidation": "Pending parent visual inspection"
+}

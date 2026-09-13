@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The State of API Design — Nate McGuire</title>
+    <meta name="description" content="REST won, GraphQL got expensive, gRPC stayed niche, and OpenAPI is the spec everyone agrees to ignore. Where we actually are." />
+    <meta name="author" content="Nate McGuire" />
+    <meta name="robots" content="index, follow, max-image-preview:large" />
+    <link rel="canonical" href="https://natemcguire.com/author/state-of-api-design-2023" />
+
+    <meta property="og:type" content="article" />
+    <meta property="og:site_name" content="Nate McGuire" />
+    <meta property="og:title" content="The State of API Design" />
+    <meta property="og:description" content="REST won, GraphQL got expensive, gRPC stayed niche, and OpenAPI is the spec everyone agrees to ignore. Where we actually are." />
+    <meta property="og:url" content="https://natemcguire.com/author/state-of-api-design-2023" />
+    <meta property="og:image" content="https://natemcguire.com/og-image.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="article:author" content="Nate McGuire" />
+    <meta property="article:published_time" content="2026-05-26" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="@natemcguire" />
+    <meta name="twitter:creator" content="@natemcguire" />
+    <meta name="twitter:title" content="The State of API Design" />
+    <meta name="twitter:description" content="REST won, GraphQL got expensive, gRPC stayed niche, and OpenAPI is the spec everyone agrees to ignore. Where we actually are." />
+    <meta name="twitter:image" content="https://natemcguire.com/og-image.png" />
+
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <link rel="stylesheet" href="/style.css">
+    <link rel="stylesheet" href="/author/article.css">
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Article",
+      "headline": "The State of API Design",
+      "author": { "@type": "Person", "name": "Nate McGuire", "url": "https://natemcguire.com/" },
+      "publisher": { "@type": "Person", "name": "Nate McGuire" },
+      "url": "https://natemcguire.com/author/state-of-api-design-2023",
+      "image": "https://natemcguire.com/og-image.png",
+      "datePublished": "2026-05-26",
+      "articleSection": "Architecture",
+      "description": "REST won, GraphQL got expensive, gRPC stayed niche, and OpenAPI is the spec everyone agrees to ignore. Where we actually are."
+    }
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.4/dist/chart.umd.min.js" defer></script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-MP2PD28L5S"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-MP2PD28L5S');
+    </script>
+</head>
+<body>
+    <div class="wrap article-wrap">
+        <header class="top">
+            <a href="/" class="brand">nate mcguire</a>
+            <nav>
+                <a href="/">bio</a>
+                <a href="/author" aria-current="page">author</a>
+                <a href="/about">about</a>
+                <a href="/speaking">speaking</a>
+                <a href="/work-with-me">work</a>
+            </nav>
+        </header>
+
+        <p class="article-meta">
+            <a href="/author">Architecture</a>
+            <span class="dot">·</span>
+            <span class="meta">May 2026</span>
+        </p>
+
+        <h1 class="article-h1">The State of API Design</h1>
+        <p class="article-hook">REST won, GraphQL got expensive, gRPC stayed niche, and OpenAPI is the spec everyone agrees to ignore. Where we actually are.</p>
+
+        <article class="article-body">
+        <p><a href="https://www.postman.com/state-of-api/">Postman's annual State of the API report</a> is the closest thing the industry has to a real survey on this, and it confirms what every senior engineer already knows: REST won, then kept winning. Every two years someone declares the death of REST and the arrival of the next big thing: SOAP (no, the other way), GraphQL, gRPC, tRPC, JSON:API, HATEOAS (twice), Falcor, OData. Almost all have a real use case. Almost none displaced REST as the default. Misreading this — "REST is legacy, modern APIs are X" — leads to bad architectural decisions at companies whose moat is making their API easy to consume.</p>
+        <p>Here is where things actually are, written as if you might have to defend the choices in a design review.</p>
+        <figure class="article-figure article-figure-chart"><div class="chart-wrap"><canvas id="chart-1"></canvas></div><script>document.addEventListener("DOMContentLoaded",function(){var el=document.getElementById("chart-1");if(!el||!window.Chart)return;new Chart(el,{"type":"bar","data":{"labels":["REST","Webhooks","GraphQL","SOAP","WebSockets","gRPC","MQTT","AsyncAPI"],"datasets":[{"label":"% of developers using","data":[86,36,29,26,26,11,7,4],"backgroundColor":"#002fa7"}]},"options":{"responsive":true,"maintainAspectRatio":false,"indexAxis":"y","plugins":{"legend":{"display":false},"title":{"display":true,"text":"API styles in use by developers, 2024"}},"scales":{"x":{"beginAtZero":true,"max":100,"title":{"display":true,"text":"% of developers"}}}}});});</script><figcaption>Approximate figures from Postman's <a href="https://www.postman.com/state-of-api/api-technologies-and-tools/">2024 State of the API report</a>. REST has not moved off the top.</figcaption></figure>
+        <p><strong>REST is the default and is going to keep being the default.</strong> Every engineer knows it, every tool speaks it, and the failure modes are well-understood. Publish a REST API, and you don't have to teach your customer's intern how to use it. They can curl an endpoint, read the JSON, and integrate by Tuesday. The cost-to-integrate of a well-designed REST API is the lowest in 2026, and it matters in B2B API economics. The narrative that REST is "old" is true and irrelevant. SQL is older. Email is older. Both are still default for the same reason: ubiquity beats novelty in any market where the customer pays the integration cost.</p>
+        <p><strong>GraphQL was overhyped, then under-hyped, and now occupies the right slot.</strong> GraphQL is the right answer when (a) your clients need to over-fetch from many resources at once, (b) you have multiple client teams with diverging needs, and (c) you have the in-house engineering depth to operate a GraphQL backend in production. Mostly this is Facebook, Shopify, GitHub, and a handful of others. For everyone else — and this is the part the consultants didn't tell you in 2018 — GraphQL is a load of operational pain you don't need. N+1 queries, caching that doesn't work like HTTP caching, depth-limiting and complexity-limiting to prevent malicious queries, schema evolution issues, the resolver layer eating your CPU. A team of three engineers does not benefit from GraphQL. A team of fifty might. Almost nobody is in between.</p>
+        <p>GraphQL is still alive, it's still the right answer for the workloads that need it, and the wave of "all our APIs should be GraphQL" peaked around 2020 and broke. If you adopted GraphQL because it was modern, you are probably regretting the cache invalidation by now. If you adopted it because you genuinely had the multi-client fan-out problem, you're fine, keep going.</p>
+        <p><strong>gRPC is correct internally and a tax externally.</strong> gRPC over HTTP/2 with protobuf serialization is genuinely fast and genuinely type-safe and is the right call for internal service-to-service in any system big enough to care about the wire cost. Google built it, Google uses it, your service mesh probably supports it. Inside your own infrastructure, where you control both ends, it's an easy win.</p>
+        <p>External gRPC — exposing a gRPC API to your customers — is much worse than its supporters admit. Browsers can't speak it natively (gRPC-Web is a hack you have to terminate). Most engineers have never touched protobuf. Tooling is worse than REST. Customer integration cost spikes. The handful of companies that ship gRPC externally are mostly doing it because their workload genuinely needs the perf — TensorFlow Serving, some financial market data feeds, very high-throughput telemetry. If you are not one of those, do not expose gRPC publicly. Internal: yes. External: only if you must.</p>
+        <p><strong>tRPC and "type-safe RPC" frameworks are a TypeScript-monorepo phenomenon.</strong> If your frontend and backend are both TypeScript in the same repo, tRPC is a real productivity win. End-to-end types, zero wire-format ceremony, a developer experience that's genuinely better than REST for that specific situation. The catch is the words "TypeScript" and "monorepo." If you've got a Python backend, you can't use it. If you've got a separate mobile team in Swift, they can't use it. If you might want to expose this API to a customer next year, you can't, because they don't have your repo. tRPC is great for the shape of company it's for. It is not a general API strategy.</p>
+        <p><strong>OpenAPI is the spec everyone agrees to ignore.</strong> OpenAPI (formerly Swagger) is the JSON-schema-based description format for REST APIs. In principle, you write the spec, the spec generates docs, client SDKs, server stubs, validation, and contract tests. In practice, most teams write the spec by hand-editing YAML that drifts from the actual implementation, or they generate the spec from the code with annotations that lie. The few teams who get this right treat the spec as the source of truth and generate everything else from it — including the server. That works. The middle ground (spec generated from code, then docs generated from spec) is where things rot, because nothing fails if the spec is wrong, so it gets wrong.</p>
+        <p>If you're starting fresh in 2026: write the OpenAPI spec first, generate the server scaffolding from it, generate the SDKs from it, generate the docs from it, and make CI fail if the spec doesn't match the running server. This is a real discipline and most teams won't sustain it, but the teams that do end up with much better APIs.</p>
+        <p><strong>Streaming and async are an active frontier.</strong> Server-Sent Events (SSE), WebSockets, and long-poll have all been around forever, but the LLM era made streaming responses table-stakes. OpenAI's SSE-based streaming response is now the de facto standard everyone copies. If you're shipping any API that returns generated content, plan for streaming on day one. Don't ship a synchronous endpoint and then bolt on streaming later — the client patterns are too different.</p>
+        <p>Webhooks remain the standard for server-to-server async. The shape converged: HMAC-signed payloads, at-least-once delivery, replay tools. Pub-sub APIs (Pusher, Ably, Centrifugo) are reasonable when your customers want push to clients without running their own infrastructure. Polling is still acceptable for low-frequency status checks; don't be ashamed of it.</p>
+        <p><strong>What's actually changing.</strong> AI integrations are reshaping API design in two ways. First: tool-use specs. OpenAI's function-calling format and Anthropic's tool definitions are both subsets of JSON Schema and they imply a future where every API publishes a machine-readable tool spec so LLMs can call it directly. If your API doesn't have a clean tool spec by 2027, you will be invisible to the agentic-AI layer of the integration market. Second: structured outputs. APIs that return well-typed structured data (rather than a JSON blob with a string body to be parsed) are about to be much more valuable, because they compose with LLM pipelines without an LLM-extraction step. Build for that.</p>
+        <p><strong>Practical advice for a team picking an API style in 2026.</strong></p>
+        <p>If you are a B2B SaaS with external customers integrating you: REST with OpenAPI, idempotency keys on mutations, cursor pagination, well-designed errors, SDKs in TS and Python. This is boring and it's correct.</p>
+        <p>If you are a consumer-product company with one frontend and one backend, both yours: REST is fine. tRPC is fine. Either works. Don't agonize.</p>
+        <p>If you have multiple client teams (web, iOS, Android) all consuming the same backend and the data shape they need differs significantly: consider GraphQL. Budget for the operational overhead.</p>
+        <p>If you have internal microservices talking to each other at high throughput: gRPC. Don't expose it externally.</p>
+        <p>If you're building an LLM-callable API or agentic-tool surface: REST with strict OpenAPI, and publish a function-calling spec separately. The future is going to be agents calling your endpoints.</p>
+        <p>The most important point in this entire piece: the technology stack is not the bottleneck. The bottleneck is whether the team designing the API treats it as a product. A great REST API beats a mediocre GraphQL one every time. A documented gRPC service beats an undocumented REST service every time. Pick the substrate, then do the <em>work</em> — design, docs, errors, latency, backwards compatibility, the whole thing.</p>
+        <p>REST won the substrate fight. The substrate isn't the interesting part.</p>
+        </article>
+
+        <footer class="article-footer">
+            <p><a href="/author">← more from /author</a></p>
+        </footer>
+    </div>
+    <script src="/author/tldr.js" defer></script>
+</body>
+</html>

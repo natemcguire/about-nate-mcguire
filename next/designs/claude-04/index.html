@@ -1,0 +1,183 @@
+<!doctype html>
+<html lang='en'>
+<head><meta name="robots" content="noindex,follow"><meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'unsafe-inline'; style-src 'unsafe-inline'; img-src data:; font-src data:; connect-src 'none'; object-src 'none'; base-uri 'none'; form-action 'none'">
+<meta charset='utf-8'>
+<meta name='viewport' content='width=device-width,initial-scale=1'>
+<title>Nate McGuire — Staff Engineer, Capital One</title>
+<meta name='description' content='Nate McGuire — engineer, founder, and operator. Staff Engineer at Capital One, Card Tech, Alexandria, Virginia.'>
+<meta name='color-scheme' content='light'>
+<style>
+*,*::before,*::after{box-sizing:border-box}
+:root{
+  --stock:#f0e9d8;--ink:#191510;--pink:#ff3d6e;--blue:#2b33d6;--a:var(--pink);--b:var(--blue);
+  --disp:'Haettenschweiler','Arial Narrow Bold','Arial Narrow',Impact,'Helvetica Neue',sans-serif;
+  --sans:'Helvetica Neue',Helvetica,Arial,sans-serif;
+  --mono:ui-monospace,'SF Mono',Menlo,Consolas,monospace;
+  --dx:0px;--dy:0px;
+}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--stock);color:var(--ink);font:400 17px/1.6 var(--sans);overflow-x:hidden}
+#grain{position:fixed;inset:0;z-index:60;pointer-events:none;opacity:.4;mix-blend-mode:multiply}
+a{color:inherit}
+::selection{background:var(--a);color:var(--stock)}
+:focus-visible{outline:3px solid var(--b);outline-offset:3px}
+.skip{position:absolute;left:-9999px;background:var(--ink);color:var(--stock);padding:10px 15px;font:700 12px var(--sans);z-index:80}
+.skip:focus{left:10px;top:10px}
+.wrap{max-width:1200px;margin:0 auto;padding:0 20px}
+
+.topbar{display:flex;flex-wrap:wrap;gap:10px 18px;justify-content:space-between;align-items:center;
+  padding:16px 0;font:700 11px/1 var(--mono);letter-spacing:.2em;text-transform:uppercase}
+.topbar .dot{display:inline-block;width:10px;height:10px;border-radius:50%;background:var(--a);vertical-align:-1px;margin-right:8px}
+.btn{font:700 11px/1 var(--mono);letter-spacing:.2em;text-transform:uppercase;background:var(--ink);color:var(--stock);
+  border:0;padding:11px 15px;cursor:pointer;box-shadow:5px 5px 0 var(--a);transition:transform .15s ease,box-shadow .15s ease}
+.btn:hover{transform:translate(2px,2px);box-shadow:3px 3px 0 var(--b)}
+.btn:active{transform:translate(5px,5px);box-shadow:0 0 0 var(--b)}
+
+.hero{padding:12px 0 34px;position:relative}
+.stack{position:relative;isolation:isolate}
+.stack .line{position:relative;display:block;font-family:var(--disp);font-weight:400;text-transform:uppercase;
+  font-size:clamp(64px,20.5vw,250px);line-height:.82;letter-spacing:-.015em}
+.stack .line .pl{position:absolute;left:0;top:0;width:100%;mix-blend-mode:multiply;pointer-events:none}
+.stack .line .pl.p1{color:var(--a);transform:translate(calc(var(--dx) * -1),calc(var(--dy) * -1))}
+.stack .line .pl.p2{color:var(--b);transform:translate(var(--dx),var(--dy))}
+.stack .line .pk{position:relative;z-index:2;color:var(--ink);mix-blend-mode:multiply}
+.rule{height:8px;background:var(--ink);margin:14px 0 0}
+.halftone{position:absolute;right:-40px;top:-20px;width:min(320px,42vw);aspect-ratio:1;border-radius:50%;z-index:-1;
+  background:radial-gradient(var(--b) 30%,transparent 31%) 0 0/9px 9px;opacity:.55;mix-blend-mode:multiply;
+  -webkit-mask-image:radial-gradient(circle,#000 42%,transparent 72%);mask-image:radial-gradient(circle,#000 42%,transparent 72%)}
+
+.strap{display:grid;gap:14px;grid-template-columns:1fr;margin-top:24px}
+@media(min-width:820px){.strap{grid-template-columns:1.25fr .75fr;align-items:end}}
+.bio{font-size:clamp(21px,3.1vw,32px);line-height:1.25;font-weight:700;letter-spacing:-.02em;max-width:24ch;margin:0}
+.badge{background:var(--b);color:var(--stock);padding:18px 20px;transform:rotate(-1.4deg);box-shadow:8px 8px 0 var(--ink);mix-blend-mode:multiply}
+.badge b{display:block;font-family:var(--disp);text-transform:uppercase;font-size:clamp(26px,4.4vw,44px);line-height:.95;letter-spacing:.005em}
+.badge span{display:block;margin-top:6px;font:700 11px/1.6 var(--mono);letter-spacing:.2em;text-transform:uppercase;opacity:.9}
+
+section{padding:52px 0}
+.kicker{font-family:var(--disp);text-transform:uppercase;font-size:clamp(34px,6.4vw,74px);line-height:.9;margin:0 0 26px;letter-spacing:-.01em}
+.kicker em{font-style:normal;color:var(--a);mix-blend-mode:multiply}
+
+.plates{display:grid;gap:18px;grid-template-columns:1fr}
+@media(min-width:760px){.plates{grid-template-columns:repeat(3,1fr)}}
+.plate{border:3px solid var(--ink);padding:22px 20px 24px;background:var(--stock);position:relative;transition:transform .25s cubic-bezier(.2,.8,.2,1),box-shadow .25s}
+.plate:nth-child(1){transform:rotate(-.8deg)}
+.plate:nth-child(3){transform:rotate(.9deg)}
+.plate:hover{transform:rotate(0deg) translateY(-6px);box-shadow:10px 10px 0 var(--a)}
+.plate .n{font:700 11px/1 var(--mono);letter-spacing:.2em;color:var(--b);display:block;margin-bottom:12px}
+.plate h3{margin:0 0 8px;font-family:var(--disp);text-transform:uppercase;font-size:clamp(24px,3.4vw,34px);line-height:.98;letter-spacing:0}
+.plate p{margin:0;font-size:16px;line-height:1.5}
+
+.focus{display:grid;gap:0;border-top:4px solid var(--ink)}
+.focus div{border-bottom:4px solid var(--ink);padding:20px 0;display:flex;align-items:baseline;gap:18px;flex-wrap:wrap;transition:padding-left .25s ease,background .25s ease}
+.focus div:hover{padding-left:16px;background:rgba(255,61,110,.12)}
+.focus b{font:700 12px/1 var(--mono);letter-spacing:.2em;color:var(--a)}
+.focus span{font-family:var(--disp);text-transform:uppercase;font-size:clamp(28px,5.6vw,62px);line-height:.94}
+
+.links{display:grid;gap:14px;grid-template-columns:repeat(auto-fit,minmax(220px,1fr))}
+.links a{display:block;text-decoration:none;background:var(--ink);color:var(--stock);padding:20px;box-shadow:8px 8px 0 var(--b);
+  transition:transform .2s ease,box-shadow .2s ease,background .2s ease}
+.links a:nth-child(even){box-shadow:8px 8px 0 var(--a)}
+.links a:hover,.links a:focus-visible{transform:translate(4px,4px);box-shadow:2px 2px 0 var(--a);background:#000}
+.links a b{display:block;font-family:var(--disp);text-transform:uppercase;font-size:32px;line-height:1;letter-spacing:.01em}
+.links a span{display:block;margin-top:8px;font:500 11.5px/1.4 var(--mono);opacity:.8;word-break:break-all}
+
+footer{padding:26px 0 60px;border-top:8px solid var(--ink);display:flex;flex-wrap:wrap;gap:8px 22px;justify-content:space-between;
+  font:700 11px/1.6 var(--mono);letter-spacing:.18em;text-transform:uppercase}
+@media(prefers-reduced-motion:reduce){
+  :root{--dx:3px;--dy:2px}
+  *{transition-duration:.001ms !important;animation:none !important}
+}
+</style>
+</head>
+<body>
+<a class='skip' href='#main'>Skip to content</a>
+<svg id='grain' aria-hidden='true' xmlns='http://www.w3.org/2000/svg'>
+  <filter id='g'><feTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3' stitchTiles='stitch'></feTurbulence>
+  <feColorMatrix type='saturate' values='0'></feColorMatrix></filter>
+  <rect width='100%' height='100%' filter='url(#g)' opacity='.5'></rect>
+</svg>
+
+<div class='wrap'>
+  <div class='topbar'>
+    <span><i class='dot'></i>Alexandria, Virginia</span>
+    <span>Engineer · Founder · Operator</span>
+    <button class='btn' id='shift' type='button'>Shift inks</button>
+  </div>
+</div>
+
+<div class='wrap'>
+<header class='hero'>
+  <div class='halftone' aria-hidden='true'></div>
+  <h1 class='stack' style='margin:0'>
+    <span class='line'><span class='pl p1' aria-hidden='true'>Nate</span><span class='pl p2' aria-hidden='true'>Nate</span><span class='pk'>Nate</span></span>
+    <span class='line'><span class='pl p1' aria-hidden='true'>McGuire</span><span class='pl p2' aria-hidden='true'>McGuire</span><span class='pk'>McGuire</span></span>
+  </h1>
+  <div class='rule'></div>
+  <div class='strap'>
+    <p class='bio'>Engineer, founder, and operator. I build software and teams, and invest in and advise small internet businesses.</p>
+    <div class='badge'><b>Staff Engineer</b><span>Capital One — Card Tech</span></div>
+  </div>
+</header>
+
+<main id='main'>
+  <section aria-labelledby='k1'>
+    <h2 class='kicker' id='k1'>Previously <em>pressed</em></h2>
+    <div class='plates'>
+      <article class='plate'><span class='n'>Plate 01</span><h3>Mayven Studios</h3><p>I founded Mayven Studios, which was acquired by Saltwater — Ryan Graves’ holding company.</p></article>
+      <article class='plate'><span class='n'>Plate 02</span><h3>Google, Airbnb, IBM</h3><p>At Mayven we built software for companies including Google, Airbnb, and IBM.</p></article>
+      <article class='plate'><span class='n'>Plate 03</span><h3>15+ years</h3><p>15+ years building software and leading engineering teams.</p></article>
+    </div>
+  </section>
+
+  <section aria-labelledby='k2'>
+    <h2 class='kicker' id='k2'>On the <em>press</em> now</h2>
+    <div class='focus'>
+      <div><b>01</b><span>Software architecture</span></div>
+      <div><b>02</b><span>Engineering leadership</span></div>
+      <div><b>03</b><span>Internet businesses</span></div>
+    </div>
+  </section>
+
+  <section aria-labelledby='k3'>
+    <h2 class='kicker' id='k3'>Send a <em>letter</em></h2>
+    <div class='links'>
+      <a href='mailto:n@natemcguire.com' target="_blank" rel="noopener noreferrer"><b>Email</b><span>n@natemcguire.com</span></a>
+      <a href='https://github.com/natemcguire' target="_blank" rel="noopener noreferrer"><b>GitHub</b><span>github.com/natemcguire</span></a>
+      <a href='https://linkedin.com/in/natemcguire' target="_blank" rel="noopener noreferrer"><b>LinkedIn</b><span>linkedin.com/in/natemcguire</span></a>
+      <a href='https://twitter.com/natemcguire' target="_blank" rel="noopener noreferrer"><b>X</b><span>twitter.com/natemcguire</span></a>
+      <a href='https://medium.com/@natemcguire' target="_blank" rel="noopener noreferrer"><b>Writing</b><span>medium.com/@natemcguire</span></a>
+    </div>
+  </section>
+</main>
+
+<footer><span>Nate McGuire</span><span>Alexandria, Virginia</span><span>Capital One · Card Tech</span></footer>
+</div>
+
+<script>
+(function(){
+  var root=document.documentElement;
+  var calm=window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var pal=[['#ff3d6e','#2b33d6'],['#ff6a1f','#0f8f6f'],['#d81b8c','#1b8fd8'],['#e8402c','#3b2bd6']];
+  var i=0,q=false,tx=4,ty=3;
+  function apply(){q=false;root.style.setProperty('--dx',tx.toFixed(1)+'px');root.style.setProperty('--dy',ty.toFixed(1)+'px');}
+  if(!calm){
+    window.addEventListener('pointermove',function(e){
+      var nx=(e.clientX/window.innerWidth-.5)*2,ny=(e.clientY/window.innerHeight-.5)*2;
+      tx=nx*9;ty=ny*7;
+      if(!q){q=true;requestAnimationFrame(apply);}
+    },{passive:true});
+    apply();
+  }
+  var b=document.getElementById('shift');
+  if(b){
+    b.addEventListener('click',function(){
+      i=(i+1)%pal.length;
+      root.style.setProperty('--a',pal[i][0]);
+      root.style.setProperty('--b',pal[i][1]);
+      if(!calm){tx=(Math.random()-.5)*22;ty=(Math.random()-.5)*16;apply();}
+    });
+  }
+})();
+</script>
+</body>
+</html>

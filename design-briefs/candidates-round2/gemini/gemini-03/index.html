@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nate McGuire &mdash; Executive Dossier</title>
+  <style>
+    :root {
+      --bg-stone: #121316;
+      --card-stone: #1a1c22;
+      --surface-elevated: #242831;
+      --text-bright: #ffffff;
+      --text-body: #c4c9d4;
+      --text-dim: #798294;
+      --amber-accent: #f59e0b;
+      --amber-glow: rgba(245, 158, 11, 0.15);
+      --border-line: #2c3240;
+      --border-subtle: #20242d;
+      --font-stack: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+      --font-mono: ui-monospace, SFMono-Regular, Consolas, monospace;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      background: var(--bg-stone);
+      color: var(--text-body);
+      font-family: var(--font-stack);
+      line-height: 1.55;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 2.5rem 1rem;
+    }
+    a:focus-visible, button:focus-visible {
+      outline: 2px solid var(--amber-accent);
+      outline-offset: 3px;
+    }
+    .dossier-frame {
+      width: 100%;
+      max-width: 860px;
+      background: var(--card-stone);
+      border: 1px solid var(--border-line);
+      border-radius: 12px;
+      box-shadow: 0 25px 60px -15px rgba(0, 0, 0, 0.7), 0 0 0 1px rgba(255, 255, 255, 0.04);
+      overflow: hidden;
+    }
+    .dossier-header {
+      padding: 2.5rem 2.5rem 1.5rem;
+      background: linear-gradient(180deg, #1f2229 0%, var(--card-stone) 100%);
+      border-bottom: 1px solid var(--border-line);
+    }
+    .header-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin-bottom: 1.5rem;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+    .identity-block h1 {
+      font-size: clamp(2rem, 5vw, 3rem);
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      color: var(--text-bright);
+      line-height: 1.1;
+    }
+    .org-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.35rem 0.75rem;
+      background: var(--amber-glow);
+      border: 1px solid rgba(245, 158, 11, 0.3);
+      border-radius: 6px;
+      color: var(--amber-accent);
+      font-family: var(--font-mono);
+      font-size: 0.8125rem;
+      font-weight: 600;
+    }
+    .header-meta {
+      display: flex;
+      gap: 2rem;
+      font-family: var(--font-mono);
+      font-size: 0.85rem;
+      color: var(--text-dim);
+      flex-wrap: wrap;
+    }
+    .header-meta span strong {
+      color: var(--text-bright);
+      font-weight: 600;
+    }
+    .bio-bar {
+      padding: 1.75rem 2.5rem;
+      background: var(--surface-elevated);
+      border-bottom: 1px solid var(--border-line);
+      font-size: 1.15rem;
+      color: var(--text-bright);
+      line-height: 1.5;
+    }
+    .tab-nav {
+      display: flex;
+      background: #14161b;
+      border-bottom: 1px solid var(--border-line);
+      overflow-x: auto;
+      scrollbar-width: none;
+    }
+    .tab-nav::-webkit-scrollbar { display: none; }
+    .tab-btn {
+      padding: 1.1rem 1.75rem;
+      background: transparent;
+      border: none;
+      border-bottom: 3px solid transparent;
+      color: var(--text-dim);
+      font-family: var(--font-mono);
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      font-weight: 600;
+      cursor: pointer;
+      white-space: nowrap;
+      transition: all 0.15s ease;
+    }
+    .tab-btn:hover {
+      color: var(--text-bright);
+      background: rgba(255, 255, 255, 0.02);
+    }
+    .tab-btn.active {
+      color: var(--amber-accent);
+      border-bottom-color: var(--amber-accent);
+      background: var(--card-stone);
+    }
+    .tab-content {
+      padding: 2.5rem;
+      min-height: 280px;
+    }
+    .panel { display: block; }
+    .tabs-ready .panel { display: none; }
+    .tabs-ready .panel.active {
+      display: block;
+      animation: fadeIn 0.2s ease;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(4px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .record-card {
+      padding: 1.5rem;
+      background: var(--surface-elevated);
+      border: 1px solid var(--border-line);
+      border-radius: 8px;
+      margin-bottom: 1.25rem;
+    }
+    .record-card:last-child { margin-bottom: 0; }
+    .record-card h3 {
+      color: var(--text-bright);
+      font-size: 1.15rem;
+      margin-bottom: 0.5rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+    .record-tag {
+      font-family: var(--font-mono);
+      font-size: 0.75rem;
+      color: var(--amber-accent);
+    }
+    .client-badges {
+      display: flex;
+      gap: 0.5rem;
+      margin-top: 0.75rem;
+      flex-wrap: wrap;
+    }
+    .c-badge {
+      font-family: var(--font-mono);
+      font-size: 0.75rem;
+      padding: 0.2rem 0.6rem;
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid var(--border-line);
+      color: var(--text-body);
+      border-radius: 4px;
+    }
+    .focus-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 1.25rem;
+    }
+    .f-box {
+      padding: 1.5rem;
+      background: var(--surface-elevated);
+      border: 1px solid var(--border-line);
+      border-radius: 8px;
+      border-top: 3px solid var(--amber-accent);
+    }
+    .f-box h4 {
+      color: var(--text-bright);
+      font-size: 1.05rem;
+      margin-bottom: 0.5rem;
+    }
+    .f-box p {
+      font-size: 0.9rem;
+      color: var(--text-dim);
+    }
+    .links-stack {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 1rem;
+    }
+    .channel-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 1.25rem;
+      background: var(--surface-elevated);
+      border: 1px solid var(--border-line);
+      border-radius: 8px;
+      color: var(--text-bright);
+      text-decoration: none;
+      font-weight: 600;
+      transition: all 0.15s ease;
+    }
+    .channel-item:hover {
+      background: var(--amber-accent);
+      color: #000000;
+      border-color: var(--amber-accent);
+    }
+    .copy-pill {
+      background: none;
+      border: 1px solid var(--border-line);
+      color: var(--text-dim);
+      font-family: var(--font-mono);
+      font-size: 0.75rem;
+      padding: 0.4rem 0.8rem;
+      border-radius: 4px;
+      cursor: pointer;
+      margin-top: 1.25rem;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    .copy-pill:hover {
+      color: var(--text-bright);
+      border-color: var(--text-dim);
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .tabs-ready .panel.active { animation: none; }
+    }
+  </style>
+</head>
+<body>
+  <article class="dossier-frame">
+    <header class="dossier-header">
+      <div class="header-top">
+        <div class="identity-block">
+          <h1>Nate McGuire</h1>
+        </div>
+        <div class="org-badge">
+          <span>Staff Engineer &bull; Capital One</span>
+        </div>
+      </div>
+      <div class="header-meta">
+        <span>Team: <strong>Card Tech</strong></span>
+        <span>Station: <strong>Alexandria, Virginia</strong></span>
+        <span>Tenure: <strong>15+ Years in Software</strong></span>
+      </div>
+    </header>
+
+    <div class="bio-bar">
+      Engineer, founder, and operator. I build software and teams, and invest in and advise small internet businesses.
+    </div>
+
+    <nav class="tab-nav" role="tablist" aria-label="Dossier Sections">
+      <button class="tab-btn active" role="tab" id="tab-track" aria-selected="true" aria-controls="panel-track">01. Track Record</button>
+      <button class="tab-btn" role="tab" id="tab-focus" aria-selected="false" aria-controls="panel-focus">02. Core Focus</button>
+      <button class="tab-btn" role="tab" id="tab-clients" aria-selected="false" aria-controls="panel-clients">03. Ventures &amp; Clients</button>
+      <button class="tab-btn" role="tab" id="tab-links" aria-selected="false" aria-controls="panel-links">04. Direct Channels</button>
+    </nav>
+
+    <div class="tab-content">
+      <!-- Panel 1: Track Record -->
+      <section class="panel active" id="panel-track" role="tabpanel" aria-labelledby="tab-track">
+        <div class="record-card">
+          <h3>Capital One &mdash; Card Tech <span class="record-tag">CURRENT STATION</span></h3>
+          <p>Staff Engineer at Capital One, Card Tech. Based in Alexandria, Virginia.</p>
+        </div>
+        <div class="record-card" style="margin-top: 1rem;">
+          <h3>15+ Years Experience <span class="record-tag">ENGINEERING &amp; TEAMS</span></h3>
+          <p>15+ years building software and leading engineering teams.</p>
+        </div>
+      </section>
+
+      <!-- Panel 2: Focus Areas -->
+      <section class="panel" id="panel-focus" role="tabpanel" aria-labelledby="tab-focus">
+        <div class="focus-grid">
+          <div class="f-box">
+            <h4>Software Architecture</h4>
+            
+          </div>
+          <div class="f-box">
+            <h4>Engineering Leadership</h4>
+            
+          </div>
+          <div class="f-box">
+            <h4>Internet Businesses</h4>
+            
+          </div>
+        </div>
+      </section>
+
+      <!-- Panel 3: Ventures & Clients -->
+      <section class="panel" id="panel-clients" role="tabpanel" aria-labelledby="tab-clients">
+        <div class="record-card">
+          <h3>Mayven Studios &rarr; Acquired by Saltwater</h3>
+          <p>Founder of Mayven Studios, acquired by Saltwater, Ryan Graves&rsquo; holding company.</p>
+          <div style="margin-top: 1rem;">
+            <span style="font-size: 0.85rem; color: var(--text-dim); display: block; margin-bottom: 0.4rem;">Client software built at Mayven for:</span>
+            <div class="client-badges">
+              <span class="c-badge">Google</span>
+              <span class="c-badge">Airbnb</span>
+              <span class="c-badge">IBM</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Panel 4: Channels -->
+      <section class="panel" id="panel-links" role="tabpanel" aria-labelledby="tab-links">
+        <div class="links-stack">
+          <a href="mailto:n@natemcguire.com" class="channel-item">Email Direct <span>&rarr;</span></a>
+          <a href="https://github.com/natemcguire" target="_blank" rel="noopener noreferrer" class="channel-item">GitHub <span>&rarr;</span></a>
+          <a href="https://linkedin.com/in/natemcguire" target="_blank" rel="noopener noreferrer" class="channel-item">LinkedIn <span>&rarr;</span></a>
+          <a href="https://twitter.com/natemcguire" target="_blank" rel="noopener noreferrer" class="channel-item">X (Twitter) <span>&rarr;</span></a>
+          <a href="https://medium.com/@natemcguire" target="_blank" rel="noopener noreferrer" class="channel-item">Writing <span>&rarr;</span></a>
+        </div>
+        <button class="copy-pill" id="copyEmailBtn" type="button">
+          <span id="copyStatusText">Copy email: n@natemcguire.com</span>
+        </button>
+      </section>
+    </div>
+  </article>
+
+  <script>
+    (function() {
+      const tabs = document.querySelectorAll('.tab-btn');
+      const panels = document.querySelectorAll('.panel');
+      tabs.forEach((tab, index) => {
+        tab.addEventListener('click', () => {
+          tabs.forEach(t => {
+            t.classList.remove('active');
+            t.setAttribute('aria-selected', 'false');
+          });
+          panels.forEach(p => p.classList.remove('active'));
+          tab.classList.add('active');
+          tab.setAttribute('aria-selected', 'true');
+          panels[index].classList.add('active');
+        });
+      });
+
+      document.documentElement.classList.add('tabs-ready');
+      tabs.forEach((tab, index) => tab.addEventListener('keydown', event => {
+        const offset = event.key === 'ArrowRight' ? 1 : event.key === 'ArrowLeft' ? -1 : 0;
+        if (!offset) return;
+        event.preventDefault();
+        const next = tabs[(index + offset + tabs.length) % tabs.length];
+        next.focus(); next.click();
+      }));
+
+      const copyBtn = document.getElementById('copyEmailBtn');
+      const statusText = document.getElementById('copyStatusText');
+      if (copyBtn) {
+        copyBtn.addEventListener('click', () => {
+          Promise.resolve().then(() => navigator.clipboard.writeText('n@natemcguire.com')).then(() => {
+            statusText.textContent = 'Copied to clipboard!';
+            setTimeout(() => {
+              statusText.textContent = 'Copy email: n@natemcguire.com';
+            }, 2500);
+          }).catch(() => {
+            window.location.href = 'mailto:n@natemcguire.com';
+          });
+        });
+      }
+    })();
+  </script>
+</body>
+</html>

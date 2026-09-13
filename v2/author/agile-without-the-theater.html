@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agile Without the Theater — Nate McGuire</title>
+    <meta name="description" content="Two-week sprints, daily standups, and burndown charts are not Agile. They are ritual. Real Agile is shorter feedback loops, which most teams refuse to actually measure." />
+    <meta name="author" content="Nate McGuire" />
+    <meta name="robots" content="index, follow, max-image-preview:large" />
+    <link rel="canonical" href="https://natemcguire.com/author/agile-without-the-theater" />
+
+    <meta property="og:type" content="article" />
+    <meta property="og:site_name" content="Nate McGuire" />
+    <meta property="og:title" content="Agile Without the Theater" />
+    <meta property="og:description" content="Two-week sprints, daily standups, and burndown charts are not Agile. They are ritual. Real Agile is shorter feedback loops, which most teams refuse to actually measure." />
+    <meta property="og:url" content="https://natemcguire.com/author/agile-without-the-theater" />
+    <meta property="og:image" content="https://natemcguire.com/og-image.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="article:author" content="Nate McGuire" />
+    <meta property="article:published_time" content="2026-05-26" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="@natemcguire" />
+    <meta name="twitter:creator" content="@natemcguire" />
+    <meta name="twitter:title" content="Agile Without the Theater" />
+    <meta name="twitter:description" content="Two-week sprints, daily standups, and burndown charts are not Agile. They are ritual. Real Agile is shorter feedback loops, which most teams refuse to actually measure." />
+    <meta name="twitter:image" content="https://natemcguire.com/og-image.png" />
+
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <link rel="stylesheet" href="/style.css">
+    <link rel="stylesheet" href="/author/article.css">
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Article",
+      "headline": "Agile Without the Theater",
+      "author": { "@type": "Person", "name": "Nate McGuire", "url": "https://natemcguire.com/" },
+      "publisher": { "@type": "Person", "name": "Nate McGuire" },
+      "url": "https://natemcguire.com/author/agile-without-the-theater",
+      "image": "https://natemcguire.com/og-image.png",
+      "datePublished": "2026-05-26",
+      "articleSection": "Engineering leadership",
+      "description": "Two-week sprints, daily standups, and burndown charts are not Agile. They are ritual. Real Agile is shorter feedback loops, which most teams refuse to actually measure."
+    }
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.4/dist/chart.umd.min.js" defer></script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-MP2PD28L5S"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-MP2PD28L5S');
+    </script>
+</head>
+<body>
+    <div class="wrap article-wrap">
+        <header class="top">
+            <a href="/" class="brand">nate mcguire</a>
+            <nav>
+                <a href="/">bio</a>
+                <a href="/author" aria-current="page">author</a>
+                <a href="/about">about</a>
+                <a href="/speaking">speaking</a>
+                <a href="/work-with-me">work</a>
+            </nav>
+        </header>
+
+        <p class="article-meta">
+            <a href="/author">Engineering leadership</a>
+            <span class="dot">·</span>
+            <span class="meta">May 2026</span>
+        </p>
+
+        <h1 class="article-h1">Agile Without the Theater</h1>
+        <p class="article-hook">Two-week sprints, daily standups, and burndown charts are not Agile. They are ritual. Real Agile is shorter feedback loops, which most teams refuse to actually measure.</p>
+
+        <article class="article-body">
+        <p><a href="https://agilemanifesto.org/">The Agile Manifesto</a> is seventeen sentences long. Almost no one who runs an "Agile" team has read it. They've read the certification materials for Certified Scrum Master, which is a different thing — a procedural overlay invented to monetize a movement that started as a reaction against procedural overhead. The "Agile" at most companies today would be unrecognizable to the original signatories, and they would mostly hate it.</p>
+        <p>The value of Agile is in shorter feedback loops between writing code and learning what users do with the code. Everything else — the sprints, the standups, the points, the velocity charts, the burndowns, the retros — is <em>a means</em>, not <em>an end</em>. When the means become the end, you have Cargo Cult Agile, which has been dominant for fifteen years.</p>
+        <p>Let me describe what real Agile looks like, what theater looks like, and how to tell which one you're doing.</p>
+        <p><strong>Real Agile: short feedback loops.</strong></p>
+        <p>You ship code to production frequently — many times a day for mature teams, at least daily for most, at worst weekly. You watch what users do with the code, on metrics you've defined in advance. You learn from the watching. You change what you build next based on what you learned. This entire loop should take days, not months.</p>
+        <p>The Agile Manifesto is not specifically about engineering process. It's about <em>learning faster than your competitors</em>. The teams that win do this. They have a tighter "did we just build something useful" loop than the teams that lose. The mechanism by which they achieve that loop is variable — Scrum works for some, Kanban for others, a custom flow for many — and the mechanism is <em>much</em> less important than whether the loop actually exists.</p>
+        <p><strong>Theater Agile: a calendar of meetings.</strong></p>
+        <p>Two-week sprints with the same length regardless of what's being built. Daily standups that report status to a manager (which is not what standups are for). Sprint planning where everyone estimates in story points whose meaning has drifted over time. Sprint retros that produce action items that are never followed up on. Sprint demos that show internal stakeholders the same screens they saw last sprint. Burndown charts that are tracked but not acted on. Velocity numbers that are measured but not improved. Backlog grooming sessions that don't change what gets built. A Jira board with 200 tickets, 60% of which will never be done.</p>
+        <p>This is the dominant pattern at most companies that say they're Agile. The rituals exist, the meetings happen, the artifacts get produced. But the <em>feedback loop</em> — the actual thing Agile is about — is broken or absent. The team is shipping every two weeks. The product manager doesn't have working metrics. Nobody is measuring whether features get used after they ship. Sprint demos are performance, not learning.</p>
+        <p>How to tell the difference:</p>
+        <p>Ask your team: "what did we learn from the last release?" If the answer is "we shipped feature X and the stakeholders are happy" or "we hit our sprint commitment," you have theater. If the answer is "we noticed that feature Y is being used differently than expected, and we're going to adjust" or "the conversion in flow Z went down, here's what we think is wrong," you have real Agile.</p>
+        <p>Ask: "how long from idea to user impact?" If the answer is months (a quarter, six weeks, eight weeks), you have theater. If the answer is days or hours, you have real Agile.</p>
+        <p>Ask: "what would change if we deleted the sprint structure?" If the team would lose all coordination, you don't have a healthy team — you have a team that's learned to use sprints as the only mechanism of coordination. If the team would barely notice, you may not need sprints at all.</p>
+        <p>A few specific things that consistently work or don't work, based on having tried many of them across a lot of teams.</p>
+        <p><strong>Daily standups: useful only at small scale.</strong> A standup of five to eight engineers, ten to fifteen minutes, focused on blockers and yesterday/today, is genuinely valuable. A standup of fifteen engineers, thirty minutes, where everyone gives a status report to a Scrum Master, is theater. Solution: if your standup has gotten bigger than ten people or longer than fifteen minutes, you have an org problem the standup can't solve. Don't double down on the standup.</p>
+        <p><strong>Sprint planning: usually too much ceremony.</strong> Most teams do not need to plan two weeks of work in advance. The plan will be wrong by Thursday. A better mode for most teams: a short weekly priorities meeting (thirty minutes), and engineers pull work from a prioritized queue as they finish things. This is the Kanban model. It's much closer to how senior engineers actually want to work, and it produces less waste.</p>
+        <p><strong>Story points: a vanity metric.</strong> Story points were originally a tool to escape time-based estimates (which everyone knows are wrong) by abstracting to "complexity." In practice, teams just convert points to time anyway, badly, and then management uses velocity (points per sprint) as a productivity metric, which incentivizes inflation. The exercise is mostly waste. Some teams use story points well and benefit. Most teams could delete them and lose nothing.</p>
+        <p><strong>Sprint demos: best when they include users.</strong> A demo to internal stakeholders is theater. A demo to actual users — even five of them — generates feedback. If you can't get users for a demo, demoing internally is fine, but recognize that you're rehearsing, not learning. Optimize for getting users in the room.</p>
+        <p><strong>Retros: useful only if action items happen.</strong> A retro is valuable if it produces specific, time-bounded changes that get implemented. A retro is theater if it produces the same complaints every two weeks (CI is too slow, the design hand-off is messy, we need better documentation) without any of them being fixed. Track retro action items. If they're not being closed, the retro is making your team feel like work is being done while no work is being done.</p>
+        <p><strong>Velocity charts: at best meaningless, at worst harmful.</strong> Comparing velocity across teams is meaningless because the unit doesn't translate. Comparing velocity within a team across time is weakly meaningful if estimation discipline is stable, which it almost never is. Using velocity as a performance metric incentivizes gaming. Most healthy engineering orgs eventually stop tracking velocity.</p>
+        <p><strong>Cycle time is the metric that actually matters.</strong> From "we decided to build it" to "users are using it" — how long? This is the leading indicator of team health, validated empirically in the DORA program's <a href="https://itrevolution.com/product/accelerate/"><em>Accelerate: The Science of Lean Software and DevOps</em></a> (Forsgren, Humble, Kim, 2018) — short lead time correlates with better organizational performance across every cohort they've measured.</p>
+        <figure class="article-figure article-figure-chart"><div class="chart-wrap"><canvas id="chart-1"></canvas></div><script>document.addEventListener("DOMContentLoaded",function(){var el=document.getElementById("chart-1");if(!el||!window.Chart)return;new Chart(el,{"type":"bar","data":{"labels":["Elite","High","Medium","Low"],"datasets":[{"label":"Lead time for changes","data":[1,7,30,180],"backgroundColor":"#002fa7"},{"label":"Time to restore service (hours)","data":[1,24,168,720],"backgroundColor":"#c41e3a"}]},"options":{"responsive":true,"maintainAspectRatio":false,"plugins":{"legend":{"position":"bottom"},"title":{"display":true,"text":"DORA performance tiers — order of magnitude"}},"scales":{"y":{"type":"logarithmic","title":{"display":true,"text":"Hours (log scale)"}}}}});});</script><figcaption>Adapted from Google's annual <a href="https://dora.dev/research/">DORA <em>Accelerate State of DevOps</em> report</a>. The gap between Elite and Low performers is roughly two orders of magnitude on every metric, year after year.</figcaption></figure>
+        <p><strong>What I'd actually recommend for a team starting fresh in 2026.</strong></p>
+        <p>Continuous deployment from day one. Every merge to main goes to production. If you can't do that, prioritize fixing the things that prevent it (test reliability, deploy automation, feature flagging).</p>
+        <p>Trunk-based development. Short-lived feature branches (less than a day). PRs reviewed and merged within hours, not days.</p>
+        <p>Aggressive feature flagging. New features ship dark, behind flags. You can ship code without releasing it. You can release to 1% of users first. The deploy-release split is one of the most underrated pieces of modern engineering practice.</p>
+        <p>Real product metrics, not engineering vanity metrics. You should know within hours of release whether the feature is being used and whether it's having the effect you wanted. If you don't, you don't have a feedback loop, and you're not actually doing Agile no matter what your sprint cadence says.</p>
+        <p>A weekly priorities conversation between engineering, product, and someone close to the customer. Not a planning meeting. A conversation. Adjust the priorities based on what was learned in the last week.</p>
+        <p>A monthly look at cycle time, not velocity. What slowed us down? What can we fix?</p>
+        <p>That's it. No sprints, no points, no Scrum Master, no daily standup if the team is healthy enough not to need it. The rituals are not the work. The work is the work.</p>
+        <p><strong>One last 2026 thing.</strong> The cost of writing code has fallen sharply with AI coding tools. This makes the <em>learning</em> part of Agile more important than ever and the <em>building</em> part less of a bottleneck. Teams that respond to this by adding more building rituals (longer sprints, bigger backlogs, more planning meetings) are missing the shift. The right response is to shorten the loop on the <em>learning</em> side — more user contact, faster metric review, more frequent prioritization — because the building is no longer what gates iteration speed.</p>
+        <p>If your team is healthier with sprints than without, keep them. If you've been doing sprints for a year and the team still isn't shipping faster or learning more, the sprints were never the answer.</p>
+        </article>
+
+        <footer class="article-footer">
+            <p><a href="/author">← more from /author</a></p>
+        </footer>
+    </div>
+    <script src="/author/tldr.js" defer></script>
+</body>
+</html>

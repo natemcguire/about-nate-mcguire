@@ -1,0 +1,104 @@
+{
+  "variations": [
+    {
+      "id": "chatgpt-01",
+      "name": "Big Type, Small Internet",
+      "rationale": "An oversized typographic editorial with an electric yellow palette, a movable punctuation mark, and a tightly composed career ledger.",
+      "entry": "chatgpt-01/index.html",
+      "review": {
+        "nate": "pending",
+        "agent": "pending"
+      }
+    },
+    {
+      "id": "chatgpt-02",
+      "name": "Field of Connections",
+      "rationale": "A midnight-blue spatial composition connects software, people, and businesses through an interactive orbital diagram, with a quiet, highly readable biography beneath.",
+      "entry": "chatgpt-02/index.html",
+      "review": {
+        "nate": "pending",
+        "agent": "pending"
+      }
+    },
+    {
+      "id": "chatgpt-03",
+      "name": "The Red Index",
+      "rationale": "A Swiss-inspired split-screen index pairs a monumental red nameplate with numbered, expandable chapters. Native disclosures keep the experience tactile and usable without JavaScript.",
+      "entry": "chatgpt-03/index.html",
+      "review": {
+        "nate": "pending",
+        "agent": "pending"
+      }
+    },
+    {
+      "id": "chatgpt-04",
+      "name": "A Working Landscape",
+      "rationale": "A warm, literary landscape of olive ink, paper tones, and hand-drawn contours. A broad illustrated opening leads into an asymmetric reading layout and an optional dark reading mode.",
+      "entry": "chatgpt-04/index.html",
+      "review": {
+        "nate": "pending",
+        "agent": "pending"
+      }
+    },
+    {
+      "id": "chatgpt-05",
+      "name": "Open Studio",
+      "rationale": "A playful gallery of oversized lavender, peach, and cobalt panels uses modular geometry and a visitor-controlled sculpture to make a compact personal site feel like an exhibition.",
+      "entry": "chatgpt-05/index.html",
+      "review": {
+        "nate": "pending",
+        "agent": "pending"
+      }
+    }
+  ],
+  "submission.json": {
+    "model": "GPT-6",
+    "generation_date": "2026-09-13",
+    "designs": [
+      {
+        "id": "chatgpt-01",
+        "name": "Big Type, Small Internet",
+        "entry": "chatgpt-01/index.html",
+        "rationale": "Electric yellow editorial typography, a responsive punctuation mark, and a concise career ledger.",
+        "approval_status": "pending"
+      },
+      {
+        "id": "chatgpt-02",
+        "name": "Field of Connections",
+        "entry": "chatgpt-02/index.html",
+        "rationale": "A midnight orbital composition turns three areas of focus into navigable points of connection.",
+        "approval_status": "pending"
+      },
+      {
+        "id": "chatgpt-03",
+        "name": "The Red Index",
+        "entry": "chatgpt-03/index.html",
+        "rationale": "A monumental red nameplate anchors a Swiss-inspired index with native expandable chapters.",
+        "approval_status": "pending"
+      },
+      {
+        "id": "chatgpt-04",
+        "name": "A Working Landscape",
+        "entry": "chatgpt-04/index.html",
+        "rationale": "Literary typography, illustrated contours, and an optional night palette create a considered reading experience.",
+        "approval_status": "pending"
+      },
+      {
+        "id": "chatgpt-05",
+        "name": "Open Studio",
+        "entry": "chatgpt-05/index.html",
+        "rationale": "An asymmetric gallery of colored panels and a rotatable abstract sculpture gives the biography an exhibition-like rhythm.",
+        "approval_status": "pending"
+      }
+    ]
+  },
+  "model": "chatgpt",
+  "modelVersion": "gpt-6-astra",
+  "generatedAt": "2026-09-13T22:14:29.457896+00:00",
+  "provenance": {
+    "environment": "Codex CLI 0.153.4",
+    "requestedModel": "gpt-6-astra",
+    "response": "response.json",
+    "runLog": "run.log"
+  }
+}

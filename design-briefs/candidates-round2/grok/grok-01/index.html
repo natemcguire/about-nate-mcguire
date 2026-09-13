@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+<meta charset='utf-8'>
+<meta name='viewport' content='width=device-width,initial-scale=1'>
+<title>Nate McGuire</title>
+<style>
+:root{--ink:#1a1410;--paper:#f3eadc;--rule:#b85c38;--mute:#6e6258;--line:#d9cbb8}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--paper);color:var(--ink);font:18px/1.5 Georgia,'Times New Roman',serif}
+a{color:inherit}
+:focus-visible{outline:2px solid var(--rule);outline-offset:3px}
+.skip{position:absolute;left:-999px}
+.skip:focus{left:8px;top:8px;background:var(--paper);padding:8px;z-index:9}
+.bar{position:fixed;top:0;left:0;height:3px;width:0;background:var(--rule);z-index:8}
+mast{display:flex;justify-content:space-between;align-items:baseline;padding:16px 6vw 12px;border-bottom:1px solid var(--ink);font:12px/1 system-ui,sans-serif;letter-spacing:.18em;text-transform:uppercase;color:var(--mute)}
+nav a{margin-left:1.25em;text-decoration:none}
+nav a:hover{color:var(--rule)}
+.hero{padding:9vh 6vw 7vh;border-bottom:1px solid var(--ink)}
+.kicker{font:12px/1 system-ui,sans-serif;letter-spacing:.22em;text-transform:uppercase;color:var(--rule);margin-bottom:1.1em}
+h1{font-size:clamp(52px,12vw,150px);line-height:.84;font-weight:400;letter-spacing:-.034em}
+.dek{max-width:26em;margin-top:1.5em;font-size:clamp(18px,2.1vw,26px);line-height:1.35}
+.issue{display:grid;grid-template-columns:1fr 260px;gap:4vw;padding:6vh 6vw;border-bottom:1px solid var(--ink)}
+article{padding:2em 0;border-bottom:1px solid var(--line)}
+article:last-of-type{border:0}
+.num{display:block;font:11px/1 system-ui,sans-serif;letter-spacing:.2em;color:var(--rule);margin-bottom:.7em}
+article h2{font-size:clamp(22px,3vw,34px);font-weight:400;margin-bottom:.45em}
+article p::first-letter{float:left;font-size:2.5em;line-height:.8;padding:.06em .1em 0 0;color:var(--rule)}
+.rail{position:sticky;top:20px;align-self:start;padding-left:1.2em;border-left:1px solid var(--ink)}
+.rail h3{font:11px/1 system-ui,sans-serif;letter-spacing:.2em;text-transform:uppercase;margin:0 0 1em}
+.rail a{display:block;text-decoration:none;font:14px/1.4 system-ui,sans-serif;color:var(--mute);margin:.55em 0}
+.rail a:hover,.rail a.on{color:var(--ink)}
+.focus{display:flex;flex-wrap:wrap;gap:8px;padding:5vh 6vw;border-bottom:1px solid var(--ink)}
+.focus b{width:100%;font:11px/1 system-ui,sans-serif;letter-spacing:.18em;text-transform:uppercase;color:var(--mute)}
+.chip{border:1px solid var(--ink);padding:.5em .95em;font:15px/1 system-ui,sans-serif;transition:background .2s,color .2s}
+.chip:hover,.chip:focus{background:var(--ink);color:var(--paper)}
+footer{padding:5vh 6vw 8vh;display:flex;flex-wrap:wrap;gap:1.2em 2em}
+footer p{flex:1 1 240px;max-width:36em}
+.links{display:flex;flex-wrap:wrap;gap:1em 1.5em;font:13px/1 system-ui,sans-serif;letter-spacing:.12em;text-transform:uppercase}
+.links a{text-decoration:none;border-bottom:1px solid var(--rule);padding-bottom:3px}
+.links a:hover{color:var(--rule)}
+@media(max-width:800px){.issue{grid-template-columns:1fr}.rail{position:static;border:0;border-top:1px solid var(--ink);padding:1.2em 0;margin-top:1em}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important;animation:none!important}}
+</style>
+</head>
+<body>
+<a class='skip' href='#main'>Skip to content</a>
+<div class='bar' id='bar' hidden></div>
+<mast>
+<span>Alexandria, Virginia</span>
+<nav>
+<a href='#work'>Work</a>
+<a href='#focus'>Focus</a>
+<a href='#colophon'>Connect</a>
+</nav>
+</mast>
+<header class='hero' id='main'>
+<p class='kicker'>Staff Engineer · Capital One · Card Tech</p>
+<h1>Nate<br>McGuire</h1>
+<p class='dek'>Engineer, founder, and operator. I build software and teams, and invest in and advise small internet businesses.</p>
+</header>
+<div class='issue' id='work'>
+<div>
+<article id='a1'>
+<span class='num'>01 — Founding</span>
+<h2>Mayven Studios</h2>
+<p>Founder of Mayven Studios, acquired by Saltwater, Ryan Graves’ holding company.</p>
+</article>
+<article id='a2'>
+<span class='num'>02 — Clients</span>
+<h2>Software for ambitious companies</h2>
+<p>At Mayven, built software for companies including Google, Airbnb, and IBM.</p>
+</article>
+<article id='a3'>
+<span class='num'>03 — Practice</span>
+<h2>Fifteen years in</h2>
+<p>15+ years building software and leading engineering teams. Now Staff Engineer at Capital One on Card Tech, based in Alexandria, Virginia.</p>
+</article>
+</div>
+<aside class='rail' aria-label='In this issue'>
+<h3>In this issue</h3>
+<a href='#a1'>Mayven Studios</a>
+<a href='#a2'>Google, Airbnb, IBM</a>
+<a href='#a3'>Capital One · Card Tech</a>
+<a href='#focus'>Current focus</a>
+</aside>
+</div>
+<section class='focus' id='focus'>
+<b>Focus</b>
+<span class='chip' tabindex='0'>Software architecture</span>
+<span class='chip' tabindex='0'>Engineering leadership</span>
+<span class='chip' tabindex='0'>Internet businesses</span>
+</section>
+<footer id='colophon'>
+<p>Nate McGuire — Staff Engineer, Capital One Card Tech. Alexandria, Virginia.</p>
+<div class='links'>
+<a href='mailto:n@natemcguire.com'>Email</a>
+<a href='https://github.com/natemcguire'>GitHub</a>
+<a href='https://linkedin.com/in/natemcguire'>LinkedIn</a>
+<a href='https://twitter.com/natemcguire'>X</a>
+<a href='https://medium.com/@natemcguire'>Writing</a>
+</div>
+</footer>
+<script>
+(function(){
+var bar=document.getElementById('bar');
+var reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
+if(!reduce) bar.hidden=false;
+function prog(){var h=document.documentElement;var d=h.scrollHeight-h.clientHeight;bar.style.width=(d?(h.scrollTop/d)*100:0)+'%';}
+if(!reduce){addEventListener('scroll',prog,{passive:true});prog();}
+var links=[].slice.call(document.querySelectorAll('.rail a'));
+if('IntersectionObserver' in window){
+var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){links.forEach(function(l){l.classList.toggle('on',l.getAttribute('href')==='#'+e.target.id);});}});},{rootMargin:'-28% 0px -55% 0px'});
+['a1','a2','a3','focus'].forEach(function(id){var n=document.getElementById(id);if(n)io.observe(n);});
+}
+})();
+</script>
+</body>
+</html>

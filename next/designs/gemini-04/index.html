@@ -1,0 +1,641 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><meta name="robots" content="noindex,follow"><meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'unsafe-inline'; style-src 'unsafe-inline'; img-src data:; font-src data:; connect-src 'none'; object-src 'none'; base-uri 'none'; form-action 'none'">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nate McGuire — Kinetic Modernist Poster</title>
+  <style>
+    :root {
+      --bg-yellow: #f2bf18;
+      --bg-yellow-deep: #e3ab08;
+      --ink-black: #111111;
+      --ink-muted: #33312b;
+      --paper-cream: #faf7f0;
+      --border-line: #111111;
+      --font-display: -apple-system, BlinkMacSystemFont, "Helvetica Neue", "Arial Black", sans-serif;
+      --font-body: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+      --gap-unit: clamp(16px, 3vw, 36px);
+    }
+
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      background-color: var(--bg-yellow);
+      color: var(--ink-black);
+      font-family: var(--font-body);
+      line-height: 1.4;
+      -webkit-font-smoothing: antialiased;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background-color: var(--bg-yellow);
+      min-height: 100vh;
+      overflow-x: hidden;
+      position: relative;
+      padding: var(--gap-unit);
+    }
+
+    /* Skip Link for Accessibility */
+    .skip-link {
+      position: absolute;
+      top: -100px;
+      left: var(--gap-unit);
+      background: var(--ink-black);
+      color: var(--paper-cream);
+      padding: 12px 20px;
+      font-weight: 700;
+      text-decoration: none;
+      z-index: 9999;
+      border: 2px solid var(--border-line);
+    }
+    .skip-link:focus {
+      top: var(--gap-unit);
+    }
+
+    /* Poster Grid Container */
+    .poster-canvas {
+      max-width: 1440px;
+      margin: 0 auto;
+      border: 3px solid var(--border-line);
+      background: var(--bg-yellow);
+      position: relative;
+      box-shadow: 12px 12px 0 var(--ink-black);
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* Top Header Bar */
+    .poster-header {
+      display: grid;
+      grid-template-columns: auto 1fr auto;
+      align-items: center;
+      border-bottom: 3px solid var(--border-line);
+      padding: 16px var(--gap-unit);
+      background: var(--paper-cream);
+      gap: 16px;
+    }
+
+    .header-tag {
+      font-family: var(--font-display);
+      font-weight: 900;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      font-size: 0.9rem;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .header-tag::before {
+      content: "";
+      display: inline-block;
+      width: 12px;
+      height: 12px;
+      background: var(--ink-black);
+    }
+
+    .header-role {
+      font-weight: 700;
+      font-size: 0.95rem;
+      text-align: center;
+      letter-spacing: 0.02em;
+    }
+
+    .header-loc {
+      font-weight: 800;
+      text-transform: uppercase;
+      font-size: 0.85rem;
+      letter-spacing: 0.06em;
+      text-align: right;
+    }
+
+    /* Hero Kinetic Typographic Section */
+    .hero-poster {
+      position: relative;
+      padding: clamp(32px, 6vw, 84px) var(--gap-unit);
+      border-bottom: 3px solid var(--border-line);
+      background: var(--bg-yellow);
+      overflow: hidden;
+    }
+
+    .kinetic-title-wrap {
+      position: relative;
+      perspective: 1000px;
+    }
+
+    .poster-title {
+      font-family: var(--font-display);
+      font-size: clamp(3.2rem, 13vw, 13rem);
+      line-height: 0.88;
+      font-weight: 950;
+      text-transform: uppercase;
+      letter-spacing: -0.04em;
+      word-break: break-word;
+      color: var(--ink-black);
+      transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+      transform-style: preserve-3d;
+    }
+
+    .poster-title span {
+      display: block;
+    }
+
+    .poster-title .outline-text {
+      -webkit-text-stroke: clamp(1.5px, 0.2vw, 3px) var(--ink-black);
+      color: transparent;
+    }
+
+    /* Geometric Kinetic Graphic Ornament */
+    .graphic-badge {
+      position: absolute;
+      top: 24px;
+      right: 24px;
+      width: clamp(80px, 12vw, 140px);
+      height: clamp(80px, 12vw, 140px);
+      border: 3px solid var(--ink-black);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: var(--paper-cream);
+      animation: spinSlow 30s linear infinite;
+      pointer-events: none;
+    }
+
+    .graphic-badge svg {
+      width: 70%;
+      height: 70%;
+      fill: var(--ink-black);
+    }
+
+    @keyframes spinSlow {
+      from { transform: rotate(0deg); }
+      to { transform: rotate(360deg); }
+    }
+
+    /* Editorial Bio Banner */
+    .bio-strip {
+      background: var(--ink-black);
+      color: var(--paper-cream);
+      padding: clamp(24px, 4vw, 48px) var(--gap-unit);
+      border-bottom: 3px solid var(--border-line);
+    }
+
+    .bio-quote {
+      font-family: var(--font-display);
+      font-size: clamp(1.35rem, 2.8vw, 2.5rem);
+      line-height: 1.25;
+      font-weight: 800;
+      max-width: 1100px;
+      letter-spacing: -0.01em;
+    }
+
+    /* Main Content Layout: Two Columns */
+    .main-grid {
+      display: grid;
+      grid-template-columns: 1fr 1.15fr;
+      border-bottom: 3px solid var(--border-line);
+    }
+
+    /* Section Panes */
+    .pane {
+      padding: clamp(28px, 4vw, 56px) var(--gap-unit);
+      background: var(--bg-yellow);
+    }
+
+    .pane:first-child {
+      border-right: 3px solid var(--border-line);
+      background: var(--paper-cream);
+    }
+
+    .pane-heading {
+      font-family: var(--font-display);
+      font-size: clamp(1.6rem, 3.2vw, 2.8rem);
+      font-weight: 900;
+      text-transform: uppercase;
+      letter-spacing: -0.02em;
+      margin-bottom: 28px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-bottom: 2px solid var(--border-line);
+      padding-bottom: 12px;
+    }
+
+    .pane-index {
+      font-size: 1rem;
+      font-weight: 800;
+      padding: 4px 8px;
+      background: var(--ink-black);
+      color: var(--paper-cream);
+    }
+
+    /* Focus Cards */
+    .focus-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .focus-card {
+      border: 2.5px solid var(--border-line);
+      background: var(--paper-cream);
+      padding: 24px;
+      position: relative;
+      box-shadow: 5px 5px 0 var(--ink-black);
+      transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
+      cursor: default;
+    }
+
+    .focus-card:hover {
+      transform: translate(-3px, -3px);
+      box-shadow: 8px 8px 0 var(--ink-black);
+      background: #ffffff;
+    }
+
+    .focus-num {
+      font-family: var(--font-display);
+      font-size: 0.85rem;
+      font-weight: 900;
+      color: var(--ink-muted);
+      letter-spacing: 0.1em;
+      margin-bottom: 8px;
+      text-transform: uppercase;
+    }
+
+    .focus-title {
+      font-family: var(--font-display);
+      font-size: clamp(1.25rem, 2vw, 1.8rem);
+      font-weight: 900;
+      line-height: 1.15;
+      letter-spacing: -0.01em;
+    }
+
+    /* Background Chronology Panels */
+    .background-items {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .bg-panel {
+      background: var(--bg-yellow);
+      border: 2.5px solid var(--border-line);
+      padding: 24px;
+      box-shadow: 5px 5px 0 var(--ink-black);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .bg-panel:hover {
+      transform: translate(-3px, -3px);
+      box-shadow: 8px 8px 0 var(--ink-black);
+    }
+
+    .bg-meta {
+      display: inline-block;
+      background: var(--ink-black);
+      color: var(--paper-cream);
+      font-family: var(--font-display);
+      font-weight: 800;
+      font-size: 0.75rem;
+      padding: 3px 8px;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      margin-bottom: 12px;
+    }
+
+    .bg-panel p {
+      font-size: clamp(1.05rem, 1.35vw, 1.35rem);
+      font-weight: 600;
+      line-height: 1.45;
+      color: var(--ink-black);
+    }
+
+    /* Contact & Connectivity Footer Section */
+    .contact-section {
+      background: var(--paper-cream);
+      padding: clamp(32px, 5vw, 64px) var(--gap-unit);
+    }
+
+    .contact-title {
+      font-family: var(--font-display);
+      font-size: clamp(2rem, 4.5vw, 4.5rem);
+      font-weight: 950;
+      text-transform: uppercase;
+      letter-spacing: -0.03em;
+      margin-bottom: 32px;
+      line-height: 0.95;
+    }
+
+    .links-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 16px;
+    }
+
+    .poster-link {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      min-height: 110px;
+      background: var(--bg-yellow);
+      border: 2.5px solid var(--border-line);
+      padding: 16px 20px;
+      color: var(--ink-black);
+      text-decoration: none;
+      font-family: var(--font-display);
+      font-weight: 900;
+      box-shadow: 4px 4px 0 var(--ink-black);
+      transition: transform 0.15s ease, box-shadow 0.15s ease, background 0.15s ease;
+      position: relative;
+    }
+
+    .poster-link:hover,
+    .poster-link:focus-visible {
+      transform: translate(-3px, -3px);
+      box-shadow: 7px 7px 0 var(--ink-black);
+      background: #ffd336;
+    }
+
+    .poster-link:focus-visible {
+      outline: 3px solid var(--ink-black);
+      outline-offset: 3px;
+    }
+
+    .link-label {
+      font-size: clamp(1.2rem, 1.8vw, 1.6rem);
+      letter-spacing: -0.02em;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .link-arrow {
+      font-size: 1.4rem;
+      transition: transform 0.2s ease;
+    }
+
+    .poster-link:hover .link-arrow {
+      transform: translate(3px, -3px);
+    }
+
+    .link-dest {
+      font-family: var(--font-body);
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: var(--ink-muted);
+      word-break: break-all;
+    }
+
+    /* Colophon Strip */
+    .colophon-strip {
+      border-top: 3px solid var(--border-line);
+      background: var(--ink-black);
+      color: var(--paper-cream);
+      padding: 16px var(--gap-unit);
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      gap: 12px;
+      font-size: 0.85rem;
+      font-weight: 600;
+    }
+
+    .colophon-strip span {
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    /* Responsive Adjustments */
+    @media (max-width: 900px) {
+      .poster-header {
+        grid-template-columns: 1fr;
+        text-align: left;
+      }
+      .header-loc {
+        text-align: left;
+      }
+      .main-grid {
+        grid-template-columns: 1fr;
+      }
+      .pane:first-child {
+        border-right: none;
+        border-bottom: 3px solid var(--border-line);
+      }
+    }
+
+    @media (max-width: 600px) {
+      body {
+        padding: 8px;
+      }
+      .poster-canvas {
+        box-shadow: 6px 6px 0 var(--ink-black);
+      }
+      .links-grid {
+        grid-template-columns: 1fr;
+      }
+      .graphic-badge {
+        display: none;
+      }
+    }
+
+    /* Respect Reduced Motion Preferences */
+    @media (prefers-reduced-motion: reduce) {
+      *,
+      *::before,
+      *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        transform: none !important;
+      }
+    }
+  </style>
+</head>
+<body>
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <div class="poster-canvas" id="poster">
+    <!-- Header Meta Bar -->
+    <header class="poster-header">
+      <div class="header-tag">Nate McGuire</div>
+      <div class="header-role">Staff Engineer · Capital One · Card Tech</div>
+      <div class="header-loc">Alexandria, Virginia</div>
+    </header>
+
+    <main id="main-content">
+      <!-- Monumental Kinetic Poster Title -->
+      <section class="hero-poster" id="hero">
+        <div class="kinetic-title-wrap" id="titleWrap">
+          <h1 class="poster-title" id="kineticTitle">
+            <span>NATE</span>
+            <span class="outline-text">McGUIRE</span>
+          </h1>
+        </div>
+
+        <!-- Modernist Geometric Emblem -->
+        <div class="graphic-badge" aria-hidden="true">
+          <svg viewBox="0 0 100 100">
+            <polygon points="50,5 95,90 5,90"></polygon>
+          </svg>
+        </div>
+      </section>
+
+      <!-- Bio Statement -->
+      <section class="bio-strip" aria-label="Overview">
+        <blockquote class="bio-quote">
+          Engineer, founder, and operator. I build software and teams, and invest in and advise small internet businesses.
+        </blockquote>
+      </section>
+
+      <!-- Core Content Grid -->
+      <div class="main-grid">
+        <!-- Focus Areas -->
+        <section class="pane" aria-labelledby="focus-heading">
+          <h2 class="pane-heading" id="focus-heading">
+            <span>Focus</span>
+            <span class="pane-index">01</span>
+          </h2>
+          <ul class="focus-list">
+            <li class="focus-card">
+              <div class="focus-num">Area / A</div>
+              <div class="focus-title">Software architecture</div>
+            </li>
+            <li class="focus-card">
+              <div class="focus-num">Area / B</div>
+              <div class="focus-title">Engineering leadership</div>
+            </li>
+            <li class="focus-card">
+              <div class="focus-num">Area / C</div>
+              <div class="focus-title">Internet businesses</div>
+            </li>
+          </ul>
+        </section>
+
+        <!-- Background & Career -->
+        <section class="pane" aria-labelledby="bg-heading">
+          <h2 class="pane-heading" id="bg-heading">
+            <span>Background</span>
+            <span class="pane-index">02</span>
+          </h2>
+          <div class="background-items">
+            <article class="bg-panel">
+              <span class="bg-meta">Milestone 01</span>
+              <p>Founder of Mayven Studios, acquired by Saltwater, Ryan Graves’ holding company.</p>
+            </article>
+            <article class="bg-panel">
+              <span class="bg-meta">Milestone 02</span>
+              <p>At Mayven, built software for companies including Google, Airbnb, and IBM.</p>
+            </article>
+            <article class="bg-panel">
+              <span class="bg-meta">Milestone 03</span>
+              <p>15+ years building software and leading engineering teams.</p>
+            </article>
+          </div>
+        </section>
+      </div>
+
+      <!-- Contact & Channels Grid -->
+      <section class="contact-section" aria-labelledby="connect-heading">
+        <h2 class="contact-title" id="connect-heading">Connect &amp; Channels</h2>
+        <nav class="links-grid" aria-label="Direct Links">
+          <a href="mailto:n@natemcguire.com" class="poster-link" target="_blank" rel="noopener noreferrer">
+            <div class="link-label">
+              <span>Email</span>
+              <span class="link-arrow">↗</span>
+            </div>
+            <div class="link-dest">n@natemcguire.com</div>
+          </a>
+          <a href="https://github.com/natemcguire" class="poster-link" target="_blank" rel="noopener noreferrer">
+            <div class="link-label">
+              <span>GitHub</span>
+              <span class="link-arrow">↗</span>
+            </div>
+            <div class="link-dest">github.com/natemcguire</div>
+          </a>
+          <a href="https://linkedin.com/in/natemcguire" class="poster-link" target="_blank" rel="noopener noreferrer">
+            <div class="link-label">
+              <span>LinkedIn</span>
+              <span class="link-arrow">↗</span>
+            </div>
+            <div class="link-dest">linkedin.com/in/natemcguire</div>
+          </a>
+          <a href="https://twitter.com/natemcguire" class="poster-link" target="_blank" rel="noopener noreferrer">
+            <div class="link-label">
+              <span>X</span>
+              <span class="link-arrow">↗</span>
+            </div>
+            <div class="link-dest">twitter.com/natemcguire</div>
+          </a>
+          <a href="https://medium.com/@natemcguire" class="poster-link" target="_blank" rel="noopener noreferrer">
+            <div class="link-label">
+              <span>Writing</span>
+              <span class="link-arrow">↗</span>
+            </div>
+            <div class="link-dest">medium.com/@natemcguire</div>
+          </a>
+        </nav>
+      </section>
+    </main>
+
+    <!-- Colophon Bottom Bar -->
+    <footer class="colophon-strip">
+      <span>Nate McGuire · Staff Engineer</span>
+      <span>Capital One · Card Tech</span>
+      <span>Alexandria, Virginia</span>
+    </footer>
+  </div>
+
+  <script>
+    (function() {
+      // Check for user preference regarding motion
+      const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      if (prefersReduced) return;
+
+      const hero = document.getElementById('hero');
+      const title = document.getElementById('kineticTitle');
+
+      if (!hero || !title) return;
+
+      let targetX = 0;
+      let targetY = 0;
+      let currentX = 0;
+      let currentY = 0;
+      let isHovered = false;
+
+      hero.addEventListener('mousemove', function(e) {
+        const rect = hero.getBoundingClientRect();
+        const relX = (e.clientX - rect.left) / rect.width - 0.5;
+        const relY = (e.clientY - rect.top) / rect.height - 0.5;
+        targetX = relX * 14;
+        targetY = relY * -10;
+        isHovered = true;
+      });
+
+      hero.addEventListener('mouseleave', function() {
+        targetX = 0;
+        targetY = 0;
+        isHovered = false;
+      });
+
+      function animateTilt() {
+        currentX += (targetX - currentX) * 0.1;
+        currentY += (targetY - currentY) * 0.1;
+        title.style.transform = `perspective(800px) rotateX(${currentY.toFixed(2)}deg) rotateY(${currentX.toFixed(2)}deg) translateZ(8px)`;
+        requestAnimationFrame(animateTilt);
+      }
+
+      requestAnimationFrame(animateTilt);
+    })();
+  </script>
+</body>
+</html>

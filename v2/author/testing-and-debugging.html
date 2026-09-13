@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Testing and Debugging — The Two Skills Senior Engineers Are Actually Paid For — Nate McGuire</title>
+    <meta name="description" content="Writing code is the easy part. Debugging at 2am with no logs and an angry CEO is the job. Here&#x27;s what I learned about both." />
+    <meta name="author" content="Nate McGuire" />
+    <meta name="robots" content="index, follow, max-image-preview:large" />
+    <link rel="canonical" href="https://natemcguire.com/author/testing-and-debugging" />
+
+    <meta property="og:type" content="article" />
+    <meta property="og:site_name" content="Nate McGuire" />
+    <meta property="og:title" content="Testing and Debugging — The Two Skills Senior Engineers Are Actually Paid For" />
+    <meta property="og:description" content="Writing code is the easy part. Debugging at 2am with no logs and an angry CEO is the job. Here&#x27;s what I learned about both." />
+    <meta property="og:url" content="https://natemcguire.com/author/testing-and-debugging" />
+    <meta property="og:image" content="https://natemcguire.com/og-image.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="article:author" content="Nate McGuire" />
+    <meta property="article:published_time" content="2026-05-26" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="@natemcguire" />
+    <meta name="twitter:creator" content="@natemcguire" />
+    <meta name="twitter:title" content="Testing and Debugging — The Two Skills Senior Engineers Are Actually Paid For" />
+    <meta name="twitter:description" content="Writing code is the easy part. Debugging at 2am with no logs and an angry CEO is the job. Here&#x27;s what I learned about both." />
+    <meta name="twitter:image" content="https://natemcguire.com/og-image.png" />
+
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <link rel="stylesheet" href="/style.css">
+    <link rel="stylesheet" href="/author/article.css">
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Article",
+      "headline": "Testing and Debugging \u2014 The Two Skills Senior Engineers Are Actually Paid For",
+      "author": { "@type": "Person", "name": "Nate McGuire", "url": "https://natemcguire.com/" },
+      "publisher": { "@type": "Person", "name": "Nate McGuire" },
+      "url": "https://natemcguire.com/author/testing-and-debugging",
+      "image": "https://natemcguire.com/og-image.png",
+      "datePublished": "2026-05-26",
+      "articleSection": "Engineering leadership",
+      "description": "Writing code is the easy part. Debugging at 2am with no logs and an angry CEO is the job. Here's what I learned about both."
+    }
+    </script>
+
+    
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-MP2PD28L5S"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-MP2PD28L5S');
+    </script>
+</head>
+<body>
+    <div class="wrap article-wrap">
+        <header class="top">
+            <a href="/" class="brand">nate mcguire</a>
+            <nav>
+                <a href="/">bio</a>
+                <a href="/author" aria-current="page">author</a>
+                <a href="/about">about</a>
+                <a href="/speaking">speaking</a>
+                <a href="/work-with-me">work</a>
+            </nav>
+        </header>
+
+        <p class="article-meta">
+            <a href="/author">Engineering leadership</a>
+            <span class="dot">·</span>
+            <span class="meta">May 2026</span>
+        </p>
+
+        <h1 class="article-h1">Testing and Debugging — The Two Skills Senior Engineers Are Actually Paid For</h1>
+        <p class="article-hook">Writing code is the easy part. Debugging at 2am with no logs and an angry CEO is the job. Here&#x27;s what I learned about both.</p>
+
+        <article class="article-body">
+        <p>Writing code is the easy part. I know this is heretical to say in 2026 — when "writing code" is the metric people obsess over, when LLM productivity claims are denominated in lines of code, when bootcamps grade you on coding challenges — but it's been true the whole time and it's even more true now. Writing the happy path of a feature is a skill any reasonable engineer has within a year of starting. The two skills that separate senior engineers from junior ones, by an enormous margin, are <em>testing</em> and <em>debugging</em>. These are the things you actually get paid for. These are the things AI tools help with least.</p>
+        <p>Let me describe both, because the conversation about both has been corrupted by enough industry cliche that the actual practice gets lost.</p>
+        <p><strong>Testing as a discipline.</strong></p>
+        <p>The point of testing is <em>not</em> to "make sure the code works." The point of testing is to give yourself the ability to <em>change</em> the code with confidence. The test suite is a freezing of behavior — when you change the code, the suite tells you whether you preserved the behavior you cared about. Without tests, every change is a roll of the dice. With tests, you can refactor aggressively, optimize confidently, and ship without panic.</p>
+        <p>This framing changes what you test and how. You don't test every line of code. You test the <em>behavior that matters</em>. The line of code that calculates a refund matters; it gets tested heavily. The line of code that decides which logging format to use doesn't matter; it doesn't get tested.</p>
+        <p>The mistake junior engineers make is testing too uniformly. They write a test for every method, including the trivial ones. The coverage is high. The tests catch nothing meaningful because the trivial methods didn't have bugs to begin with. The senior engineer's test suite is smaller, asymmetric, and weighted toward the parts of the codebase where being wrong is catastrophic.</p>
+        <p>What does "where being wrong is catastrophic" look like?</p>
+        <p>Money math. Anything involving currency, conversion, rounding, totals. Bugs here are public and embarrassing.</p>
+        <p>Authorization logic. Anything where the answer to "is this user allowed to do this thing" is computed. Bugs here are security incidents.</p>
+        <p>State transitions. Order goes from pending to paid to shipped to delivered. Each transition has rules. Bugs here become support tickets.</p>
+        <p>Data transformations across boundaries. Inputs come in shape A, get processed, leave in shape B. The transformation has edge cases. Bugs here are usually invisible until customer data is wrong.</p>
+        <p>Anything that's "obviously correct." Code that the engineer didn't think to test because the intent was clear from the function name. This is where most production bugs live, because nobody verified the intent matched the implementation.</p>
+        <p>The discipline isn't "high coverage." The discipline is "every place where being wrong is expensive has tests that would catch the wrongness." Coverage numbers don't measure that. Stop using them as the goal.</p>
+        <p><strong>Debugging as a discipline.</strong></p>
+        <p>Brian Kernighan wrote in <a href="https://www.amazon.com/Elements-Programming-Style-Brian-Kernighan/dp/0070342075"><em>The Elements of Programming Style</em></a> (1978): <em>"Debugging is twice as hard as writing the code in the first place. Therefore, if you write the code as cleverly as possible, you are, by definition, not smart enough to debug it."</em> The line is fifty years old and the math hasn't changed.</p>
+        <p>Debugging is the skill of taking a symptom and reasoning backwards through a system to the cause. It is a science with a method. Engineers who are good at it are not "naturally talented"; they have learned a process. Engineers who are bad at it are missing the process, not the talent.</p>
+        <p>The process, simplified:</p>
+        <p><strong>Reproduce.</strong> Get the bug to happen in front of you. If you can't reproduce, you can't debug. Reproducing might involve specific data, specific timing, specific user, specific browser. The reproduction is half the work. If you find yourself trying to fix something you couldn't reproduce, stop — you're not debugging, you're guessing.</p>
+        <p><strong>Bisect.</strong> Find the part of the system where the bug is happening. If the symptom is "user sees wrong number on dashboard," is the bug in the data, the query, the API, the frontend, or the rendering? Each is a hypothesis. Each has a test you can run to confirm or deny. Eliminate possibilities methodically, not by jumping to conclusions.</p>
+        <p>The bisect should be informed by what's most likely. "It's never the compiler" is a useful heuristic — bugs in code you control are vastly more common than bugs in the language, the framework, the database, or the OS. Junior engineers spend hours blaming the framework when the problem is in their own three lines.</p>
+        <p><strong>Form a hypothesis.</strong> Once you've localized, you should have a specific guess about what's wrong. "The query returns the wrong rows when the user has more than one role." "The cache is stale because we forgot to invalidate it on the write path." Write the hypothesis down. The act of writing forces it to be specific.</p>
+        <p><strong>Test the hypothesis.</strong> Run the experiment. Either confirm or refute. Don't try to fix it before you've confirmed. Many junior engineers leap straight from "I think it's X" to "I'll fix X" and discover hours later that X was never the problem and now they've added a fix that also breaks something else.</p>
+        <p><strong>Fix the cause, not the symptom.</strong> This is the part that separates senior from junior. The junior engineer fixes the symptom — adds a null check where the null should never have happened. The senior engineer figures out <em>why</em> the null happened and fixes that upstream. The null check is sometimes fine as belt-and-suspenders, but it's not the fix; the fix is wherever the unexpected null originated.</p>
+        <p><strong>Write a regression test.</strong> The bug existed because no test caught it. Add the test that would have caught it. Now if it recurs, you'll know. This step is often skipped because the fix feels done; this is wrong. The fix without the test is half done.</p>
+        <p><strong>Postmortem if it was production.</strong> Why did this happen? Why didn't we catch it earlier? What systemic change would prevent the next one? Blameless postmortems are a real discipline and many teams claim to do them and don't. The signal for a real postmortem is that something <em>systemic</em> gets changed — a process, a test, a monitor, a guardrail — not that someone gets blamed and an action item gets logged but never closed.</p>
+        <p><strong>Production debugging is its own skill.</strong></p>
+        <p>Local debugging is easy. You have the code, the data, the breakpoint debugger, the time to think. Production debugging is hard. You may not be able to attach a debugger. You may not be able to reproduce. You may have to debug with logs, traces, and metrics — instrumentation that was added before the bug happened. The investment in observability before the incident is what determines how fast you can debug during the incident.</p>
+        <p>This is the part most teams under-invest in. They write code, they ship it, they don't add structured logging at the seams. When the incident comes, they're squinting at unstructured printf logs trying to figure out what happened. The fix is to invest in observability <em>as a discipline</em>, not as an afterthought: structured logs at every meaningful boundary, traces that span services, metrics on the business behavior (not just CPU and memory), error tracking that captures stack traces in production with the right context.</p>
+        <p>The teams that have great observability debug production issues in minutes. The teams that don't debug for hours and sometimes never find the root cause. Compound this across a year and the difference in engineering output is huge.</p>
+        <p><strong>A few specific debugging techniques worth naming.</strong></p>
+        <p><strong>The rubber duck.</strong> Explain the problem out loud to someone who isn't an engineer. You will solve the bug in the explanation. The mechanism by which this works is fascinating and unimportant; the empirical fact is it works. Use it.</p>
+        <p><strong>Read the actual error.</strong> Read the <em>whole</em> stack trace, including the chained causes. Read it twice. The number of engineers who skip past the actual error message and start guessing is high, and it's almost always faster to read the message carefully than to guess.</p>
+        <p><strong>Print debugging is real debugging.</strong> Some engineers look down on print/console.log debugging as primitive compared to a step debugger. This is snobbery. Print debugging is sometimes the right tool, particularly in distributed systems, async code, and production-only bugs. The right tool depends on the problem, not on whose toolkit it's in.</p>
+        <p><strong>The bisect against git history.</strong> When a bug appeared "recently," <a href="https://git-scm.com/docs/git-bisect"><code>git bisect</code></a> is a power tool. Mark a known-good commit and a known-bad commit, and git will walk you through the commits in between to find the exact change that introduced the bug. This finds bugs that hours of code review wouldn't. Most engineers don't know about this. Learn it.</p>
+        <p><strong>Differential debugging.</strong> If something works in environment A and not environment B, find the differences. Same code, different config? Different OS? Different data? Different traffic pattern? The diff between A and B is your candidate bug list.</p>
+        <p><strong>Slow down to go fast.</strong> When you're three hours into a debugging session and getting nowhere, the urge is to keep grinding. The right move is often the opposite — stop, walk away for ten minutes, come back fresh. The cognitive cost of being stuck in a wrong hypothesis is enormous. Stepping away resets the search.</p>
+        <p><strong>Two cultural notes.</strong></p>
+        <p>Engineers who can debug well are wildly more valuable than engineers who can't. This is not visible on a resume. It barely shows up in coding interviews. It only emerges over time. The way to identify these engineers is to watch how they react when something breaks in production. The good ones get focused and methodical. The bad ones panic or guess. Pay attention to the difference; promote and protect the good ones.</p>
+        <p>The same is true of testing. The engineers who care about testing are different from the engineers who don't. They tend to ship more reliable software, mentor better, and build more durable codebases. They're also often the ones who don't get the most credit, because their value shows up as the <em>absence</em> of incidents — which is invisible. Make a point of crediting them.</p>
+        <p>Hunt and Thomas's <a href="https://pragprog.com/titles/tpp20/the-pragmatic-programmer-20th-anniversary-edition/"><em>The Pragmatic Programmer</em></a> is the best single book on engineering as a discipline that I know of; the chapters on debugging and on assertive programming are required reading for anyone leveling up out of mid-career. Writing code is the easy part — and getting easier every quarter. The cost of producing a working first draft has fallen by an order of magnitude in the AI-tooling era, and it will keep falling. What hasn't fallen is the cost of <em>knowing whether the code is right</em>. Tests and debugging are the disciplines that close that gap. The AI tools are going to keep getting better at writing. They're not going to get better as fast at noticing what's wrong with what they wrote, because that requires a model of the surrounding system the AI doesn't have. That's where senior engineering careers live in 2026 and beyond. Be the engineer who can take the AI's first draft and find the bugs in it before they reach production.</p>
+        </article>
+
+        <footer class="article-footer">
+            <p><a href="/author">← more from /author</a></p>
+        </footer>
+    </div>
+    <script src="/author/tldr.js" defer></script>
+</body>
+</html>

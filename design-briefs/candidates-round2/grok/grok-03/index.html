@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+<meta charset='utf-8'>
+<meta name='viewport' content='width=device-width,initial-scale=1'>
+<title>Nate McGuire</title>
+<style>
+:root{--bg:#08090c;--fg:#ece6d8;--gold:#c9a227;--dim:#8a8376}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--fg);font:18px/1.55 Georgia,serif;min-height:100vh}
+a{color:var(--gold)}
+:focus-visible{outline:2px solid var(--gold);outline-offset:3px}
+.skip{position:absolute;left:-999px}
+.skip:focus{left:8px;top:8px;background:#111;padding:8px;z-index:9}
+.stars{position:fixed;inset:0;pointer-events:none;background:radial-gradient(1px 1px at 8% 12%,#fff,transparent),radial-gradient(1px 1px at 22% 38%,#fff,transparent),radial-gradient(1.5px 1.5px at 70% 18%,#c9a227,transparent),radial-gradient(1px 1px at 88% 64%,#fff,transparent),radial-gradient(1px 1px at 40% 72%,#fff,transparent),radial-gradient(1.2px 1.2px at 12% 80%,#c9a227,transparent),radial-gradient(1px 1px at 55% 8%,#fff,transparent),radial-gradient(1px 1px at 93% 28%,#fff,transparent),radial-gradient(1px 1px at 33% 22%,#fff,transparent),radial-gradient(1.4px 1.4px at 61% 48%,#c9a227,transparent);opacity:.7;z-index:0}
+header,main,footer{position:relative;z-index:1}
+header{padding:12vh 8vw 8vh;min-height:88vh;display:flex;flex-direction:column;justify-content:flex-end}
+.loc{font:12px/1 system-ui,sans-serif;letter-spacing:.28em;text-transform:uppercase;color:var(--gold);margin-bottom:1.4em}
+h1{font-weight:400;font-size:clamp(48px,10vw,120px);letter-spacing:.22em;line-height:.9;text-transform:uppercase;transition:letter-spacing .4s ease}
+.sub{margin-top:1.4em;max-width:22em;font-size:clamp(16px,2vw,22px);color:var(--dim)}
+nav.sky{position:fixed;right:4vw;top:50%;transform:translateY(-50%);z-index:2;display:flex;flex-direction:column;gap:18px}
+nav.sky a{width:10px;height:10px;border-radius:50%;border:1px solid var(--gold);background:transparent;text-indent:-999px;overflow:hidden}
+nav.sky a:hover,nav.sky a:focus,nav.sky a.on{background:var(--gold)}
+main{padding:0 8vw 10vh;max-width:860px}
+chapter{display:block;padding:8vh 0;border-top:1px solid rgba(201,162,39,.35)}
+.n{font:11px/1 system-ui,sans-serif;letter-spacing:.24em;text-transform:uppercase;color:var(--gold);margin-bottom:1em}
+chapter h2{font-size:clamp(26px,4vw,42px);font-weight:400;margin-bottom:.5em}
+.focus{display:flex;flex-wrap:wrap;gap:10px;margin-top:1em}
+.focus span{border:1px solid var(--gold);color:var(--gold);padding:.4em .8em;font:13px/1 system-ui,sans-serif;letter-spacing:.08em}
+footer{padding:6vh 8vw 10vh;border-top:1px solid rgba(201,162,39,.35);display:flex;flex-wrap:wrap;gap:14px 22px}
+footer a{font:12px/1 system-ui,sans-serif;letter-spacing:.16em;text-transform:uppercase;text-decoration:none;border-bottom:1px solid var(--gold);padding-bottom:3px}
+@media(max-width:700px){nav.sky{right:12px}h1{letter-spacing:.08em}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}h1{transition:none}}
+</style>
+</head>
+<body>
+<a class='skip' href='#main'>Skip to content</a>
+<div class='stars' aria-hidden='true'></div>
+<nav class='sky' aria-label='Sections'>
+<a href='#top' class='on' title='Name'>Top</a>
+<a href='#c1' title='Mayven'>Mayven</a>
+<a href='#c2' title='Clients'>Clients</a>
+<a href='#c3' title='Now'>Now</a>
+<a href='#c4' title='Connect'>Connect</a>
+</nav>
+<header id='top'>
+<p class='loc'>Alexandria, Virginia</p>
+<h1 id='nm'>Nate McGuire</h1>
+<p class='sub'>Engineer, founder, and operator. I build software and teams, and invest in and advise small internet businesses.</p>
+</header>
+<main id='main'>
+<chapter id='c1'>
+<p class='n'>01 · Founding</p>
+<h2>Mayven Studios</h2>
+<p>Founder of Mayven Studios, acquired by Saltwater, Ryan Graves’ holding company.</p>
+</chapter>
+<chapter id='c2'>
+<p class='n'>02 · Clients</p>
+<h2>Google, Airbnb, IBM</h2>
+<p>At Mayven, built software for companies including Google, Airbnb, and IBM.</p>
+</chapter>
+<chapter id='c3'>
+<p class='n'>03 · Now</p>
+<h2>Staff Engineer, Card Tech</h2>
+<p>15+ years building software and leading engineering teams. Staff Engineer at Capital One, Card Tech, based in Alexandria, Virginia.</p>
+<div class='focus'>
+<span>Software architecture</span>
+<span>Engineering leadership</span>
+<span>Internet businesses</span>
+</div>
+</chapter>
+</main>
+<footer id='c4'>
+<a href='mailto:n@natemcguire.com'>Email</a>
+<a href='https://github.com/natemcguire'>GitHub</a>
+<a href='https://linkedin.com/in/natemcguire'>LinkedIn</a>
+<a href='https://twitter.com/natemcguire'>X</a>
+<a href='https://medium.com/@natemcguire'>Writing</a>
+</footer>
+<script>
+(function(){
+var reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
+var nm=document.getElementById('nm');
+if(!reduce && matchMedia('(min-width:701px)').matches){addEventListener('scroll',function(){var t=Math.min(1,scrollY/420);nm.style.letterSpacing=(0.22-t*0.14)+'em';},{passive:true});}
+var ids=['top','c1','c2','c3','c4'];
+var dots=[].slice.call(document.querySelectorAll('nav.sky a'));
+if('IntersectionObserver' in window){
+var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){var id=e.target.id;dots.forEach(function(d){d.classList.toggle('on',d.getAttribute('href')==='#'+id);});}});},{rootMargin:'-40% 0px -40% 0px'});
+ids.forEach(function(id){io.observe(document.getElementById(id));});
+}
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Designing REST APIs That Don&#x27;t Embarrass You — Nate McGuire</title>
+    <meta name="description" content="Most REST API guides are checklists. This one is the four mistakes I see in every code review and how to avoid them." />
+    <meta name="author" content="Nate McGuire" />
+    <meta name="robots" content="index, follow, max-image-preview:large" />
+    <link rel="canonical" href="https://natemcguire.com/author/rest-api-design" />
+
+    <meta property="og:type" content="article" />
+    <meta property="og:site_name" content="Nate McGuire" />
+    <meta property="og:title" content="Designing REST APIs That Don&#x27;t Embarrass You" />
+    <meta property="og:description" content="Most REST API guides are checklists. This one is the four mistakes I see in every code review and how to avoid them." />
+    <meta property="og:url" content="https://natemcguire.com/author/rest-api-design" />
+    <meta property="og:image" content="https://natemcguire.com/og-image.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="article:author" content="Nate McGuire" />
+    <meta property="article:published_time" content="2026-05-26" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="@natemcguire" />
+    <meta name="twitter:creator" content="@natemcguire" />
+    <meta name="twitter:title" content="Designing REST APIs That Don&#x27;t Embarrass You" />
+    <meta name="twitter:description" content="Most REST API guides are checklists. This one is the four mistakes I see in every code review and how to avoid them." />
+    <meta name="twitter:image" content="https://natemcguire.com/og-image.png" />
+
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <link rel="stylesheet" href="/style.css">
+    <link rel="stylesheet" href="/author/article.css">
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Article",
+      "headline": "Designing REST APIs That Don't Embarrass You",
+      "author": { "@type": "Person", "name": "Nate McGuire", "url": "https://natemcguire.com/" },
+      "publisher": { "@type": "Person", "name": "Nate McGuire" },
+      "url": "https://natemcguire.com/author/rest-api-design",
+      "image": "https://natemcguire.com/og-image.png",
+      "datePublished": "2026-05-26",
+      "articleSection": "Architecture",
+      "description": "Most REST API guides are checklists. This one is the four mistakes I see in every code review and how to avoid them."
+    }
+    </script>
+
+    
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-MP2PD28L5S"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-MP2PD28L5S');
+    </script>
+</head>
+<body>
+    <div class="wrap article-wrap">
+        <header class="top">
+            <a href="/" class="brand">nate mcguire</a>
+            <nav>
+                <a href="/">bio</a>
+                <a href="/author" aria-current="page">author</a>
+                <a href="/about">about</a>
+                <a href="/speaking">speaking</a>
+                <a href="/work-with-me">work</a>
+            </nav>
+        </header>
+
+        <p class="article-meta">
+            <a href="/author">Architecture</a>
+            <span class="dot">·</span>
+            <span class="meta">May 2026</span>
+        </p>
+
+        <h1 class="article-h1">Designing REST APIs That Don&#x27;t Embarrass You</h1>
+        <p class="article-hook">Most REST API guides are checklists. This one is the four mistakes I see in every code review and how to avoid them.</p>
+
+        <article class="article-body">
+        <p>I've reviewed several hundred REST APIs over the last decade and a half — at Mayven, portfolio companies, Capital One. The mistakes aren't novel. They cluster into four main issues, all fixable in the project's first week if you know to look. Once they're in production, they're permanent — someone depends on them, and changing them breaks things.</p>
+        <p>Here they are, ordered by severity.</p>
+        <p><strong>Mistake one: confusing resources with actions.</strong></p>
+        <p>REST is noun-first, as Roy Fielding's <a href="https://ics.uci.edu/~fielding/pubs/dissertation/rest_arch_style.htm">2000 dissertation, Chapter 5</a> established. The URL names a <em>thing</em>; the HTTP verb describes what you do to it. <code>GET /orders/123</code>, <code>POST /orders</code>, <code>DELETE /orders/123</code>. The mistake is when your API starts looking like RPC: <code>POST /cancelOrder</code>, <code>POST /refundOrder</code>, <code>POST /orderActions</code>. URLs with verbs lose REST's benefits. Cacheability breaks. Generic client libraries can't reason about your endpoints. Permissions get harder because they're scoped to actions, not resources. Future API consumers — including you — can't predict availability by reading the URL shape.</p>
+        <p>The fix is uncomfortable but cheap: name the resource, even if it feels weird. A cancellation is a resource. <code>POST /orders/123/cancellations</code> creates one. <code>GET /orders/123/cancellations</code> lists them. The cancellation has an ID, timestamp, reason, actor. The action becomes data, which you wanted all along — now you can audit, query, and reverse it without a side table. The same logic applies to refunds, exports, subscription pauses, password resets. Promote them to resources. Your future self will thank you.</p>
+        <p><strong>Mistake two: pagination as an afterthought.</strong></p>
+        <p>Every API starts with <code>GET /things</code> returning everything. Six months later, there are 50,000 things, and the dashboard times out. Someone adds <code>?limit=100</code> and <code>?offset=0</code>, ships it, marks the ticket done, and goes home. Three years later, the same dashboard queries offset=4900, taking thirty seconds because the database scans to skip the first 4,900 rows.</p>
+        <p>Offset pagination is a trap. It looks like it works. It performs worse the deeper you paginate because the database counts to your offset every time. It gives inconsistent results when items are inserted or deleted between page requests. The page-three result at 10am isn't the same at 10:01am. Customer-facing APIs that paginate this way produce bug reports that are nearly impossible to reproduce.</p>
+        <p>Use cursor pagination from day one. Sort by something stable (created-at + ID is reliable), and return a cursor pointing to the last item on the page. The next request asks for items after that cursor. This is O(log n) regardless of depth, consistent under concurrent writes, and it's the model GitHub, Stripe, and Slack all converged on. The cost on day one is one extra hour of work. The cost on day 800 is rewriting it under fire.</p>
+        <p>Include a sane default page size (50 is fine, 25 is fine, 1000 is not), enforce a maximum, and never make a client paginate to get a total count. If they need a count, give them a separate endpoint.</p>
+        <p><strong>Mistake three: status codes as decoration.</strong></p>
+        <p>HTTP has a reasonable set of status codes. Use them. The pattern I see is everything returns <code>200 OK</code> with a body saying <code>{"success": false, "error": "..."}</code>, and then the API "documents" that you have to read the body to find out if it failed. This is wrong on multiple levels — your CDN will cache the error, your monitoring tools won't alert on failures, retry middleware in client libraries won't know to retry, and your logs will say everything succeeded until your customer calls.</p>
+        <p>The right shape:</p>
+        <p>A successful read is <code>200</code>. A successful create is <code>201</code> with a <code>Location</code> header pointing to the new resource. A successful delete with no body is <code>204</code>. Client errors are <code>4xx</code> — <code>400</code> for malformed requests, <code>401</code> for unauthenticated, <code>403</code> for authenticated-but-not-allowed, <code>404</code> for missing, <code>409</code> for conflicts, <code>422</code> for valid-shape-but-invalid-content, <code>429</code> for rate-limited. Server errors are <code>5xx</code>. A <code>5xx</code> means "our fault, retry might succeed"; a <code>4xx</code> means "your fault, retrying won't help."</p>
+        <p>Getting this right impacts more than the API surface. Every infrastructure layer between you and your client speaks HTTP status codes. Load balancers, observability platforms, CDNs, retry libraries, alerting rules — all act on the codes. When you collapse everything into <code>200</code>, you blind every layer of the stack.</p>
+        <p><strong>Mistake four: no versioning strategy, then a versioning crisis.</strong></p>
+        <p>Almost no API at v0 needs a version in its URL. Then six months later, a customer runs production traffic against it, and you need to make a breaking change. Now you have an unversioned API and a breaking change to make, and the choice is "break the customer" or "support the old behavior in the same endpoint forever via clever side logic." Both are bad.</p>
+        <p>Pick a versioning scheme on day one and write it down. There are three sane options:</p>
+        <p>URL versioning (<code>/v1/users</code>). Simple, obvious, easy to route at the load balancer. Downside: forces a copy-paste of every endpoint when you go to v2, even ones that didn't change.</p>
+        <p>Header versioning (<code>Accept: application/vnd.yourcompany.v2+json</code>). Cleaner separation between resource identity and representation. Downside: it's invisible in logs and harder to debug because two requests to the same URL behave differently. Most teams that adopt this end up wishing they'd done URL versioning.</p>
+        <p>Date-pinning (<code>API-Version: 2026-05-26</code>). Stripe's model. Pin a customer to a date, evolve the API continuously, and run a translation layer that converts the live API back to the date-pinned format. Powerful, expensive, only worth it at API-as-product scale. If you're not Stripe, you're not Stripe. Don't pretend you are.</p>
+        <p>For most teams, URL versioning is the right answer. It's the cheapest to operate, easiest to reason about, and the cost of copy-paste between v1 and v2 is real but bounded. The point is: pick something on day one. Don't wait for the crisis.</p>
+        <p><strong>Two smaller things worth flagging.</strong></p>
+        <p>Idempotency keys for any non-GET endpoint that costs money or mutates external state. <a href="https://docs.stripe.com/api/idempotent_requests">Stripe popularized this</a> and it's correct. The client generates a UUID, sends it in a header, and the server promises that repeated requests with the same key return the same result without re-executing the operation. This makes retry-safe clients possible. Bake it in from the start.</p>
+        <p>Error response shape consistency. Every error should look the same: a status code, an error code (machine-readable, stable), and a message (human-readable, can change). If different endpoints return errors in three different shapes, every client integrates you three times. Pick one shape on day one and enforce it in the framework.</p>
+        <p>That's it. There are entire books written about this. The books are mostly correct, and 80% of what you actually need is in this article. Get these four things right and your API will outlast the team that built it.</p>
+        </article>
+
+        <footer class="article-footer">
+            <p><a href="/author">← more from /author</a></p>
+        </footer>
+    </div>
+    <script src="/author/tldr.js" defer></script>
+</body>
+</html>

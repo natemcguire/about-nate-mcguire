@@ -1,0 +1,285 @@
+{
+  "schemaVersion": 2,
+  "variations": [
+    {
+      "id": "claude-01",
+      "model": "claude",
+      "name": "The Ledger",
+      "entry": "designs/claude-01/",
+      "modelVersion": "claude-opus-5",
+      "generatedAt": "2026-09-13",
+      "contentVersion": "2026-09-12",
+      "review": {
+        "nate": "approved",
+        "agent": "approved"
+      },
+      "sha256": "38765461b7cbeb211c0d20f67dc2751bbfd26b19fef372bd82ac35f09de87461"
+    },
+    {
+      "id": "claude-02",
+      "model": "claude",
+      "name": "Orbit",
+      "entry": "designs/claude-02/",
+      "modelVersion": "claude-opus-5",
+      "generatedAt": "2026-09-13",
+      "contentVersion": "2026-09-12",
+      "review": {
+        "nate": "approved",
+        "agent": "approved"
+      },
+      "sha256": "c2efd65d0e515615eb3e81a33e9306a61d911da6447358cdc36d99b0915ad7d5"
+    },
+    {
+      "id": "claude-03",
+      "model": "claude",
+      "name": "Blueprint",
+      "entry": "designs/claude-03/",
+      "modelVersion": "claude-opus-5",
+      "generatedAt": "2026-09-13",
+      "contentVersion": "2026-09-12",
+      "review": {
+        "nate": "approved",
+        "agent": "approved"
+      },
+      "sha256": "c31a7056a110fada75558380f76067ed72bd9a760a707deeb5c2d6b29a155496"
+    },
+    {
+      "id": "claude-04",
+      "model": "claude",
+      "name": "Overprint",
+      "entry": "designs/claude-04/",
+      "modelVersion": "claude-opus-5",
+      "generatedAt": "2026-09-13",
+      "contentVersion": "2026-09-12",
+      "review": {
+        "nate": "approved",
+        "agent": "approved"
+      },
+      "sha256": "3a08d6f1d81b30585abdea86991bfb42d6168068b7147f185d9472d4a2adc82f"
+    },
+    {
+      "id": "claude-05",
+      "model": "claude",
+      "name": "Specimen",
+      "entry": "designs/claude-05/",
+      "modelVersion": "claude-opus-5",
+      "generatedAt": "2026-09-13",
+      "contentVersion": "2026-09-12",
+      "review": {
+        "nate": "approved",
+        "agent": "approved"
+      },
+      "sha256": "3f585caee687f7c8d4afcb523693561b4cb29b7c94e858358a952ae8c0bbda1b"
+    },
+    {
+      "id": "chatgpt-01",
+      "model": "chatgpt",
+      "name": "Big Type, Small Internet",
+      "entry": "designs/chatgpt-01/",
+      "modelVersion": "gpt-6-astra",
+      "generatedAt": "2026-09-13T22:14:29.457896+00:00",
+      "contentVersion": "2026-09-12",
+      "review": {
+        "nate": "approved",
+        "agent": "approved"
+      },
+      "sha256": "c70687d4e3a775ac65fcdd7e52ce1860cb39648df60d03ef93889fb8eacebe2c"
+    },
+    {
+      "id": "chatgpt-02",
+      "model": "chatgpt",
+      "name": "Field of Connections",
+      "entry": "designs/chatgpt-02/",
+      "modelVersion": "gpt-6-astra",
+      "generatedAt": "2026-09-13T22:14:29.457896+00:00",
+      "contentVersion": "2026-09-12",
+      "review": {
+        "nate": "approved",
+        "agent": "approved"
+      },
+      "sha256": "c19f86b47f72e5c80e16008ea59e9cea77673d03e65ad7936b449cf8238eca83"
+    },
+    {
+      "id": "chatgpt-03",
+      "model": "chatgpt",
+      "name": "The Red Index",
+      "entry": "designs/chatgpt-03/",
+      "modelVersion": "gpt-6-astra",
+      "generatedAt": "2026-09-13T22:14:29.457896+00:00",
+      "contentVersion": "2026-09-12",
+      "review": {
+        "nate": "approved",
+        "agent": "approved"
+      },
+      "sha256": "916326930f5e61ab06b243c72a4919e4842c0d3f0da3e057afef7af6cffdbaf1"
+    },
+    {
+      "id": "chatgpt-04",
+      "model": "chatgpt",
+      "name": "A Working Landscape",
+      "entry": "designs/chatgpt-04/",
+      "modelVersion": "gpt-6-astra",
+      "generatedAt": "2026-09-13T22:14:29.457896+00:00",
+      "contentVersion": "2026-09-12",
+      "review": {
+        "nate": "approved",
+        "agent": "approved"
+      },
+      "sha256": "122b025d7de522017629b0c05f996ebf5471eab7dd7aa172e9aa74a6f995e228"
+    },
+    {
+      "id": "chatgpt-05",
+      "model": "chatgpt",
+      "name": "Open Studio",
+      "entry": "designs/chatgpt-05/",
+      "modelVersion": "gpt-6-astra",
+      "generatedAt": "2026-09-13T22:14:29.457896+00:00",
+      "contentVersion": "2026-09-12",
+      "review": {
+        "nate": "approved",
+        "agent": "approved"
+      },
+      "sha256": "bb03503e5a9c646179d8c9c00a15fa68ac4beacb272683d962662765fae141df"
+    },
+    {
+      "id": "grok-01",
+      "model": "grok",
+      "name": "Folio",
+      "entry": "designs/grok-01/",
+      "modelVersion": "grok-4.6",
+      "generatedAt": "2026-09-13T22:06:15+00:00",
+      "contentVersion": "2026-09-12",
+      "review": {
+        "nate": "approved",
+        "agent": "approved"
+      },
+      "sha256": "38278dd7324576db1467152a288426b7d60f3495c10c9586eb9830090fdc0d88"
+    },
+    {
+      "id": "grok-02",
+      "model": "grok",
+      "name": "Title Block",
+      "entry": "designs/grok-02/",
+      "modelVersion": "grok-4.6",
+      "generatedAt": "2026-09-13T22:06:15+00:00",
+      "contentVersion": "2026-09-12",
+      "review": {
+        "nate": "approved",
+        "agent": "approved"
+      },
+      "sha256": "9444e560bdc85db4da03eea8fb44e42f298582cfce49e29c90f1bee469141bde"
+    },
+    {
+      "id": "grok-03",
+      "model": "grok",
+      "name": "Nocturne",
+      "entry": "designs/grok-03/",
+      "modelVersion": "grok-4.6",
+      "generatedAt": "2026-09-13T22:06:15+00:00",
+      "contentVersion": "2026-09-12",
+      "review": {
+        "nate": "approved",
+        "agent": "approved"
+      },
+      "sha256": "9bc841603be2e5be338474aee253429f95094f87343c17d17081028a1bdb1093"
+    },
+    {
+      "id": "grok-04",
+      "model": "grok",
+      "name": "Twin Plate",
+      "entry": "designs/grok-04/",
+      "modelVersion": "grok-4.6",
+      "generatedAt": "2026-09-13T22:06:15+00:00",
+      "contentVersion": "2026-09-12",
+      "review": {
+        "nate": "approved",
+        "agent": "approved"
+      },
+      "sha256": "acdce5fd052e10dc3e1b005d720562553ce7552a4bbe71765557a24046708ebc"
+    },
+    {
+      "id": "grok-05",
+      "model": "grok",
+      "name": "Hot Metal",
+      "entry": "designs/grok-05/",
+      "modelVersion": "grok-4.6",
+      "generatedAt": "2026-09-13T22:06:15+00:00",
+      "contentVersion": "2026-09-12",
+      "review": {
+        "nate": "approved",
+        "agent": "approved"
+      },
+      "sha256": "52549a6911703ee6be58230c7e6cc672d5c5a4a7ca480581d19fa29d338cbc8b"
+    },
+    {
+      "id": "gemini-01",
+      "model": "gemini",
+      "name": "Atelier Broadsheet \u2014 Swiss Typographic Grid",
+      "entry": "designs/gemini-01/",
+      "modelVersion": "gemini-3.8-flash-high",
+      "generatedAt": "2026-09-13T22:09:09.208735+00:00",
+      "contentVersion": "2026-09-12",
+      "review": {
+        "nate": "approved",
+        "agent": "approved"
+      },
+      "sha256": "e021f52643d2d7c5d6f6ffa68f0087f08d854e99f0e413519e2723bdf9afa50a"
+    },
+    {
+      "id": "gemini-02",
+      "model": "gemini",
+      "name": "Constellation \u2014 Distributed Systems Canvas",
+      "entry": "designs/gemini-02/",
+      "modelVersion": "gemini-3.8-flash-high",
+      "generatedAt": "2026-09-13T22:09:09.208735+00:00",
+      "contentVersion": "2026-09-12",
+      "review": {
+        "nate": "approved",
+        "agent": "approved"
+      },
+      "sha256": "01d5a0c3d589957545bc5c82a6b3bb441ac28888a9502fd2f2fc4f37431389a6"
+    },
+    {
+      "id": "gemini-03",
+      "model": "gemini",
+      "name": "Monolith Dossier \u2014 Tactile Executive Index",
+      "entry": "designs/gemini-03/",
+      "modelVersion": "gemini-3.8-flash-high",
+      "generatedAt": "2026-09-13T22:09:09.208735+00:00",
+      "contentVersion": "2026-09-12",
+      "review": {
+        "nate": "approved",
+        "agent": "approved"
+      },
+      "sha256": "fe9e9b7c49d89c9893a5953651e9123fdfa890470ab06df13b0ed60b9ce932ea"
+    },
+    {
+      "id": "gemini-04",
+      "model": "gemini",
+      "name": "Kinetic Modernist Poster",
+      "entry": "designs/gemini-04/",
+      "modelVersion": "gemini-3.8-flash-high",
+      "generatedAt": "2026-09-13T22:09:09.208735+00:00",
+      "contentVersion": "2026-09-12",
+      "review": {
+        "nate": "approved",
+        "agent": "approved"
+      },
+      "sha256": "2e026d5c3d434b059f3f8a1be84bc2bca2edafccac2617181c09bc9f8e5958fb"
+    },
+    {
+      "id": "gemini-05",
+      "model": "gemini",
+      "name": "Modernist Horizon \u2014 Asymmetric Split Editorial",
+      "entry": "designs/gemini-05/",
+      "modelVersion": "gemini-3.8-flash-high",
+      "generatedAt": "2026-09-13T22:09:09.208735+00:00",
+      "contentVersion": "2026-09-12",
+      "review": {
+        "nate": "approved",
+        "agent": "approved"
+      },
+      "sha256": "f69545e9a4f69f905dae4ba3b5c22ee29c5375d8eb4b4c6791c402c28f723c68"
+    }
+  ]
+}

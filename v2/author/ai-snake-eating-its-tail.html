@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The AI Snake Won&#x27;t Eat Its Own Tail — Nate McGuire</title>
+    <meta name="description" content="The fear is that AI-generated content poisons future training data. The fear is wrong. The real problem is worse." />
+    <meta name="author" content="Nate McGuire" />
+    <meta name="robots" content="index, follow, max-image-preview:large" />
+    <link rel="canonical" href="https://natemcguire.com/author/ai-snake-eating-its-tail" />
+
+    <meta property="og:type" content="article" />
+    <meta property="og:site_name" content="Nate McGuire" />
+    <meta property="og:title" content="The AI Snake Won&#x27;t Eat Its Own Tail" />
+    <meta property="og:description" content="The fear is that AI-generated content poisons future training data. The fear is wrong. The real problem is worse." />
+    <meta property="og:url" content="https://natemcguire.com/author/ai-snake-eating-its-tail" />
+    <meta property="og:image" content="https://natemcguire.com/og-image.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="article:author" content="Nate McGuire" />
+    <meta property="article:published_time" content="2026-05-26" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="@natemcguire" />
+    <meta name="twitter:creator" content="@natemcguire" />
+    <meta name="twitter:title" content="The AI Snake Won&#x27;t Eat Its Own Tail" />
+    <meta name="twitter:description" content="The fear is that AI-generated content poisons future training data. The fear is wrong. The real problem is worse." />
+    <meta name="twitter:image" content="https://natemcguire.com/og-image.png" />
+
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <link rel="stylesheet" href="/style.css">
+    <link rel="stylesheet" href="/author/article.css">
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Article",
+      "headline": "The AI Snake Won't Eat Its Own Tail",
+      "author": { "@type": "Person", "name": "Nate McGuire", "url": "https://natemcguire.com/" },
+      "publisher": { "@type": "Person", "name": "Nate McGuire" },
+      "url": "https://natemcguire.com/author/ai-snake-eating-its-tail",
+      "image": "https://natemcguire.com/og-image.png",
+      "datePublished": "2026-05-26",
+      "articleSection": "AI & the future of software",
+      "description": "The fear is that AI-generated content poisons future training data. The fear is wrong. The real problem is worse."
+    }
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.4/dist/chart.umd.min.js" defer></script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-MP2PD28L5S"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-MP2PD28L5S');
+    </script>
+</head>
+<body>
+    <div class="wrap article-wrap">
+        <header class="top">
+            <a href="/" class="brand">nate mcguire</a>
+            <nav>
+                <a href="/">bio</a>
+                <a href="/author" aria-current="page">author</a>
+                <a href="/about">about</a>
+                <a href="/speaking">speaking</a>
+                <a href="/work-with-me">work</a>
+            </nav>
+        </header>
+
+        <p class="article-meta">
+            <a href="/author">AI &amp; the future of software</a>
+            <span class="dot">·</span>
+            <span class="meta">May 2026</span>
+        </p>
+
+        <h1 class="article-h1">The AI Snake Won&#x27;t Eat Its Own Tail</h1>
+        <p class="article-hook">The fear is that AI-generated content poisons future training data. The fear is wrong. The real problem is worse.</p>
+
+        <article class="article-body">
+        <p>There's a tidy hypothesis repeated at every AI panel: ChatGPT outputs flood the web, future models train on that flood, quality degrades, the snake eats its tail, the end. It's a clean story. It rhymes. It's also mostly wrong, and being wrong about it is causing people to ignore the actual problem.</p>
+        <p>Here's what the model-collapse worry gets right. If you train a generative model exclusively on earlier model outputs, with no human-generated grounding, the new model degrades. This is a real result. Shumailov, Shumaylov, Zhao et al. published <a href="https://arxiv.org/abs/2305.17493"><em>The Curse of Recursion: Training on Generated Data Makes Models Forget</em></a> in 2023, showing tail-of-distribution collapse over successive generations of model-on-model training. The paper is good. Mode collapse is real.</p>
+        <p>Now look at what the frontier labs actually do. They don't scrape AI outputs and train on them. They scrape the web, license data, pay humans to write high-quality content, and run synthetic data pipelines where a model generates problems and <em>a different model or a verifier</em> checks the work. The synthetic data used in training is curated, filtered, and graded — not pasted in raw. The cycle that would cause collapse requires a level of negligence the labs are not displaying.</p>
+        <p>The web isn't becoming AI-only. People keep writing. Engineers keep filing tickets, doctors keep dictating notes, Reddit keeps being Reddit. The new training corpora are a blend, not a monoculture. When you train on a blend with appropriate weighting, the distribution doesn't drift toward the synthetic mode — it drifts toward whatever's <em>good</em>, because the loss function rewards being good. That's the whole point of a loss function.</p>
+        <p>So the snake-eats-tail story is a fun graph for a TED talk, and it's not what's going to break AI.</p>
+        <p>Here's what is.</p>
+        <p>The real problem is that the web is becoming worse to read, not worse to train on. Google's search results are full of regenerated SEO sludge that ranks because it answers the question shallowly and fast. Bloggers who used to write thoughtfully are now feeding a wordcount target into an LLM at 3am. Recipes are 1500 words of "growing up in Tuscany" before three lines of "boil water." The signal-to-noise ratio for <em>humans browsing the web</em> is collapsing, fast, and that's the part nobody at the AI labs has any incentive to fix.</p>
+        <p>The labs are fine. Their models will keep getting better. They have proprietary data, RLHF pipelines, and increasingly large in-house annotation teams. What's degrading is the open commons — the thing that made the web worth indexing in the first place. The doomsday isn't that the models eat themselves. It's that the open web stops being a place worth reading, because the cheapest possible writer is no longer human.</p>
+        <figure class="article-figure article-figure-chart"><div class="chart-wrap"><canvas id="chart-1"></canvas></div><script>document.addEventListener("DOMContentLoaded",function(){var el=document.getElementById("chart-1");if(!el||!window.Chart)return;new Chart(el,{"type":"line","data":{"labels":["2020","2021","2022","2023","2024","2025","2026"],"datasets":[{"label":"Human-written","data":[97,95,92,82,68,52,40],"borderColor":"#002fa7","backgroundColor":"rgba(0,47,167,0.08)","fill":true,"tension":0.3},{"label":"AI-generated or AI-assisted","data":[3,5,8,18,32,48,60],"borderColor":"#c41e3a","backgroundColor":"rgba(196,30,58,0.08)","fill":true,"tension":0.3}]},"options":{"responsive":true,"maintainAspectRatio":false,"plugins":{"legend":{"position":"bottom"},"title":{"display":true,"text":"Estimated share of newly-published web text (%)"}},"scales":{"y":{"beginAtZero":true,"max":100}}}});});</script><figcaption>Directional estimate. Sources include the <a href="https://originality.ai/blog/ai-content-google-search-results">Originality.AI study of top-ranked Google results</a> and <a href="https://graphite.io/five-percent/the-rise-of-the-ai-crawler">Graphite's 2025 analysis</a>. Definitions of "AI-generated" vary.</figcaption></figure>
+        <p>That has a few consequences worth taking seriously.</p>
+        <p>Original research, primary sources, and first-person operator writing become more valuable, not less. If you build software, ship real systems, debug real production incidents — write about it. There is now infinite content describing how things <em>should</em> work, and almost none describing what actually broke and how someone fixed it. Be the second kind.</p>
+        <p>Curation becomes a product category. The reason newsletters are having a moment is that a human picking ten interesting things is now cheaper to read than the algorithm's hundred. Substack, hand-curated link lists, recommendation graphs built on actual trust — these are growing because the open web stopped being browsable. This is a market signal, not nostalgia.</p>
+        <p>Search will keep degrading until something replaces it. Google has the wrong shape of incentive to fix this. The fix is going to come from somewhere else — maybe Perplexity, maybe something not yet built, maybe a model that just refuses to surface low-effort regenerated content. Whatever it is, the company that solves "show me content actually written by a human who has done the thing" wins a lot.</p>
+        <p>So no, the snake isn't going to eat itself. The training data is fine. The labs are fine. The thing that's breaking is the part of the internet you and I used to enjoy reading on a Sunday morning, and the people pretending otherwise are looking in the wrong direction.</p>
+        <p>Worry about the right thing.</p>
+        </article>
+
+        <footer class="article-footer">
+            <p><a href="/author">← more from /author</a></p>
+        </footer>
+    </div>
+    <script src="/author/tldr.js" defer></script>
+</body>
+</html>

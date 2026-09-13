@@ -1,0 +1,52 @@
+{
+  "model": "gemini",
+  "modelVersion": "gemini-3.8-flash-high",
+  "generatedAt": "2026-09-13T22:09:09.208735+00:00",
+  "status": "pending",
+  "provenance": {
+    "provider": "Antigravity CLI",
+    "requestedModel": "gemini-3.8-flash-high",
+    "catalog": "available-models.txt",
+    "response": "raw-response.json",
+    "modelSelfReport": "gemini-3.8-flash",
+    "note": "Newest Gemini version listed by authenticated AGY model catalog; model self-report is not independent attestation.",
+    "replacementResponse": "replacement-response.json"
+  },
+  "variations": [
+    {
+      "id": "gemini-01",
+      "name": "Atelier Broadsheet \u2014 Swiss Typographic Grid",
+      "entry": "gemini-01/index.html",
+      "rationale": "Inspired by modernist Swiss graphic design and architectural monographs, this concept balances high-density editorial typography with an interactive structural grid overlay, real-time East Coast timekeeper, and responsive typographic scale.",
+      "review": "pending"
+    },
+    {
+      "id": "gemini-02",
+      "name": "Constellation \u2014 Distributed Systems Canvas",
+      "entry": "gemini-02/index.html",
+      "rationale": "An interactive systems architecture visualization featuring an organic HTML5 canvas node constellation representing distributed software systems and team topologies, coupled with telemetry cards and high-contrast dark mode.",
+      "review": "pending"
+    },
+    {
+      "id": "gemini-03",
+      "name": "Monolith Dossier \u2014 Tactile Executive Index",
+      "entry": "gemini-03/index.html",
+      "rationale": "A tactile, executive index card aesthetic with accessible tabbed navigation, physical elevation shadows, quick clipboard email copy, and clear delineations between leadership, engineering, and venture advisory.",
+      "review": "pending"
+    },
+    {
+      "id": "gemini-04",
+      "name": "Kinetic Modernist Poster",
+      "entry": "gemini-04/index.html",
+      "rationale": "An expressive, high-impact typographic poster aesthetic inspired by Swiss and Bauhaus international poster art. Set in warm cadmium yellow, deep pitch charcoal, and architectural paper whites, it features monumental grotesque typography, dynamic kinetic perspective tilt on mouse interaction, geometric composition badges, and responsive poster panels. It strictly adheres to the supplied factual copy with zero elaboration, presents every contact channel prominently, and remains completely legible and accessible with JavaScript disabled or reduced motion active.",
+      "review": "pending"
+    },
+    {
+      "id": "gemini-05",
+      "name": "Modernist Horizon \u2014 Asymmetric Split Editorial",
+      "entry": "gemini-05/index.html",
+      "rationale": "An asymmetric split-screen composition featuring a sculptural left-hand sticky identity anchor and a fluid right-hand narrative stream with interactive focus cards and modern monochrome aesthetics.",
+      "review": "pending"
+    }
+  ]
+}

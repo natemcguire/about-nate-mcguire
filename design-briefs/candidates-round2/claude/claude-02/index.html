@@ -1,0 +1,206 @@
+<!doctype html>
+<html lang='en'>
+<head>
+<meta charset='utf-8'>
+<meta name='viewport' content='width=device-width,initial-scale=1'>
+<title>Nate McGuire — Staff Engineer, Capital One</title>
+<meta name='description' content='Nate McGuire, Staff Engineer at Capital One, Card Tech. Engineer, founder, and operator in Alexandria, Virginia.'>
+<meta name='color-scheme' content='dark'>
+<style>
+*,*::before,*::after{box-sizing:border-box}
+:root{
+  --bg:#05060c;--bg2:#0a0d18;--fg:#e9edf7;--dim:#8e97b0;--mint:#6df3c8;--violet:#9a8bff;--amber:#ffc56d;
+  --sans:-apple-system,BlinkMacSystemFont,'Segoe UI','Helvetica Neue',Arial,sans-serif;
+  --mono:ui-monospace,'SF Mono',SFMono-Regular,Menlo,Consolas,monospace;
+}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--fg);font:400 17px/1.68 var(--sans);overflow-x:hidden}
+body::before{content:'';position:fixed;inset:0;z-index:-2;background:
+  radial-gradient(900px 620px at 78% 6%,rgba(154,139,255,.2),transparent 62%),
+  radial-gradient(820px 560px at 12% 82%,rgba(109,243,200,.14),transparent 60%),var(--bg)}
+#stars{position:fixed;inset:0;z-index:-1;width:100%;height:100%}
+a{color:inherit}
+::selection{background:var(--mint);color:#04121a}
+:focus-visible{outline:2px solid var(--mint);outline-offset:4px;border-radius:4px}
+.skip{position:absolute;left:-9999px;background:var(--mint);color:#04121a;padding:10px 15px;font:700 12px var(--sans);z-index:60;border-radius:6px}
+.skip:focus{left:12px;top:12px}
+.wrap{width:100%;max-width:1180px;margin:0 auto;padding:0 22px}
+.eyebrow{font:600 11px/1 var(--mono);letter-spacing:.26em;text-transform:uppercase;color:var(--mint)}
+
+/* hero */
+.hero{min-height:100svh;display:grid;align-items:center;gap:52px;padding:96px 0 64px;grid-template-columns:1fr}
+@media(min-width:960px){.hero{grid-template-columns:1.05fr .95fr;gap:40px;padding:0}}
+h1{margin:20px 0 18px;font-size:clamp(46px,8.6vw,96px);line-height:.94;letter-spacing:-.035em;font-weight:600}
+h1 .l2{display:block;color:transparent;background:linear-gradient(92deg,var(--mint),var(--violet) 70%);-webkit-background-clip:text;background-clip:text}
+.tag{max-width:40ch;font-size:clamp(18px,2.3vw,22px);line-height:1.5;color:#cfd6e8}
+.meta{display:flex;flex-wrap:wrap;gap:10px;margin-top:26px}
+.chip{font:500 12px/1 var(--mono);letter-spacing:.09em;text-transform:uppercase;padding:9px 13px;border:1px solid rgba(233,237,247,.18);border-radius:999px;color:var(--dim);background:rgba(255,255,255,.02)}
+
+/* orbit system */
+.system{position:relative;width:100%;max-width:520px;margin:0 auto;aspect-ratio:1/1}
+.ring{position:absolute;inset:0;border:1px dashed rgba(233,237,247,.16);border-radius:50%;transition:border-color .4s ease,box-shadow .4s ease}
+.ring.r2{inset:15%}.ring.r3{inset:30%}
+.ring .sat{position:absolute;top:-5px;left:50%;width:10px;height:10px;margin-left:-5px;border-radius:50%;background:var(--mint);box-shadow:0 0 18px var(--mint)}
+.ring.r2 .sat{background:var(--violet);box-shadow:0 0 18px var(--violet)}
+.ring.r3 .sat{background:var(--amber);box-shadow:0 0 18px var(--amber)}
+.ring.r1{animation:spin 34s linear infinite}
+.ring.r2{animation:spin 23s linear infinite reverse}
+.ring.r3{animation:spin 15s linear infinite}
+@keyframes spin{to{transform:rotate(360deg)}}
+.core{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:46%;aspect-ratio:1;border-radius:50%;
+  display:grid;place-content:center;text-align:center;gap:5px;padding:10px;
+  background:radial-gradient(circle at 50% 40%,rgba(154,139,255,.3),rgba(5,6,12,.9) 68%);
+  border:1px solid rgba(233,237,247,.16);box-shadow:inset 0 0 40px rgba(109,243,200,.14)}
+.core b{font:600 13px/1.3 var(--sans);letter-spacing:.02em}
+.core span{font:500 10px/1.5 var(--mono);letter-spacing:.16em;text-transform:uppercase;color:var(--dim)}
+.lbl{position:absolute;font:600 11px/1.3 var(--mono);letter-spacing:.14em;text-transform:uppercase;color:var(--dim);
+  padding:7px 11px;border-radius:999px;border:1px solid rgba(233,237,247,.14);background:rgba(6,8,16,.72);white-space:nowrap;transition:color .3s,border-color .3s,transform .3s}
+.lbl:hover{color:var(--fg);transform:translateY(-2px)}
+.l1{left:-6px;top:6%}.l2{right:-6px;top:44%}.l3{left:12%;bottom:-4px}
+.lbl[data-r='1']:hover ~ .rings .r1{border-color:var(--mint);box-shadow:0 0 44px rgba(109,243,200,.2)}
+.lbl[data-r='2']:hover ~ .rings .r2{border-color:var(--violet);box-shadow:0 0 44px rgba(154,139,255,.22)}
+.lbl[data-r='3']:hover ~ .rings .r3{border-color:var(--amber);box-shadow:0 0 44px rgba(255,197,109,.2)}
+@media(max-width:560px){.lbl{position:static;display:inline-block;margin:0 6px 8px 0}
+  .system{max-width:320px}.labels{margin-top:22px;text-align:center}}
+
+/* sections */
+section{padding:76px 0;border-top:1px solid rgba(233,237,247,.1)}
+.shead{display:flex;align-items:baseline;justify-content:space-between;gap:16px;flex-wrap:wrap;margin-bottom:38px}
+.shead h2{margin:0;font-size:clamp(26px,4vw,40px);letter-spacing:-.028em;font-weight:600}
+.track{list-style:none;margin:0;padding:0 0 0 30px;position:relative}
+.track::before{content:'';position:absolute;left:5px;top:8px;bottom:8px;width:1px;background:linear-gradient(180deg,var(--mint),var(--violet),transparent)}
+.track li{position:relative;padding:0 0 34px}
+.track li:last-child{padding-bottom:0}
+.track li::before{content:'';position:absolute;left:-30px;top:9px;width:11px;height:11px;border-radius:50%;background:var(--bg);border:2px solid var(--mint);box-shadow:0 0 16px rgba(109,243,200,.6)}
+.track li:nth-child(2)::before{border-color:var(--violet);box-shadow:0 0 16px rgba(154,139,255,.6)}
+.track li:nth-child(3)::before{border-color:var(--amber);box-shadow:0 0 16px rgba(255,197,109,.6)}
+.track h3{margin:0 0 4px;font-size:clamp(20px,2.7vw,26px);font-weight:600;letter-spacing:-.02em}
+.track p{margin:0;color:var(--dim);max-width:56ch}
+
+.grid{display:grid;gap:12px;grid-template-columns:repeat(auto-fit,minmax(212px,1fr))}
+.card{display:block;text-decoration:none;padding:22px;border:1px solid rgba(233,237,247,.13);border-radius:16px;background:rgba(255,255,255,.022);position:relative;overflow:hidden;transition:transform .35s cubic-bezier(.2,.8,.2,1),border-color .35s,background .35s}
+.card::after{content:'';position:absolute;inset:-40% -40% auto auto;width:180px;height:180px;border-radius:50%;background:radial-gradient(circle,rgba(109,243,200,.3),transparent 68%);opacity:0;transition:opacity .4s}
+.card:hover,.card:focus-visible{transform:translateY(-5px);border-color:rgba(109,243,200,.5);background:rgba(255,255,255,.05)}
+.card:hover::after,.card:focus-visible::after{opacity:1}
+.card b{display:block;font-size:21px;font-weight:600;letter-spacing:-.01em;margin-bottom:5px;position:relative}
+.card span{font:500 11.5px/1.5 var(--mono);color:var(--dim);word-break:break-all;position:relative}
+footer{padding:40px 0 66px;font:500 11px/1.7 var(--mono);letter-spacing:.16em;text-transform:uppercase;color:var(--dim);display:flex;flex-wrap:wrap;gap:8px 24px;justify-content:space-between;border-top:1px solid rgba(233,237,247,.1)}
+@media(prefers-reduced-motion:reduce){*{animation:none !important;transition-duration:.001ms !important}}
+</style>
+</head>
+<body>
+<a class='skip' href='#main'>Skip to content</a>
+<canvas id='stars' aria-hidden='true'></canvas>
+
+<div class='wrap'>
+<header class='hero'>
+  <div>
+    <p class='eyebrow'>Alexandria, Virginia</p>
+    <h1>Nate McGuire<span class='l2'>builds systems.</span></h1>
+    <p class='tag'>Engineer, founder, and operator. I build software and teams, and invest in and advise small internet businesses.</p>
+    <div class='meta'>
+      <span class='chip'>Staff Engineer</span>
+      <span class='chip'>Capital One</span>
+      <span class='chip'>Card Tech</span>
+    </div>
+  </div>
+
+  <div class='labels'>
+    <div class='system'>
+      <span class='lbl l1' data-r='1'>Software architecture</span>
+      <span class='lbl l2' data-r='2'>Engineering leadership</span>
+      <span class='lbl l3' data-r='3'>Internet businesses</span>
+      <div class='rings' aria-hidden='true'>
+        <div class='ring r1'><i class='sat'></i></div>
+        <div class='ring r2'><i class='sat'></i></div>
+        <div class='ring r3'><i class='sat'></i></div>
+        <div class='core'><b>Staff Engineer</b><span>Capital One<br>Card Tech</span></div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<main id='main'>
+  <section aria-labelledby='h-rec'>
+    <div class='shead'><h2 id='h-rec'>Trajectory</h2><p class='eyebrow'>15+ years</p></div>
+    <ul class='track'>
+      <li>
+        <h3>Founded Mayven Studios</h3>
+        <p>My company, acquired by Saltwater — Ryan Graves’ holding company.</p>
+      </li>
+      <li>
+        <h3>Google, Airbnb, IBM</h3>
+        <p>At Mayven, I built software for companies including Google, Airbnb, and IBM.</p>
+      </li>
+      <li>
+        <h3>Fifteen-plus years in</h3>
+        <p>Building software and leading engineering teams — now on Card Tech at Capital One.</p>
+      </li>
+    </ul>
+  </section>
+
+  <section aria-labelledby='h-focus'>
+    <div class='shead'><h2 id='h-focus'>In orbit</h2><p class='eyebrow'>Focus</p></div>
+    <ul class='track'>
+      <li><h3>Software architecture</h3></li>
+      <li><h3>Engineering leadership</h3></li>
+      <li><h3>Internet businesses</h3></li>
+    </ul>
+  </section>
+
+  <section aria-labelledby='h-links'>
+    <div class='shead'><h2 id='h-links'>Signals out</h2><p class='eyebrow'>Say hello</p></div>
+    <div class='grid'>
+      <a class='card' href='mailto:n@natemcguire.com'><b>Email</b><span>n@natemcguire.com</span></a>
+      <a class='card' href='https://github.com/natemcguire' rel='me noopener'><b>GitHub</b><span>github.com/natemcguire</span></a>
+      <a class='card' href='https://linkedin.com/in/natemcguire' rel='me noopener'><b>LinkedIn</b><span>linkedin.com/in/natemcguire</span></a>
+      <a class='card' href='https://twitter.com/natemcguire' rel='me noopener'><b>X</b><span>twitter.com/natemcguire</span></a>
+      <a class='card' href='https://medium.com/@natemcguire' rel='me noopener'><b>Writing</b><span>medium.com/@natemcguire</span></a>
+    </div>
+  </section>
+</main>
+
+<footer><span>Nate McGuire</span><span>Alexandria, Virginia</span><span>Engineer · Founder · Operator</span></footer>
+</div>
+
+<script>
+(function(){
+  var c=document.getElementById('stars');
+  if(!c||!c.getContext)return;
+  var ctx=c.getContext('2d'),w=0,h=0,dpr=Math.min(window.devicePixelRatio||1,2),pts=[],mx=-999,my=-999,raf=0;
+  var calm=window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  function size(){
+    w=c.clientWidth;h=c.clientHeight;c.width=w*dpr;c.height=h*dpr;ctx.setTransform(dpr,0,0,dpr,0,0);
+    var n=Math.round(Math.min(150,Math.max(40,(w*h)/13000)));
+    pts=[];
+    for(var i=0;i<n;i++){pts.push({x:Math.random()*w,y:Math.random()*h,r:Math.random()*1.5+.3,
+      vx:(Math.random()-.5)*.16,vy:(Math.random()-.5)*.16,a:Math.random()*.6+.18});}
+  }
+  function draw(){
+    ctx.clearRect(0,0,w,h);
+    for(var i=0;i<pts.length;i++){
+      var p=pts[i];
+      if(!calm){
+        p.x+=p.vx;p.y+=p.vy;
+        if(p.x<-6)p.x=w+6;if(p.x>w+6)p.x=-6;if(p.y<-6)p.y=h+6;if(p.y>h+6)p.y=-6;
+      }
+      var dx=p.x-mx,dy=p.y-my,d=Math.sqrt(dx*dx+dy*dy),lift=d<180?(1-d/180):0;
+      ctx.beginPath();
+      ctx.arc(p.x+dx*lift*.09,p.y+dy*lift*.09,p.r+lift*1.1,0,6.2832);
+      ctx.fillStyle='rgba('+(200+Math.round(lift*55))+','+(225)+',255,'+(p.a+lift*.4)+')';
+      ctx.fill();
+      if(lift>0){
+        ctx.beginPath();ctx.moveTo(p.x,p.y);ctx.lineTo(mx,my);
+        ctx.strokeStyle='rgba(109,243,200,'+(lift*.16)+')';ctx.lineWidth=.6;ctx.stroke();
+      }
+    }
+    if(!calm)raf=requestAnimationFrame(draw);
+  }
+  window.addEventListener('resize',function(){size();if(calm)draw();},{passive:true});
+  window.addEventListener('pointermove',function(e){mx=e.clientX;my=e.clientY;},{passive:true});
+  window.addEventListener('pointerleave',function(){mx=-999;my=-999;},{passive:true});
+  size();draw();
+})();
+</script>
+</body>
+</html>
