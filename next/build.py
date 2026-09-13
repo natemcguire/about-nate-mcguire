@@ -8,8 +8,14 @@ e = html.escape
 def field(key, value):
     return f'<div class="field"><dt>{key}</dt><dd>{value}</dd></div>'
 
+def rich(value):
+    value = e(value)
+    for label, url in c.get('references', {}).items():
+        value = value.replace(e(label), f'<a href="{e(url, quote=True)}">{e(label)}</a>')
+    return value
+
 def items(values):
-    return '<ul class="list">' + ''.join(f'<li>{e(v)}</li>' for v in values) + '</ul>'
+    return '<ul class="list">' + ''.join(f'<li>{rich(v)}</li>' for v in values) + '</ul>'
 
 fields = field('role', f'{e(c["role"])} at {e(c["company"])}<br>{e(c["team"])}')
 fields += field('location', e(c['location']))

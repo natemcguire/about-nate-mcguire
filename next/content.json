@@ -1,22 +1,44 @@
 {
-  "version": "2026-09-12",
+  "version": "2026-09-13",
   "name": "Nate McGuire",
   "role": "Staff Engineer",
   "company": "Capital One",
   "team": "Card Tech",
   "location": "Alexandria, Virginia",
-  "bio": "Engineer, founder, and operator. I build software and teams, and invest in and advise small internet businesses.",
+  "bio": "Engineer, founder, and operator. I build software and grow the teams behind it.",
   "background": [
-    "Founder of Mayven Studios, acquired by Saltwater, Ryan Graves’ holding company.",
-    "At Mayven, built software for companies including Google, Airbnb, and IBM.",
-    "15+ years building software and leading engineering teams."
+    "Built Mayven Studios, grew the team, and ran it profitably for 10 years.",
+    "Worked on Google X moonshot projects and Facebook’s Building 8.",
+    "Sold Mayven to Saltwater / Ryan Graves."
   ],
-  "focus": ["Software architecture", "Engineering leadership", "Internet businesses"],
+  "focus": [
+    "Software architecture",
+    "Engineering leadership",
+    "Internet businesses"
+  ],
   "links": [
-    {"label": "Email", "url": "mailto:n@natemcguire.com"},
-    {"label": "GitHub", "url": "https://github.com/natemcguire"},
-    {"label": "LinkedIn", "url": "https://linkedin.com/in/natemcguire"},
-    {"label": "X", "url": "https://twitter.com/natemcguire"},
-    {"label": "Writing", "url": "https://medium.com/@natemcguire"}
-  ]
+    {
+      "label": "Email",
+      "url": "mailto:n@natemcguire.com"
+    },
+    {
+      "label": "GitHub",
+      "url": "https://github.com/natemcguire"
+    },
+    {
+      "label": "LinkedIn",
+      "url": "https://linkedin.com/in/natemcguire"
+    },
+    {
+      "label": "X",
+      "url": "https://twitter.com/natemcguire"
+    },
+    {
+      "label": "Writing",
+      "url": "https://medium.com/@natemcguire"
+    }
+  ],
+  "references": {
+    "Saltwater / Ryan Graves": "https://en.wikipedia.org/wiki/Ryan_Graves_(businessman)"
+  }
 }

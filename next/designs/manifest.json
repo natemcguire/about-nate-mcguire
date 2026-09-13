@@ -8,12 +8,12 @@
       "entry": "designs/claude-01/",
       "modelVersion": "claude-opus-5",
       "generatedAt": "2026-09-13",
-      "contentVersion": "2026-09-12",
+      "contentVersion": "2026-09-13",
       "review": {
         "nate": "approved",
         "agent": "approved"
       },
-      "sha256": "62ecd7cc550bb06b804f715095f36a58e40691f50466f8caa3be14d3ffa47293"
+      "sha256": "d4c1693b2d9a26a3a68285ab0d8755c851cde5c562111051dd71241ed937cb81"
     },
     {
       "id": "claude-02",
@@ -22,12 +22,12 @@
       "entry": "designs/claude-02/",
       "modelVersion": "claude-opus-5",
       "generatedAt": "2026-09-13",
-      "contentVersion": "2026-09-12",
+      "contentVersion": "2026-09-13",
       "review": {
         "nate": "approved",
         "agent": "approved"
       },
-      "sha256": "c1a56e51a499462a61c11c4693f55bd06db6b9d035066b1491d6f2a8f04e1dbe"
+      "sha256": "64c6cf3f4d1ff9e959855c05d27492d7078f8b00407541711e52de92c663f499"
     },
     {
       "id": "claude-03",
@@ -36,12 +36,12 @@
       "entry": "designs/claude-03/",
       "modelVersion": "claude-opus-5",
       "generatedAt": "2026-09-13",
-      "contentVersion": "2026-09-12",
+      "contentVersion": "2026-09-13",
       "review": {
         "nate": "approved",
         "agent": "approved"
       },
-      "sha256": "cfb1f4c59c1fc718602b1f4bc4bba525a720b4d152a15ccc6d365c60f1054995"
+      "sha256": "815b92cf4399b3a7a06b10abc6e7a09e6f24e15c40e89395582b0b4a90e11220"
     },
     {
       "id": "claude-04",
@@ -50,12 +50,12 @@
       "entry": "designs/claude-04/",
       "modelVersion": "claude-opus-5",
       "generatedAt": "2026-09-13",
-      "contentVersion": "2026-09-12",
+      "contentVersion": "2026-09-13",
       "review": {
         "nate": "approved",
         "agent": "approved"
       },
-      "sha256": "c2262f29a89ea918a5a6617a5c3669c696cd40998d6d213e9c48ab2a57710c6c"
+      "sha256": "b1d1113373a5221966c1abb4c2db81589530e2e9e84bd99e3c9ea577fd79f37a"
     },
     {
       "id": "claude-05",
@@ -64,12 +64,12 @@
       "entry": "designs/claude-05/",
       "modelVersion": "claude-opus-5",
       "generatedAt": "2026-09-13",
-      "contentVersion": "2026-09-12",
+      "contentVersion": "2026-09-13",
       "review": {
         "nate": "approved",
         "agent": "approved"
       },
-      "sha256": "e20ed2ac630ac71a0ddbe2e3800eb7dc637586580ca9e52a8f5db60552c29e04"
+      "sha256": "5d74f07df376e9cafee7947c34ddc896638b55cebdf428b927300dfee8c90200"
     },
     {
       "id": "chatgpt-01",
@@ -78,12 +78,12 @@
       "entry": "designs/chatgpt-01/",
       "modelVersion": "gpt-6-astra",
       "generatedAt": "2026-09-13T22:14:29.457896+00:00",
-      "contentVersion": "2026-09-12",
+      "contentVersion": "2026-09-13",
       "review": {
         "nate": "approved",
         "agent": "approved"
       },
-      "sha256": "6fc3c17926803d471de0cae6c419596aeb80aaf4c24054911e8fd89ff6806aa3"
+      "sha256": "249ceda461e2512c1440113db1312b0c654abbddd0d1ab0cb6a47cd8448d8f0d"
     },
     {
       "id": "chatgpt-02",
@@ -92,12 +92,12 @@
       "entry": "designs/chatgpt-02/",
       "modelVersion": "gpt-6-astra",
       "generatedAt": "2026-09-13T22:14:29.457896+00:00",
-      "contentVersion": "2026-09-12",
+      "contentVersion": "2026-09-13",
       "review": {
         "nate": "approved",
         "agent": "approved"
       },
-      "sha256": "6f8e01d959ef859893981aa5bb8e325a1cc0e23844732b676aac192858bb665f"
+      "sha256": "d711e7ff492243ef6a6618bdf63b253cdb4823b6690f88ad32994038e4d6911c"
     },
     {
       "id": "chatgpt-03",
@@ -106,12 +106,12 @@
       "entry": "designs/chatgpt-03/",
       "modelVersion": "gpt-6-astra",
       "generatedAt": "2026-09-13T22:14:29.457896+00:00",
-      "contentVersion": "2026-09-12",
+      "contentVersion": "2026-09-13",
       "review": {
         "nate": "approved",
         "agent": "approved"
       },
-      "sha256": "66f5811176b4d05d0474c35ce3043e0b25a474e09e0ffe63eabbeb7df4b99bf6"
+      "sha256": "8f5b465052bdc50613a696505057fa0fc423278a9abd6d5999cbb03c27c1e016"
     },
     {
       "id": "chatgpt-04",
@@ -120,12 +120,12 @@
       "entry": "designs/chatgpt-04/",
       "modelVersion": "gpt-6-astra",
       "generatedAt": "2026-09-13T22:14:29.457896+00:00",
-      "contentVersion": "2026-09-12",
+      "contentVersion": "2026-09-13",
       "review": {
         "nate": "approved",
         "agent": "approved"
       },
-      "sha256": "cd6304b57d661f007ce930718baf20ec424018c9f8d9e0c20bc614cb95ec5ef6"
+      "sha256": "7ca7b527ba4256c55bef21425f6f472ab598b5efc551d1aebf08a2b289c56395"
     },
     {
       "id": "chatgpt-05",
@@ -134,12 +134,12 @@
       "entry": "designs/chatgpt-05/",
       "modelVersion": "gpt-6-astra",
       "generatedAt": "2026-09-13T22:14:29.457896+00:00",
-      "contentVersion": "2026-09-12",
+      "contentVersion": "2026-09-13",
       "review": {
         "nate": "approved",
         "agent": "approved"
       },
-      "sha256": "32072ae020f837b84528c3a1786ea230c1e3c247d29fe2e845e993c778700e1c"
+      "sha256": "359d33a47e54c956d07b4f168a2471aa92bcf7287537d829b36321f311d11290"
     },
     {
       "id": "grok-01",
@@ -148,12 +148,12 @@
       "entry": "designs/grok-01/",
       "modelVersion": "grok-4.6",
       "generatedAt": "2026-09-13T22:06:15+00:00",
-      "contentVersion": "2026-09-12",
+      "contentVersion": "2026-09-13",
       "review": {
         "nate": "approved",
         "agent": "approved"
       },
-      "sha256": "4f162f71496852324f7da0b496b37ff506c3652377f32318cb7e9e98a98bdf30"
+      "sha256": "39457f9cb178f6fcd6bee4de98693d02201fc47fc9d1a4f26074e8e72e6b84b6"
     },
     {
       "id": "grok-02",
@@ -162,12 +162,12 @@
       "entry": "designs/grok-02/",
       "modelVersion": "grok-4.6",
       "generatedAt": "2026-09-13T22:06:15+00:00",
-      "contentVersion": "2026-09-12",
+      "contentVersion": "2026-09-13",
       "review": {
         "nate": "approved",
         "agent": "approved"
       },
-      "sha256": "57d8a362ef4a7b1cc244b8089c1f8ac5354552df29f2d0b6c7511cfdb9e970c6"
+      "sha256": "54eff2c3a91b82a34f06a3e64ae087de7806cdbdb51688c5a1031f396def3db3"
     },
     {
       "id": "grok-03",
@@ -176,12 +176,12 @@
       "entry": "designs/grok-03/",
       "modelVersion": "grok-4.6",
       "generatedAt": "2026-09-13T22:06:15+00:00",
-      "contentVersion": "2026-09-12",
+      "contentVersion": "2026-09-13",
       "review": {
         "nate": "approved",
         "agent": "approved"
       },
-      "sha256": "28ec273006637e89a218108be1839bb0780f05ca70f5b24cb722e1c30c075712"
+      "sha256": "84706a275f0952b7135fc6893c62395618b7ed9c22b65a5a83a117767d5a800d"
     },
     {
       "id": "grok-04",
@@ -190,12 +190,12 @@
       "entry": "designs/grok-04/",
       "modelVersion": "grok-4.6",
       "generatedAt": "2026-09-13T22:06:15+00:00",
-      "contentVersion": "2026-09-12",
+      "contentVersion": "2026-09-13",
       "review": {
         "nate": "approved",
         "agent": "approved"
       },
-      "sha256": "341c5534b140938f0cdc7504388985295d2b8d41dfef9acceea23b30ad54a854"
+      "sha256": "0a687e9b66cae5e16888d6f87e022aa05d0530349b208abe217719c2d2660511"
     },
     {
       "id": "grok-05",
@@ -204,12 +204,12 @@
       "entry": "designs/grok-05/",
       "modelVersion": "grok-4.6",
       "generatedAt": "2026-09-13T22:06:15+00:00",
-      "contentVersion": "2026-09-12",
+      "contentVersion": "2026-09-13",
       "review": {
         "nate": "approved",
         "agent": "approved"
       },
-      "sha256": "39b97ba78fce5606a692c80387ad89ebbd2a403925514c860747ff302e6a5651"
+      "sha256": "73f30d7d89bdeb91cda141cb494989764249ba5d6fb76a0ded97a80777dd67ec"
     },
     {
       "id": "gemini-01",
@@ -218,12 +218,12 @@
       "entry": "designs/gemini-01/",
       "modelVersion": "gemini-3.8-flash-high",
       "generatedAt": "2026-09-13T22:09:09.208735+00:00",
-      "contentVersion": "2026-09-12",
+      "contentVersion": "2026-09-13",
       "review": {
         "nate": "approved",
         "agent": "approved"
       },
-      "sha256": "81e85ddac66bc33a936d51719f7b0383d27c36e899ed79343e5ebee3eaac42a2"
+      "sha256": "860df3dd588b0bda3cb0d59da86befc0517d7a5d6784d12d7a84d7e336363fa4"
     },
     {
       "id": "gemini-02",
@@ -232,12 +232,12 @@
       "entry": "designs/gemini-02/",
       "modelVersion": "gemini-3.8-flash-high",
       "generatedAt": "2026-09-13T22:09:09.208735+00:00",
-      "contentVersion": "2026-09-12",
+      "contentVersion": "2026-09-13",
       "review": {
         "nate": "approved",
         "agent": "approved"
       },
-      "sha256": "9babf910e859bc1feb4fbb958dc4394df4b0f3cb302d7ca9f6780b196206a947"
+      "sha256": "c9d0019be5560e62883ea951794c86fecb663a6fee5f8431fb3ba40fad49b377"
     },
     {
       "id": "gemini-03",
@@ -246,12 +246,12 @@
       "entry": "designs/gemini-03/",
       "modelVersion": "gemini-3.8-flash-high",
       "generatedAt": "2026-09-13T22:09:09.208735+00:00",
-      "contentVersion": "2026-09-12",
+      "contentVersion": "2026-09-13",
       "review": {
         "nate": "approved",
         "agent": "approved"
       },
-      "sha256": "60263781dd59e74144a480923307876a69c4cf0ae0c2119fc60053211987a9c1"
+      "sha256": "e7938fed6c2e6badd6a75f55674343da8ddcc408dbcf81fcd49577259d333921"
     },
     {
       "id": "gemini-04",
@@ -260,12 +260,12 @@
       "entry": "designs/gemini-04/",
       "modelVersion": "gemini-3.8-flash-high",
       "generatedAt": "2026-09-13T22:09:09.208735+00:00",
-      "contentVersion": "2026-09-12",
+      "contentVersion": "2026-09-13",
       "review": {
         "nate": "approved",
         "agent": "approved"
       },
-      "sha256": "99417ad7b63511257a9d9a03a1720047cf4b75200e16662fab601c1904e30ec8"
+      "sha256": "ab360f45e11a3123bcaf40eaedbfc2b9f3ffbadee7ee4663cbbd455f7814218e"
     },
     {
       "id": "gemini-05",
@@ -274,12 +274,12 @@
       "entry": "designs/gemini-05/",
       "modelVersion": "gemini-3.8-flash-high",
       "generatedAt": "2026-09-13T22:09:09.208735+00:00",
-      "contentVersion": "2026-09-12",
+      "contentVersion": "2026-09-13",
       "review": {
         "nate": "approved",
         "agent": "approved"
       },
-      "sha256": "8f03bea701606a68b2c03d90bd147a06e5dc4cda1b68f1db553ff43483ad2adf"
+      "sha256": "56cebe3bedfa38d4d33925365077fe1b6baa8f072d8fccd624d39976d709effc"
     }
   ]
 }

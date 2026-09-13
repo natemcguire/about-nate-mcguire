@@ -24,7 +24,9 @@ Field names and JSON syntax do not need to appear. Invent short navigational/int
 labels where useful, but no filler copy or new biographical claims.
 
 Nate is a Staff Engineer at Capital One, Card Tech, based in Alexandria, Virginia.
-Mayven was his company; Google, Airbnb, and IBM were clients, not his employers.
+Mayven was his company. Describe work on Google X moonshot projects and Facebook’s Building 8,
+team growth, and 10 profitable years before selling to Saltwater / Ryan Graves. Link the compact
+acquisition label to the businessman’s Wikipedia page specified in content.json. No Ryan biography.
 Do not invent projects, testimonials, awards, metrics, availability, portraits, or credentials.
 Keep the content concise. This is a personal site, not an agency sales funnel.
 
