@@ -16,7 +16,8 @@ async function readData() {
   return data;
 }
 async function loadDesign(variation, signal) {
-  const response = await fetch(variation.entry, {signal});
+  const entry = `${variation.entry}?v=${encodeURIComponent(variation.sha256 || variation.contentVersion)}`;
+  const response = await fetch(entry, {signal});
   if (!response.ok || !response.headers.get('content-type')?.includes('text/html')) throw new Error('Unavailable');
   const next = document.createElement('iframe');
   next.title = `${variation.name} — ${variation.modelVersion}`;
@@ -29,7 +30,7 @@ async function loadDesign(variation, signal) {
     next.onerror = () => reject(new Error('Unavailable'));
     signal.addEventListener('abort', () => reject(new Error('Cancelled')), {once:true});
   });
-  next.src = variation.entry;
+  next.src = entry;
   document.body.insertBefore(next, footer);
   try {await loaded; return next;} catch(error) {next.remove(); throw error;}
 }
