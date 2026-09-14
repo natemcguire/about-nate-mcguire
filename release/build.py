@@ -72,7 +72,7 @@ for source in sources:
  if source.parent.name!='author' and override.exists(): body=override.read_text()
  if source.name=='author.html':
   body='<h1>Writing</h1><p>Notes on building software, growing teams, and running a business.</p><p><a href="https://medium.com/@natemcguire">Follow on Medium ↗</a></p>'+body[body.index('<h2>Writings</h2>'):]
- head=old.split('</head>')[0]
+ head=old.split('</head>')[0].replace('operator and investor in a portfolio of small internet businesses.', 'startup investor and advisor to founders and VC/PE teams on technology and engineering team culture.')
  head=re.sub(r'<link rel="stylesheet"[^>]*>','',head)
  tail='<script src="/author/tldr.js" defer></script>' if source.parent.name=='author' else ''
  page=head+assets+'</head><body><!--email_off-->'+bar+'<main class="secondary-page" id="profile">'+body+'</main>'+footer+tail+'<!--/email_off--></body></html>'
