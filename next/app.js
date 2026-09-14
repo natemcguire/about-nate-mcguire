@@ -1,15 +1,29 @@
-import { eligible, choose, remember } from './selection.mjs?v=cycles-1';
+import { eligible, choose, remember, sharedVariation } from './selection.mjs?v=cycles-2';
 const status = document.querySelector('#design-status');
 const profile = document.querySelector('#profile');
 const footer = document.querySelector('body > footer');
 const buttons = [...document.querySelectorAll('[data-model]')];
 let current = null, frame = null, request = 0, data;
 const secondary = profile.classList.contains('secondary-page');
-let history = {}, saved;
-try { history = JSON.parse(sessionStorage.getItem('design-history') || '{}'); saved = sessionStorage.getItem('design-choice'); } catch {}
+let history = {};
+try { history = JSON.parse(sessionStorage.getItem('design-history-v2') || '{}'); } catch {}
 if (!history || typeof history !== 'object' || Array.isArray(history)) history = {};
 function persist(choice) {
-  try {sessionStorage.setItem('design-history', JSON.stringify(history)); sessionStorage.setItem('design-choice', choice);} catch {}
+  try {sessionStorage.setItem('design-history-v2', JSON.stringify(history));} catch {}
+  const url = new URL(location.href);
+  if (choice === 'base') url.searchParams.delete('design');
+  else url.searchParams.set('design', choice);
+  window.history.replaceState(null, '', url);
+  // Keep the exact design while navigating between profile and writing pages.
+  for (const link of document.querySelectorAll('a[href]')) {
+    const href = link.getAttribute('href');
+    if (href.startsWith('#')) continue;
+    const target = new URL(href, location.href);
+    if (target.origin !== location.origin || /\.[^/]+$/.test(target.pathname) && !target.pathname.endsWith('.html')) continue;
+    if (choice === 'base') target.searchParams.delete('design');
+    else target.searchParams.set('design', choice);
+    link.href = target.pathname + target.search + target.hash;
+  }
 }
 let themeStyle;
 async function applyPageDesign(variation, signal) {
@@ -72,7 +86,7 @@ async function selectDesign(button, initialId = null) {
     if (token !== request) return;
     const pool = eligible(manifest.variations, model, content.version);
     const seen = Array.isArray(history[model]) ? history[model] : [];
-    const variation = pool.find(v => v.id === initialId) || choose(pool, seen, current);
+    const variation = pool.find(v => v.id === initialId) || choose(pool, seen, seen.at(-1));
     if (!variation) throw new Error('Unavailable');
     const pageTheme = secondary ? await applyPageDesign(variation, thisController.signal) : null;
     if (!secondary) pending = await loadDesign(variation, thisController.signal);
@@ -87,7 +101,7 @@ async function selectDesign(button, initialId = null) {
     } else {
       profile.hidden = true; document.body.classList.add('viewing-design'); pending.hidden = false;
     }
-    if (!initialId || !seen.includes(variation.id)) history[model] = remember(pool, seen, variation.id);
+    history[model] = initialId ? [variation.id] : remember(pool, seen, variation.id);
     persist(variation.id);
     active(model);
     status.textContent = `${button.textContent} · ${variation.name}`;
@@ -108,10 +122,11 @@ async function revealAvailableCollections() {
       if (pool.length) {available++; button.title = `Pre-generated with ${pool[0].modelVersion}`;}
     }
     document.querySelector('.design-bar').hidden = available === 0;
-    if (request === 0 && saved !== 'base') {
-      const initial = manifest.variations.find(v => v.id === saved) || manifest.variations.find(v => v.id === 'claude-04');
+    if (request === 0) {
+      const initial = sharedVariation(manifest.variations, content.version, location.search);
       const button = buttons.find(b => b.dataset.model === initial?.model);
       if (button) await selectDesign(button, initial.id);
+      else persist('base');
     }
   } catch { /* Profile stays readable without the collection. */ }
 }
