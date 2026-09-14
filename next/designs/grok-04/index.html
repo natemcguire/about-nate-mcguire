@@ -42,7 +42,7 @@ h2{font-size:clamp(22px,3vw,32px);font-weight:600;letter-spacing:-.02em;margin:0
 <div class='frame' id='frame'>
 <section class='left' aria-label='Identity'>
 <h1 class='vname'>Nate McGuire</h1>
-<p>Engineer, founder, and operator. I build software and teams. I invest in startups and advise founders and VC/PE teams on technology and engineering team culture.</p>
+<p>Engineer, founder, and operator. I build software and teams. I invest in startups, buy small businesses, advise founders, and help financial firms with technology due diligence.</p>
 <p>Staff Engineer · Capital One · Card Tech<br>Alexandria, Virginia</p>
 <div class='modes'>
 <button type='button' id='be' aria-pressed='true'>Engineer</button>
@@ -66,7 +66,7 @@ h2{font-size:clamp(22px,3vw,32px);font-weight:600;letter-spacing:-.02em;margin:0
 </article>
 <article class='block o' id='b4'>
 <h2>Startup investing</h2>
-<p>I invest in startups and advise founders and VC/PE teams on technology and engineering team culture.</p>
+<p>I invest in startups, buy small businesses, advise founders, and help financial firms with technology due diligence.</p>
 <div class='focus'>
 <span>Software architecture</span>
 <span>Engineering leadership</span>
@@ -92,6 +92,8 @@ function applySplit(value){var p=Math.min(68,Math.max(28,value));document.docume
 function setSplit(px){var r=frame.getBoundingClientRect();applySplit((px-r.left)/r.width*100);}
 h.addEventListener('pointerdown',function(e){drag=true;h.setPointerCapture(e.pointerId);});
 addEventListener('pointerup',function(){drag=false;});
+h.addEventListener('lostpointercapture',function(){drag=false;});
+h.addEventListener('pointercancel',function(){drag=false;});
 addEventListener('pointermove',function(e){if(drag) setSplit(e.clientX);});
 h.addEventListener('keydown',function(e){if(!['ArrowLeft','ArrowRight','Home','End'].includes(e.key))return;e.preventDefault();var cur=parseFloat(getComputedStyle(document.documentElement).getPropertyValue('--split'))||44;applySplit(e.key==='Home'?28:e.key==='End'?68:cur+(e.key==='ArrowLeft'?-2:2));});
 })();

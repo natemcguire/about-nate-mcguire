@@ -114,7 +114,7 @@ footer{padding:26px 0 60px;border-top:8px solid var(--ink);display:flex;flex-wra
   </h1>
   <div class='rule'></div>
   <div class='strap'>
-    <p class='bio'>Engineer, founder, and operator. I build software and teams. I invest in startups and advise founders and VC/PE teams on technology and engineering team culture.</p>
+    <p class='bio'>Engineer, founder, and operator. I build software and teams. I invest in startups, buy small businesses, advise founders, and help financial firms with technology due diligence.</p>
     <div class='badge'><b>Staff Engineer</b><span>Capital One — Card Tech</span></div>
   </div>
 </header>
@@ -160,7 +160,7 @@ footer{padding:26px 0 60px;border-top:8px solid var(--ink);display:flex;flex-wra
   var pal=[['#ff3d6e','#2b33d6'],['#ff6a1f','#0f8f6f'],['#d81b8c','#1b8fd8'],['#e8402c','#3b2bd6']];
   var i=0,q=false,tx=4,ty=3;
   function apply(){q=false;root.style.setProperty('--dx',tx.toFixed(1)+'px');root.style.setProperty('--dy',ty.toFixed(1)+'px');}
-  if(!calm){
+  if(!calm&&window.matchMedia('(hover: hover) and (pointer: fine)').matches){
     window.addEventListener('pointermove',function(e){
       var nx=(e.clientX/window.innerWidth-.5)*2,ny=(e.clientY/window.innerHeight-.5)*2;
       tx=nx*9;ty=ny*7;

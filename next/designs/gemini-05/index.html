@@ -204,6 +204,11 @@
     @media (prefers-reduced-motion: reduce) {
       .c-link, .tile { transition: none; transform: none; }
     }
+
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { animation: none !important; transition: none !important; scroll-behavior: auto !important; }
+    }
+    @media (hover: none), (pointer: coarse) { .c-link:hover, .tile:hover { transform: none !important; } }
   </style>
 </head>
 <body><!--email_off-->
@@ -214,7 +219,7 @@
         <div class="badge-role">Capital One &bull; Card Tech</div>
         <h1 class="masthead-h1">Nate McGuire</h1>
         <p class="masthead-statement">
-          Engineer, founder, and operator. I build software and teams. I invest in startups and advise founders and VC/PE teams on technology and engineering team culture.
+          Engineer, founder, and operator. I build software and teams. I invest in startups, buy small businesses, advise founders, and help financial firms with technology due diligence.
         </p>
       </div>
 

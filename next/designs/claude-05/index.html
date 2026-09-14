@@ -37,10 +37,15 @@ a{color:inherit}
 /* hero name */
 .name{margin:0;font-weight:800;text-transform:uppercase;line-height:.8;letter-spacing:var(--track);
   font-size:clamp(58px,17.4vw,225px);word-break:break-word}
-.name .ch{display:inline-block;transform-origin:50% 100%;will-change:transform;
+.name.is-interactive{letter-spacing:0}
+.name .word{display:inline-block;white-space:nowrap}
+.name .word .ch:last-child{margin-right:0}
+@media(max-width:600px){.name{font-size:clamp(40px,14vw,84px)}}
+.name .ch{display:inline-block;letter-spacing:0;margin-right:var(--track);transform-origin:50% 100%;will-change:transform;
   transition:color .35s ease}
 .hero{padding:38px 0 26px;border-bottom:2px solid var(--k)}
 .setter{display:flex;align-items:center;gap:14px;flex-wrap:wrap;padding:22px 0 4px}
+.setter[hidden]{display:none}
 .setter label{font:600 10px/1 var(--mono);letter-spacing:.18em;text-transform:uppercase;color:var(--grey)}
 .setter input[type=range]{flex:1;min-width:160px;max-width:420px;accent-color:var(--red);height:24px;cursor:ew-resize}
 .setter output{font:700 11px/1 var(--mono);letter-spacing:.1em;color:var(--k);min-width:8ch}
@@ -62,7 +67,7 @@ a{color:inherit}
 .fi{display:flex;align-items:baseline;justify-content:space-between;gap:16px;padding:14px 0;border-bottom:1px solid var(--hair);
   font-size:clamp(26px,4.6vw,54px);font-weight:800;letter-spacing:-.035em;text-transform:uppercase;line-height:1;transition:color .3s ease,padding-left .3s ease}
 .fi:last-child{border-bottom:0}
-.fi:hover{color:var(--red);padding-left:12px}
+@media(hover:hover) and (pointer:fine){.fi:hover{color:var(--red);padding-left:12px}}
 .fi em{font:600 10px/1 var(--mono);letter-spacing:.2em;font-style:normal;color:var(--grey);text-transform:uppercase;white-space:nowrap}
 
 .links{list-style:none;margin:0;padding:0}
@@ -98,16 +103,16 @@ footer b{color:var(--k)}
   <header class='hero'>
     <h1 class='name' id='name'>Nate McGuire</h1>
     <div class='setter' id='setter' hidden>
-      <label for='tr'>Tracking</label>
+      <label for='tr'>Name spacing</label>
       <input type='range' id='tr' min='-60' max='120' value='-35' step='1'>
-      <output id='trv' for='tr'>-0.035 em</output>
+      <output id='trv' for='tr'>Tight</output>
     </div>
   </header>
 
   <main id='main'>
     <section class='row' aria-labelledby='s1'>
       <div class='gut'><b>A</b>Statement<br>44/50</div>
-      <p class='lede' id='s1'>Engineer, founder, and operator. I build <span class='hl'>software and teams</span>. I invest in startups and advise founders and VC/PE teams on technology and engineering team culture.</p>
+      <p class='lede' id='s1'>Engineer, founder, and operator. I build <span class='hl'>software and teams</span>. I invest in startups, buy small businesses, advise founders, and help financial firms with technology due diligence.</p>
     </section>
 
     <section class='row' aria-labelledby='s2'>
@@ -164,7 +169,9 @@ footer b{color:var(--k)}
     var set=function(){
       var v=parseInt(sl.value,10)/1000;
       document.documentElement.style.setProperty('--track',v.toFixed(3)+'em');
-      out.textContent=v.toFixed(3)+' em';
+      var label=v<-.01?'Tight':v>.025?'Wide':'Natural';
+      out.textContent=label;
+      sl.setAttribute('aria-valuetext',label+' name spacing');
     };
     sl.addEventListener('input',set);
     set();
@@ -172,15 +179,19 @@ footer b{color:var(--k)}
 
   if(!el)return;
   var txt=el.textContent,frag=document.createDocumentFragment(),chars=[];
-  for(var i=0;i<txt.length;i++){
-    var c=txt.charAt(i);
-    if(c===' '){frag.appendChild(document.createTextNode(' '));continue;}
-    var s=document.createElement('span');
-    s.className='ch';s.textContent=c;s.setAttribute('aria-hidden','false');
-    frag.appendChild(s);chars.push(s);
-  }
+  txt.split(' ').forEach(function(word,index){
+    if(index)frag.appendChild(document.createTextNode(' '));
+    var group=document.createElement('span');group.className='word';
+    for(var i=0;i<word.length;i++){
+      var s=document.createElement('span');
+      s.className='ch';s.textContent=word.charAt(i);s.setAttribute('aria-hidden','true');
+      group.appendChild(s);chars.push(s);
+    }
+    frag.appendChild(group);
+  });
   el.textContent='';
   el.appendChild(frag);
+  el.classList.add('is-interactive');
   el.setAttribute('aria-label',txt);
 
   var fine=window.matchMedia&&window.matchMedia('(hover: hover) and (pointer: fine)').matches;
@@ -189,7 +200,8 @@ footer b{color:var(--k)}
   var boxes=[],q=false,mx=-9999,my=-9999;
   function measure(){
     boxes=chars.map(function(s){
-      var r=s.getBoundingClientRect();
+      var previous=s.style.transform;s.style.transform='none';
+      var r=s.getBoundingClientRect();s.style.transform=previous;
       return {x:r.left+r.width/2,y:r.top+r.height/2+window.pageYOffset};
     });
   }

@@ -459,6 +459,11 @@
         transform: none !important;
       }
     }
+
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { animation: none !important; transition: none !important; scroll-behavior: auto !important; }
+    }
+    @media (hover: none), (pointer: coarse) { .focus-card:hover, .bg-panel:hover, .contact-link:hover, .contact-link:hover .link-arrow { transform: none !important; } }
   </style>
 </head>
 <body>
@@ -493,7 +498,7 @@
       <!-- Bio Statement -->
       <section class="bio-strip" aria-label="Overview">
         <blockquote class="bio-quote">
-          Engineer, founder, and operator. I build software and teams. I invest in startups and advise founders and VC/PE teams on technology and engineering team culture.
+          Engineer, founder, and operator. I build software and teams. I invest in startups, buy small businesses, advise founders, and help financial firms with technology due diligence.
         </blockquote>
       </section>
 
@@ -597,44 +602,40 @@
 
   <script>
     (function() {
-      // Check for user preference regarding motion
-      const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-      if (prefersReduced) return;
-
+      const motion = window.matchMedia('(prefers-reduced-motion: reduce)');
+      const finePointer = window.matchMedia('(hover: hover) and (pointer: fine)');
       const hero = document.getElementById('hero');
       const title = document.getElementById('kineticTitle');
-
       if (!hero || !title) return;
-
-      let targetX = 0;
-      let targetY = 0;
-      let currentX = 0;
-      let currentY = 0;
-      let isHovered = false;
-
-      hero.addEventListener('mousemove', function(e) {
-        const rect = hero.getBoundingClientRect();
-        const relX = (e.clientX - rect.left) / rect.width - 0.5;
-        const relY = (e.clientY - rect.top) / rect.height - 0.5;
-        targetX = relX * 14;
-        targetY = relY * -10;
-        isHovered = true;
-      });
-
-      hero.addEventListener('mouseleave', function() {
-        targetX = 0;
-        targetY = 0;
-        isHovered = false;
-      });
-
-      function animateTilt() {
-        currentX += (targetX - currentX) * 0.1;
-        currentY += (targetY - currentY) * 0.1;
-        title.style.transform = `perspective(800px) rotateX(${currentY.toFixed(2)}deg) rotateY(${currentX.toFixed(2)}deg) translateZ(8px)`;
-        requestAnimationFrame(animateTilt);
+      let frame = 0, targetX = 0, targetY = 0, currentX = 0, currentY = 0;
+      function reset() {
+        cancelAnimationFrame(frame); frame = 0;
+        targetX = targetY = currentX = currentY = 0;
+        title.style.transform = '';
       }
-
-      requestAnimationFrame(animateTilt);
+      function animateTilt() {
+        frame = 0;
+        currentX += (targetX - currentX) * .16;
+        currentY += (targetY - currentY) * .16;
+        title.style.transform = `perspective(800px) rotateX(${currentY.toFixed(2)}deg) rotateY(${currentX.toFixed(2)}deg)`;
+        if (Math.abs(targetX - currentX) + Math.abs(targetY - currentY) > .03) frame = requestAnimationFrame(animateTilt);
+        else if (!targetX && !targetY) title.style.transform = '';
+      }
+      hero.addEventListener('pointermove', event => {
+        if (motion.matches || !finePointer.matches || event.pointerType === 'touch') return;
+        const rect = hero.getBoundingClientRect();
+        targetX = ((event.clientX - rect.left) / rect.width - .5) * 14;
+        targetY = ((event.clientY - rect.top) / rect.height - .5) * -10;
+        if (!frame) frame = requestAnimationFrame(animateTilt);
+      });
+      hero.addEventListener('pointerleave', () => {
+        targetX = targetY = 0;
+        if (!motion.matches && finePointer.matches && !frame) frame = requestAnimationFrame(animateTilt);
+        else if (motion.matches || !finePointer.matches) reset();
+      });
+      motion.addEventListener('change', reset);
+      finePointer.addEventListener('change', reset);
+      document.addEventListener('visibilitychange', () => { if (document.hidden) reset(); });
     })();
   </script>
 </body>

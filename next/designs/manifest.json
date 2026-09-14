@@ -13,7 +13,7 @@
         "nate": "approved",
         "agent": "approved"
       },
-      "sha256": "cbcf69166f702067ed1d8de736c7f190a414951071726720c1952f995413b5a3"
+      "sha256": "b28e20f3dfa144f3d725152c3d3a9067f26b3fc69f2f81cb0c4e387cab53be64"
     },
     {
       "id": "claude-02",
@@ -27,7 +27,7 @@
         "nate": "approved",
         "agent": "approved"
       },
-      "sha256": "12374f843c5c01b380be242ee9bfa4dbbec6798bea89b658ce0ccd4768680c54"
+      "sha256": "8d79dcace02688de8ef05ec3179150f8cee76301f94ea6924e18f111cb93d83a"
     },
     {
       "id": "claude-03",
@@ -41,7 +41,7 @@
         "nate": "approved",
         "agent": "approved"
       },
-      "sha256": "55328ab47840100922042c959dcfab63e670da76ec4bc727480bbe043cae8d23"
+      "sha256": "3b348f2d33dffe139d77834fe402a0d95d1a43f4d7ca5b6f8e3566c1322a9e31"
     },
     {
       "id": "claude-04",
@@ -55,7 +55,7 @@
         "nate": "approved",
         "agent": "approved"
       },
-      "sha256": "efa62ec5d4eb215fa56be5d840c45efc5e5204d003346c72d6e79e74754aad14"
+      "sha256": "b9fcd4776c1ff1389f1a41f9754a5c9f519feb89869114fdaa32b746a44af665"
     },
     {
       "id": "claude-05",
@@ -69,7 +69,7 @@
         "nate": "approved",
         "agent": "approved"
       },
-      "sha256": "6df8cf6b288a2f024a3d9934a2efb9ef2905cd527e50302378fc65298369f16d"
+      "sha256": "1babec876f1988588d376bd40f3edc42d36e051eb375219b5572729f9be0a437"
     },
     {
       "id": "chatgpt-01",
@@ -83,7 +83,7 @@
         "nate": "approved",
         "agent": "approved"
       },
-      "sha256": "ce718fb8bf50baf95acab7be652c8c8ed90714c80bf91de283a59a80207b17f2"
+      "sha256": "719800fa8587fcf4e71712977db6b485e16e0a2a0b41d636fc6817ecb4c2efab"
     },
     {
       "id": "chatgpt-02",
@@ -97,7 +97,7 @@
         "nate": "approved",
         "agent": "approved"
       },
-      "sha256": "e4c98018f88a31d7431235ad7daf33772a3a8670ec04c8b8ab017750f705d0ea"
+      "sha256": "2ce1961dc522272230f8af35cd622f757d26ebb96ea2ae8996b0667520d9fc35"
     },
     {
       "id": "chatgpt-03",
@@ -111,7 +111,7 @@
         "nate": "approved",
         "agent": "approved"
       },
-      "sha256": "67faac8115c58f6c85719eb1652664ffd2863eeb001607ae0dca37d33ac09144"
+      "sha256": "a6dfe6a1b23136af35e43bb5e3e468032fa3272e6f8863f7da0dffb83ffb0231"
     },
     {
       "id": "chatgpt-04",
@@ -125,7 +125,7 @@
         "nate": "approved",
         "agent": "approved"
       },
-      "sha256": "59caa51b40eb48e9ac1a865bf58484e4260d7b163b7098eeafc788a2997907c9"
+      "sha256": "06341070fc044161ab8605346542c6fa38ec0b8179d4b9ceb5e670e2daa0ad7d"
     },
     {
       "id": "chatgpt-05",
@@ -139,7 +139,7 @@
         "nate": "approved",
         "agent": "approved"
       },
-      "sha256": "560dfef0913b0bdb534c5d8d0d557a9b5904939a52c282f2768435fdee3c3d72"
+      "sha256": "8f930c8d40aa51a13fc56fb83a3dc8f28a2d48c9a78867f3da49e9a3cc87d28c"
     },
     {
       "id": "grok-01",
@@ -153,7 +153,7 @@
         "nate": "approved",
         "agent": "approved"
       },
-      "sha256": "f196b868f3d789eeb94c3e1ea6c24c8e8b158252bcdbdc1ea489fd831ac7d71b"
+      "sha256": "197c49633b88c15c78b21f184f288c6cf2ca5bdb272f1dbeb04dec259a3481bc"
     },
     {
       "id": "grok-02",
@@ -167,7 +167,7 @@
         "nate": "approved",
         "agent": "approved"
       },
-      "sha256": "2e3b2f01ecbc93832059d790f38173780376cb8928a017c81a1e4c6caad2ea63"
+      "sha256": "340eebfc595d4642100856c9260caca10ae29e1e6302218413d1a085c4e740b3"
     },
     {
       "id": "grok-03",
@@ -181,7 +181,7 @@
         "nate": "approved",
         "agent": "approved"
       },
-      "sha256": "019c56a828aa7fd4538145ed7203ba20853b1b20c7dd8b0d9b464a635f55dd42"
+      "sha256": "ad6866d7b794039bca1e472207c08c3532c4387b54520f501f7465879c5b385f"
     },
     {
       "id": "grok-04",
@@ -195,7 +195,7 @@
         "nate": "approved",
         "agent": "approved"
       },
-      "sha256": "91b289a8f149ed0d00707ad712fc9bb059c7796f744f0dc3abedf9c25dbe9fe4"
+      "sha256": "77d6a31fdd2452e7e25a7610cf883040345b950a55efbc0e7c07b044c5d7b897"
     },
     {
       "id": "grok-05",
@@ -209,7 +209,7 @@
         "nate": "approved",
         "agent": "approved"
       },
-      "sha256": "0f76f37fd32fa3935a2876d44f0deefa56630bf65cd16aeb91bdbbe3d3b8bf2c"
+      "sha256": "5a1669ab25405f9687d90a21199d7ee08d969453912f7c716193c39d1d556689"
     },
     {
       "id": "gemini-01",
@@ -223,7 +223,7 @@
         "nate": "approved",
         "agent": "approved"
       },
-      "sha256": "957f42c9402fa564387a98f312500d0164396c358197ae30eb6f2f3641d2250f"
+      "sha256": "f767202e8510bae1fe6abfac5b90efd1395f38813e9a9a5c54339cc1cc51320a"
     },
     {
       "id": "gemini-02",
@@ -237,7 +237,7 @@
         "nate": "approved",
         "agent": "approved"
       },
-      "sha256": "0507aab0cf3c8207e3b4f3f6ec433dee77611a24c70a08526e939812967d9ba9"
+      "sha256": "0efcd337a4e767eecfe37eaaaf658e508625e670c949a0cb7919333d4b7e438e"
     },
     {
       "id": "gemini-03",
@@ -251,7 +251,7 @@
         "nate": "approved",
         "agent": "approved"
       },
-      "sha256": "b9a56c985eff89c5df2106153dce314fd81df0f36e8b52937efb646c18d9c8cf"
+      "sha256": "0567022964fff270332f4617ca3f341dfcc493769987a9497b061876e055be00"
     },
     {
       "id": "gemini-04",
@@ -265,7 +265,7 @@
         "nate": "approved",
         "agent": "approved"
       },
-      "sha256": "dcde92936670f0a013f798bdc1a4c80515c8544d1c5749e301f95fb5bf836182"
+      "sha256": "df52834b62c6b7a22fcf245796c5074f198b9fef0ed653939b833d6f689ca401"
     },
     {
       "id": "gemini-05",
@@ -279,7 +279,7 @@
         "nate": "approved",
         "agent": "approved"
       },
-      "sha256": "cc462f23a791628ec5fe002290af96b7e8a2ccd077f239b15f0b905a62466f3d"
+      "sha256": "55833012039042fb4811e7b73cbff1b5be857e7fc9c3890b48d784177371ecc4"
     }
   ]
 }

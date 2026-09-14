@@ -48,7 +48,7 @@ aside{border-left:1px solid var(--navy);padding:16px;display:flex;flex-direction
 <div class='meta'><span>Sheet 01 / Site plan</span><span id='xy'>X 000 · Y 000</span></div>
 <h1>Nate McGuire</h1>
 <p class='role'>Staff Engineer · Capital One · Card Tech · Alexandria, Virginia</p>
-<bio>Engineer, founder, and operator. I build software and teams. I invest in startups and advise founders and VC/PE teams on technology and engineering team culture.</bio>
+<bio>Engineer, founder, and operator. I build software and teams. I invest in startups, buy small businesses, advise founders, and help financial firms with technology due diligence.</bio>
 <svg class='plan' viewBox='0 0 720 340' role='group' aria-labelledby='pt'>
 <title id='pt'>Plan of work: Mayven, clients, Capital One, focus</title>
 <rect x='1' y='1' width='718' height='338' fill='none' stroke='#16324f'/>
@@ -89,11 +89,12 @@ aside{border-left:1px solid var(--navy);padding:16px;display:flex;flex-direction
 (function(){
 var reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
 var hx=document.getElementById('hx'),hy=document.getElementById('hy'),xy=document.getElementById('xy');
-if(!reduce){hx.style.display=hy.style.display='block';addEventListener('mousemove',function(e){hx.style.top=e.clientY+'px';hy.style.left=e.clientX+'px';xy.textContent='X '+String(e.clientX).padStart(3,'0')+' · Y '+String(e.clientY).padStart(3,'0');});}
+if(!reduce && matchMedia('(hover:hover) and (pointer:fine)').matches){hx.style.display=hy.style.display='block';addEventListener('mousemove',function(e){hx.style.top='0';hy.style.left='0';hx.style.transform='translateY('+e.clientY+'px)';hy.style.transform='translateX('+e.clientX+'px)';xy.textContent='X '+String(e.clientX).padStart(3,'0')+' · Y '+String(e.clientY).padStart(3,'0');});}
 function show(id){
+i=['p1','p2','p3','p4'].indexOf(id);
 document.querySelectorAll('.legend section').forEach(function(s){s.classList.toggle('on',s.id===id);});
 document.querySelectorAll('.room').forEach(function(r){r.classList.toggle('on',r.getAttribute('data-p')===id);});
-document.querySelectorAll('.focus button').forEach(function(b){b.classList.toggle('on',b.getAttribute('data-p')===id);});
+document.querySelectorAll('.focus button').forEach(function(b){b.classList.toggle('on',b.getAttribute('data-p')===id);b.setAttribute('aria-pressed',String(b.getAttribute('data-p')===id));});
 }
 document.querySelectorAll('.room, .focus button').forEach(function(el){
 el.addEventListener('click',function(){show(el.getAttribute('data-p'));});

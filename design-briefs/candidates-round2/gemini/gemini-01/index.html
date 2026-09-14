@@ -279,6 +279,11 @@
     @media (prefers-reduced-motion: reduce) {
       * { transition: none !important; animation: none !important; }
     }
+
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { animation: none !important; transition: none !important; scroll-behavior: auto !important; }
+    }
+    @media (hover: none), (pointer: coarse) { .focus-card:hover, .channel-link:hover, .channel-link:hover .link-arrow { transform: none !important; } }
   </style>
 </head>
 <body>
@@ -308,7 +313,7 @@
 
     <section class="hero-statement" aria-label="Executive Bio">
       <p class="statement-text">
-        Engineer, founder, and operator. I build <strong>software and teams</strong>. I invest in startups and advise founders and VC/PE teams on technology and engineering team culture.
+        Engineer, founder, and operator. I build <strong>software and teams</strong>. I invest in startups, buy small businesses, advise founders, and help financial firms with technology due diligence.
       </p>
     </section>
 

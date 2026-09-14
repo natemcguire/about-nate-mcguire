@@ -57,4 +57,4 @@ working code, not mockups, screenshots alone, or instructions to build it later.
 Before returning, review your five designs for content fidelity, genuinely distinct layouts,
 working interactions, responsive behavior, readability, and reduced-motion support.
 
-Use the current investing/advisory wording exactly: "I invest in startups and advise founders and VC/PE teams on technology and engineering team culture.". Do not describe this as small internet businesses or companies.
+Use the current investing/advisory wording exactly: "I invest in startups, buy small businesses, advise founders, and help financial firms with technology due diligence.". Do not describe this as small internet businesses or companies.

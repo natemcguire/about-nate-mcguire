@@ -58,7 +58,7 @@ footer p{flex:1 1 240px;max-width:36em}
 <header class='hero' id='main'>
 <p class='kicker'>Staff Engineer · Capital One · Card Tech</p>
 <h1>Nate<br>McGuire</h1>
-<p class='dek'>Engineer, founder, and operator. I build software and teams. I invest in startups and advise founders and VC/PE teams on technology and engineering team culture.</p>
+<p class='dek'>Engineer, founder, and operator. I build software and teams. I invest in startups, buy small businesses, advise founders, and help financial firms with technology due diligence.</p>
 </header>
 <div class='issue' id='work'>
 <div>
@@ -107,7 +107,7 @@ footer p{flex:1 1 240px;max-width:36em}
 var bar=document.getElementById('bar');
 var reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
 if(!reduce) bar.hidden=false;
-function prog(){var h=document.documentElement;var d=h.scrollHeight-h.clientHeight;bar.style.width=(d?(h.scrollTop/d)*100:0)+'%';}
+function prog(){var h=document.documentElement;var d=h.scrollHeight-h.clientHeight;bar.style.width='100%';bar.style.transformOrigin='left';bar.style.transform='scaleX('+(d?h.scrollTop/d:0)+')';}
 if(!reduce){addEventListener('scroll',prog,{passive:true});prog();}
 var links=[].slice.call(document.querySelectorAll('.rail a'));
 if('IntersectionObserver' in window){

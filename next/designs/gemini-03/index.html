@@ -246,6 +246,11 @@
     @media (prefers-reduced-motion: reduce) {
       .tabs-ready .panel.active { animation: none; }
     }
+
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { animation: none !important; transition: none !important; scroll-behavior: auto !important; }
+    }
+    @media (hover: none), (pointer: coarse) { .channel-item:hover, .copy-pill:hover { transform: none !important; } }
   </style>
 </head>
 <body><!--email_off-->
@@ -267,7 +272,7 @@
     </header>
 
     <div class="bio-bar">
-      Engineer, founder, and operator. I build software and teams. I invest in startups and advise founders and VC/PE teams on technology and engineering team culture.
+      Engineer, founder, and operator. I build software and teams. I invest in startups, buy small businesses, advise founders, and help financial firms with technology due diligence.
     </div>
 
     <nav class="tab-nav" role="tablist" aria-label="Dossier Sections">
@@ -333,7 +338,7 @@
           <a href="https://medium.com/@natemcguire" class="channel-item" target="_blank" rel="noopener noreferrer">Writing <span>&rarr;</span></a>
         </div>
         <button class="copy-pill" id="copyEmailBtn" type="button">
-          <span id="copyStatusText">Copy email: n@natemcguire.com</span>
+          <span id="copyStatusText" aria-live="polite">Copy email: n@natemcguire.com</span>
         </button>
       </section>
     </div>
@@ -348,20 +353,23 @@
           tabs.forEach(t => {
             t.classList.remove('active');
             t.setAttribute('aria-selected', 'false');
+            t.tabIndex = -1;
           });
           panels.forEach(p => p.classList.remove('active'));
           tab.classList.add('active');
           tab.setAttribute('aria-selected', 'true');
+          tab.tabIndex = 0;
           panels[index].classList.add('active');
         });
       });
 
+      tabs.forEach((tab, i) => { tab.tabIndex = i === 0 ? 0 : -1; });
       document.documentElement.classList.add('tabs-ready');
       tabs.forEach((tab, index) => tab.addEventListener('keydown', event => {
         const offset = event.key === 'ArrowRight' ? 1 : event.key === 'ArrowLeft' ? -1 : 0;
-        if (!offset) return;
+        if (!offset && event.key !== 'Home' && event.key !== 'End') return;
         event.preventDefault();
-        const next = tabs[(index + offset + tabs.length) % tabs.length];
+        const next = tabs[event.key === 'Home' ? 0 : event.key === 'End' ? tabs.length - 1 : (index + offset + tabs.length) % tabs.length];
         next.focus(); next.click();
       }));
 
@@ -375,7 +383,11 @@
               statusText.textContent = 'Copy email: n@natemcguire.com';
             }, 2500);
           }).catch(() => {
-            window.location.href = 'mailto:n@natemcguire.com';
+            statusText.textContent = 'Email: n@natemcguire.com — select to copy';
+            const range = document.createRange();
+            range.selectNodeContents(statusText);
+            const selection = window.getSelection();
+            selection.removeAllRanges(); selection.addRange(range);
           });
         });
       }

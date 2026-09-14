@@ -47,7 +47,7 @@ footer a{font:12px/1 system-ui,sans-serif;letter-spacing:.16em;text-transform:up
 <header id='top'>
 <p class='loc'>Alexandria, Virginia</p>
 <h1 id='nm'>Nate McGuire</h1>
-<p class='sub'>Engineer, founder, and operator. I build software and teams. I invest in startups and advise founders and VC/PE teams on technology and engineering team culture.</p>
+<p class='sub'>Engineer, founder, and operator. I build software and teams. I invest in startups, buy small businesses, advise founders, and help financial firms with technology due diligence.</p>
 </header>
 <main id='main'>
 <chapter id='c1'>
@@ -80,9 +80,6 @@ footer a{font:12px/1 system-ui,sans-serif;letter-spacing:.16em;text-transform:up
 </footer>
 <script>
 (function(){
-var reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
-var nm=document.getElementById('nm');
-if(!reduce && matchMedia('(min-width:701px)').matches){addEventListener('scroll',function(){var t=Math.min(1,scrollY/420);nm.style.letterSpacing=(0.22-t*0.14)+'em';},{passive:true});}
 var ids=['top','c1','c2','c3','c4'];
 var dots=[].slice.call(document.querySelectorAll('nav.sky a'));
 if('IntersectionObserver' in window){

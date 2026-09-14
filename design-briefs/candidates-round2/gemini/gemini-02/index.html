@@ -246,6 +246,12 @@
       .status-dot { animation: none; }
       .interactive-card, .focus-btn, .link-pill { transition: none; transform: none; }
     }
+
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { animation: none !important; transition: none !important; scroll-behavior: auto !important; }
+    }
+    .focus-btn { font-family: inherit; }
+    @media (hover: none), (pointer: coarse) { .interactive-card:hover, .focus-btn:hover, .link-pill:hover { transform: none !important; } }
   </style>
 </head>
 <body>
@@ -261,27 +267,28 @@
     <div class="role-lead">Staff Engineer &bull; Alexandria, Virginia</div>
     
     <p class="bio-copy">
-      Engineer, founder, and operator. I build software and teams. I invest in startups and advise founders and VC/PE teams on technology and engineering team culture.
+      Engineer, founder, and operator. I build software and teams. I invest in startups, buy small businesses, advise founders, and help financial firms with technology due diligence.
     </p>
 
     <section class="interactive-card" aria-label="Core Disciplines">
       <div class="section-tag">CORE ARCHITECTURAL FOCUS</div>
+      <p id="focus-hint" class="focus-btn-desc">Select a focus to rearrange the constellation.</p>
       <div class="focus-interactive" role="region" aria-label="Focus Areas">
-        <div class="focus-btn active" tabindex="0">
+        <button type="button" class="focus-btn active" aria-pressed="true" aria-describedby="focus-hint">
           <span class="focus-btn-num">01</span>
-          <div class="focus-btn-title">Software Architecture</div>
-          <div class="focus-btn-desc"></div>
-        </div>
-        <div class="focus-btn" tabindex="0">
+          <span class="focus-btn-title">Software Architecture</span>
+          <span class="focus-btn-desc"></span>
+        </button>
+        <button type="button" class="focus-btn" aria-pressed="false" aria-describedby="focus-hint">
           <span class="focus-btn-num">02</span>
-          <div class="focus-btn-title">Engineering Leadership</div>
-          <div class="focus-btn-desc"></div>
-        </div>
-        <div class="focus-btn" tabindex="0">
+          <span class="focus-btn-title">Engineering Leadership</span>
+          <span class="focus-btn-desc"></span>
+        </button>
+        <button type="button" class="focus-btn" aria-pressed="false" aria-describedby="focus-hint">
           <span class="focus-btn-num">03</span>
-          <div class="focus-btn-title">Startup investing</div>
-          <div class="focus-btn-desc"></div>
-        </div>
+          <span class="focus-btn-title">Startup investing</span>
+          <span class="focus-btn-desc"></span>
+        </button>
       </div>
     </section>
 
@@ -328,9 +335,22 @@
     (function() {
       const canvas = document.getElementById('constellation');
       const ctx = canvas.getContext('2d');
+      if (!ctx) return;
       let width, height;
       let particles = [];
-      const isReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      const motion = window.matchMedia('(prefers-reduced-motion: reduce)');
+      let isReduced = motion.matches;
+      let frame = 0;
+      let selected = 0;
+      const controls = [...document.querySelectorAll('.focus-btn')];
+      controls.forEach((button, index) => button.addEventListener('click', () => {
+        selected = index;
+        controls.forEach((control, i) => {
+          control.classList.toggle('active', i === index);
+          control.setAttribute('aria-pressed', String(i === index));
+        });
+        createParticles(); restart();
+      }));
 
       function resize() {
         width = canvas.width = window.innerWidth;
@@ -343,8 +363,8 @@
         const count = Math.min(Math.floor((width * height) / 16000), 55);
         for (let i = 0; i < count; i++) {
           particles.push({
-            x: Math.random() * width,
-            y: Math.random() * height,
+            x: selected === 1 ? width / 2 + Math.cos(i * 2 * Math.PI / count) * width * .4 : selected === 2 ? (i % 7 + 1) * width / 8 : Math.random() * width,
+            y: selected === 1 ? height / 2 + Math.sin(i * 2 * Math.PI / count) * height * .4 : selected === 2 ? (Math.floor(i / 7) + 1) * height / (Math.ceil(count / 7) + 1) : Math.random() * height,
             vx: (Math.random() - 0.5) * 0.45,
             vy: (Math.random() - 0.5) * 0.45,
             radius: Math.random() * 1.5 + 1
@@ -387,14 +407,16 @@
           }
         }
 
-        if (!isReduced) {
-          requestAnimationFrame(draw);
+        if (!isReduced && !document.hidden) {
+          frame = requestAnimationFrame(draw);
         }
       }
 
-      window.addEventListener('resize', resize);
-      resize();
-      draw();
+      function restart() { cancelAnimationFrame(frame); draw(); }
+      window.addEventListener('resize', () => { resize(); restart(); });
+      motion.addEventListener('change', () => { isReduced = motion.matches; restart(); });
+      document.addEventListener('visibilitychange', restart);
+      resize(); restart();
     })();
   </script>
 </body>
