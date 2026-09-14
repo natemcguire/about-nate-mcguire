@@ -3,6 +3,7 @@ const status = document.querySelector('#design-status');
 const profile = document.querySelector('#profile');
 const footer = document.querySelector('body > footer');
 const buttons = [...document.querySelectorAll('[data-model]')];
+const labels = new Map(buttons.map(button => [button.dataset.model, button.textContent]));
 let current = null, frame = null, request = 0, data;
 const secondary = profile.classList.contains('secondary-page');
 let history = {};
@@ -34,7 +35,11 @@ async function applyPageDesign(variation, signal) {
   return themes[variation.id];
 }
 function active(model) {
-  for (const button of buttons) button.setAttribute('aria-pressed', String(button.dataset.model === model));
+  for (const button of buttons) {
+    const selected = button.dataset.model === model;
+    button.setAttribute('aria-pressed', String(selected));
+    button.textContent = selected && model !== 'base' ? 'Try Again' : labels.get(button.dataset.model);
+  }
 }
 async function readData() {
   if (!data) data = Promise.all(['/designs/manifest.json', '/content.json'].map(async path => {
@@ -101,10 +106,12 @@ async function selectDesign(button, initialId = null) {
     } else {
       profile.hidden = true; document.body.classList.add('viewing-design'); pending.hidden = false;
     }
-    history[model] = initialId ? [variation.id] : remember(pool, seen, variation.id);
+    history[model] = initialId && seen.includes(variation.id)
+      ? [...seen.filter(id => id !== variation.id), variation.id]
+      : remember(pool, seen, variation.id);
     persist(variation.id);
     active(model);
-    status.textContent = `${button.textContent} · ${variation.name}`;
+    status.textContent = `${labels.get(model)} · ${variation.name}`;
   } catch {
     pending?.remove();
     if (token === request) status.textContent = 'Unable to load this design. Try again.';

@@ -35,7 +35,7 @@ page = f'''<!doctype html>
 <meta property="og:title" content="Nate McGuire — Staff Engineer, founder &amp; operator">
 <meta property="og:description" content="{e(c['bio'], quote=True)}">
 <meta property="og:url" content="https://natemcguire.com/">
-<meta property="og:image" content="https://natemcguire.com/og-image.png">
+<meta property="og:image" content="https://natemcguire.com/og-image-staff.png">
 <meta name="twitter:card" content="summary_large_image">
 <script type="application/ld+json">{json.dumps({"@context":"https://schema.org","@type":"Person","name":c['name'],"jobTitle":c['role'],"worksFor":{"@type":"Organization","name":c['company']},"url":"https://natemcguire.com/","description":c['bio'],"sameAs":[v['url'] for v in c['links'] if v['url'].startswith('https:')]})}</script>
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-MP2PD28L5S"></script>

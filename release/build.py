@@ -73,3 +73,11 @@ for source in sources:
  (OUT/source.relative_to(ROOT/'v2')).write_text(page)
 
 (OUT/'404.html').write_text('<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Page not found — Nate McGuire</title>'+assets+'</head><body>'+bar+'<main id="profile" class="secondary-page"><h1>Page not found</h1><p><a href="/">Back to Nate McGuire</a></p></main>'+footer+'</body></html>')
+
+# Version the corrected social card so share crawlers request the new artwork.
+shutil.copy(ROOT/'next/og-image-staff.png', OUT/'og-image-staff.png')
+shutil.copy(ROOT/'next/og-image-staff.png', OUT/'og-image.png')
+for page in list(OUT.glob('*.html'))+list((OUT/'author').glob('*.html')):
+ text=page.read_text().replace('https://natemcguire.com/og-image.png','https://natemcguire.com/og-image-staff.png')
+ text=text.replace('property="og:image:width" content="1200"','property="og:image:width" content="1731"').replace('property="og:image:height" content="630"','property="og:image:height" content="909"')
+ page.write_text(text)
