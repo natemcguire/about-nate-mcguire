@@ -68,17 +68,42 @@ async function loadDesign(variation, signal) {
   document.body.insertBefore(next, footer);
   try {await loaded; return next;} catch(error) {next.remove(); throw error;}
 }
+const reducedMotion = matchMedia('(prefers-reduced-motion: reduce)');
+let revealAnimation;
+function loading(model, enabled) {
+  document.body.classList.toggle('design-loading', enabled);
+  document.querySelector('.design-bar').setAttribute('aria-busy', String(enabled));
+  for (const button of buttons) button.toggleAttribute('data-loading', enabled && button.dataset.model === model);
+}
+function settle(ms, signal) {
+  return new Promise((resolve, reject) => {
+    if (signal.aborted) return reject(new Error('Cancelled'));
+    const abort = () => {clearTimeout(timer); reject(new Error('Cancelled'));};
+    const timer = setTimeout(() => {signal.removeEventListener('abort', abort); resolve();}, ms);
+    signal.addEventListener('abort', abort, {once:true});
+  });
+}
+function reveal(element, motion) {
+  revealAnimation?.cancel();
+  if (!motion || reducedMotion.matches) return;
+  revealAnimation = element.animate([
+    {opacity:0, transform:'translateY(8px) scale(.995)'},
+    {opacity:1, transform:'translateY(0) scale(1)'}
+  ], {duration:260, easing:'cubic-bezier(0.23, 1, 0.32, 1)'});
+}
 let controller;
-async function selectDesign(button, initialId = null) {
+async function selectDesign(button, initialId = null, motion = false) {
   const token = ++request;
   controller?.abort();
+  revealAnimation?.cancel();
   const model = button.dataset.model;
   if (model === 'base') {
+    loading(model, false);
     frame?.remove(); frame = null; current = null;
     profile.hidden = false; footer.hidden = false;
     document.body.classList.remove('viewing-design', 'themed-page');
     themeStyle?.remove(); themeStyle = null; delete profile.dataset.design; persist('base');
-    active('base'); status.textContent = '';
+    active('base'); status.textContent = ''; reveal(profile, motion);
     return;
   }
   controller = new AbortController();
@@ -86,7 +111,9 @@ async function selectDesign(button, initialId = null) {
   const timeout = setTimeout(() => thisController.abort(), 15000);
   let pending;
   try {
-    status.textContent = 'Rendering…';
+    loading(model, true);
+    const started = performance.now();
+    status.textContent = `Rendering ${labels.get(model)}…`;
     const [manifest, content] = await readData();
     if (token !== request) return;
     const pool = eligible(manifest.variations, model, content.version);
@@ -95,7 +122,9 @@ async function selectDesign(button, initialId = null) {
     if (!variation) throw new Error('Unavailable');
     const pageTheme = secondary ? await applyPageDesign(variation, thisController.signal) : null;
     if (!secondary) pending = await loadDesign(variation, thisController.signal);
+    await settle(motion && !reducedMotion.matches ? Math.max(0, 620 - (performance.now() - started)) : 0, thisController.signal);
     if (token !== request) {pending?.remove(); return;}
+    loading(model, false);
     frame?.remove(); frame = pending; current = variation.id;
     footer.hidden = false;
     if (secondary) {
@@ -111,13 +140,14 @@ async function selectDesign(button, initialId = null) {
       : remember(pool, seen, variation.id);
     persist(variation.id);
     active(model);
+    reveal(secondary ? profile : pending, motion);
     status.textContent = `${labels.get(model)} · ${variation.name}`;
   } catch {
     pending?.remove();
     if (token === request) status.textContent = 'Unable to load this design. Try again.';
-  } finally {clearTimeout(timeout);}
+  } finally {clearTimeout(timeout); if (token === request) loading(model, false);}
 }
-for (const button of buttons) button.addEventListener('click', () => selectDesign(button));
+for (const button of buttons) button.addEventListener('click', event => selectDesign(button, null, event.detail !== 0));
 async function revealAvailableCollections() {
   try {
     const [manifest, content] = await readData();

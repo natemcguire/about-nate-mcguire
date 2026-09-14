@@ -8,12 +8,12 @@
       "entry": "designs/claude-01/",
       "modelVersion": "claude-opus-5",
       "generatedAt": "2026-09-13",
-      "contentVersion": "2026-09-13",
+      "contentVersion": "2026-09-14",
       "review": {
         "nate": "approved",
         "agent": "approved"
       },
-      "sha256": "d4c1693b2d9a26a3a68285ab0d8755c851cde5c562111051dd71241ed937cb81"
+      "sha256": "cbcf69166f702067ed1d8de736c7f190a414951071726720c1952f995413b5a3"
     },
     {
       "id": "claude-02",
@@ -22,12 +22,12 @@
       "entry": "designs/claude-02/",
       "modelVersion": "claude-opus-5",
       "generatedAt": "2026-09-13",
-      "contentVersion": "2026-09-13",
+      "contentVersion": "2026-09-14",
       "review": {
         "nate": "approved",
         "agent": "approved"
       },
-      "sha256": "64c6cf3f4d1ff9e959855c05d27492d7078f8b00407541711e52de92c663f499"
+      "sha256": "12374f843c5c01b380be242ee9bfa4dbbec6798bea89b658ce0ccd4768680c54"
     },
     {
       "id": "claude-03",
@@ -36,12 +36,12 @@
       "entry": "designs/claude-03/",
       "modelVersion": "claude-opus-5",
       "generatedAt": "2026-09-13",
-      "contentVersion": "2026-09-13",
+      "contentVersion": "2026-09-14",
       "review": {
         "nate": "approved",
         "agent": "approved"
       },
-      "sha256": "815b92cf4399b3a7a06b10abc6e7a09e6f24e15c40e89395582b0b4a90e11220"
+      "sha256": "55328ab47840100922042c959dcfab63e670da76ec4bc727480bbe043cae8d23"
     },
     {
       "id": "claude-04",
@@ -50,12 +50,12 @@
       "entry": "designs/claude-04/",
       "modelVersion": "claude-opus-5",
       "generatedAt": "2026-09-13",
-      "contentVersion": "2026-09-13",
+      "contentVersion": "2026-09-14",
       "review": {
         "nate": "approved",
         "agent": "approved"
       },
-      "sha256": "b1d1113373a5221966c1abb4c2db81589530e2e9e84bd99e3c9ea577fd79f37a"
+      "sha256": "efa62ec5d4eb215fa56be5d840c45efc5e5204d003346c72d6e79e74754aad14"
     },
     {
       "id": "claude-05",
@@ -64,26 +64,26 @@
       "entry": "designs/claude-05/",
       "modelVersion": "claude-opus-5",
       "generatedAt": "2026-09-13",
-      "contentVersion": "2026-09-13",
+      "contentVersion": "2026-09-14",
       "review": {
         "nate": "approved",
         "agent": "approved"
       },
-      "sha256": "5d74f07df376e9cafee7947c34ddc896638b55cebdf428b927300dfee8c90200"
+      "sha256": "6df8cf6b288a2f024a3d9934a2efb9ef2905cd527e50302378fc65298369f16d"
     },
     {
       "id": "chatgpt-01",
       "model": "chatgpt",
-      "name": "Big Type, Small Internet",
+      "name": "Big Type",
       "entry": "designs/chatgpt-01/",
       "modelVersion": "gpt-6-astra",
       "generatedAt": "2026-09-13T22:14:29.457896+00:00",
-      "contentVersion": "2026-09-13",
+      "contentVersion": "2026-09-14",
       "review": {
         "nate": "approved",
         "agent": "approved"
       },
-      "sha256": "249ceda461e2512c1440113db1312b0c654abbddd0d1ab0cb6a47cd8448d8f0d"
+      "sha256": "ce718fb8bf50baf95acab7be652c8c8ed90714c80bf91de283a59a80207b17f2"
     },
     {
       "id": "chatgpt-02",
@@ -92,12 +92,12 @@
       "entry": "designs/chatgpt-02/",
       "modelVersion": "gpt-6-astra",
       "generatedAt": "2026-09-13T22:14:29.457896+00:00",
-      "contentVersion": "2026-09-13",
+      "contentVersion": "2026-09-14",
       "review": {
         "nate": "approved",
         "agent": "approved"
       },
-      "sha256": "d711e7ff492243ef6a6618bdf63b253cdb4823b6690f88ad32994038e4d6911c"
+      "sha256": "e4c98018f88a31d7431235ad7daf33772a3a8670ec04c8b8ab017750f705d0ea"
     },
     {
       "id": "chatgpt-03",
@@ -106,12 +106,12 @@
       "entry": "designs/chatgpt-03/",
       "modelVersion": "gpt-6-astra",
       "generatedAt": "2026-09-13T22:14:29.457896+00:00",
-      "contentVersion": "2026-09-13",
+      "contentVersion": "2026-09-14",
       "review": {
         "nate": "approved",
         "agent": "approved"
       },
-      "sha256": "8f5b465052bdc50613a696505057fa0fc423278a9abd6d5999cbb03c27c1e016"
+      "sha256": "67faac8115c58f6c85719eb1652664ffd2863eeb001607ae0dca37d33ac09144"
     },
     {
       "id": "chatgpt-04",
@@ -120,12 +120,12 @@
       "entry": "designs/chatgpt-04/",
       "modelVersion": "gpt-6-astra",
       "generatedAt": "2026-09-13T22:14:29.457896+00:00",
-      "contentVersion": "2026-09-13",
+      "contentVersion": "2026-09-14",
       "review": {
         "nate": "approved",
         "agent": "approved"
       },
-      "sha256": "7ca7b527ba4256c55bef21425f6f472ab598b5efc551d1aebf08a2b289c56395"
+      "sha256": "59caa51b40eb48e9ac1a865bf58484e4260d7b163b7098eeafc788a2997907c9"
     },
     {
       "id": "chatgpt-05",
@@ -134,12 +134,12 @@
       "entry": "designs/chatgpt-05/",
       "modelVersion": "gpt-6-astra",
       "generatedAt": "2026-09-13T22:14:29.457896+00:00",
-      "contentVersion": "2026-09-13",
+      "contentVersion": "2026-09-14",
       "review": {
         "nate": "approved",
         "agent": "approved"
       },
-      "sha256": "359d33a47e54c956d07b4f168a2471aa92bcf7287537d829b36321f311d11290"
+      "sha256": "560dfef0913b0bdb534c5d8d0d557a9b5904939a52c282f2768435fdee3c3d72"
     },
     {
       "id": "grok-01",
@@ -148,12 +148,12 @@
       "entry": "designs/grok-01/",
       "modelVersion": "grok-4.6",
       "generatedAt": "2026-09-13T22:06:15+00:00",
-      "contentVersion": "2026-09-13",
+      "contentVersion": "2026-09-14",
       "review": {
         "nate": "approved",
         "agent": "approved"
       },
-      "sha256": "39457f9cb178f6fcd6bee4de98693d02201fc47fc9d1a4f26074e8e72e6b84b6"
+      "sha256": "f196b868f3d789eeb94c3e1ea6c24c8e8b158252bcdbdc1ea489fd831ac7d71b"
     },
     {
       "id": "grok-02",
@@ -162,12 +162,12 @@
       "entry": "designs/grok-02/",
       "modelVersion": "grok-4.6",
       "generatedAt": "2026-09-13T22:06:15+00:00",
-      "contentVersion": "2026-09-13",
+      "contentVersion": "2026-09-14",
       "review": {
         "nate": "approved",
         "agent": "approved"
       },
-      "sha256": "54eff2c3a91b82a34f06a3e64ae087de7806cdbdb51688c5a1031f396def3db3"
+      "sha256": "2e3b2f01ecbc93832059d790f38173780376cb8928a017c81a1e4c6caad2ea63"
     },
     {
       "id": "grok-03",
@@ -176,12 +176,12 @@
       "entry": "designs/grok-03/",
       "modelVersion": "grok-4.6",
       "generatedAt": "2026-09-13T22:06:15+00:00",
-      "contentVersion": "2026-09-13",
+      "contentVersion": "2026-09-14",
       "review": {
         "nate": "approved",
         "agent": "approved"
       },
-      "sha256": "84706a275f0952b7135fc6893c62395618b7ed9c22b65a5a83a117767d5a800d"
+      "sha256": "019c56a828aa7fd4538145ed7203ba20853b1b20c7dd8b0d9b464a635f55dd42"
     },
     {
       "id": "grok-04",
@@ -190,26 +190,26 @@
       "entry": "designs/grok-04/",
       "modelVersion": "grok-4.6",
       "generatedAt": "2026-09-13T22:06:15+00:00",
-      "contentVersion": "2026-09-13",
+      "contentVersion": "2026-09-14",
       "review": {
         "nate": "approved",
         "agent": "approved"
       },
-      "sha256": "0a687e9b66cae5e16888d6f87e022aa05d0530349b208abe217719c2d2660511"
+      "sha256": "91b289a8f149ed0d00707ad712fc9bb059c7796f744f0dc3abedf9c25dbe9fe4"
     },
     {
       "id": "grok-05",
       "model": "grok",
-      "name": "Hot Metal",
+      "name": "Signal",
       "entry": "designs/grok-05/",
       "modelVersion": "grok-4.6",
-      "generatedAt": "2026-09-13T22:06:15+00:00",
-      "contentVersion": "2026-09-13",
+      "generatedAt": "2026-09-13T22:46:14+00:00",
+      "contentVersion": "2026-09-14",
       "review": {
         "nate": "approved",
         "agent": "approved"
       },
-      "sha256": "73f30d7d89bdeb91cda141cb494989764249ba5d6fb76a0ded97a80777dd67ec"
+      "sha256": "0f76f37fd32fa3935a2876d44f0deefa56630bf65cd16aeb91bdbbe3d3b8bf2c"
     },
     {
       "id": "gemini-01",
@@ -218,12 +218,12 @@
       "entry": "designs/gemini-01/",
       "modelVersion": "gemini-3.8-flash-high",
       "generatedAt": "2026-09-13T22:09:09.208735+00:00",
-      "contentVersion": "2026-09-13",
+      "contentVersion": "2026-09-14",
       "review": {
         "nate": "approved",
         "agent": "approved"
       },
-      "sha256": "701d4c9249be23086c38117cd55e616010d77c76268c0ce0e64922988aa8ec09"
+      "sha256": "957f42c9402fa564387a98f312500d0164396c358197ae30eb6f2f3641d2250f"
     },
     {
       "id": "gemini-02",
@@ -232,12 +232,12 @@
       "entry": "designs/gemini-02/",
       "modelVersion": "gemini-3.8-flash-high",
       "generatedAt": "2026-09-13T22:09:09.208735+00:00",
-      "contentVersion": "2026-09-13",
+      "contentVersion": "2026-09-14",
       "review": {
         "nate": "approved",
         "agent": "approved"
       },
-      "sha256": "a732e026fe0ac37a2125357c8a3cc20384a5f5ddc6fb5c25d1924be0e133ba3e"
+      "sha256": "0507aab0cf3c8207e3b4f3f6ec433dee77611a24c70a08526e939812967d9ba9"
     },
     {
       "id": "gemini-03",
@@ -246,12 +246,12 @@
       "entry": "designs/gemini-03/",
       "modelVersion": "gemini-3.8-flash-high",
       "generatedAt": "2026-09-13T22:09:09.208735+00:00",
-      "contentVersion": "2026-09-13",
+      "contentVersion": "2026-09-14",
       "review": {
         "nate": "approved",
         "agent": "approved"
       },
-      "sha256": "d138f203bd7a595e2e9ea2f1fd60676506d0616c8b2550090398deb041dc30a9"
+      "sha256": "b9a56c985eff89c5df2106153dce314fd81df0f36e8b52937efb646c18d9c8cf"
     },
     {
       "id": "gemini-04",
@@ -260,12 +260,12 @@
       "entry": "designs/gemini-04/",
       "modelVersion": "gemini-3.8-flash-high",
       "generatedAt": "2026-09-13T22:09:09.208735+00:00",
-      "contentVersion": "2026-09-13",
+      "contentVersion": "2026-09-14",
       "review": {
         "nate": "approved",
         "agent": "approved"
       },
-      "sha256": "00fc494dcd7e7b9551aed48dd3bf1eb93a397018df480a878f6c6403d99b0887"
+      "sha256": "dcde92936670f0a013f798bdc1a4c80515c8544d1c5749e301f95fb5bf836182"
     },
     {
       "id": "gemini-05",
@@ -274,12 +274,12 @@
       "entry": "designs/gemini-05/",
       "modelVersion": "gemini-3.8-flash-high",
       "generatedAt": "2026-09-13T22:09:09.208735+00:00",
-      "contentVersion": "2026-09-13",
+      "contentVersion": "2026-09-14",
       "review": {
         "nate": "approved",
         "agent": "approved"
       },
-      "sha256": "fb173577a0212a899c8e90002619d713fff98753c39b81bce4937ba0e3c5fa68"
+      "sha256": "cc462f23a791628ec5fe002290af96b7e8a2ccd077f239b15f0b905a62466f3d"
     }
   ]
 }

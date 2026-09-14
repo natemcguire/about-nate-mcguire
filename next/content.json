@@ -1,20 +1,20 @@
 {
-  "version": "2026-09-13",
+  "version": "2026-09-14",
   "name": "Nate McGuire",
   "role": "Staff Engineer",
   "company": "Capital One",
   "team": "Card Tech",
   "location": "Alexandria, Virginia",
-  "bio": "Engineer, founder, and operator. I build software and grow the teams behind it.",
+  "bio": "Engineer, founder, and operator. I build software and grow the teams behind it. I invest in startups and advise founders and VC/PE teams on technology and engineering team culture.",
   "background": [
     "Built Mayven Studios, grew the team, and ran it profitably for 10 years.",
-    "Worked on Google X moonshot projects and Facebook’s Building 8.",
+    "Worked on Google X moonshot projects and Facebook\u2019s Building 8.",
     "Sold Mayven to Saltwater / Ryan Graves."
   ],
   "focus": [
     "Software architecture",
     "Engineering leadership",
-    "Internet businesses"
+    "Startup investing"
   ],
   "links": [
     {

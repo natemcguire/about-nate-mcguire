@@ -1,0 +1,125 @@
+{
+  "provider": "xAI",
+  "modelVersion": "grok-4.6",
+  "reasoningEffort": "xhigh",
+  "modelSelectionEvidence": "Live xAI models API verified grok-4.6 as latest available frontier text model; official docs support maximum xhigh effort.",
+  "documentation": "https://docs.x.ai/developers/model-capabilities/text/reasoning",
+  "generationMethod": "xAI Chat Completions API via Mac mini",
+  "responseId": "c1c721e7-68ea-9a12-9a82-be4948c92f53",
+  "variations": [
+    {
+      "id": "grok-01",
+      "model": "grok",
+      "modelVersion": "grok-4.6",
+      "reasoningEffort": "xhigh",
+      "name": "Folio",
+      "entry": "grok-01/index.html",
+      "rationale": "Literary-journal opening: warm sheet, oxblood double-rule mast, and a two-column hero that holds name, role, and bio in one viewport. Contents rail tracks chapters without hiding copy; type, measure, and rules do the work instead of filler blocks.",
+      "generatedAt": "2026-09-13T22:46:14+00:00",
+      "contentVersion": "2026-09-13",
+      "review": {
+        "nate": "pending",
+        "agent": "pending"
+      }
+    },
+    {
+      "id": "grok-02",
+      "model": "grok",
+      "modelVersion": "grok-4.6",
+      "reasoningEffort": "xhigh",
+      "name": "Elevation",
+      "entry": "grok-02/index.html",
+      "rationale": "Replaced the house drawing with a Swiss poster canvas: oversized system type, nested ivory/ink slabs, and work copy in one lockup. Spread is a real labeled range that offsets the planes, with a composed CSS default if JS is off. Hover ties slabs to the matching copy; reduced motion drops transitions. All given facts and URLs remain, nothing extra.",
+      "generatedAt": "2026-09-13T22:46:14+00:00",
+      "contentVersion": "2026-09-13",
+      "review": {
+        "nate": "pending",
+        "agent": "pending"
+      },
+      "revisionResponseId": "b42109f7-a71c-934e-8150-44fa6d98c4d1"
+    },
+    {
+      "id": "grok-03",
+      "model": "grok",
+      "modelVersion": "grok-4.6",
+      "reasoningEffort": "xhigh",
+      "name": "Night Desk",
+      "entry": "grok-03/index.html",
+      "rationale": "A framed nocturnal reading room: lamp-warmed serif, gold hairlines, and a labeled side index instead of anonymous dots. Identity, bio, and focus sit in the first viewport; a reading-light switch changes the room without gating facts.",
+      "generatedAt": "2026-09-13T22:46:14+00:00",
+      "contentVersion": "2026-09-13",
+      "review": {
+        "nate": "pending",
+        "agent": "pending"
+      }
+    },
+    {
+      "id": "grok-04",
+      "model": "grok",
+      "modelVersion": "grok-4.6",
+      "reasoningEffort": "xhigh",
+      "name": "Measure",
+      "entry": "grok-04/index.html",
+      "rationale": "Asymmetric Swiss split: sticky ink identity versus a cool reading column, joined by a red rule and ruler ticks. Measure radios (narrow, reading, wide) are a typesetter\u2019s control\u2014they reshape the column without filtering or inventing biography.",
+      "generatedAt": "2026-09-13T22:46:14+00:00",
+      "contentVersion": "2026-09-13",
+      "review": {
+        "nate": "pending",
+        "agent": "pending"
+      }
+    },
+    {
+      "id": "grok-05",
+      "model": "grok",
+      "modelVersion": "grok-4.6",
+      "reasoningEffort": "xhigh",
+      "name": "Signal",
+      "entry": "grok-05/index.html",
+      "rationale": "Poster lockup in cobalt, cream, and gold with crop marks and a once-only rule draw. Work is full-width bands that lift on hover and focus; colorway radios reprint the field. Kinetic through composition and state, not animation loops.",
+      "generatedAt": "2026-09-13T22:46:14+00:00",
+      "contentVersion": "2026-09-13",
+      "review": {
+        "nate": "pending",
+        "agent": "pending"
+      }
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 12918,
+    "completion_tokens": 11454,
+    "total_tokens": 48435,
+    "prompt_tokens_details": {
+      "text_tokens": 12918,
+      "audio_tokens": 0,
+      "image_tokens": 0,
+      "cached_tokens": 0
+    },
+    "completion_tokens_details": {
+      "reasoning_tokens": 24063,
+      "audio_tokens": 0,
+      "accepted_prediction_tokens": 0,
+      "rejected_prediction_tokens": 0
+    },
+    "num_sources_used": 0,
+    "cost_in_usd_ticks": 2389380000
+  },
+  "additionalRevisionUsage": {
+    "prompt_tokens": 4155,
+    "completion_tokens": 2746,
+    "total_tokens": 34406,
+    "prompt_tokens_details": {
+      "text_tokens": 4155,
+      "audio_tokens": 0,
+      "image_tokens": 0,
+      "cached_tokens": 512
+    },
+    "completion_tokens_details": {
+      "reasoning_tokens": 27505,
+      "audio_tokens": 0,
+      "accepted_prediction_tokens": 0,
+      "rejected_prediction_tokens": 0
+    },
+    "num_sources_used": 0,
+    "cost_in_usd_ticks": 1890480000
+  }
+}

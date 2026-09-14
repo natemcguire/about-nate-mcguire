@@ -1,0 +1,5 @@
+Edited with the built-in image generation tool from v2/og-image.png.
+
+Prompt: Edit this existing social sharing image, preserving its cream paper texture, retro pixel typography, black terminal window border and offset shadow, blue NATE MCGUIRE name, NATE_MCGUIRE.EXE black title bar, ornamental dashed line and green cursor. Replace DISTINGUISHED ENGINEER with exact uppercase text STAFF SOFTWARE ENGINEER. Completely remove the CAPITAL ONE · AUSTIN, TX line; do not put any company or location text in its place. Balance the remaining single role line and whitespace in that area. Preserve wide 1200:630 aspect ratio and composition. No other new text. This is a precise text correction to the provided image.
+
+Output: og-image-staff.png, 1731 × 909. Visually verified exact role and removal of company/location. Used at the versioned social-card URL and legacy /og-image.png alias.

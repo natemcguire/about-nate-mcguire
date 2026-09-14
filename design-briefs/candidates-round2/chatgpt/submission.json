@@ -2,7 +2,7 @@
   "variations": [
     {
       "id": "chatgpt-01",
-      "name": "Big Type, Small Internet",
+      "name": "Big Type",
       "rationale": "An oversized typographic editorial with an electric yellow palette, a movable punctuation mark, and a tightly composed career ledger.",
       "entry": "chatgpt-01/index.html",
       "review": {
@@ -57,7 +57,7 @@
     "designs": [
       {
         "id": "chatgpt-01",
-        "name": "Big Type, Small Internet",
+        "name": "Big Type",
         "entry": "chatgpt-01/index.html",
         "rationale": "Electric yellow editorial typography, a responsive punctuation mark, and a concise career ledger.",
         "approval_status": "pending"

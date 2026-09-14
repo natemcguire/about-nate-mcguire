@@ -4,12 +4,18 @@ ROOT=Path(__file__).resolve().parents[1]
 OUT=ROOT/'release/site';OUT.mkdir(exist_ok=True)
 content=json.loads((ROOT/'next/content.json').read_text())
 manifest={'schemaVersion':2,'variations':[]}
+overrides=json.loads((ROOT/'next/design-overrides.json').read_text())
 policy="default-src 'none'; script-src 'unsafe-inline'; style-src 'unsafe-inline'; img-src data:; font-src data:; connect-src 'none'; object-src 'none'; base-uri 'none'; form-action 'none'"
 for model in ['claude','chatgpt','grok','gemini']:
  folder=ROOT/'design-briefs/candidates-round2'/model
  sub=json.loads((folder/'submission.json').read_text())
  for v in sub['variations']:
-  ident=v['id'];source=folder/v['entry'];text=source.read_text()
+  ident=v['id'];selected_folder=folder;selected_sub=sub
+  if ident in overrides:
+   selected_folder=ROOT/overrides[ident]['folder']
+   selected_sub=json.loads((selected_folder/'submission.json').read_text())
+   v=next(item for item in selected_sub['variations'] if item['id']==ident)
+  source=selected_folder/v['entry'];text=source.read_text()
   text=re.sub(r'(<body\b[^>]*>)',lambda m:m.group(1)+'<!--email_off-->',text,count=1,flags=re.I).replace('</body>','<!--/email_off--></body>')
   def link(match):
    tag=match.group()
@@ -20,7 +26,7 @@ for model in ['claude','chatgpt','grok','gemini']:
   meta=f'<meta name="robots" content="noindex,follow"><meta http-equiv="Content-Security-Policy" content="{policy}">'
   text=re.sub(r'(<head\b[^>]*>)',lambda m:m.group(1)+meta,text,count=1,flags=re.I)
   dest=ROOT/'next/designs'/ident;dest.mkdir(exist_ok=True);(dest/'index.html').write_text(text)
-  manifest['variations'].append({'id':ident,'model':model,'name':v['name'],'entry':f'designs/{ident}/','modelVersion':sub.get('modelVersion',v.get('modelVersion')),'generatedAt':sub.get('generatedAt',v.get('generatedAt')),'contentVersion':content['version'],'review':{'nate':'approved','agent':'approved'},'sha256':hashlib.sha256(text.encode()).hexdigest()})
+  manifest['variations'].append({'id':ident,'model':model,'name':v['name'],'entry':f'designs/{ident}/','modelVersion':selected_sub.get('modelVersion',v.get('modelVersion')),'generatedAt':selected_sub.get('generatedAt',v.get('generatedAt')),'contentVersion':content['version'],'review':{'nate':'approved','agent':'approved'},'sha256':hashlib.sha256(text.encode()).hexdigest()})
 (ROOT/'next/designs/manifest.json').write_text(json.dumps(manifest,indent=2))
 for name in ['index.html','base.css','app.js','selection.mjs','content.json']:
  shutil.copy(ROOT/'next'/name,OUT/name)
