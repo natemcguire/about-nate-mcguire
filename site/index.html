@@ -1,0 +1,272 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Nate McGuire: exited founder, staff software engineer, investor</title>
+<meta name="description" content="Personal site of Nate McGuire: exited founder, staff software engineer and startup investor.">
+<meta name="author" content="Nate McGuire">
+<link rel="canonical" href="https://natemcguire.com/">
+<meta name="theme-color" content="#1e4d3a">
+<meta property="og:type" content="profile">
+<meta property="og:site_name" content="Nate McGuire">
+<meta property="profile:first_name" content="Nate">
+<meta property="profile:last_name" content="McGuire">
+<meta property="og:title" content="Nate McGuire">
+<meta property="og:description" content="Exited founder, staff software engineer, startup investor.">
+<meta property="og:url" content="https://natemcguire.com/">
+<meta property="og:image" content="https://natemcguire.com/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Nate McGuire's name and roles set around a rounded triangle.">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="me" href="https://www.linkedin.com/in/natemcguire/">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebSite",
+      "@id": "https://natemcguire.com/#site",
+      "url": "https://natemcguire.com/",
+      "name": "Nate McGuire"
+    },
+    {
+      "@type": "ProfilePage",
+      "@id": "https://natemcguire.com/#page",
+      "url": "https://natemcguire.com/",
+      "name": "Nate McGuire",
+      "isPartOf": {
+        "@id": "https://natemcguire.com/#site"
+      },
+      "mainEntity": {
+        "@id": "https://natemcguire.com/#nate"
+      }
+    },
+    {
+      "@type": "Person",
+      "@id": "https://natemcguire.com/#nate",
+      "name": "Nate McGuire",
+      "url": "https://natemcguire.com/",
+      "description": "Exited founder, staff software engineer and startup investor.",
+      "jobTitle": "Staff Software Engineer",
+      "knowsAbout": [
+        "Software engineering",
+        "Founding startups",
+        "Startup investing"
+      ],
+      "sameAs": [
+        "https://www.linkedin.com/in/natemcguire/"
+      ]
+    }
+  ]
+}
+</script>
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="preload" href="/fonts/bricolage-grotesque.woff2" as="font" type="font/woff2" crossorigin>
+<script>
+// Hide the plain words before anything is painted; the canvas draws them. If
+// the page's script has not started after a few seconds, bring them back.
+document.documentElement.classList.add("js");
+setTimeout(function () {
+  var root = document.documentElement;
+  if (!root.classList.contains("live")) root.classList.remove("js");
+}, 6000);
+</script>
+<style>
+@font-face {
+  font-family: "Bricolage Grotesque";
+  src: url("/fonts/bricolage-grotesque.woff2") format("woff2");
+  font-weight: 500;
+  font-display: swap;
+}
+
+:root {
+  --paper: #1e4d3a;
+  --ink: #f6d3ae;
+  color-scheme: dark light;
+}
+
+* { box-sizing: border-box; }
+
+html, body {
+  height: 100%;
+  margin: 0;
+  overflow: hidden;
+  overscroll-behavior: none;
+  background: var(--paper);
+  color: var(--ink);
+  font: 500 17px/1.4 "Bricolage Grotesque", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  -webkit-text-size-adjust: 100%;
+}
+
+/* Without JavaScript the words are simply set in the middle of the page. */
+main {
+  display: grid;
+  place-content: center;
+  height: 100%;
+  padding: 0 24px 72px;
+  text-align: center;
+}
+
+main h1, main p {
+  margin: 0;
+  font-size: clamp(22px, 4vw, 30px);
+  font-weight: 500;
+}
+
+/* With it they are drawn on the canvas, and these stay for screen readers.
+   `js` is set before the first paint, so the plain words never flash. */
+.js main, .live main {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
+canvas {
+  position: fixed;
+  inset: 0;
+  display: none;
+  touch-action: none;
+  user-select: none;
+  -webkit-user-select: none;
+  -webkit-touch-callout: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.live canvas { display: block; }
+canvas.reachable { cursor: grab; }
+canvas.holding { cursor: grabbing; }
+
+footer {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  padding: 14px 20px calc(18px + env(safe-area-inset-bottom));
+  text-align: center;
+  letter-spacing: 0.01em;
+  pointer-events: none;
+}
+
+footer a {
+  color: inherit;
+  text-decoration-thickness: 1.5px;
+  text-underline-offset: 0.22em;
+  pointer-events: auto;
+  border-radius: 4px;
+}
+
+footer a:hover { text-decoration-thickness: 2.5px; }
+
+footer a:focus-visible {
+  outline: 2px solid currentColor;
+  outline-offset: 4px;
+}
+
+/* The speaker: quiet in the corner until looked for. */
+#sound {
+  position: fixed;
+  right: calc(6px + env(safe-area-inset-right));
+  bottom: calc(8px + env(safe-area-inset-bottom));
+  display: none;
+  width: 44px;
+  height: 44px;
+  padding: 12px;
+  border: 0;
+  border-radius: 50%;
+  background: none;
+  color: inherit;
+  opacity: 0.38;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+  touch-action: manipulation;
+}
+
+.live #sound { display: block; }
+#sound:hover { opacity: 0.8; }
+
+#sound:focus-visible {
+  opacity: 0.8;
+  outline: 2px solid currentColor;
+  outline-offset: -4px;
+}
+
+#sound svg {
+  display: block;
+  width: 100%;
+  height: 100%;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.8;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+/* Shown only on phones that must be asked before they share their motion. */
+#tilt {
+  position: fixed;
+  top: calc(14px + env(safe-area-inset-top));
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 8px 16px 9px;
+  border: 1.5px solid currentColor;
+  border-radius: 999px;
+  background: var(--paper);
+  color: inherit;
+  font: inherit;
+  font-size: 15px;
+  letter-spacing: 0.01em;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+  touch-action: manipulation;
+  animation: tilt-in 0.35s ease-out;
+}
+
+#tilt[hidden] { display: none; }
+
+@keyframes tilt-in {
+  from { opacity: 0; transform: translate(-50%, -8px); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  #tilt { animation: none; }
+}
+
+#sound .waves, #sound.on .cross { display: none; }
+#sound.on .waves { display: inline; }
+</style>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-MP2PD28L5S"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag() { dataLayer.push(arguments); }
+gtag("js", new Date());
+gtag("config", "G-MP2PD28L5S");
+</script>
+</head>
+<body>
+<main>
+  <h1>nate mcguire</h1>
+  <p>exited founder, staff software engineer, startup investor</p>
+</main>
+<canvas id="stage" aria-hidden="true"></canvas>
+<footer>
+  for fun: <a href="https://apps.apple.com/us/app/hifi-radio/id6824175373">Hifi</a>,
+  <a href="https://testflight.apple.com/join/rmyRz46M">FilmDeck</a>
+</footer>
+<button id="tilt" type="button" hidden>tap to tilt</button>
+<button id="sound" type="button" aria-label="Sound" aria-pressed="false">
+  <svg viewBox="0 0 24 24" aria-hidden="true">
+    <path d="M4 9.5v5h3.5l4.5 4v-13l-4.5 4z"/>
+    <g class="waves"><path d="M15.5 9.2a4 4 0 0 1 0 5.6"/><path d="M18.2 6.6a7.6 7.6 0 0 1 0 10.8"/></g>
+    <g class="cross"><path d="M16 9.5l5 5"/><path d="M21 9.5l-5 5"/></g>
+  </svg>
+</button>
+<script type="module" src="/main.mjs"></script>
+</body>
+</html>

@@ -1,0 +1,24 @@
+# Pages from the old site. Everything now lives on the home page.
+/about            /  301
+/about.html       /  301
+/author           /  301
+/author.html      /  301
+/author/*         /  301
+/projects         /  301
+/projects.html    /  301
+/projects/*       /  301
+/designs/*        /  301
+/speaking         /  301
+/speaking.html    /  301
+/work             /  301
+/work-with-me     /  301
+/work-with-me.html  /  301
+/writing          /  301
+/writing/*        /  301
+/blog/*           /  301
+/about-nate-mcguire       /  301
+/about-nate-mcguire.html  /  301
+/author-nate-mcguire      /  301
+/author-nate-mcguire.html /  301
+/retro-profile            /  301
+/retro-profile.html       /  301
